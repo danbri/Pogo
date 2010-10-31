@@ -1,0 +1,19 @@
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+<title>The Rock (1996)</title>
+<meta property="og:title" content="The Rock" />
+<meta property="og:type" content="movie" />
+<meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+
+<!-- geo example from spec, doesnt really fit with a movie but ok for now -->
+<meta property="og:latitude" content="37.416343" />
+<meta property="og:longitude" content="-122.153013" />
+<meta property="og:street-address" content="1601 S California Ave" />
+<meta property="og:locality" content="Palo Alto" />
+<meta property="og:region" content="CA" />
+<meta property="og:postal-code" content="94304" />
+<meta property="og:country-name" content="USA" />
+...
+</head>
+</html>
