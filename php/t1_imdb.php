@@ -2,7 +2,10 @@
 
 require_once 'OGDataItem.php'; 
 
-$tests = OGDataItem::getTests('testcases/basic_tests.xml'); 
+#$tests = OGDataItem::getTests('testcases/basic_tests.xml'); 
+
+$tests = OGDataItem::getTests('testcases/imdb_tests.xml'); 
+
 	# sitemap pointing to *.cache HTML files + *.meta JSON associative arrays
 
 foreach ($tests as $test) {  
@@ -22,6 +25,8 @@ foreach ($tests as $test) {
   */
 
   print $og->rapperCheck();
+
+  print $og->arcParse();
 
 }  # loop thru testcases
 

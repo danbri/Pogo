@@ -35,11 +35,11 @@ class OGDataItem {
     $tc = preg_replace( '/file:/','', $tc);
     $handle = fopen( $tc, "r");
     $contents = stream_get_contents($handle);
-    print "Content: ". $contents . "\n\n";
+    print "meta: ". $contents . "\n\n";
     fclose($handle);
     $meta = json_decode( $contents, true );
     $this->meta = $meta;
-    print "META: ". $meta . "\n";
+    # print "META: ". $meta . "\n";
     print "Expected triples: " . $meta['triple_count'] . "\n"; 
     print "Actual triples: TODO\n";
     print "\n";
@@ -87,6 +87,34 @@ class OGDataItem {
 
     $rc2 = `$c2`;
     print "Rapper count 2: $rc2 \n";
+
+  }
+
+
+  public function arcParse() {
+
+  require_once 'plugins/arc/ARC2.php';
+  $meta = $this->meta;
+  $url = $meta[url]; 				#'http://www.rottentomatoes.com/m/oceans_eleven/';
+
+  $parser = ARC2::getRDFParser();
+  $parser->parse($url);
+  $parser->extractRDF('rdfa');
+  $triples = $parser->getTriples();
+
+  print "<h3>Extended data</h3>";
+  foreach ($triples as $key => $value) {
+     if (!preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
+       if (preg_match( '/poshrdf/', $value['p'])) continue;
+       if (preg_match( '/stylesheet/', $value['p'])) continue;
+        print "Factoid: " . $value['s'] . " " . $value['p'] . " " . $value['o'] . " \n";
+     }
+  }
+
+  # factoid: p :  http://purl.org/dc/elements/1.1/title
+  # factoid: o :  Oceans (Disneynature's Oceans) Movie Reviews, Pictures - Rotten Tomatoes
+  # factoid: s_type :  uri
+  # factoid: o_type :  literal
 
   }
 
