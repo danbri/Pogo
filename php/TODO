@@ -1,0 +1,12 @@
+
+==OPTIONAL= 
+
+external services:
+ * any23
+
+
+==ESSENTIAL==
+
+ * Nothing should print() to stdout 
+ * serious errors -> system error log
+
