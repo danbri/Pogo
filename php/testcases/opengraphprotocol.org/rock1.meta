@@ -1,0 +1,12 @@
+{
+    "url": "http://opengraphprotocol.org/todo",
+    "testid": "rock1",
+    "testgroup": "opengraphprotocol.org",
+    "cache_date": "Sun 31 Oct 2010 13:46:47 CET",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": false,
+    "triple_count": 4,
+    "home_site": "http://www.opengraphprotocol.org/"
+}
