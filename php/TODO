@@ -4,6 +4,15 @@
 external services:
  * any23
 
+ * Toby Inkster's perl library: perl -MCPAN -e shell 
+   install RDF::RDFa::Parser
+   docs http://cognition-parser.googlecode.com/svn/trunk/swignition/extras/RDF-RDFa-Parser/lib/RDF/RDFa/Parser.pm
+
+ use RDF::RDFa::Parser;
+ 
+ $parser = RDF::RDFa::Parser->new($xhtml, $baseuri);
+ $parser->consume;
+ $graph = $parser->graph;
 
 ==ESSENTIAL==
 
