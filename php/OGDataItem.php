@@ -3,6 +3,14 @@
 # PHP Utility for checking Open Graph Protocol markup.
 #
 # Nearby in the Web: http://webr3.org/apps/play/api/lib a js rdfa API 
+#
+# http://developers.facebook.com/blog/post/390
+# http://developers.facebook.com/tools/lint/examples/
+# http://developers.facebook.com/tools/lint/?url=opengraphprotocol.org
+# http://developers.facebook.com/tools/lint/?url=http://www.imdb.com/title/tt0117500/
+# http://developers.facebook.com/tools/lint/?url=developers.facebook.com
+# http://developers.facebook.com/tools/lint/?url=http://www.rottentomatoes.com/m/matrix/
+# http://developers.facebook.com/tools/lint/?url=blog.paulisageek.com
 
 
 class OGDataItem {
