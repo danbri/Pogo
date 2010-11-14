@@ -1,0 +1,13 @@
+{ 
+ "url": "http://www.imdb.com/character/ch0002991/",
+    "testid": "comicbookguy",
+    "testgroup": "imdb",
+    "cache_date": "Sun 14 Nov 2010 18:20:06 CET",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 15,
+    "warning": "XML parser error: EntityRef: expecting ';'",
+    "home_site": "http://www.imdb.com/"
+}
