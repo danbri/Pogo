@@ -1,0 +1,12 @@
+{ 
+ "url": "http://www.imdb.com/title/tt1219342/",
+    "testid": "legend_guardians",
+    "testgroup": "imdb",
+    "cache_date": "Sun 31 Oct 2010 13:46:47 CET",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 1000,
+    "home_site": "http://www.imdb.com/"
+}
