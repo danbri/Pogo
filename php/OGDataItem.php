@@ -40,27 +40,26 @@ class OGDataItem {
   }
 
 
-  public function meta(){
-    return $contents;
-  }
 
   public function readTest($tc) { 
-    
     $tc = preg_replace( '/file:/','', $tc);
     $handle = fopen( $tc, "r");
     $contents = stream_get_contents($handle);
-#    print "meta: ". $contents . "\n\n";
+    #print "meta: ". $contents . "\n<br/>\n";
     fclose($handle);
     $meta = json_decode( $contents, true );
     $this->meta = $meta;
+#    print "meta2: ". $meta . "\n<br/>\n";
     # print "META: ". $meta . "\n";
-#    print "Expected triples: " . $meta['triple_count'] . "\n"; 
-#    print "Actual triples: TODO\n";
-#    print "\n";
+    #    print "Expected triples: " . $meta['triple_count'] . "\n"; 
+    #    print "Actual triples: TODO\n";
     $fn = $meta[testgroup] . "/" . $meta[testid];
-
   }
 
+
+  public function getmeta(){ 
+    return $this->meta;
+  }
 
 
   ## Services and Utilities
@@ -87,20 +86,21 @@ class OGDataItem {
     # Let's compare tidy and untidy counts
     # Requires: HTML Tidy and Rapper (Redland RDF parser)
     $c1 = "rapper  --count -i rdfa " . $fn . ".cache " . $meta[url] ;
-    print "Basic commandline: " . $c1 . "\n\n";
+    
+    #print "Basic commandline: " . $c1 . "\n\n";
 
     $c2 = "tidy -f logs/_errorlog -numeric -q -asxml ".$fn . ".cache" . "  | rapper  --count -i rdfa - ".$meta[url];
-    print "Tidied commandline: " . $c2 . "\n\n";
+    # print "Tidied commandline: " . $c2 . "\n\n";
     
     # TODO: impl
     # http://us.php.net/manual/en/function.shell-exec.php
     # http://us.php.net/manual/en/language.operators.execution.php
 
     $rc1 = `$c1`;
-    print "Rapper count 1: $rc1 \n";
+    # print "Rapper count 1: $rc1 \n";
 
     $rc2 = `$c2`;
-    print "Rapper count 2: $rc2 \n";
+    # print "Rapper count 2: $rc2 \n";
 
   }
 
@@ -121,10 +121,10 @@ class OGDataItem {
      if (!preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
        if (preg_match( '/poshrdf/', $value['p'])) continue;
        if (preg_match( '/stylesheet/', $value['p'])) continue;
-        print "Factoid: " . $value['s'] . " " . $value['p'] . " " . $value['o'] . " \n";
+        # print "Factoid: " . $value['s'] . " " . $value['p'] . " " . $value['o'] . " \n";
      }
   }
-
+  #  return($this->triples);
   # factoid: p :  http://purl.org/dc/elements/1.1/title
   # factoid: o :  Oceans (Disneynature's Oceans) Movie Reviews, Pictures - Rotten Tomatoes
   # factoid: s_type :  uri
@@ -134,8 +134,8 @@ class OGDataItem {
 
 
   public function rdf2info() {
-    print "Got a graph ". $g;
-    print "TODO: pull type, admins, app ID, Description, Image, title, Site URL, URL from it.";
+    #print "Got a graph ". $g;
+    #print "TODO: pull type, admins, app ID, Description, Image, title, Site URL, URL from it.";
     # for that, we need an OO repr?
     $props = array(); #todo
     foreach ($this->triples as $key => $value) {
@@ -146,13 +146,18 @@ class OGDataItem {
        }
     }
     $url_parts = parse_url( $props["http://opengraphprotocol.org/schema/url"] );
-    $site_url = $url_parts['scheme'] ."://". $url_parts['host'] . $url_parts['port'] . "/" ; # TODO: must we guess this?
+
+    if ($url_parts['host'] && $url_parts['port']) { 
+      $site_url = $url_parts['scheme'] ."://". $url_parts['host'] . $url_parts['port'] . "/" ; # TODO: must we guess this?
+    } else {
+      $site_url = '';
+    }
     $t = "<table border='1'>\n";
-    $t .= "<tr><td class="ogfield">Type</td><td>". $props["http://opengraphprotocol.org/schema/type"] ."</td></tr>";
-    $t .= "<tr><td class="ogfield">Image</td><td>". $props["http://opengraphprotocol.org/schema/image"] ."</td></tr>";
-    $t .= "<tr><td class="ogfield">Title</td><td>". $props["http://opengraphprotocol.org/schema/title"] ."</td></tr>";
-    $t .=  "<tr><td class="ogfield">Site URL</td><td>". $site_url ."</td></tr>";
-    $t .= "<tr><td class="ogfield">URL</td><td>". $props["http://opengraphprotocol.org/schema/url"] ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">Type</td><td>". $props["http://opengraphprotocol.org/schema/type"] ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">Image</td><td>". $props["http://opengraphprotocol.org/schema/image"] ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">Title</td><td>". $props["http://opengraphprotocol.org/schema/title"] ."</td></tr>";
+    $t .=  "<tr><td class=\"ogfield\">Site URL</td><td>". $site_url ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">URL</td><td>". $props["http://opengraphprotocol.org/schema/url"] ."</td></tr>";
     $t .= "</table>\n";
     return $t;
   }
