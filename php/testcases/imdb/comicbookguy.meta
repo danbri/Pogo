@@ -3,6 +3,7 @@
     "testid": "comicbookguy",
     "testgroup": "imdb",
     "cache_date": "Sun 14 Nov 2010 18:20:06 CET",
+    "status": "valid",
     "valid_html": false,
     "uses_rdfa": true,
     "uses_og": true,

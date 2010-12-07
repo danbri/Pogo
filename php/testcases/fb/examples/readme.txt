@@ -3,7 +3,8 @@ From examples at http://developers.facebook.com/blog/post/390
 
 Each linter review has a warning text (add to our json?), an info box 
 (appid, title, site url, url), and debug (data source, from title; and from 
-'our normalised version of the url', and fb:app_id.  
+'our normalised version of the url', and fb:app_id.   If there is no title,
+maybe it sets the title to the url?
 
 Todo: Ask Paul about these.
 
