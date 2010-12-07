@@ -18,6 +18,7 @@ class OGDataItem {
   public $meta = array();
   public $testdir = "./testcases/";
   public $htmlok;
+  public $triples;
 
   public static function getTests($source) {  
 
@@ -38,19 +39,24 @@ class OGDataItem {
     return ( $this->testdir . $this->meta[testgroup] . "/" . $this->meta[testid]);
   }
 
+
+  public function meta(){
+    return $contents;
+  }
+
   public function readTest($tc) { 
     
     $tc = preg_replace( '/file:/','', $tc);
     $handle = fopen( $tc, "r");
     $contents = stream_get_contents($handle);
-    print "meta: ". $contents . "\n\n";
+#    print "meta: ". $contents . "\n\n";
     fclose($handle);
     $meta = json_decode( $contents, true );
     $this->meta = $meta;
     # print "META: ". $meta . "\n";
-    print "Expected triples: " . $meta['triple_count'] . "\n"; 
-    print "Actual triples: TODO\n";
-    print "\n";
+#    print "Expected triples: " . $meta['triple_count'] . "\n"; 
+#    print "Actual triples: TODO\n";
+#    print "\n";
     $fn = $meta[testgroup] . "/" . $meta[testid];
 
   }
@@ -110,7 +116,7 @@ class OGDataItem {
   $parser->extractRDF('rdfa');
   $triples = $parser->getTriples();
 
-  print "<h3>Extended data</h3>";
+  $this->triples=$triples;
   foreach ($triples as $key => $value) {
      if (!preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
        if (preg_match( '/poshrdf/', $value['p'])) continue;
@@ -125,6 +131,43 @@ class OGDataItem {
   # factoid: o_type :  literal
 
   }
+
+
+  public function rdf2info() {
+    print "Got a graph ". $g;
+    print "TODO: pull type, admins, app ID, Description, Image, title, Site URL, URL from it.";
+    # for that, we need an OO repr?
+    $props = array(); #todo
+    foreach ($this->triples as $key => $value) {
+       if (preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
+          $prop =  $value['p'];
+          $props[$prop] = $value['o'];
+          print $prop. " " . $value['o'] . " \n";
+       }
+    }
+    $url_parts = parse_url( $props["http://opengraphprotocol.org/schema/url"] );
+    $site_url = $url_parts['scheme'] ."://". $url_parts['host'] . $url_parts['port'] . "/" ; # TODO: must we guess this?
+    $t = "<table border='1'>\n";
+    $t .= "<tr><td class="ogfield">Type</td><td>". $props["http://opengraphprotocol.org/schema/type"] ."</td></tr>";
+    $t .= "<tr><td class="ogfield">Image</td><td>". $props["http://opengraphprotocol.org/schema/image"] ."</td></tr>";
+    $t .= "<tr><td class="ogfield">Title</td><td>". $props["http://opengraphprotocol.org/schema/title"] ."</td></tr>";
+    $t .=  "<tr><td class="ogfield">Site URL</td><td>". $site_url ."</td></tr>";
+    $t .= "<tr><td class="ogfield">URL</td><td>". $props["http://opengraphprotocol.org/schema/url"] ."</td></tr>";
+    $t .= "</table>\n";
+    return $t;
+  }
+
+/* 
+Type	movie
+Admins	1106591 615860
+App ID	326803741017
+Description	The Matrix - Directed by Andy Wachowski , Larry Wachowski With Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving	In the near future, a computer hacker named Neo discovers that all life on Earth may be nothing more than an elaborate facade created by a malevolent.... Visit Rotten Tomatoes for Photos, Showtimes, Cast, Crew, Reviews, Plot Summary, Comments, Discussions, Taglines, Trailers, Posters, Fan Sites.
+Image	
+Title	The Matrix
+Site URL	http://www.rottentomatoes.com/
+URL	http://www.rottentomatoes.com/m/matrix/
+*/
+
 
 }
 
