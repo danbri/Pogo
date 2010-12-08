@@ -1,0 +1,15 @@
+{ 
+ "url": "http://developers.facebook.com/tools/lint/examples/bad_admin",
+    "testid": "bad_admin",
+    "testgroup": "fb/examples",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "warning": "The fb:admins field contained some invalid ids, namely 113869198637480; App ID in Admin Field; You put 113869198637480 in the fb:admins field. It should be in fb:app_id.",
+    "valid_html": false,
+    "status": "invalid",
+    "uses_rdfa": true,
+    "status": "invalid",
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 0,
+    "home_site": "http://www.facebook.com/"
+}

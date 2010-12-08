@@ -1,0 +1,15 @@
+{ 
+ "url": "http://developers.facebook.com/tools/lint/examples/bad_app_id",
+    "testid": "bad_app_id",
+    "testgroup": "fb/examples",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "warning": "this appid is bad! (contains words not numbers).",
+    "valid_html": false,
+    "status": "invalid",
+    "uses_rdfa": true,
+    "status": "invalid",
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 0,
+    "home_site": "http://www.facebook.com/"
+}
