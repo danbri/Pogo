@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
 
-<!--
-<url><loc>file:testcases/imdb/craig_dibble.meta</loc></url> 
--->
  
+
 <url><loc>file:testcases/fb/examples/bad_type.meta</loc></url>
 <url><loc>file:testcases/fb/examples/good.meta</loc></url>
+
+<url><loc>file:testcases/fb/examples/api_key.meta</loc></url>
+
+<url><loc>file:testcases/fb/examples/meta_name.meta</loc></url>
+<url><loc>file:testcases/fb/examples/meta_name_2.meta</loc></url>
+
+
+<url><loc>file:testcases/fb/examples/bad_admin.meta</loc></url>
+<url><loc>file:testcases/fb/examples/bad_app_id.meta</loc></url>
+<url><loc>file:testcases/fb/examples/bad_domain.meta</loc></url>
+<url><loc>file:testcases/fb/examples/bad_page_id.meta</loc></url>
 
 </urlset>

@@ -42,24 +42,31 @@ foreach ($tests as $test) {
   print "<h3>Test: $test</h3></h3>";
   $og = new OGDataItem();
   $og->readTest($test); # load JSON description of this test case
-
-
-  print "<h4>rapperCheck</h4>". $og->rapperCheck();
+  #print "<h4>rapperCheck</h4>";
+  # print $og->rapperCheck();
   $myrdf =  $og->arcParse();
-  print "<h4>arcParse</h4>";
+  #print "<h4>arcParse</h4>";
   $table = $og->rdf2info(); # html table, fixed list of attribs
-  print "<h4>rdf2info</h4>" . $table;
 
+  try { 
+  $og->checkfields();
+  } catch (Exception $e) {
+    if ($e->getMessage() == "BAD_TYPE_CHARS_FAIL") { print "Poor type name found. Please avoid capitals and punctuation except ':' and '_'.<br/>"; }
+  }
 
   # meta: { "url": "http://developers.facebook.com/tools/lint/examples/bad_type", "testid": "bad_type", "testgroup": "fb/examples", "cache_date": "Sun 14 Nov 2010 13:46:47 CET", "valid_html": false, "uses_rdfa": true, "uses_og": true, "extended": true, "triple_count": 0, "warning": "Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+", "home_site": "http://www.facebook.com/" } 
   $meta = $og->getmeta();
-  print "<div>Metadata: ". $meta['url']  . "</div>\n"; #todo: add check/exception when no item loaded
+  # print "<div>Metadata: ". $meta['url']  . "</div>\n"; #todo: add check/exception when no item loaded
   $status = $meta['status'];
   if ($status == "valid") { 
     print "VALID! &#x2714;";
   } else {
-    print "INVALID! &#x2717;";
+    print "INVALID! &#x2717; <br/>";
+    print "Target Warning: " . $meta['warning'];
   }  
+  print $table;
+
+
 
   print "<br /><br />\n";
 }  # loop thru testcases
