@@ -1,3 +1,7 @@
+CODING
+
+ * determine when we can reasonably use a simple associative array; which props are repeatable?
+
 
 ==OPTIONAL= 
 
@@ -20,3 +24,17 @@ external services:
  * serious errors -> system error log
  * add ARC2 parser
  * add Perl parser via commandline?
+
+
+DOCS
+
+Perhaps a flow chart, with HTML, OG markup, FB content, and accuracy as different ways of screwing up.
+
+
+LINTING
+
+ We want all the bad examples to be detectable, using either the simple parser or an RDFa-based on.
+
+ Well, is that do-able?
+
+

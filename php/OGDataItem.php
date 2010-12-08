@@ -142,7 +142,7 @@ class OGDataItem {
        if (preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
           $prop =  $value['p'];
           $props[$prop] = $value['o'];
-          print $prop. " " . $value['o'] . " \n";
+          # print $prop. " " . $value['o'] . " \n";
        }
     }
     $url_parts = parse_url( $props["http://opengraphprotocol.org/schema/url"] );
@@ -161,6 +161,24 @@ class OGDataItem {
     $t .= "</table>\n";
     return $t;
   }
+
+
+  public function checkfields() {
+    print "Running all field value checks.<br/>";
+    $this->checkTypeLabel();
+  }
+  
+  public function checkTypeLabel() {
+	#    print "Checking all type field values.<br/>";
+	#      print "Key: $key Value: $value <br/>\n";      print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
+    foreach ($this->triples as $key => $value) {
+      if ($value['p'] == 'http://opengraphprotocol.org/schema/type') { 
+        if (preg_match( '/[^a-z_:]/', $value['o']) )  { throw new Exception('BAD_TYPE_CHARS_FAIL'); }
+      }
+    }
+  print "<br/>"; # tmp
+  }
+  #  Warning: Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+
 
 /* 
 Type	movie
