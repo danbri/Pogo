@@ -35,6 +35,8 @@ class OGDataGraph {
   public $htmlok;
   public $triples;
 
+  public static $nslist;
+
   public static function getTests($source) {  
 
     $dom = new DomDocument();
@@ -64,8 +66,6 @@ class OGDataGraph {
     fclose($handle);
     $meta = json_decode( $contents, true );
     $this->meta = $meta;
-#    print "meta2: ". $meta . "\n<br/>\n";
-    # print "META: ". $meta . "\n";
     #    print "Expected triples: " . $meta['triple_count'] . "\n"; 
     #    print "Actual triples: TODO\n";
     $fn = $meta['testgroup'] . "/" . $meta['testid'];

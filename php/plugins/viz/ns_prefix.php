@@ -5,8 +5,9 @@
 # http://prefix.cc/popular/all.file.json
 
 $ns = array();
-function loadNamespaceArray() {
-  $handle = fopen( 'all.file.json', 'r'); # todo: cache this!
+function loadNamespaceList() {
+  # ok :) print "<blink>LOADING JSON</blink>";
+  $handle = fopen('plugins/viz/all.file.json', 'r');
   $contents = stream_get_contents($handle);
   fclose($handle);
   $ns = json_decode( $contents, true );
@@ -18,9 +19,10 @@ function ns() {
 }
 
 function shortname($s) {
-  print "Looking up: $s<br/>";
+  print "shorting: $s using '$ns'<br/>";
   $matches = array();
-  foreach ($ns as $key => $value) {
+  
+  foreach (ns() as $key => $value) {
     print "Is $value substring in $s ? <br/>";
   }
   return $s;
