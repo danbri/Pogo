@@ -8,6 +8,8 @@
 
 <url><loc>file:testcases/fb/examples/api_key.meta</loc></url>
 
+<url><loc>file:testcases/fb/examples/not_CSV.meta</loc></url>
+
 <url><loc>file:testcases/fb/examples/meta_name.meta</loc></url>
 <url><loc>file:testcases/fb/examples/meta_name_2.meta</loc></url>
 
