@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta property="fb:page_id" content="Paul Rocks" />
+</head>
+<body>
+  This is an example page for the
+  <a href="/tools/lint/">Facebook URL Linter</a>.
+  <a href="/tools/lint/examples">See more</a>, view the source, or
+  <a href="/tools/lint/?url=http%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Flint%2Fexamples%2Fbad_page_id">lint it</a>!
+</body>
+</html>
