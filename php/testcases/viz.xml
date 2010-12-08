@@ -2,4 +2,7 @@
 <urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
 
 <url><loc>file:testcases/fb/examples/good.meta</loc></url>
+<!--
+<url><loc>file:testcases/imdb/comicbookguy.meta</loc></url>
+-->
 </urlset>
