@@ -2,8 +2,14 @@
 
 # PHP Utility for checking Open Graph Protocol markup.
 #
-# Nearby in the Web: http://webr3.org/apps/play/api/lib a js rdfa API 
+# 'And thirdly, the code is more what you'd call "guidelines" than actual rules.'
+# -- http://www.imdb.com/title/tt0325980/quotes
 #
+# Nearby in the Web: http://webr3.org/apps/play/api/lib a js rdfa API 
+
+
+# This code should at least find the same issues flagged by the FB linter:
+# 
 # http://developers.facebook.com/blog/post/390
 # http://developers.facebook.com/tools/lint/examples/
 # http://developers.facebook.com/tools/lint/?url=opengraphprotocol.org
@@ -13,7 +19,16 @@
 # http://developers.facebook.com/tools/lint/?url=blog.paulisageek.com
 
 
-class OGDataItem {
+require_once 'OG_L18N.php'; # human facing text strings belong externally
+error_reporting (E_ALL ^ E_NOTICE); # looking in a hash for missing info - not a crime
+
+# require 'plugins/viz/ns_prefix.php';
+
+#
+# 
+
+class OGDataGraph {
+
 
   public $meta = array();
   public $testdir = "./testcases/";
@@ -36,7 +51,7 @@ class OGDataItem {
 
 
   public function localFile() {
-    return ( $this->testdir . $this->meta[testgroup] . "/" . $this->meta[testid]);
+    return ( $this->testdir . $this->meta['testgroup'] . "/" . $this->meta['testid']);
   }
 
 
@@ -53,7 +68,7 @@ class OGDataItem {
     # print "META: ". $meta . "\n";
     #    print "Expected triples: " . $meta['triple_count'] . "\n"; 
     #    print "Actual triples: TODO\n";
-    $fn = $meta[testgroup] . "/" . $meta[testid];
+    $fn = $meta['testgroup'] . "/" . $meta['testid'];
   }
 
 
@@ -85,11 +100,11 @@ class OGDataItem {
     $fn = $this->localFile();
     # Let's compare tidy and untidy counts
     # Requires: HTML Tidy and Rapper (Redland RDF parser)
-    $c1 = "rapper  --count -i rdfa " . $fn . ".cache " . $meta[url] ;
+    $c1 = "rapper  --count -i rdfa " . $fn . ".cache " . $meta['url'] ;
     
     #print "Basic commandline: " . $c1 . "\n\n";
 
-    $c2 = "tidy -f logs/_errorlog -numeric -q -asxml ".$fn . ".cache" . "  | rapper  --count -i rdfa - ".$meta[url];
+    $c2 = "tidy -f logs/_errorlog -numeric -q -asxml ".$fn . ".cache" . "  | rapper  --count -i rdfa - ".$meta['url'];
     # print "Tidied commandline: " . $c2 . "\n\n";
     
     # TODO: impl
@@ -105,11 +120,13 @@ class OGDataItem {
   }
 
 
+  public function getTriples() { return $this->triples; }
+
   public function arcParse() {
 
-  require_once 'plugins/arc/ARC2.php';
+  require_once 'plugins/arc/ARC2.php'; # lots of PHP4-compatibility warnings when in PHP5.
   $meta = $this->meta;
-  $url = $meta[url]; 				#'http://www.rottentomatoes.com/m/oceans_eleven/';
+  $url = $meta['url']; 				#'http://www.rottentomatoes.com/m/oceans_eleven/';
 
   $parser = ARC2::getRDFParser();
   $parser->parse($url);
@@ -164,8 +181,11 @@ class OGDataItem {
 
 
   public function checkfields() {
-    print "Running all field value checks.<br/>";
-    $this->checkTypeLabel();
+    print "Running all field value checks.<br/><br/>";
+    $this->checkTypeLabel(); # cf. testcases/fb/examples/bad_type.meta
+
+    $this->checkAppIDSyntax(); # cf. testcases/fb/examples/api_key.meta
+    
   }
   
   public function checkTypeLabel() {
@@ -179,6 +199,22 @@ class OGDataItem {
   print "<br/>"; # tmp
   }
   #  Warning: Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+
+
+
+
+  public function checkAppIDSyntax() {
+    foreach ($this->triples as $key => $value) {
+      # print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
+      if ($value['p'] == 'http://www.facebook.com/2008/fbmlapp_id') { 
+        # print "Checking app_id is purely numeric.";
+        if (preg_match( '/[^0-9]+/', $value['o']) )  { throw new Exception('NONDIGIT_APPID_CHARS_FAIL'); } # todo: get tighter regex w/ no false positives from FB.
+        # else { print "Passed."; } 
+      }
+    }
+  print "<br/>"; # tmp
+    
+  }
+
 
 /* 
 Type	movie

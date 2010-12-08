@@ -1,0 +1,15 @@
+{ 
+    "url": "http://developers.facebook.com/tools/lint/examples/api_key",
+    "testid": "api_key",
+    "testgroup": "fb/examples",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "status": "invalid",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "status": "invalid",
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 0,
+    "warning": "You used your api key \"f0345d178810e97cdab9e9474de8a25d\" instead of your app id \"113869198637480\". Oops!",
+    "home_site": "http://www.facebook.com/"
+}
