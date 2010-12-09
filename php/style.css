@@ -1,0 +1,7 @@
+
+body { margin-left: 6em; margin-right: 9em; }
+h2 { background: #ffb;  }
+h3 { background: #ffd; border-style: solid; border-width: normal; padding: 3px; }
+h4 { background: #ffe; border-style: groove; border-width: thin; margin-left: .5em; margin-right: 15em; }
+.ogfield { font-weight: bold; background: #CCF;}
+
