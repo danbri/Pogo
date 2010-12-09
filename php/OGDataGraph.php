@@ -22,12 +22,14 @@
 require_once 'OG_L18N.php'; # natural-lang text strings belong here
 require_once 'OG_Checker.php'; 
 
-error_reporting (E_ALL ^ E_NOTICE); # looking in a hash for missing info - not a crime
+error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED ); # looking in a hash for missing info - not a crime
 # error_reporting(E_ALL|E_STRICT); # dev't
 
 # stopgap verbosity 
 function verbose($s) { 
-  #print "<strong>debug</strong>: $s<br/>"; 
+  #print "<strong>debug</strong>: $s<br/>\n"; 
+  #print "debug: $s\n"; 
+  #print '';
 } 
 
 class OGDataGraph {
@@ -148,13 +150,22 @@ class OGDataGraph {
   # ARC RDFa parser plugin (general RDFa 1.0 parser with microformat support)
   
   public function arcParse($u) {
-
     require_once 'plugins/arc/ARC2.php'; # lots of PHP4-compatibility warnings when in PHP5.
     $meta = $this->meta;
     if ($u) { $url = $u; } else { $url = $meta['url']; } # eg. 'http://www.rottentomatoes.com/m/oceans_eleven/';
 
-    verbose("ARC RDFa parser: '$u'<br/>");
-    $parser = ARC2::getRDFParser();
+
+    # Problems are in here:
+    verbose("!!!ARC parser being called with url '$u'\n");
+    try { 
+      $parser = ARC2::getRDFParser();
+    } catch (Exception $e) {
+
+      verbose("XXXTerrible exception with getting parser! '$parser' ");
+    }
+    verbose("ZZZRequired OK, got parser.");
+
+
     $parser->parse($url);
     $parser->extractRDF('rdfa');
     $triples = $parser->getTriples();
@@ -212,7 +223,7 @@ class OGDataGraph {
   # todo: move to a separate PHP class
 
   public function checkfields() {
-    print "Running all field value checks.<br/><br/>";
+    verbose("Running all field value checks.");
     $this->checkTypeLabel(); # cf. testcases/fb/examples/bad_type.meta
     $this->checkAppIDSyntax(); # cf. testcases/fb/examples/api_key.meta
     $this->checkMetaName();
