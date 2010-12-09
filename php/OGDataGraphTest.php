@@ -37,6 +37,30 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
     }
   }
 
+
+  public function testLiteAvailable()
+  {
+    $fn = dirname(__FILE__) . '/plugins/lite/OpenGraph.php';
+    if (!file_exists($fn)) {
+      $this->fail("Lite OpenGraph library not found at $f");
+    } else {
+      $this->assertTrue(true, "Lite OpenGraph library found.");
+    }
+  }
+
+  /**
+  * @depends testLiteAvailable
+  */
+  public function testLiteBasic() 
+  {
+    require 'plugins/lite/OpenGraph.php';
+    $o = OpenGraph::fetch('http://www.imdb.com/title/tt0083658/');
+    $this->assertNotNull($o, "opengraph lite parser shouldn't be null.");
+    # todo: load from file. test for network. both.
+  }
+
+
+
   public function testLoadCSVTest() {
     $og = new OGDataGraph();
     try {
