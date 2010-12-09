@@ -1,0 +1,14 @@
+{ 
+ "url": "http://developers.facebook.com/tools/lint/examples/not_CSV",
+    "testid": "not_CSV",
+    "testgroup": "fb/examples",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "status": "invalid",
+    "warning": "Property value isn't CSV.",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 0,
+    "home_site": "http://www.facebook.com/"
+}
