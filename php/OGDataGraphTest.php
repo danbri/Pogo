@@ -31,13 +31,11 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
   # http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.exceptions
   public function testARCAvailable()
   {
-    try {
-      require_once 'plugins/arc/ARC2.php';
-    } catch (Exception $e) {
+    if (!file_exists(dirname(__FILE__) . '/plugins/arc/ARC2.php')) {
       $this->fail("ARC2 library not found");
-      return;
+    } else {
+      $this->assertTrue(true, "ARC2 library found.");
     }
-    $this->assertTrue(true, "ARC2 library found.");
   }
 
 
