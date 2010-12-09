@@ -1,23 +1,13 @@
 <html>
-<head><title>Pogo Open Graph Protocol checker: demo</title>
-<style type="text/css">
-body { margin: 9em; }
-h2 { background: #ffb;  }
-h3 { background: #ffd; border-style: solid; border-width: normal; padding: 3px; }
-h4 { background: #ffe; border-style: groove; border-width: thin; margin-left: .5em; margin-right: 15em; }
-.ogfield { font-weight: bold; background: #CCF;}
-</style>
+<head><title>Open Graph checker</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
 <?php 
-require_once 'plugins/viz/header.php';   ?>
+require_once 'plugins/viz/header.php';   
+?>
 </head>
-<body><h1>OpenGraph checker</h1>
-<p>See also Facebook's <a href="http://developers.facebook.com/tools/lint/?url=http://developers.facebook.com/tools/lint/examples/good">linter</a>.</p>
-
-<!-- driven by testcases with json metadata:
-meta: { "url": "http://developers.facebook.com/tools/lint/examples/bad_type", "testid": "bad_type", "testgroup": "fb/examples", "cache_date": "Sun 14 Nov 2010 13:46:47 CET", 
-# "valid_html": false, "uses_rdfa": true, "uses_og": true, "extended": true, "triple_count": 0, "warning": "Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+", "home_site": "http://www.facebook.com/" } -->
 
 <?php 
+require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
 $l = OGDataGraph::$nslist = loadNamespaceList();
 

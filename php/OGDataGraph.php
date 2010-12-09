@@ -37,6 +37,11 @@ class OGDataGraph {
 
   public static $nslist;
 
+
+  function __autoload() {
+    # loadNamespaceList(); # not needed
+  } # we could store the list in php form instead of json. 
+
   public static function getTests($source) {  
 
     $dom = new DomDocument();
@@ -187,6 +192,7 @@ class OGDataGraph {
     $this->checkMetaName();
     $this->checkNotCSV();
     $this->checkNumericPageID();
+    $this->checkAdminsNotBigNumber();
   }
   
   public function checkNotCSV() {
@@ -210,9 +216,18 @@ class OGDataGraph {
   }
 
 
+  public function checkAdminsNotBigNumber() {
+    foreach ($this->triples as $key => $value) {
+      if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') { 
+        if ( preg_match( '/[0-9]{10}/', $value['o']) )  { throw new Exception('FAILED_BIG_NUMBER_IN_ADMINS'); } # todo: clarify rule!
+      }
+    }
+  }
+
+
 
   public function checkMetaName() {
-    print "TODO: check syntax of meta name. Requires raw parser API not triples.";
+#    print "TODO: check syntax of meta name. Requires raw parser API not triples.";
     return; # todo: requires markup access, not ARC triples. use built-in simple parser.
   }
 
