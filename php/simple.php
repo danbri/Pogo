@@ -3,11 +3,14 @@
 
 <?php 
 require_once 'page_top.php';
+require_once 'OGDataGraph.php'; 
+
+# http://localhost/pogo/Pogo/php/simple.php
 
 function isValidURL($url) { return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url); }
 
 $mode = $_GET['mode'];
-if ($mode &&  !preg_match( '/(^full$|^lite$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
+if ($mode &&  !preg_match( '/(^full$|^lite$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
 
 $url = $_GET['url'];
 
@@ -26,13 +29,26 @@ if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
 <body>
 
 <?php 
-require_once 'OGDataGraph.php'; 
-$suite = 'testcases/viz.xml'; 
-$tests = OGDataGraph::getTests($suite); 
 
-print "URL: $url<br/>";
+print "<p>URL: $url</p>";
+print "<h3>Fetching URL</h3></h3>";
 
-print "<p>Found ". sizeof($tests) .  " item(s).</p>";
+verbose("Fetching $url");
+$og = new OGDataGraph();
+
+print $og->readFromURL($url, $mode); # mode defaults to lite
+
+if ($verbose) { print "Read from url.</br>"; }
+
+# $table = $og->rdf2info(); # html table, fixed list of attribs
+
+
+
+
+
+# to throw out...
+
+function archived() {
 $i = 0;
 foreach ($tests as $test) {  
   $i++;
@@ -85,6 +101,8 @@ print "</ul>";
   print "<br /><br />\n";
 } 
  # loop thru testcases
+
+} # archived
 ?>
 <hr />
 [pogo checker alpha0]

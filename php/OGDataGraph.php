@@ -19,28 +19,58 @@
 # http://developers.facebook.com/tools/lint/?url=blog.paulisageek.com
 
 
-require_once 'OG_L18N.php'; # human facing text strings belong externally
+require_once 'OG_L18N.php'; # natural-lang text strings belong here
+require_once 'OG_Checker.php'; 
+
 error_reporting (E_ALL ^ E_NOTICE); # looking in a hash for missing info - not a crime
+# error_reporting(E_ALL|E_STRICT); # dev't
 
-# require 'plugins/viz/ns_prefix.php';
-
-#
-# 
+# stopgap verbosity 
+function verbose($s) { 
+  #print "<strong>debug</strong>: $s<br/>"; 
+} 
 
 class OGDataGraph {
-
 
   public $meta = array();
   public $testdir = "./testcases/";
   public $htmlok;
   public $triples;
+  public $url;
 
-  public static $nslist;
+  public static $nslist; # namespace prefixes
+  
 
 
-  function __autoload() {
-    # loadNamespaceList(); # not needed
-  } # we could store the list in php form instead of json. 
+  function __toString() {
+    return "[OGDataGraph status: triples=$triples url=$url htmlok=$htmlok meta=$meta ]";
+  }
+
+
+  # default to lite, so as not to depend on RDFa parser plugin(s)
+  #
+  function readFromURL($u, $mode='lite') {
+    verbose("reading from url $u with mode $mode."); 
+    if ($mode == 'lite') {
+      return $this->liteParse($u);
+    } else {
+      return $this->arcParse($u);
+    }
+  }
+
+  function liteParse($u) {
+    return 'lite: todo';
+ 
+  }
+
+#  function __autoload() {
+#    # loadNamespaceList(); # not needed
+#  } # we could store the list in php form instead of json. 
+
+
+
+  #################################################################################
+  # Testcases-related methods
 
   public static function getTests($source) {  
 
@@ -56,12 +86,9 @@ class OGDataGraph {
     return $tests;
   }
 
-
   public function localFile() {
     return ( $this->testdir . $this->meta['testgroup'] . "/" . $this->meta['testid']);
   }
-
-
 
   public function readTest($tc) { 
     $tc = preg_replace( '/file:/','', $tc);
@@ -82,24 +109,12 @@ class OGDataGraph {
   }
 
 
-  ## Services and Utilities
-  # TODO: identify privacy and security concerns; which can be used in WWW interface? vs API?
 
 
-  public function htmlW3CCheck() {
-
-    require_once 'Services/W3C/HTMLValidator.php'; # TODO
-
-    $fn = $this->localFile();	# http://validator.w3.org/check
-    $v = new Services_W3C_HTMLValidator();
-    print "HTML check! fn=". $fn . "\n";
-
-    $r = $v->validateFile( $fn . ".cache"  );  # http://pear.php.net/package/Services_W3C_HTMLValidator/docs/latest/Services_W3C_HTMLValidator/Services_W3C_HTMLValidator_Response.html
-    $this->htmlok = $r;
-    # http://pear.php.net/package/Services_W3C_HTMLValidator/docs/latest/Services_W3C_HTMLValidator/Services_W3C_HTMLValidator_Error.html
-
-  }
-
+  #################################################################################
+  # Full RDFa parsers
+  # Rapper (Redland) parser; for commandline use only currently.
+  
   public function rapperCheck() {
     $meta = $this->meta;
     $fn = $this->localFile();
@@ -127,33 +142,40 @@ class OGDataGraph {
 
   public function getTriples() { return $this->triples; }
 
-  public function arcParse() {
 
-  require_once 'plugins/arc/ARC2.php'; # lots of PHP4-compatibility warnings when in PHP5.
-  $meta = $this->meta;
-  $url = $meta['url']; 				#'http://www.rottentomatoes.com/m/oceans_eleven/';
+  #################################################################################
+  # Full RDFa parsers
+  # ARC RDFa parser plugin (general RDFa 1.0 parser with microformat support)
+  
+  public function arcParse($u) {
 
-  $parser = ARC2::getRDFParser();
-  $parser->parse($url);
-  $parser->extractRDF('rdfa');
-  $triples = $parser->getTriples();
+    require_once 'plugins/arc/ARC2.php'; # lots of PHP4-compatibility warnings when in PHP5.
+    $meta = $this->meta;
+    if ($u) { $url = $u; } else { $url = $meta['url']; } # eg. 'http://www.rottentomatoes.com/m/oceans_eleven/';
 
-  $this->triples=$triples;
-  foreach ($triples as $key => $value) {
-     if (!preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
-       if (preg_match( '/poshrdf/', $value['p'])) continue;
-       if (preg_match( '/stylesheet/', $value['p'])) continue;
-        # print "Factoid: " . $value['s'] . " " . $value['p'] . " " . $value['o'] . " \n";
-     }
+    verbose("ARC RDFa parser: '$u'<br/>");
+    $parser = ARC2::getRDFParser();
+    $parser->parse($url);
+    $parser->extractRDF('rdfa');
+    $triples = $parser->getTriples();
+    $this->triples=$triples;
+    foreach ($triples as $key => $value) {
+       if (!preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
+         if (preg_match( '/poshrdf/', $value['p'])) continue;
+         if (preg_match( '/stylesheet/', $value['p'])) continue;
+          # print "Factoid: " . $value['s'] . " " . $value['p'] . " " . $value['o'] . " \n";
+       }
+    }
+    return($this->triples);
   }
-  #  return($this->triples);
-  # factoid: p :  http://purl.org/dc/elements/1.1/title
-  # factoid: o :  Oceans (Disneynature's Oceans) Movie Reviews, Pictures - Rotten Tomatoes
-  # factoid: s_type :  uri
-  # factoid: o_type :  literal
+  # representation: array with associative arrays, keys: s, p, o, s_type (uri, ...), o_type (literal, ...)
 
-  }
 
+
+
+
+  #################################################################################
+  # HTML output 
 
   public function rdf2info() {
     #print "Got a graph ". $g;
@@ -184,6 +206,10 @@ class OGDataGraph {
     return $t;
   }
 
+  #################################################################################
+  # CHECKS
+  #
+  # todo: move to a separate PHP class
 
   public function checkfields() {
     print "Running all field value checks.<br/><br/>";
@@ -195,17 +221,14 @@ class OGDataGraph {
     $this->checkAdminsNotBigNumber();
   }
   
+
   public function checkNotCSV() {
     foreach ($this->triples as $key => $value) {
-#      print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') {
         if (!preg_match( '/^\s*[0-9]+(\s*,\s*[0-9]+)*\s*$/', $value['o']) )  { throw new Exception('FAILED_FBADMINS_REGEX'); }
-        # else { print "Passed."; }
       }
     }
   }
-
-
 
   public function checkNumericPageID() {
     foreach ($this->triples as $key => $value) {
@@ -270,18 +293,18 @@ class OGDataGraph {
     } # end loop thru namespaces; todo: cache
     return ($u);
   }   
+  #################################################################################
+  ## Services and Utilities
+  # TODO: review privacy and security concerns for random Web use
 
-
-/* 
-Type	movie
-Admins	1106591 615860
-App ID	326803741017
-Description	The Matrix - Directed by Andy Wachowski , Larry Wachowski With Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving	In the near future, a computer hacker named Neo discovers that all life on Earth may be nothing more than an elaborate facade created by a malevolent.... Visit Rotten Tomatoes for Photos, Showtimes, Cast, Crew, Reviews, Plot Summary, Comments, Discussions, Taglines, Trailers, Posters, Fan Sites.
-Image	
-Title	The Matrix
-Site URL	http://www.rottentomatoes.com/
-URL	http://www.rottentomatoes.com/m/matrix/
-*/
+  public function htmlW3CCheck() {
+    require_once 'Services/W3C/HTMLValidator.php'; # TODO
+    $fn = $this->localFile();	# http://validator.w3.org/check
+    $v = new Services_W3C_HTMLValidator();
+    print "HTML check! fn=". $fn . "\n";
+    $r = $v->validateFile( $fn . ".cache"  );  # http://pear.php.net/package/Services_W3C_HTMLValidator/docs/latest/Services_W3C_HTMLValidator/Services_W3C_HTMLValidator_Response.html
+    $this->htmlok = $r;	 # http://pear.php.net/package/Services_W3C_HTMLValidator/docs/latest/Services_W3C_HTMLValidator/Services_W3C_HTMLValidator_Error.html
+  }
 
 }
 
