@@ -1,26 +1,31 @@
 <html>
-<head><title>OpenGraph checker</title>
-<style type="text/css">
-body { margin: 9em; }
-h2 { background: #ffb;  }
-h3 { background: #ffd; border-style: solid; border-width: normal; padding: 3px; }
-h4 { background: #ffe; border-style: groove; border-width: thin; margin-left: .5em; margin-right: 15em; }
-.ogfield { font-weight: bold; background: #CCF;}
-</style>
-</head>
+<head><title>OpenGraph checker</title><link rel="stylesheet" href="style.css" type="text/css" /></head>
+
 <?php 
+require_once 'page_top.php';
+
+function isValidURL($url) { return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url); }
+
+$mode = $_GET['mode'];
+if ($mode &&  !preg_match( '/(^full$|^lite$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
+
 $url = $_GET['url'];
+
 if (!$url) {
   print "<form action=\"simple.php\" method=\"get\" name=\"checker\">\n";
   print "URL:<input type=\"text\" size=\"50\" name=\"url\" /><input type=\"submit\" name=\"go\"/>\n</form>";
-  print "<small>examples: <a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache\">legend_guardians</a> </small>";
+  print "<small>examples: <a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache\">legend_guardians</a> ";
+  print "(<a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache?mode=lite\">lite</a> | ";
+  print "<a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache?mode=full\">full</a>)";
+  print "</small>";
   exit(1); # todo: show simple form here
 }
+if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
+
 ?>
 <body>
 
 <?php 
-require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
 $suite = 'testcases/viz.xml'; 
 $tests = OGDataGraph::getTests($suite); 
