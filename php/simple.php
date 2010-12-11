@@ -2,53 +2,46 @@
 <head><title>OpenGraph checker</title><link rel="stylesheet" href="style.css" type="text/css" /></head>
 
 <?php 
+# http://localhost/pogo/Pogo/php/simple.php
 require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
-
-# http://localhost/pogo/Pogo/php/simple.php
-
 function isValidURL($url) { return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url); }
-
 $mode = $_GET['mode'];
 if ($mode &&  !preg_match( '/(^full$|^lite$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
-
 $url = $_GET['url'];
 
-  print "<form action=\"simple.php\" method=\"get\" name=\"checker\">\n";
-  print "URL:<input type=\"text\" size=\"50\" name=\"url\" /><input type=\"submit\" name=\"go\"/>\n</form>";
-  print "<small>examples: <a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache\">legend_guardians</a> ";
-
-  print "(<a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache&mode=lite\">lite</a> | ";
-  print "<a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache&mode=full\">full</a>), ";
-
-  print " bladerunner (<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=lite\">lite</a> | ";
-  print "<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=full\">full</a>)";
-
-  print "</small>";
-  if (!$url) {
-  exit(1); # todo: show simple form here
-}
+print "<form action=\"simple.php\" method=\"get\" name=\"checker\">\n";
+print "URL:<input type=\"text\" size=\"50\" name=\"url\" /><input type=\"submit\" name=\"go\"/>\n</form>";
+print "<small>examples: <a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache\">legend_guardians</a> ";
+print "(<a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache&mode=lite\">lite</a> | ";
+print "<a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache&mode=full\">full</a>), ";
+print " bladerunner (<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=lite\">lite</a> | ";
+print "<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=full\">full</a>)</small>";
+if (!$url) {  exit(1); }
 if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
-
 ?>
+
 <body>
-
 <?php 
-
 print "<p>URL: $url   <b>" . $mode  ."</b> </p>";
-#if ($mode) { [r
-print "<h3>Fetching URL</h3></h3>";
 
+print "<h3>Fetching URL</h3></h3>";
 verbose("Fetching $url");
 $og = new OGDataGraph();
+$og->readFromURL($url, $mode); # mode defaults to lite
+if ($mode == 'lite') { $og->buildTriplesFromOGModel(); } 
+if ($mode == 'full') { $og->buildOGModelFromTriples(); } 
+print $og->simpleTable();
 
-print $og->readFromURL($url, $mode); # mode defaults to lite
-verbose("Read from url.");
-$table = $og->rdf2info(); # html table, fixed list of attribs
-print $table;
+
+
+
+
 
 
 # to throw out...
+# save the Viz bit, and the checks.
+# todo: add a full table. and full triples.
 
 function archived() {
 $i = 0;

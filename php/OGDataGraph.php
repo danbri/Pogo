@@ -74,12 +74,8 @@ class OGDataGraph {
      return "[OGDataGraph status: triples=".sizeof($this->triples)." ]";
   }
 
-  function __autoload() {
-    # 
-  } 
+  # function __autoload() {  } 
 
-  # w.i.p.
-  # http://php.net/manual/en/language.oop5.overloading.php
   public function __get($name) {
     $name = str_replace('_',':', $name);
     # verbose( "Getting '$name'");
@@ -92,7 +88,6 @@ class OGDataGraph {
   }
 
   # default to lite, so as not to depend on RDFa parser plugin(s)
-  #
   function readFromURL($u, $mode='lite') {
     verbose("reading from url $u with mode $mode."); 
     if ($mode == 'lite') {
@@ -114,17 +109,20 @@ class OGDataGraph {
         $this->fields[ 'og:'.$f ] = $v;
       }
     }
-
-    return 'lite: todo'; 
   }
 
   function dumpFields() {
     foreach ($this->fields as $f => $v) {
       print "$f -> $v\n";
-    }
-  
+    }  
   }
 
+
+  function dumpTriples() {
+    foreach ($this->triples as $key => $value) {
+        verbose( "Factoid: " . $value['s'] . " " . $value['p'] . " " . $value['o'] . " \n");
+      }
+  }
 
   #################################################################################
   # Testcases-related methods
@@ -155,6 +153,7 @@ class OGDataGraph {
     fclose($handle);
     $meta = json_decode( $contents, true );
     $this->meta = $meta;
+    $this->url = $meta['url'];
     #    print "Expected triples: " . $meta['triple_count'] . "\n"; 
     #    print "Actual triples: TODO\n";
     $fn = $meta['testgroup'] . "/" . $meta['testid'];
@@ -240,6 +239,20 @@ class OGDataGraph {
   #################################################################################
   # HTML output 
 
+  public function simpleTable() {
+
+    $t = "<table border='1' style='background: #eeeeee;'>\n";
+    $t .= "<tr><td class=\"ogfield\">Type</td><td>". $this->og_type ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">Image</td><td><img src='". $this->og_image ."'>". $this->og_image ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">Title</td><td>".  $this->og_title ."</td></tr>";
+    $t .=  "<tr><td class=\"ogfield\">Site URL</td><td>".  $this->og_site_url ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">URL</td><td>". $this->og_image ."</td></tr>";
+    $t .= "</table>\n";
+    return $t;
+  }
+
+
+
   public function rdf2info() {
     #print "Got a graph ". $g;
     #print "TODO: pull type, admins, app ID, Description, Image, title, Site URL, URL from it.";
@@ -277,32 +290,45 @@ class OGDataGraph {
 
   public function isOGField($f, $x) {
       # verbose("Comparing $f and $x");
-      if ($x =='http://ogp.me/ns'.$f || $x=='http://opengraphprotocol.org/schema/'.$f) { return true; }
+      if ($x =='http://ogp.me/ns#'.$f || $x=='http://opengraphprotocol.org/schema/'.$f) { return true; }
       else { return false; }
   }
 
   public function buildOGModelFromTriples() {
     if (is_null($this->getTriples())) { throw new Exception("BUILD_OG_NO_TRIPLES_YET"); }
-    # verbose("!!STUDYING TRIPLES TO CREATE OG MODEL!!");
-
     $f = array(); 
-    foreach ( OGDataGraph::$officialFields as $fieldname) {
-      # verbose("Scanning for field $fieldname.");
-      foreach ($this->triples as $key => $v) { 
-        # print "XFactoid: ".$v['s']." ".$v['p']." ".$v['o']."\n";
+    foreach ( OGDataGraph::$officialFields as $fieldname) {      # verbose("Scanning for field $fieldname.");
+      foreach ($this->triples as $key => $v) { 		         # print "XFactoid: ".$v['s']." ".$v['p']." ".$v['o']."\n";
         if (OGDataGraph::isOGField( $fieldname, $v['p'] )) { #verbose("got:".$v['o']."!");
            $f[ 'og:'.$fieldname ] = $v['o']; 
         }
       }
     }
-    # verbose("fields: ".var_dump($f)."\n");
     $this->fields = $f;
     return false; # unimplemented
     # see FB linter: it gets URI from somewhere, title from somewhere, everything else from RDFa
     # todo: write test cases for html order situation
-
   }
 
+  public function buildTriplesFromOGModel() {
+    foreach ($this->fields as $attr => $val ) {
+      # verbose("triple: ".$this->meta['url']."  $attr  $val ");
+      $claim = array();
+      $claim['s'] = $this->url; 
+      $claim['p'] = preg_replace('/og:/', 'http://ogp.me/ns#', $attr);
+      $claim['o'] = $val; 
+      $claim['s_type'] = 'uri'; # todo: double-check with ARC2 that we're API-compatible
+      if (preg_match('/^http(s)?:\/\//',$val)){
+        $claim['o_type'] = 'uri'; #
+      } else {
+        $claim['o_type'] = 'literal';
+      }
+      if (is_null($this->triples)) { $this->triples = array(); }
+      array_push($this->triples, $claim);
+      # verbose("RDFIZED: ".$claim);
+      # todo, push these into triples array (in ARC format)
+    }
+  }
 
   # turn http://opengraphprotocol.org/schema/ into http://ogp.me/ns#
   # todo: convert subjects and objects too
