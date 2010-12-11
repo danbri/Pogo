@@ -18,6 +18,24 @@
 # http://developers.facebook.com/tools/lint/?url=http://www.rottentomatoes.com/m/matrix/
 # http://developers.facebook.com/tools/lint/?url=blog.paulisageek.com
 
+/*
+  Copyright 2010 Dan Brickley <danbri@danbri.org>
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+
+
 
 require_once 'OG_L18N.php'; # natural-lang text strings belong here
 require_once 'OG_Checker.php'; 
@@ -64,7 +82,7 @@ class OGDataGraph {
   # http://php.net/manual/en/language.oop5.overloading.php
   public function __get($name) {
     $name = str_replace('_',':', $name);
-    verbose( "Getting '$name'");
+    # verbose( "Getting '$name'");
     if (array_key_exists($name, $this->fields)) {
       return $this->fields[$name];
     } else {
@@ -84,7 +102,19 @@ class OGDataGraph {
     }
   }
 
-  function liteParse($u) {
+  function liteParse($u='default') {
+    if ($u != 'default') { $url = $u; } else { $url = $this->meta['url']; $u = $url; }
+    # verbose("liteParse: '$u'");
+    require_once 'plugins/lite/OpenGraph.php';
+    $o = OpenGraph::fetch($u);
+    foreach (OGDataGraph::$officialFields as $f) {
+      $v = $o->_values[$f];
+      if ($v) {
+        # verbose("Store:$v");
+        $this->fields[ 'og:'.$f ] = $v;
+      }
+    }
+
     return 'lite: todo'; 
   }
 
@@ -290,91 +320,27 @@ class OGDataGraph {
 
   #################################################################################
   # CHECKS
-  #
-  # todo: move to a separate PHP class
-
   public function checkfields() {
     verbose("Running all field value checks.");
-    $this->checkTypeLabel(); # cf. testcases/fb/examples/bad_type.meta
-    $this->checkAppIDSyntax(); # cf. testcases/fb/examples/api_key.meta
-    $this->checkMetaName();
-    $this->checkNotCSV();
-    $this->checkNumericPageID();
-    $this->checkAdminsNotBigNumber();
+    require 'OG_Checker.php';
+    Checker::checkTypeLabel($this); # cf. testcases/fb/examples/bad_type.meta
+    Checker::checkAppIDSyntax($this); # cf. testcases/fb/examples/api_key.meta
+    Checker::checkMetaName($this);
+    Checker::checkNotCSV($this);
+    Checker::checkNumericPageID($this);
+    Checker::checkAdminsNotBigNumber($this);
   }
   
-
-  public function checkNotCSV() {
-    foreach ($this->triples as $key => $value) {
-      if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') {
-        if (!preg_match( '/^\s*[0-9]+(\s*,\s*[0-9]+)*\s*$/', $value['o']) )  { throw new Exception('FAILED_FBADMINS_REGEX'); }
-      }
-    }
-  }
-
-  public function checkNumericPageID() {
-    foreach ($this->triples as $key => $value) {
-      if ($value['p'] == 'http://www.facebook.com/2008/fbmlpage_id') { 
-        if ( preg_match( '/[^0-9]+/', $value['o']) )  { throw new Exception('FAILED_PAGEID_NUMBERSONLY_REGEX'); }
-      }
-    }
-  }
-
-
-  public function checkAdminsNotBigNumber() {
-    foreach ($this->triples as $key => $value) {
-      if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') { 
-        if ( preg_match( '/[0-9]{10}/', $value['o']) )  { throw new Exception('FAILED_BIG_NUMBER_IN_ADMINS'); } # todo: clarify rule!
-      }
-    }
-  }
-
-
-
-  public function checkMetaName() {
-#    print "TODO: check syntax of meta name. Requires raw parser API not triples.";
-    return; # todo: requires markup access, not ARC triples. use built-in simple parser.
-  }
-
-  public function checkTypeLabel() {
-	#    print "Checking all type field values.<br/>";
-	#      print "Key: $key Value: $value <br/>\n";      print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
-    foreach ($this->triples as $key => $value) {
-      if ($value['p'] == 'http://opengraphprotocol.org/schema/type') { 
-        if (preg_match( '/[^a-z_:]/', $value['o']) )  { throw new Exception('BAD_TYPE_CHARS_FAIL'); }
-      }
-    }
-  print "<br/>"; # tmp
-  }
-  #  Warning: Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+
-
-
-
-  public function checkAppIDSyntax() {
-    foreach ($this->triples as $key => $value) {
-      # print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
-      if ($value['p'] == 'http://www.facebook.com/2008/fbmlapp_id') { 
-        # print "Checking app_id is purely numeric.";
-        if (preg_match( '/[^0-9]+/', $value['o']) )  { throw new Exception('NONDIGIT_APPID_CHARS_FAIL'); } # todo: get tighter regex w/ no false positives from FB.
-        # else { print "Passed."; } 
-      }
-    }
-  print "<br/>"; # tmp
-    
-  }
-
-
   function shortify($u) {
-    foreach (OGDataGraph::$nslist as $prefix => $uri) {
-      # print "DOES $u CONTAIN $uri ? <br/>";
+    foreach (OGDataGraph::$nslist as $prefix => $uri) {   # print "DOES $u CONTAIN $uri ? <br/>";
       if(strstr($u , $uri ) ) {
-        $short = str_replace( $uri, $prefix . ':', $u ); # abbreviate
-        # print "Replacing $uri with $prefix in $u : result is $short<br/>";
+        $short = str_replace( $uri, $prefix . ':', $u );  # print "Replacing $uri with $prefix in $u : result is $short<br/>";
         return($short);
       }
     } # end loop thru namespaces; todo: cache
     return ($u);
   }   
+
   #################################################################################
   ## Services and Utilities
   # TODO: review privacy and security concerns for random Web use

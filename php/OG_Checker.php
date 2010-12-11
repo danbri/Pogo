@@ -27,27 +27,25 @@
 
 class Checker {
 
-  public function checkfields() {
-    print "Running all field value checks.<br/><br/>";
-    $this->checkTypeLabel(); # cf. testcases/fb/examples/bad_type.meta
+/*    $this->checkTypeLabel(); # cf. testcases/fb/examples/bad_type.meta
     $this->checkAppIDSyntax(); # cf. testcases/fb/examples/api_key.meta
     $this->checkMetaName();
     $this->checkNotCSV();
     $this->checkNumericPageID();
     $this->checkAdminsNotBigNumber();
-  }
+*/
   
 
-  public function checkNotCSV() {
-    foreach ($this->triples as $key => $value) {
+  public function checkNotCSV($og) {
+    foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') {
         if (!preg_match( '/^\s*[0-9]+(\s*,\s*[0-9]+)*\s*$/', $value['o']) )  { throw new Exception('FAILED_FBADMINS_REGEX'); }
       }
     }
   }
 
-  public function checkNumericPageID() {
-    foreach ($this->triples as $key => $value) {
+  public function checkNumericPageID($og) {
+    foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmlpage_id') { 
         if ( preg_match( '/[^0-9]+/', $value['o']) )  { throw new Exception('FAILED_PAGEID_NUMBERSONLY_REGEX'); }
       }
@@ -55,8 +53,8 @@ class Checker {
   }
 
 
-  public function checkAdminsNotBigNumber() {
-    foreach ($this->triples as $key => $value) {
+  public function checkAdminsNotBigNumber($og) {
+    foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') { 
         if ( preg_match( '/[0-9]{10}/', $value['o']) )  { throw new Exception('FAILED_BIG_NUMBER_IN_ADMINS'); } # todo: clarify rule!
       }
@@ -65,15 +63,13 @@ class Checker {
 
 
 
-  public function checkMetaName() {
-#    print "TODO: check syntax of meta name. Requires raw parser API not triples.";
+  public function checkMetaName($og) {
+    #    print "TODO: check syntax of meta name. Requires raw parser API not triples.";
     return; # todo: requires markup access, not ARC triples. use built-in simple parser.
   }
 
-  public function checkTypeLabel() {
-	#    print "Checking all type field values.<br/>";
-	#      print "Key: $key Value: $value <br/>\n";      print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
-    foreach ($this->triples as $key => $value) {
+  public function checkTypeLabel($og) {
+    foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://opengraphprotocol.org/schema/type') { 
         if (preg_match( '/[^a-z_:]/', $value['o']) )  { throw new Exception('BAD_TYPE_CHARS_FAIL'); }
       }
@@ -84,8 +80,8 @@ class Checker {
 
 
 
-  public function checkAppIDSyntax() {
-    foreach ($this->triples as $key => $value) {
+  public function checkAppIDSyntax($og) {
+    foreach ($og->triples as $key => $value) {
       # print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
       if ($value['p'] == 'http://www.facebook.com/2008/fbmlapp_id') { 
         # print "Checking app_id is purely numeric.";
@@ -99,11 +95,9 @@ class Checker {
 
 
   function shortify($u) {
-    foreach (OGDataGraph::$nslist as $prefix => $uri) {
-      # print "DOES $u CONTAIN $uri ? <br/>";
+    foreach (OGDataGraph::$nslist as $prefix => $uri) {   # print "DOES $u CONTAIN $uri ? <br/>";
       if(strstr($u , $uri ) ) {
-        $short = str_replace( $uri, $prefix . ':', $u ); # abbreviate
-        # print "Replacing $uri with $prefix in $u : result is $short<br/>";
+        $short = str_replace( $uri, $prefix . ':', $u );  # print "Replacing $uri with $prefix in $u : result is $short<br/>";
         return($short);
       }
     } # end loop thru namespaces; todo: cache

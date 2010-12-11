@@ -75,6 +75,8 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
   */
   public function testMetaCSVTest() {
 
+    require_once 'OG_Checker.php';
+
     # copied from dependency above (which we could delete...)
     $og = new OGDataGraph();
     try {
@@ -99,7 +101,8 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
       $this->fail("Something terrible happened while parsing ". $m['url'] );
     }
     try {    
-      $og->checkNotCSV();
+#      $og->checkNotCSV();
+      Checker::checkNotCSV($og);
     } catch (Exception $e) {
       $this->assertEquals($e->getMessage(), "FAILED_FBADMINS_REGEX", "not_CSV test should fail fb:admins regex.");
     }
@@ -199,6 +202,56 @@ public function testOverloadedPropertyLookup() {
     # $this->markTestIncomplete("Need to implement model from triples reader."); # more to test? repeated properties? multiple colons?
 
 }
+
+
+/**
+* @depends testOverloadedPropertyLookup
+*/
+public function testOverloadedBogusPropertyLookup() {
+    // same for a non-existent property, 'og:qwerty'
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
+    $rdf = $og->fullParse();
+    $og->buildOGModelFromTriples();
+    $this->assertNotEquals( $og->og_qwerty , 'The Rock', "Should expose simple OG properties as an associative array.");
+    $this->assertNull( $og->og_qwerty, "There is no og:qwerty property in this test case."); 
+}
+
+/* <head>
+<meta property="og:title" content="The Rock" />
+<meta property="og:type" content="movie" />
+<meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+</head>
+*/
+public function testBasicGoodExampleFull() {
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
+    $rdf = $og->fullParse();
+    $og->buildOGModelFromTriples();
+    $this->assertEquals( $og->og_title , 'The Rock', '<meta property="og:title" content="The Rock" /> gives og->og_title');
+    $this->assertEquals( $og->og_type , 'movie', '<meta property="og:type" content="movie" /> gives og->og_type');
+    $this->assertEquals( $og->og_url , 'http://www.imdb.com/title/tt0117500/', '<meta property="og:url" content="http://www.imdb.com/title/tt0117500/" /> gives og->og_url'); 
+    $this->assertEquals( $og->og_image , 'http://ia.media-imdb.com/images/rock.jpg', '<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" /> gives og->image');
+}
+
+public function testBasicGoodExampleLite() {
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
+#    $rdf = $og->liteParse( $og->meta['url']);
+    $rdf = $og->liteParse();
+    # 
+    $this->AssertNotNull($og->og_title, "We should have a title.");
+    $this->assertEquals( $og->og_title , 'The Rock', '<meta property="og:title" content="The Rock" /> gives og->og_title');
+    $this->assertEquals( $og->og_type , 'movie', '<meta property="og:type" content="movie" /> gives og->og_type');
+    $this->assertEquals( $og->og_url , 'http://www.imdb.com/title/tt0117500/', '<meta property="og:url" content="http://www.imdb.com/title/tt0117500/" /> gives og->og_url'); 
+    $this->assertEquals( $og->og_image , 'http://ia.media-imdb.com/images/rock.jpg', '<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" /> gives og->image');
+    $this->markTestIncomplete( 'This test has not been implemented yet: Lite parser not integrated.');
+    $og->buildTriplesFromOGModel();
+
+}
+
+
 
 // http://www.phpunit.de/manual/current/en/incomplete-and-skipped-tests.html
 }

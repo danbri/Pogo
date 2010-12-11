@@ -37,7 +37,7 @@ class OpenGraph implements Iterator
    * Holds all the Open Graph values we've parsed from a page
    *
    */
-	private $_values = array();
+	public $_values = array(); //changed
 
   /**
    * Fetches a URI and parses it for Open Graph data, returns
