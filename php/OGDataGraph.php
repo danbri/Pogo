@@ -51,7 +51,7 @@ function verbose($s) {
 class OGDataGraph {
  
   #configuration
-  public $my_base_uri = 'http://localhost/pogo/Pogo/php/'; # used for finding testcases/ etc via HTTP
+  public $my_base_uri = 'http://localhost/pogo/Pogo/php'; # used for finding testcases/ etc via HTTP
   public $testdir = "./testcases/";
   #end configuration!
 
@@ -88,8 +88,9 @@ class OGDataGraph {
   }
 
   # default to lite, so as not to depend on RDFa parser plugin(s)
-  function readFromURL($u, $mode='lite') {
-    verbose("reading from url $u with mode $mode."); 
+  function readFromURL($u = 'default' , $mode='lite') {
+    if ($u=='default') { $u = $this->url; } 
+    # verbose("reading from url $u with mode $mode."); 
     if ($mode == 'lite') {
       $this->liteParse($u);
       $this->buildTriplesFromOGModel();
@@ -156,6 +157,11 @@ class OGDataGraph {
     $meta = json_decode( $contents, true );
     $this->meta = $meta;
     $this->url = $meta['url'];
+    if (preg_match('/^\//', $this->url )) {
+      # verbose("!!!!Got a relative URL; TODO: prepend base path from local cfg:". $this->my_base_uri);
+      $this->url = $this->my_base_uri . $meta['url'];
+    } 
+
     #    print "Expected triples: " . $meta['triple_count'] . "\n"; 
     #    print "Actual triples: TODO\n";
     $fn = $meta['testgroup'] . "/" . $meta['testid'];

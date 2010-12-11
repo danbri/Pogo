@@ -238,7 +238,6 @@ public function testBasicGoodExampleFull() {
 public function testBasicGoodExampleLite() {
     $og = new OGDataGraph();
     try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
-#    $rdf = $og->liteParse( $og->meta['url']);
     $rdf = $og->liteParse();
     # 
     $this->AssertNotNull($og->og_title, "We should have a title.");
@@ -246,15 +245,27 @@ public function testBasicGoodExampleLite() {
     $this->assertEquals( $og->og_type , 'movie', '<meta property="og:type" content="movie" /> gives og->og_type');
     $this->assertEquals( $og->og_url , 'http://www.imdb.com/title/tt0117500/', '<meta property="og:url" content="http://www.imdb.com/title/tt0117500/" /> gives og->og_url'); 
     $this->assertEquals( $og->og_image , 'http://ia.media-imdb.com/images/rock.jpg', '<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" /> gives og->image');
-#    $this->markTestIncomplete( 'This test has not been implemented yet: Lite parser not integrated.');
     $this->assertNotNull($og->url, "URL field shouldn't be null, but read from meta file in testcases/.");
     $og->buildTriplesFromOGModel();
     # verbose("triples: " . $og->dumpTriples());
 }
 
+public function testOGPSamplesLite() {
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
+    $og->readFromURL();
+    $this->assertEquals($og->og_title, 'The Rock', "Should get title" );
+}
 
+public function testOGPSamplesFull() {
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
+    $og->readFromURL($og->url, 'full');
+    $this->assertEquals($og->og_title, 'The Rock', "Should get title" );
+}
 
 // http://www.phpunit.de/manual/current/en/incomplete-and-skipped-tests.html
+//    $this->markTestIncomplete( 'This test has not been implemented yet: Lite parser not integrated.');
 }
 ?>
 
