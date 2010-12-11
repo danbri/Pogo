@@ -25,7 +25,7 @@ if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
 <?php 
 print "<p>URL: $url   <b>" . $mode  ."</b> </p>";
 
-print "<h3>Fetching URL</h3></h3>";
+print "<h3>Info</h3></h3>";
 verbose("Fetching $url");
 $og = new OGDataGraph();
 $og->readFromURL($url, $mode); # mode defaults to lite

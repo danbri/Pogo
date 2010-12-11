@@ -91,9 +91,11 @@ class OGDataGraph {
   function readFromURL($u, $mode='lite') {
     verbose("reading from url $u with mode $mode."); 
     if ($mode == 'lite') {
-      return $this->liteParse($u);
+      $this->liteParse($u);
+      $this->buildTriplesFromOGModel();
     } else {
-      return $this->arcParse($u);
+      $this->arcParse($u);
+      $this->buildOGModelFromTriples();
     }
   }
 
@@ -120,7 +122,7 @@ class OGDataGraph {
 
   function dumpTriples() {
     foreach ($this->triples as $key => $value) {
-        verbose( "Factoid: " . $value['s'] . " " . $value['p'] . " " . $value['o'] . " \n");
+        verbose("Factoid: " . $value['s'] . " " . $value['p'] . " " . $value['o'] . " \n");
       }
   }
 
