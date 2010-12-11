@@ -10,7 +10,6 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
   
   function setUp() {
     $og1 = $OGDataGraph->new = new OGDataGraph();
-    verbose("Made an ".$og1);
   } 
 
   public function testRaptorAvailable()
@@ -119,13 +118,89 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
     }
   }
 
-} 
+
+  public function testLoadGoodTestOK() {
+    try {    
+      $og = new OGDataGraph();
+      $og->readTest('testcases/fb/examples/good.meta');
+    } catch(Exception $e) {
+      $this->fail("Didn't load good test, although it should be here.");
+    }
+  }
 
 
+  /**
+   * @depends testLoadGoodTestOK
+   */
+  // Testing Utilities for migration as http://opengraphprotocol.org/schema/ becomes http://ogp.me/ns#
+   
+  public function testLongAndShortNamespaces() {
+    $new_ns_regex = '/http:\/\/ogp\.me\/ns#/';
 
+    $og = new OGDataGraph();
 
+    try {    
+      $og->readTest('testcases/fb/examples/good.meta');
+    } catch(Exception $e) {
+      $this->fail("failed to load good.meta.");
+    }
 
+    $rdf = $og->getTriples();
+    $this->assertNull($rdf, "Should not get an RDF graph until we fetch or build one.");
 
-# http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.exceptions
+    $og->arcParse();
+    $rdf = $og->getTriples();
+    $this->assertNotNull($rdf, "Should've got an RDF graph.");
+    foreach ($rdf as $key => $value) {
+      if ( preg_match($new_ns_regex, $value['p']) != 0 ) {
+        $this->fail("Matched short ns in a testcase that doesn't contain it.");
+      }
+    }
+  
+    $this->assertNotNull($og, "Should have an og object now.");
+
+    # verbose("pre-short-ns: ".$og);
+    $shorted = $og->shortifyOGTriples();
+    # verbose("post-short-ns: ".$og);
+
+    $this->assertNotNull($shorted, "ShortifyingOGTriples should return something not null.");
+    $got_shorty = false;
+    foreach ($shorted as $key => $value) {
+      if ( preg_match($new_ns_regex, $value['p']) != 0 ) { $got_shorty = true; } 
+    }
+    $this->assertTrue($got_shorty, "Expect to have got shorter ogp.me ns URI at least in 1 or more predicates, after shorteningOGTriples().");
+  }
+
+  public function testBuildOGModelFromTriples() {
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
+    $rdf = $og->fullParse();
+    $this->assertNotNull($rdf, "Should get an array of triples.");
+    $this->assertType('array', $rdf, "RDF should be represented as an array.");
+    $this->assertNotEquals( sizeOf($rdf), 0, "Array should not be sizeof 0.");
+    $this->assertNotNull( $og->buildOGModelFromTriples(), "Should be able to buildOGModelFromTriples successfully.");
+    $fields = $og->fields;
+    $this->assertNotNull($fields, "Should have access to a fields associative array.");
+    # $og->dumpFields();
+    $this->assertNotNull ($og->fields['og:title'], "Should have generated a title field from the RDFa now.");
+    $this->assertEquals($og->fields['og:title'], "The Rock", "Should have extracted title as 'The Rock' from RDFa.");
+  }
+
+/**
+* @depends testBuildOGModelFromTriples
+*/
+public function testOverloadedPropertyLookup() {
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
+    $rdf = $og->fullParse();
+    $og->buildOGModelFromTriples();
+    # verbose("TITLE SHORT VERSION: ".$og->og_title ."\n");
+    $this->assertEquals( $og->og_title , 'The Rock', "Should expose simple OG properties as an associative array.");
+    # $this->markTestIncomplete("Need to implement model from triples reader."); # more to test? repeated properties? multiple colons?
+
+}
+
+// http://www.phpunit.de/manual/current/en/incomplete-and-skipped-tests.html
+}
 ?>
 

@@ -25,29 +25,53 @@ require_once 'OG_Checker.php';
 error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED ); # looking in a hash for missing info - not a crime
 # error_reporting(E_ALL|E_STRICT); # dev't
 
-# stopgap verbosity 
+# verbosity stopgap
 function verbose($s) { 
-  #print "<strong>debug</strong>: $s<br/>\n"; 
-  #print "debug: $s\n"; 
-  #print '';
+  print "debug: $s\n"; 
 } 
 
 class OGDataGraph {
-
-  public $meta = array();
+ 
+  #configuration
+  public $my_base_uri = 'http://localhost/pogo/Pogo/php/'; # used for finding testcases/ etc via HTTP
   public $testdir = "./testcases/";
-  public $htmlok;
-  public $triples;
-  public $url;
+  #end configuration!
 
-  public static $nslist; # namespace prefixes
+  public $meta = array(); # for testcase-loaded metadata
+  public $htmlok; # notneeded?
+
+  # Meta Content
+  public $triples; 		# the full RDF view, follows ARC's conventions for s/p/o structures
+  public $fields = array();	# the flat Lite view, simple atribute/values of a common object
+				# also need for less-flat view, with nested objects?
+
+  public $url; 			# notneeded?
+  public $log = array(); 	#not used yet; plan is to keep transaction log, load, transform etc.
+
+  public static $nslist; 	# namespace prefixes list, loaded from json when needed.
+
+  public static $officialFields = array('title', 'type', 'url', 'image', 'description', 'site_name', 'latitude', 'longitude', 'street-address', 'locality', 'region', 'postal-code', 'country-name', 'email', 'phone_number', 'fax_number', 'video', 'video:height', 'video:width', 'video:type', 'audio', 'audio:title', 'audio:artist', 'audio:album', 'audio:type');
   
-
-
   function __toString() {
-    return "[OGDataGraph status: triples=$triples url=$url htmlok=$htmlok meta=$meta ]";
+     return "[OGDataGraph status: triples=".sizeof($this->triples)." ]";
   }
 
+  function __autoload() {
+    # 
+  } 
+
+  # w.i.p.
+  # http://php.net/manual/en/language.oop5.overloading.php
+  public function __get($name) {
+    $name = str_replace('_',':', $name);
+    verbose( "Getting '$name'");
+    if (array_key_exists($name, $this->fields)) {
+      return $this->fields[$name];
+    } else {
+      #print "!@#$!"; 
+      #$this->dumpFields();
+    }
+  }
 
   # default to lite, so as not to depend on RDFa parser plugin(s)
   #
@@ -61,14 +85,15 @@ class OGDataGraph {
   }
 
   function liteParse($u) {
-    return 'lite: todo';
- 
+    return 'lite: todo'; 
   }
 
-#  function __autoload() {
-#    # loadNamespaceList(); # not needed
-#  } # we could store the list in php form instead of json. 
-
+  function dumpFields() {
+    foreach ($this->fields as $f => $v) {
+      print "$f -> $v\n";
+    }
+  
+  }
 
 
   #################################################################################
@@ -148,23 +173,22 @@ class OGDataGraph {
   #################################################################################
   # Full RDFa parsers
   # ARC RDFa parser plugin (general RDFa 1.0 parser with microformat support)
-  
-  public function arcParse($u) {
+
+  public function fullParse($u = 'default' ) {
+    return $this->arcParse($u); # defaulting to ARC's RDFa parser; should also add perl parser (for RDFa 1.1).
+  }
+
+  # parse, either a specified URI or from pre-loaded metadata
+  public function arcParse($u = 'default' ) {
     require_once 'plugins/arc/ARC2.php'; # lots of PHP4-compatibility warnings when in PHP5.
     $meta = $this->meta;
-    if ($u) { $url = $u; } else { $url = $meta['url']; } # eg. 'http://www.rottentomatoes.com/m/oceans_eleven/';
-
-
-    # Problems are in here:
-    verbose("!!!ARC parser being called with url '$u'\n");
+    if ($u != 'default') { $url = $u; } else { $url = $meta['url']; }
+    # verbose("ARC parser being called with url '$u'\n");
     try { 
       $parser = ARC2::getRDFParser();
     } catch (Exception $e) {
-
-      verbose("XXXTerrible exception with getting parser! '$parser' ");
+      verbose("Exception with getting parser! '$parser' ");
     }
-    verbose("ZZZRequired OK, got parser.");
-
 
     $parser->parse($url);
     $parser->extractRDF('rdfa');
@@ -180,8 +204,6 @@ class OGDataGraph {
     return($this->triples);
   }
   # representation: array with associative arrays, keys: s, p, o, s_type (uri, ...), o_type (literal, ...)
-
-
 
 
 
@@ -209,12 +231,61 @@ class OGDataGraph {
     }
     $t = "<table border='1'>\n";
     $t .= "<tr><td class=\"ogfield\">Type</td><td>". $props["http://opengraphprotocol.org/schema/type"] ."</td></tr>";
-    $t .= "<tr><td class=\"ogfield\">Image</td><td>". $props["http://opengraphprotocol.org/schema/image"] ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">Image</td><td><img src='". $props["http://opengraphprotocol.org/schema/image"] ."' /><br/>". $props["http://opengraphprotocol.org/schema/image"] ."</td></tr>";
     $t .= "<tr><td class=\"ogfield\">Title</td><td>". $props["http://opengraphprotocol.org/schema/title"] ."</td></tr>";
     $t .=  "<tr><td class=\"ogfield\">Site URL</td><td>". $site_url ."</td></tr>";
     $t .= "<tr><td class=\"ogfield\">URL</td><td>". $props["http://opengraphprotocol.org/schema/url"] ."</td></tr>";
     $t .= "</table>\n";
     return $t;
+  }
+
+
+  #################################################################################
+  #
+  #  Hop between Lite and Full views
+
+
+  public function isOGField($f, $x) {
+      # verbose("Comparing $f and $x");
+      if ($x =='http://ogp.me/ns'.$f || $x=='http://opengraphprotocol.org/schema/'.$f) { return true; }
+      else { return false; }
+  }
+
+  public function buildOGModelFromTriples() {
+    if (is_null($this->getTriples())) { throw new Exception("BUILD_OG_NO_TRIPLES_YET"); }
+    # verbose("!!STUDYING TRIPLES TO CREATE OG MODEL!!");
+
+    $f = array(); 
+    foreach ( OGDataGraph::$officialFields as $fieldname) {
+      # verbose("Scanning for field $fieldname.");
+      foreach ($this->triples as $key => $v) { 
+        # print "XFactoid: ".$v['s']." ".$v['p']." ".$v['o']."\n";
+        if (OGDataGraph::isOGField( $fieldname, $v['p'] )) { #verbose("got:".$v['o']."!");
+           $f[ 'og:'.$fieldname ] = $v['o']; 
+        }
+      }
+    }
+    # verbose("fields: ".var_dump($f)."\n");
+    $this->fields = $f;
+    return false; # unimplemented
+    # see FB linter: it gets URI from somewhere, title from somewhere, everything else from RDFa
+    # todo: write test cases for html order situation
+
+  }
+
+
+  # turn http://opengraphprotocol.org/schema/ into http://ogp.me/ns#
+  # todo: convert subjects and objects too
+  public function shortifyOGTriples() {
+    if (is_null($this->triples)) { throw new Exception("SHORTIFY_NO_TRIPLES_YET"); }
+    $new_rdf = array();
+    foreach ($this->triples as $key => $value) { 
+      $value['s'] = str_replace( 'http://opengraphprotocol.org/schema/', 'http://ogp.me/ns#', $value['s']); # rare
+      $value['p'] = str_replace( 'http://opengraphprotocol.org/schema/', 'http://ogp.me/ns#', $value['p']); # typical
+      $value['o'] = str_replace( 'http://opengraphprotocol.org/schema/', 'http://ogp.me/ns#', $value['o']); # crude
+      array_push( $new_rdf, $value ); # hmm - is order semantically meaningful? see recent video discussion.
+    }
+    return ($new_rdf);
   }
 
   #################################################################################
