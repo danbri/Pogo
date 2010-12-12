@@ -29,11 +29,14 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 
   public function testARCAvailable()
   {
+    verbose("@ARC@???");
     if (!file_exists(dirname(__FILE__) . '/plugins/arc/ARC2.php')) {
       $this->fail("ARC2 library not found");
+      verbose("@NOPE!");
     } else {
       $this->assertTrue(true, "ARC2 library found.");
-    }
+      verbose("@PHEW!");
+  }
   }
 
 
@@ -60,6 +63,21 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 
 
 
+  ##############################################################################
+  # Installation / local config -related
+
+  # some testcases have relative URIs for meta['url'] in the JSON. Can we fetch them?
+  public function testLocalRepoAccessible() {
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
+    # verbose("META:".var_dump($og->meta) ."\n");
+    $og->readFromURL(); # we happen to know this is a relative URI
+    $this->assertEquals($og->og_title, 'The Rock', "Should get title from local repo." );
+  }
+
+
+
+  ##############################################################################
   public function testLoadCSVTest() {
     $og = new OGDataGraph();
     try {
@@ -250,31 +268,26 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
     # verbose("triples: " . $og->dumpTriples());
   }
 
+  /**
+  * @depends testLocalRepoAccessible
+  */
   public function testOGPSamplesLite() {
     $og = new OGDataGraph();
-    try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
+    try { $og->readTest('testcases/ogp/eg1a.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
     $og->readFromURL();
     $this->assertEquals($og->og_title, 'The Rock', "Should get title" );
   }
 
+  /**
+  * @depends testLocalRepoAccessible
+  */
   public function testOGPSamplesFull() {
     $og = new OGDataGraph();
-    try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
+    try { $og->readTest('testcases/ogp/eg1a.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
     $og->readFromURL('full');
     $this->assertEquals($og->og_title, 'The Rock', "Should get title" );
   }
 
-
-##############################################################################
-# Installation / local config -related
-
-  # some testcases have relative URIs for meta['url'] in the JSON. Can we fetch them?
-  public function testLocalRepoAccessible() {
-    $og = new OGDataGraph();
-    try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
-    $og->readFromURL(); # we happen to know this is a relative URI
-    $this->assertEquals($og->og_title, 'The Rock', "Should get title from local repo." );
-  }
 
 ##############################################################################
 # Security-related
@@ -322,17 +335,24 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 # 
 # Spec issues: should it say we strip/ignore from start/finish? also strip \n ?
 
+  /**
+  * @depends testLocalRepoAccessible
+  */
   public function testPassNewlinesThroughFull() {
     $og = new OGDataGraph();
-    try {$f='testcases/ogp/eg1.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+    try {$f='testcases/ogp/eg1a.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
     $og->readFromURL('full');
     $this->assertNotNull($og->og_description, "Expecting an og:description");
     $this->assertRegExp('/James\n\s+/', $og->og_description, "We expect newlines within content to be preserved.");
   }
 
+
+  /**
+  * @depends testLocalRepoAccessible
+  */
   public function testPassNewlinesThroughLite() {
     $og = new OGDataGraph();
-    try {$f='testcases/ogp/eg1.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+    try {$f='testcases/ogp/eg1a.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
     $og->readFromURL('lite');
     $this->assertNotNull($og->og_description, "Expecting an og:description");
     $this->assertRegExp('/James\n\s+/', $og->og_description, "We expect newlines within content to be preserved.");
@@ -342,9 +362,12 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 ##############################################################################
 # Charset-handling
 
-
-
+# see mixi testcase for example. how to structure tests here?
 #
+
+
+
+
 
 
 // http://www.phpunit.de/manual/current/en/incomplete-and-skipped-tests.html

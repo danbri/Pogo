@@ -51,7 +51,7 @@ function verbose($s) {
 class OGDataGraph {
  
   #configuration
-  public $my_base_uri = 'http://localhost/pogo/Pogo/php'; # used for finding testcases/ etc via HTTP
+  public static $my_base_uri = 'http://localhost/pogo/Pogo/checker'; # used for finding testcases/ etc via HTTP
   public $testdir = "./testcases/";
   #end configuration!
 
@@ -160,8 +160,8 @@ class OGDataGraph {
     $this->meta = $meta;
     $this->url = $meta['url'];
     if (preg_match('/^\//', $this->url )) {
-      # verbose("!!!!Got a relative URL; TODO: prepend base path from local cfg:". $this->my_base_uri);
-      $this->url = $this->my_base_uri . $meta['url'];
+      # verbose("!!!!Got a relative URL; TODO: prepend base path from local cfg:". OGDataGraph::$my_base_uri;
+      $this->url = OGDataGraph::$my_base_uri . $meta['url'];
     } 
 
     #    print "Expected triples: " . $meta['triple_count'] . "\n"; 
@@ -220,9 +220,10 @@ class OGDataGraph {
   # parse, either a specified URI or from pre-loaded metadata
   public function arcParse($u = 'default' ) {
     require_once 'plugins/arc/ARC2.php'; # lots of PHP4-compatibility warnings when in PHP5.
-    $meta = $this->meta;
+    $meta = $this->meta;    
+
     if ($u != 'default') { $url = $u; } else { $url = $meta['url']; }
-    # verbose("ARC parser being called with url '$u'\n");
+    verbose("ARC parser being called with url '$u'\n");
     try { 
       $parser = ARC2::getRDFParser();
     } catch (Exception $e) {
