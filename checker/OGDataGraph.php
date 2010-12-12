@@ -137,7 +137,7 @@ class OGDataGraph {
     $dom = new DomDocument();
     $dom->load($source);
     $tests = array();
-    $xpath = new DomXPath($dom);
+    $xpath = new DomXPath($dom); # or xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ?
     $xpath->registerNamespace('c', 'http://www.google.com/schemas/sitemap/0.84');
     $result = $xpath->query("//c:loc/text()");
     foreach($result as $b) {
