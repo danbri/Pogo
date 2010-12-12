@@ -30,6 +30,7 @@ IMPLEMENTATIONS
  * remove the many parts of ARC library we don't need (MySQL store etc.). Or at least make dependencies clear.
  * patch the bits of ARC2 parser that cause PHP5 to emit warnings?
  * wire in other parser sources
+ * Ubuntu ships an earlier phpunit which isn't happy with our setup - investigate
 
 DOCS
 
