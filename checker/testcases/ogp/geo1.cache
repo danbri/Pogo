@@ -3,7 +3,7 @@
 <meta property="og:title" content="Fidel's Fictional Fooderia" />
 <meta property="og:type" content="restaurant" />
 <meta property="og:url" content="http://example.org/fff/" />
-<!--<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />-->
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Chile_Rellenos.jpg/220px-Chile_Rellenos.jpg" />
 
 
 <!--geo markup example from ogp.me -->
