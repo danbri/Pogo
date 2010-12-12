@@ -3,6 +3,9 @@
 
 This is a utility for checking Open Graph Protocol (OGP) content.
 
+Source code: https://github.com/danbri/Pogo (APACHE licensed)
+
+
 It also may be useful for comparing the behaviour of OGP-related software, 
 in particular parsers. 
 
