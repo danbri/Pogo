@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl" id="facebook" class=" no_js"  xmlns:og="http://ogp.me/ns#">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-language" content="nl" />
+<title>URL Linter - Facebook ontwikkelaars</title>
+<meta property="fb:app_id" content="113869198637480" />
+<meta property="og:title" content="URL Linter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://developers.facebook.com/tools/lint/" />
+<meta property="og:image" content="http://b.static.ak.fbcdn.net/rsrc.php/zA/r/rwsSMfAU1li.png" />
+<meta property="og:site_name" content="Facebook Developers" />
+</head>
+<body>
+<h1>Lint</h1>
+<p>This is a stripped down version of the Linter homepage, showing only the OG markup in head.</p>
+</body>
+</html>
