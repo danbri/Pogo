@@ -1,0 +1,1102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:hx="http://purl.org/NET/hinclude" xmlns:fb="http://developers.facebook.com/schema/" xml:lang="en" xmlns:dc="http://purl.org/dc/terms/" xmlns:media="http://search.yahoo.com/searchmonkey/media/" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><link href="http://public.slidesharecdn.com/v3/styles/combined.css?1291986223" rel="stylesheet" type="text/css" media="all" />
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="screen" href="http://public.slidesharecdn.com/v3/styles/slideview_ie6.css?1291986223" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="http://public.slidesharecdn.com/v3/styles/slideview_ie7.css?1291986223" /><![endif]-->
+<script id="page-json" type="text/javascript"><!--
+var slideshare_object = {"inContest":0,"comments":{"update_url":"http://www.slideshare.net/comment/update","spam_url":"http://www.slideshare.net/comment/mark_spam","unsubscribe_url":"http://www.slideshare.net/comment/unsubscribe/2397710","captcha_url":"http://s3.amazonaws.com/ss-captchas/","ajaxurl":"http://www.slideshare.net/~/slideshow/comments/2397710.json","create_url":"http://www.slideshare.net/comment/create","template":"\u003Cli class=\"vcard\"\u003E\n                  \u003Ca href=\"#\" class=\"userimage-link h-author-photo url\" title=\"Full Name\" rel=\"nofollow\"\u003E\n                    \u003Cimg class=\"nickname\" src=\"/images/userImage_SMALL.gif\" alt=\"username\" /\u003E\n                    \u003Cspan class=\"h-username fn\"\u003Eusername\u003C/span\u003E\n                  \u003C/a\u003E \n                  \u003Ca href=\"#\" class=\"proBadge_link_slideview h-pb-sv h-pb-sv-c\"\u003E\u003Cimg class=\"h-pb-sv-img proBadge_comment\" src=\"http://public.slidesharecdn.com/images/pro_account_mini_badge.png\" height=\"8\" alt=\"Pro Account\" width=\"27\" /\u003E\u003C/a\u003E\u003Cspan class=\"h-occupation\"\u003E, occupation, \u003C/span\u003E\u003Cspan class=\"org h-organization\"\u003Eorganization\u003C/span\u003E\n                  \u003Cspan class=\"quiet when-comment-value\"\u003E3 months ago\u003C/span\u003E\n                  \u003Cspan class=\"floatRight h-comment-actions hide\"\u003E\n                    \u003Ca href=\"#\" class=\"ilink action-edit\" rel=\"nofollow\"\u003Eedit\u003C/a\u003E\n                    \u003Ca href=\"#\" class=\"ilink action-delete\" rel=\"nofollow\"\u003Edelete\u003C/a\u003E\n                    \u003Ca href=\"#\" class=\"ilink action-spam loggedin-only\" rel=\"nofollow\"\u003Espam\u003C/a\u003E\n                  \u003C/span\u003E\n                  \u003Cblockquote class=\"comment-item-value\"\u003E\n                    \u003Cp\u003EThis is a comment!\u003C/p\u003E\n                  \u003C/blockquote\u003E\n                  \n                \u003C/li\u003E","total_count":0,"destroy_url":"http://www.slideshare.net/comment/destroy"},"doc":"udc-slides-091101144048-phpapp01","stats":{"url":"http://www.slideshare.net/~/slideshow/stats/2397710.json"},"user":{"commenter":false,"occupation":null,"can_remove_contact":null,"loggedin":null,"pro":null,"login":"guest","organization":null,"photo_url":"http://public.slidesharecdn.com/images/userImage_SMALL.gif","owner":false,"name":null,"email":"guest","id":null,"su":null,"user_group":null,"member_type":"non-member"},"dev":false,"sharing_more":{"url":"http://www.slideshare.net/~/slideshow/sharing_more/2397710.html"},"default_tab":".svMoreAuthor","contacts":{"delete_url":"http://www.slideshare.net/contact/delete?contactee=1817606\u0026frm_source=slidepage","create_url":"http://www.slideshare.net/contact/create?contactee=CONTACTEE\u0026frm_source=slidepage"},"_auth_token_name":"authenticity_token","kissmetrics_api_key":"f38a86f22083188a0a69d64d1487a4078b65db16","key":false,"embeds_count":6,"favorites":{"delete_url":"http://www.slideshare.net/favorite/delete","update_url":"http://www.slideshare.net/favorite/update/FAVID","tag_href":"/tag/TAGNAME","create_url":"http://www.slideshare.net/favorite/create"},"activities":{"community":{"count":0,"total":0,"url":"http://www.slideshare.net/~/slideshow/community_list/2397710.json"},"favorites":{"count":9,"total":9,"url":"http://www.slideshare.net/~/slideshow/favorites_list/2397710.json"}},"startSlide":1,"totalSlides":62,"_auth_token":"b3IA+tKtPijYkKBMpNRUEf9JtWCMNyBwsiDe7N46Sws=","voting_widget_host":"/","downloads":{"allow":true,"sp_isdwnl":true},"groups":{"post_url":"http://www.slideshare.net/community/send_to_community"},"preview":"no","useHttp":1,"slideshow":{"type":"presentation","form_after_slide_number":null,"is_audio":true,"user_name":"danbri","show_related_content":"1","title":"Describing Everything - Open Web standards and classi\ufb01cation","id":"2397710","user_login":"danbri","form_is_blocking":false},"contests":[],"category":{"featured":0,"url":"http://www.slideshare.net/category/categorize?slideshow_id=2397710"},"presentationId":2397710,"topnav":{"update_url":"http://www.slideshare.net/language/update_language","get_url":"/top_nav"},"player":{"height":481,"version":9,"color":"#FFFFFF","url":"http://static.slidesharecdn.com/swf/ssplayer2.swf","width":598},"facebook_app_id":2490221586,"pvt":0,"gam_cat_name":"technology","flagging":{"flagged_value":null,"update_url":"http://www.slideshare.net/main/flag?slideshow_id=2397710"},"stripped_title":"open-web-standards-and-classication-foundations-for-a-hybrid-approach","zeitgeist":[],"meeting_start_status":-1,"version_no":"1257892480"};
+//--></script><script src="http://public.slidesharecdn.com/v3/scripts/combined.js?1291986223"></script>
+<script id="page-load" type="text/javascript">
+// <![CDATA[
+var timer = (new Date()).getTime();
+// ]]>
+</script>
+<script id="ga-init" type="text/javascript">
+// <![CDATA[
+window._gaq = [];
+// ]]>
+</script>
+<script id="rails_environment" type="text/javascript">
+// <![CDATA[
+slideshare_object.deploy_environment = 'production';
+// ]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Describing Everything - Open Web standards and classiﬁcation</title>
+<link href="http://public.slidesharecdn.com/images/favicon.ico" rel="Shortcut Icon" />
+<meta name="title" property="media:title" content="Describing Everything - Open Web standards and classiﬁcation" />
+<meta name="description" property="dc:description" content="Original title: Open Web standards and classiﬁcation: Foundations for a hybrid approach Keynote address, UDC Seminar: " />
+<meta name="og_title" property="og:title" content="Describing Everything - Open Web standards and classiﬁcation" />
+<meta name="og_type" property="og:type" content="article" />
+<meta name="og_url" property="og:url" content="http://www.slideshare.net/danbri/open-web-standards-and-classication-foundations-for-a-hybrid-approach" />
+<meta name="og_image" property="og:image" content="http://cdn.slidesharecdn.com/udc-slides-091101144048-phpapp01-thumbnail-2?1257892480" />
+<meta name="og_site_name" property="og:site_name" content="SlideShare" />
+
+<meta name="fb_app_id" property="fb:app_id" content="2490221586" />
+<link href="http://cdn.slidesharecdn.com/udc-slides-091101144048-phpapp01-thumbnail?1257892480" rel="image_src" />
+<link href="http://www.slideshare.net/danbri/open-web-standards-and-classication-foundations-for-a-hybrid-approach" rel="canonical" />
+<link href="/rss/latest" title="RSS" rel="alternate" type="application/rss+xml" />
+<link href="/search/opensearch.xml" title="SlideShare Search" rel="search" type="application/opensearchdescription+xml" />
+<link href="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=udc-slides-091101144048-phpapp01&amp;stripped_title=open-web-standards-and-classication-foundations-for-a-hybrid-approach" name="media_presentation" rel="media:presentation" />
+<link href="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=udc-slides-091101144048-phpapp01&amp;stripped_title=open-web-standards-and-classication-foundations-for-a-hybrid-approach&amp;hostedIn=fb_feed" name="video_src" rel="video_src" />
+<link href="http://www.slideshare.net/api/oembed/1?format=json&amp;url=http://www.slideshare.net/danbri/open-web-standards-and-classication-foundations-for-a-hybrid-approach" title="Slideshow oEmbed Profile" rel="alternate" type="application/json+oembed" />
+<link href="http://www.slideshare.net/api/oembed/1?format=xml&amp;url=http://www.slideshare.net/danbri/open-web-standards-and-classication-foundations-for-a-hybrid-approach" title="Slideshow oEmbed Profile" rel="alternate" type="text/xml+oembed" />
+<meta name="media_width" property="media:width" content="425" />
+<meta name="media_height" property="media:height" content="355" />
+<meta name="video_width" content="425" />
+<meta name="video_height" content="355" />
+<meta name="video_type" content="application/x-shockwave-flash" />
+<meta href="http://cdn.slidesharecdn.com/udc-slides-091101144048-phpapp01-thumbnail?1257892480" name="media_thumbnail" rel="media:thumbnail" />
+<meta name="dc_creator" property="dc:creator" content="danbri" />
+
+</head>
+<body>
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+FB.init({
+appId  : slideshare_object.facebook_app_id,
+status : true, // check login status
+cookie : true, // enable cookies to allow the server to access the session
+xfbml  : true  // parse XFBML
+});
+};
+(function() {
+var e = document.createElement('script');
+e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+e.async = true;
+document.getElementById('fb-root').appendChild(e);
+}());
+</script>
+<div class="admanager-section">
+<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js"></script>
+<script type="text/javascript">
+GS_googleAddAdSenseService("ca-pub-5203428669823392");
+GS_googleEnableAllServices();
+</script>
+<script type="text/javascript">
+GA_googleAddAttr("cat", "technology");
+GA_googleAddAttr("ztag", "world-wide-web");
+GA_googleAddAttr("ztag", "resource-description-framework");
+GA_googleAddAttr("ztag", "wikipedia");
+GA_googleAddAttr("ztag", "information-retrieval");
+GA_googleAddAttr("ztag", "douglas-adams");
+GA_googleAddAttr("ztag", "margaret-thatcher");
+GA_googleAddAttr("ztag", "simple-knowledge-organization-system");
+GA_googleAddAttr("ztag", "dan-brickley");
+GA_googleAddAttr("contest", "none");
+GA_googleAddAttr('misc','webinar');
+</script>
+
+<script type="text/javascript">
+GA_googleAddSlot("ca-pub-5203428669823392", "slideview_top_728_90");
+</script>
+
+
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-5203428669823392", "slideview_sponsorship"); 
+</script>
+
+<!--<script type="text/javascript">
+GA_googleAddSlot("ca-pub-5203428669823392", "slideview_bottom_300_250");
+</script>-->
+<!--
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-5203428669823392", "slideview_link");
+</script>
+-->
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-5203428669823392", "slideview_right_1");
+</script>
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-5203428669823392", "slideview_bottom2"); 
+</script>
+<script type='text/javascript'>
+GA_googleAddSlot("ca-pub-5203428669823392", "slideview_below_transcript");
+</script>
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-5203428669823392", "footer");
+</script>
+
+<!--
+<script type='text/javascript'>
+GA_googleAddSlot("ca-pub-5203428669823392", "pixel_tracker");
+</script>
+-->
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-5203428669823392", "slideview_mid_468x60");
+</script>
+<script type="text/javascript">GA_googleAddAdSensePageAttr("google_hints", "Describing Everything - Open Web standards and classi\ufb01cation");</script>
+<script type="text/javascript">
+ GA_googleUseSyncSRARendering();
+  GA_googleFetchAds();
+</script>
+
+
+<!--
+<script type="text/javascript">  
+var google_adnum = 0;
+var random_number = Math.random();
+if (random_number < 0.55){ 
+GA_googleAddAttr("ztag", "Web-1");
+ } else { GA_googleAddAttr("ztag", "Go-1"); } 
+</script>
+-->
+</div>
+<div class="container">
+<div class="clearfix header-09">
+<a href="/" class="logo" title="Go to SlideShare's homepage" rel="nofollow">SlideShare. Present yourself.</a>
+<ul class="mainNav">
+<li class="nav_home"><a href="/" title="SlideShare homepage">Home</a></li>
+<li class="nav_business"><a href="/business/premium/plans?cmp_src=main_nav" title="Upgrade to Slideshare Pro Accounts for Premium Features.">Go Pro</a></li>
+<li class="nav_channels"><a href="/pro_accounts" title="Channels on SlideShare">Channels</a></li>
+<li class="nav_community"><a href="/events" title="Connect and interact with the SlideShare community">Events</a></li>
+<li class="nav_jobs"><a href="http://jobs.slideshare.com/" title="Browse presentations, documents, videos, slidecasts, videoslides and more" target="_blank">Jobs</a></li>
+<li class="nav_upload"><strong><a href="/login?from=upload&from_source=/upload" title="Upload your presentations and documents in PowerPoint, OpenOffice, Keynote or PDF format">Upload</a></strong></li>
+</ul>
+<form class="headerSearch" method="get" action="/search/slideshow">
+<fieldset>
+<span class="suggestionContainer">
+<input name="q" class="text" id="search_query_top" type="text" value="" autocomplete="off" />
+</span>
+<input class="ctaStrong" type="submit" value="Search" />
+</fieldset>
+</form>
+<div class="userNav"><ul>
+
+
+  <li>
+    <img id="j-fb-topnav-indicator" width="20" height="20" class="loading hide" alt="Processing&hellip;" src="http://public.slidesharecdn.com/images/loading.gif" />
+    <a id="fb-login-topnav" class="fb_button fb_button_small" href="/newsfeed?from_source=/newsfeed"><span class="fb_button_text">Login</span></a>
+  </li>
+  <li><a href="/login" class="void_fancybox" rel="nofollow">Login</a></li>
+  <li><strong><a href="/signup" class="void_fancybox" title="Signup now for a SlideShare account" rel="nofollow">Signup</a></strong></li>
+  <li><a href="http://pro.slideshare.net/advertise" rel="nofollow">Advertise</a></li>
+
+</ul>
+
+
+
+
+  
+  <script src="http://public.slidesharecdn.com/javascripts/ajax_signup.js?1291986207" type="text/javascript"></script>
+  
+
+</div>
+</div>
+<div class="leaderboard banner ad_top lostchild" style="height:90px;margin:0 0 .75em;text-align:center;width:728px"><div class="leaderboardContent"><script type="text/javascript">  
+GA_googleFillSlot("slideview_top_728_90");
+</script></div></div>
+
+
+
+
+
+<!-- disable_ad_section_start(weight=1.0) -->
+<div class="mainTitle">
+<h1 class="h-slideshow-title">Describing Everything - Open Web standards and classiﬁcation</h1>
+<span class="quieter when-uploaded-value">2 years ago</span>
+
+</div>
+<!-- disable_ad_section_end() -->
+<div class="column1">
+<ul class="slideviewActions h-tools">
+<li class="last" style="float:right;margin:0;text-align:right;"><span class="h-sponsorshiptool lostchild">
+<script type="text/javascript">
+  GA_googleFillSlot("slideview_sponsorship");
+</script>
+</span></li>
+<li class="action-share public-only"><a href="#" title="Email this webinar to your contacts" class="iconShare j-tooltip" rel="nofollow">Email</a> </li>
+<li class="action-addfav public-only"><a href="/signup?from=favorite&from_source=http%3A%2F%2Fwww.slideshare.net%2Fdanbri%2Fopen-web-standards-and-classication-foundations-for-a-hybrid-approach" title="Save to favorites" class="iconFavOff j-tooltip" rel="nofollow">Favorite</a> </li>
+<li class="action-fav public-only" style="display:none">
+<a href="#" title="Saved to your favorites" class="iconFavOn j-tooltip" rel="nofollow">Favorited</a> <a href="#" title="Remove from favorites" class="ilink delete j-tooltip" rel="nofollow">&times;</a>
+</li>
+
+<li class="action-download" style=""><a href="/signup?from=download&from_source=http://www.slideshare.net/danbri/open-web-standards-and-classication-foundations-for-a-hybrid-approach/download&download_id=2397710-0273fd301de379199f112794c48059916bcd344e-slideshow" title="Download this webinar" class="iconDownload j-tooltip" rel="nofollow">Download</a> </li>
+<li class="action-embed"><a href="#" title="Embed this webinar" class="iconEmbed j-tooltip" rel="nofollow">Embed</a> </li>
+
+<li class="action-addgrp public-only last"><a href="/signup?from=AddToCommunity&from_source=http%3A%2F%2Fwww.slideshare.net%2Fdanbri%2Fopen-web-standards-and-classication-foundations-for-a-hybrid-approach" title="Add this webinar to a Group or Event" class="j-tooltip" rel="nofollow">More&hellip;</a></li>
+
+
+<li class="expanded action-embed-code embedPanel" style="display:none">
+
+
+<span class="clearfix h-embed-allow">
+<label class="h-embed-label" for="embed-code">Embed this webinar</label>
+<span class="hint">Copy the code below and paste it into your website.</span>
+<input class="text quiet h-embed-code" readonly="readonly" id="embed-code" type="text" value="" />
+<a href="#" title="Customize embed code" class="customizeLink h-action-customize ilink" rel="nofollow">Customize</a>
+</span>
+<span class="customizeEmbed h-embed-allow" id="h-customize-embed-section" style="display:none">
+<label for="embed-code">Without related content</label>
+<input name="embed-code" class="text quiet h-norel-embedcode" readonly="readonly" id="embedCodeWithoutRelated" type="text" value="" />
+<label for="embed-code">For WordPress.com blogs</label>
+<input name="embed-code" class="text quiet h-wpembedcode" readonly="readonly" id="embedCodeWP" type="text" value="" />
+<span class="h-post-write-embed">    <script>
+      document.getElementById('embed-code').value = "\u003Cdiv style=\"width:425px\" id=\"__ss_2397710\"\u003E\u003Cstrong style=\"display:block;margin:12px 0 4px\"\u003E\u003Ca href=\"http://www.slideshare.net/danbri/open-web-standards-and-classication-foundations-for-a-hybrid-approach\" title=\"Describing Everything - Open Web standards and classi\ufb01cation\"\u003EDescribing Everything - Open Web standards and classi\ufb01cation\u003C/a\u003E\u003C/strong\u003E\u003Cobject id=\"__sse2397710\" width=\"425\" height=\"355\"\u003E\u003Cparam name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=udc-slides-091101144048-phpapp01\u0026stripped_title=open-web-standards-and-classication-foundations-for-a-hybrid-approach\u0026userName=danbri\" /\u003E\u003Cparam name=\"allowFullScreen\" value=\"true\"/\u003E\u003Cparam name=\"allowScriptAccess\" value=\"always\"/\u003E\u003Cembed name=\"__sse2397710\" src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=udc-slides-091101144048-phpapp01\u0026stripped_title=open-web-standards-and-classication-foundations-for-a-hybrid-approach\u0026userName=danbri\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"425\" height=\"355\"\u003E\u003C/embed\u003E\u003C/object\u003E\u003Cdiv style=\"padding:5px 0 12px\"\u003EView more \u003Ca href=\"http://www.slideshare.net/\"\u003Ewebinars\u003C/a\u003E from \u003Ca href=\"http://www.slideshare.net/danbri\"\u003Edanbri\u003C/a\u003E.\u003C/div\u003E\u003C/div\u003E";
+      document.getElementById('embedCodeWP').value = '[slideshare id=2397710&doc=udc-slides-091101144048-phpapp01]';
+      document.getElementById('embedCodeWithoutRelated').value = "\u003Cdiv style=\"width:425px\" id=\"__ss_2397710\"\u003E\u003Cstrong style=\"display:block;margin:12px 0 4px\"\u003E\u003Ca href=\"http://www.slideshare.net/danbri/open-web-standards-and-classication-foundations-for-a-hybrid-approach\" title=\"Describing Everything - Open Web standards and classi\ufb01cation\"\u003EDescribing Everything - Open Web standards and classi\ufb01cation\u003C/a\u003E\u003C/strong\u003E\u003Cobject id=\"__sse2397710\" width=\"425\" height=\"355\"\u003E\u003Cparam name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=udc-slides-091101144048-phpapp01\u0026rel=0\u0026stripped_title=open-web-standards-and-classication-foundations-for-a-hybrid-approach\u0026userName=danbri\" /\u003E\u003Cparam name=\"allowFullScreen\" value=\"true\"/\u003E\u003Cparam name=\"allowScriptAccess\" value=\"always\"/\u003E\u003Cembed name=\"__sse2397710\" src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=udc-slides-091101144048-phpapp01\u0026rel=0\u0026stripped_title=open-web-standards-and-classication-foundations-for-a-hybrid-approach\u0026userName=danbri\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"425\" height=\"355\"\u003E\u003C/embed\u003E\u003C/object\u003E\u003Cdiv style=\"padding:5px 0 12px\"\u003EView more \u003Ca href=\"http://www.slideshare.net/\"\u003Ewebinars\u003C/a\u003E from \u003Ca href=\"http://www.slideshare.net/danbri\"\u003Edanbri\u003C/a\u003E.\u003C/div\u003E\u003C/div\u003E";
+    </script>
+</span>
+</span>
+<a href="#" class="ilink cancel" rel="nofollow">Close</a>
+</li>
+
+
+<li class="expanded action-unverified-download public-only" style="display:none">
+<p>
+We have emailed the verification/download link to <strong>"<span class="user-email"></span>"</strong>.
+<br />
+Login to your email and click the link to download the file directly.
+</p>
+<form class="changeEmail change-unverified-email">
+<fieldset>
+<legend>To request the link at a different email address, update it here.</legend>
+<input name="unverified-email" class="text unverified-email" value="" />
+<input class="submit" type="submit" value="Update" />
+<a href="#" class="ilink cancel" rel="nofollow">Close</a><br />
+<span class="change-unverified-email-validate" style="display:none">Validation messages.</span>
+<span class="change-unverified-email-win" style="display:none;color:#0A0">Success message.</span>
+<span class="change-unverified-email-fail" style="display:none;color:#A00">Fail message.</span>
+</fieldset>
+</form>
+<p style="margin:0"><span class="hint">Check your bulk/spam folders if you can't find our mail.</span></p>
+</li>
+</ul>
+
+<div class="playerWrapper">
+<div class="player" id="svPlayerId">
+<p id="placeholder">
+Loading&hellip;
+</p>
+<p id="noflash">
+Flash Player 9 (or above) is needed to view presentations. <br />We have detected that you do not have it on your computer. To install it, go <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" title="Install Adobe Flash Player" rel="nofollow">here</a>.
+</p>
+</div>
+<div class="playerAd h-player-banner lostchild noAdForLead" style="display:none;">
+<a href="#" class="closeThis">&times;</a>
+<div class="h-mid-banner-content"><script type="text/javascript"> 
+GA_googleFillSlot("slideview_mid_468x60"); 
+</script></div>
+</div>
+</div>
+<script type="text/javascript">
+// <![CDATA[
+(function(ele) {
+var sessionid = null;
+if (document.cookie) try {
+sessionid = encodeURIComponent(document.cookie.match(/_cookie_id=([^;]*)/)[1]);
+} catch (e) {
+//
+}
+var flashversion=deconcept.SWFObjectUtil.getPlayerVersion().major;
+if (flashversion<9) {
+document.getElementById('placeholder').style.display = 'none';
+document.getElementById('noflash').style.display = 'block';
+} else {
+if(slideshare_object.player.url.match(/^http:\/\/s3.amazonaws.com\/ppt-download\//)){
+html = '<embed width="598" height="481" quality="high" bgcolor="#FFFFFF" name="player" id="player"\
+src="'+slideshare_object.player.url+'" type="application/pdf"/>';
+if (jQuery.browser.msie && ((jQuery.browser.version * 1) < 7)) {
+jQuery('#noflash').hide();
+jQuery('#svPlayerId').css('background', 'url(http://public.slidesharecdn.com/images/loading.gif) no-repeat center');
+jQuery(document).ready(function() { $(ele).html(html); });
+} else {
+$(ele).html(html);
+}
+} else {
+var so = new SWFObject(slideshare_object.player.url, "player", slideshare_object.player.width, slideshare_object.player.height, slideshare_object.player.version, slideshare_object.player.color, slideshare_object.player.no_type_info);
+so.addVariable('sessid', sessionid);
+so.addVariable('pvt', slideshare_object.pvt);
+if (slideshare_object.key) so.addVariable('key', slideshare_object.key);
+so.addVariable('doc', slideshare_object.doc);
+so.addVariable('version_no', slideshare_object.version_no);
+so.addVariable('presentationId', slideshare_object.presentationId);
+so.addVariable('totalSlides', slideshare_object.totalSlides);
+so.addVariable('startSlide', slideshare_object.startSlide);
+so.addVariable('inContest', slideshare_object.inContest);
+so.addVariable('totalSlides', slideshare_object.totalSlides);
+so.addVariable('startSlide', slideshare_object.startSlide);
+so.addVariable('presentationId', slideshare_object.presentationId);
+so.addVariable('preview', slideshare_object.preview);
+so.addVariable('stitle', slideshare_object.stripped_title);  // for secret preso's
+so.addVariable('userName', slideshare_object.slideshow.user_login);
+so.addVariable('has_form', (slideshare_object.slideshow.form_after_slide_number && 1));
+so.addVariable('form_after_slide_number', slideshare_object.slideshow.form_after_slide_number);
+so.addVariable('form_is_blocking', slideshare_object.slideshow.form_is_blocking);
+so.addVariable('hostedIn' , 'slideshare');
+so.addVariable('page' , 'slideview');
+so.addVariable('useHttp', '1');
+so.addVariable('rel', slideshare_object.slideshow.show_related_content);
+so.addVariable('autoplay', '1');
+so.addVariable('isAudio', slideshare_object.slideshow.is_audio ? '1' : '0');
+so.addParam("allowScriptAccess", 'always');
+so.addParam("wmode", 'transparent');
+so.addParam("allowFullScreen", 'true');
+if (jQuery.browser.msie && ((jQuery.browser.version * 1) < 7)) {
+jQuery('#noflash').hide();
+jQuery('#svPlayerId').css('background', 'url(http://public.slidesharecdn.com/images/loading.gif) no-repeat center');
+jQuery(document).ready(function() { so.write(ele); });
+} else {
+so.write(ele);
+}
+}
+ele.style.height = slideshare_object.player.height + 'px';
+ele.style.width  = slideshare_object.player.width  + 'px';
+$(ele).parent().height(slideshare_object.player.height + 'px')
+$(ele).parent().width(slideshare_object.player.width  + 'px');
+if(slideshare_object.player.url.match(/^http:\/\/s3.amazonaws.com\/ppt-download\//)){
+$(ele).prepend("<div style='margin-left:10px; margin-right: 10px; padding-top:5px;'>This presentation is best viewed in Safari on Apple computers. Due to the file size, please be patient while it loads.<br />This is an Adobe&reg; Acrobat&reg; 9 PDF Portfolio. If you are unable to view this, please download Adobe Acrobat 9 Reader here <a href='http://ad.doubleclick.net/clk;216811595;39562291;o?http://get.adobe.com/reader/?sdid=EVMYF' >http://get.adobe.com/reader</a></div>");
+window.setInterval("$('#svPlayerId div').remove()",20000);
+}
+}
+})(document.getElementById('svPlayerId'));
+// ]]>
+</script>
+
+
+<div class="clearfix FBlike">
+<h2>Like this presentation?</h2>
+<iframe scrolling="no" class="h-fb-like" allowtransparency="true" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.slideshare.net%2Fdanbri%2Fopen-web-standards-and-classication-foundations-for-a-hybrid-approach&amp;layout=standard&amp;show_faces=false&amp;width=340&amp;action=like&amp;colorscheme=light" frameborder="0" style="border:0;float:left;height:25px;margin:0;overflow:hidden;width:390px"></iframe>
+</div>
+<div class="tabsContainer tabbox horzTabs" id="commentsNotes">
+<div class="commentsTab tab selected comments-tab h-comments-tab">
+<h2 class="comment-value"><a href="#commentsList" rel="nofollow"><span class="comments-total">No comments yet</span></a></h2>
+<div class="tabContent" id="commentsList">
+
+<ul class="comments h-comments-list"></ul>
+
+
+<form class="postComment h-comment-post" method="post" action="#" id="postComment" accept-charset="utf-8">
+<fieldset>
+<div id="loginOptions">
+<div id="my_identity"></div>
+</div>
+<textarea class="h-post-comment-textarea j-post-comment-textarea" rows="4" cols="40"></textarea>
+<div class="h-non-user-message">
+<div>
+<a href="#" title="Just include the embed code in the comment. We support embeds from Youtube, Google Videos, BlipTV, Metacafe, Viddler, Yahoo Videos and several other approved sites only." class="ilink floatLeft j-tooltip" rel="nofollow">Embed Video</a>
+<span class="floatRight">
+<label class="comments-subscribe" for="followupComments">
+<input name="" id="followupComments" type="checkbox" value="" />
+Subscribe to comments
+</label>
+</span>
+</div>
+<a href="/signup?from=comments&from_source=http%3A%2F%2Fwww.slideshare.net%2Fdanbri%2Fopen-web-standards-and-classication-foundations-for-a-hybrid-approach" class="ctaNormal floatRight" rel="nofollow" id="login-provider-slideshare">Post Comment</a>
+</div>
+
+</fieldset>
+</form>
+<div class="captchaSection captcha anon-only" id="simple_captcha" style="display:none">
+</div>
+<form class="updateComment update-form" method="post" action="#" accept-charset="utf-8">
+<fieldset>
+<legend>Edit your comment</legend>
+<textarea rows="4" cols="40"></textarea>
+<input class="bold floatRight action-update" type="submit" value="Update" />
+<a href="#" class="ilink floatRight action-cancel" rel="nofollow">Cancel</a>
+</fieldset>
+</form>
+</div>
+</div>
+<div class="notesTab tab notes-tab">
+<h2><a href="#notesList" rel="nofollow">Speaker Notes on slide <span class="which-slide-value">1</span></a></h2>
+<div class="tabContent h-notes" id="notesList"></div>
+</div>
+</div>
+<div class="clearfix medRecBottom2">
+<div class="slideview_bottom2_fill"><script type="text/javascript">
+ GA_googleFillSlot("slideview_bottom2"); 
+</script></div>
+
+</div><!-- .medRecBottom2 -->
+<div class="tabsContainer tabbox horzTabs" id="favsGroupsEvents">
+<div class="favsTab selected tab">
+<h2><a href="#favsList" class="h-favorites-title" rel="nofollow">9 Favorites</a></h2>
+<div class="tabContent" id="favsList">
+<ul class="favsGroups h-favorites-list">
+<li>
+<strong><a href="/gracemcdunnough" title="gracemcdunnough" class="fn url userimage-link" rel="nofollow"><img src="http://cdn.slidesharecdn.com/profile-photo-gracemcdunnough?1236093816" alt="gracemcdunnough" /><span class="h-username">Grace McDunnough</span></a></strong><span class="h-occupation"></span><span class="org h-organization"></span>
+<span class="quiet h-summary"><span class='when-fav-value'>7 months ago</span></span>
+<div class="h-tags"></div>
+</li>
+
+<li>
+<strong><a href="/Michael55555" title="Michael55555" class="fn url userimage-link" rel="nofollow"><img src="http://public.slidesharecdn.com/images/userImage_SMALL.gif" alt="Michael55555" /><span class="h-username">Mike Fokin</span></a></strong><span class="h-occupation"></span><span class="org h-organization"></span>
+<span class="quiet h-summary"><span class='when-fav-value'>2 years ago</span></span>
+<div class="h-tags">Tags <strong><a href='/tag/openweb' rel='nofollow'>openweb</a></strong> <strong><a href='/tag/skos' rel='nofollow'>skos</a></strong></div>
+</li>
+
+<li>
+<strong><a href="/igorb" title="igorb" class="fn url userimage-link" rel="nofollow"><img src="http://public.slidesharecdn.com/images/userImage_SMALL.gif" alt="igorb" /><span class="h-username">Igor Brbre</span></a></strong><span class="h-occupation"></span><span class="org h-organization"> at IZUM, </span>
+<span class="quiet h-summary"><span class='when-fav-value'>2 years ago</span></span>
+<div class="h-tags"></div>
+</li>
+
+<li>
+<strong><a href="/lukask" title="lukask" class="fn url userimage-link" rel="nofollow"><img src="http://cdn.slidesharecdn.com/profile-photo-lukask?1255727454" alt="lukask" /><span class="h-username">Lukas Koster</span></a></strong><span class="h-occupation">, Library Systems Coordinator </span><span class="org h-organization"> at Library of the University of Amsterdam, </span>
+<span class="quiet h-summary"><span class='when-fav-value'>2 years ago</span></span>
+<div class="h-tags"></div>
+</li>
+
+<li>
+<strong><a href="/kidehen" title="kidehen" class="fn url userimage-link" rel="nofollow"><img src="http://public.slidesharecdn.com/images/userImage_SMALL.gif" alt="kidehen" /><span class="h-username">Kingsley Idehen</span></a></strong><span class="h-occupation">, CEO, Software Company </span><span class="org h-organization"> at OpenLink Software, </span>
+<span class="quiet h-summary"><span class='when-fav-value'>2 years ago</span></span>
+<div class="h-tags">Tags <strong><a href='/tag/linkeddata' rel='nofollow'>linkeddata</a></strong></div>
+</li>
+
+<li>
+<strong><a href="/jodischneider" title="jodischneider" class="nickname url userimage-link" rel="nofollow"><img src="http://public.slidesharecdn.com/images/userImage_SMALL.gif" alt="jodischneider" /><span class="h-username">jodischneider</span></a></strong><span class="h-occupation"></span><span class="org h-organization"></span>
+<span class="quiet h-summary"><span class='when-fav-value'>2 years ago</span></span>
+<div class="h-tags">Tags <strong><a href='/tag/semantic-libraries' rel='nofollow'>semantic libraries</a></strong> <strong><a href='/tag/classification' rel='nofollow'>classification</a></strong></div>
+</li>
+
+<li>
+<strong><a href="/areggiori" title="areggiori" class="fn url userimage-link" rel="nofollow"><img src="http://public.slidesharecdn.com/images/userImage_SMALL.gif" alt="areggiori" /><span class="h-username">Alberto Attilio Reggiori</span></a></strong><span class="h-occupation"></span><span class="org h-organization"> at Media Metadata, </span>
+<span class="quiet h-summary"><span class='when-fav-value'>2 years ago</span></span>
+<div class="h-tags">Tags <strong><a href='/tag/web-standards' rel='nofollow'>web standards</a></strong> <strong><a href='/tag/ddc' rel='nofollow'>ddc</a></strong> <strong><a href='/tag/taxonomies' rel='nofollow'>taxonomies</a></strong> <strong><a href='/tag/skos' rel='nofollow'>skos</a></strong> <strong><a href='/tag/danbri' rel='nofollow'>danbri</a></strong></div>
+</li>
+
+<li>
+<strong><a href="/IanMulvany" title="IanMulvany" class="fn url userimage-link" rel="nofollow"><img src="http://cdn.slidesharecdn.com/profile-photo-IanMulvany?1232665628" alt="IanMulvany" /><span class="h-username">Ian Mulvany</span></a></strong><span class="h-occupation">, product development manager, NPG </span><span class="org h-organization"> at Nature Publishing Group, </span>
+<span class="quiet h-summary"><span class='when-fav-value'>2 years ago</span></span>
+<div class="h-tags"></div>
+</li>
+
+<li>
+<strong><a href="/ahagenbruch" title="ahagenbruch" class="fn url userimage-link" rel="nofollow"><img src="http://cdn.slidesharecdn.com/profile-photo-ahagenbruch?1242733177" alt="ahagenbruch" /><span class="h-username">André Hagenbruch</span></a></strong><span class="h-occupation">, Software engineer </span><span class="org h-organization"> at University Library Bochum, </span>
+<span class="quiet h-summary"><span class='when-fav-value'>2 years ago</span></span>
+<div class="h-tags"></div>
+</li>
+</ul>
+<div class="viewMore action-morefavs" style="display:none"><a href="#" class="ilink" rel="nofollow">more</a></div>
+</div>
+</div>
+
+<!-- downloader list starts here -->
+
+<!-- downloader list ends here -->
+</div>
+<div class="slideshow-transcript">
+<a rel="nofollow" id="text-version"></a>
+<h2 class="h-slideshow-title">Describing Everything - Open Web standards and classiﬁcation - Webinar Transcript</h2>
+<!-- disable_ad_section_start(weight=0.5) -->
+<ol class="transcripts h-transcripts"><li>Open Web standards and classification:  Foundations for a hybrid approach UDC Seminar: Classification at a Crossroads The Hague, 30 October 2009 Dan Brickley,  Vrije University Amsterdam </li><li>Enough about me: <ul><li>Confession - not a librarian.  </li></ul><ul><li>(not a classification expert either) </li></ul><ul><li>Accidental technologist - </li></ul><ul><ul><li>Subject Gateways, eLib, SOSIG &amp; DESIRE </li></ul></ul><ul><ul><li>Web technologies for ‘knowledge sharing’ </li></ul></ul><ul><ul><li>Semantic Web standards: RDF, SKOS, OWL </li></ul></ul></li><li>Principles not Technology <ul><li>Foundations for a hybrid approach? </li></ul><ul><ul><li>introduction - historical ‘Web’ view. </li></ul></ul><ul><ul><li>principles: obvious, idealistic, and inevitable. </li></ul></ul><ul><ul><li>some examples from TV &amp; today. </li></ul></ul><ul><ul><li>practical suggestions for using Web... </li></ul></ul></li><li>&nbsp;</li><li>credit: chroniclingamerica.loc.gov Big and getting bigger... </li><li>1000 small answers <ul><li>tools, datasets, strategies, techniques </li></ul><ul><li>individual pieces are fragmented, isolated </li></ul><ul><li>closed datasets, software systems </li></ul><ul><li>most classification work today is hidden from most of humanity </li></ul></li><li>Back to basics <ul><ul><li>origins of the Web </li></ul></ul><ul><ul><li>origins of subject classification </li></ul></ul><ul><ul><li>(deceptively?) simple suggestions </li></ul></ul></li><li>&nbsp;</li><li>Need for hybrid models: <ul><li>1000,000,000,000 pages; 7,000,000,000 people </li></ul><ul><li>Information reproducing fast than we are! </li></ul><ul><li>Beware false oppositions: </li></ul><ul><ul><li>tags ‘vs’ KOS </li></ul></ul><ul><ul><li>automation ‘vs’ cataloguing </li></ul></ul><ul><ul><li>ontology ‘vs’ classification </li></ul></ul><ul><ul><li>Web 2.0 ‘vs’ tradition </li></ul></ul></li><li>‘ Hybrid’ means sharing <ul><li>New combinations of tools and data </li></ul><ul><li>Using standards (W3C SKOS, ISO, ...) </li></ul><ul><li>Letting data flow between systems </li></ul></li><li>Varieties of knowledge <ul><li>‘ Bibliographic facts’, disciplinary views. </li></ul><ul><li>Classifications and thesauri; linked. </li></ul><ul><li>Increasing quantities of base factual data. </li></ul><ul><li>Maps, biographies, Wikipedia, Data.gov, ... </li></ul><ul><li>Ontologies can model books or the world. </li></ul><ul><li>We seem to need both... </li></ul></li><li>Hybrid models <ul><li>human classification mixed with automatic </li></ul><ul><li>professional schemes mixed with user tags </li></ul><ul><li>thing-oriented ontologies mixed with discipline-oriented subject classifications </li></ul></li><li>Common aspects <ul><li>much innovation underway in each area </li></ul><ul><li>each combines different datasets and systems </li></ul></li><li>The Proposal: A fundamental strategy for faster innovation PUT OUR DATA IN THE WEB (SO OTHERS FIND IT &amp; USE IT &amp; IMPROVE IT) </li><li>Once again. <ul><li>We need to put our data in the Web. </li></ul><ul><li>In public. Downloadable. Linkable.  </li></ul><ul><li>Using standard formats.  </li></ul><ul><li>Enthusiastically! loudly! and soon! </li></ul></li><li>What kind of data? <ul><li>Thesauri, classification systems, KOS. </li></ul><ul><li>Controlled lists of names and named entities. </li></ul><ul><li>Autoclass configs. Tag cloud linkage. Mappings. Translations. Local improvements. </li></ul><ul><li>Anything someone else might build on. </li></ul></li><li>Business Models <ul><li>there will be no “Netscape moment” for us </li></ul><ul><li>a gentle, peaceful decline in usage </li></ul><ul><li>Open Data communities are exploring many license and funding options - MusicBrainz, Wikipedia, Data.gov, data.gov.uk, OpenStreetMap, .... </li></ul><ul><li>No magic answer, but the Web is inevitable </li></ul></li><li>Interlude:  Television </li><li>Classification &amp; TV <ul><ul><li>Inspirations: Douglas Adams’  Hyperland </li></ul></ul><ul><ul><li>BBC and the ‘London Classification’  </li></ul></ul><ul><ul><li>Obama, Iran, CNN &amp; Debategraph </li></ul></ul><ul><ul><li>Freebase Parallax ‘sets and relationships’ </li></ul></ul></li><li>&nbsp;</li><li>Douglas Adams, “Hyperland, a fantasy documentary” (1990) </li><li>BBC Lonclass <ul><li>An adapted UDC, used since 1960s </li></ul><ul><li>Used internally to catalogue BBC materials </li></ul><ul><li>A cultural heritage artifact in its own right </li></ul></li><li>&nbsp;</li><li>&nbsp;</li><li>LETTER TO MRS THATCHER FROM SIR AUSTIN PEARCE, TELLING MOMENTS INVOLVING MARGARET THATCHER (PRIME MINISTER),  THATCHER IN THE TARDIS (ALEXEI SAYLE&apos;S STUFF COMEDY SKETCH)THATCHER FOUNDATION, RESIGNATION OF MARGARET THATCHER AS PRIME MINISTER, RESIGNATION OF MARGARET THATCHER AS MP, THATCHER MEETING WITH LECH WALESA (GDANSK) (NOVEMBER 1988), THATCHER&apos;S REJOICE STATEMENT AFTER THE BRITISH RECAPTURE OF SOUTH GEORGIA, DAVID OWEN IS MRS THATCHER IN A TROUSER SUIT (CATCHPHRASE), DEATH OF DENIS THATCHER,WHOLE REGIMENT OF CLICHES MARCHING INTO THE SUNSET (MARGARET THATCHER QUOTE) </li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>Examples <ul><li>R672:32.007(47)YELTSIN:342.518.1THATCHER “TWO SHOTS OF MARGARET THATCHER AND BORIS YELTSIN” </li></ul><ul><li>[BRITISH AEROSPACE].007.11PEARCE:656.881:342.518.1THATCHER “LETTER TO MRS THATCHER FROM SIR AUSTIN PEARCE” </li></ul><ul><li>656.881:301.162.721:32.007THATCHER:654.192.731TV-AM “MARGARET THATCHER&apos;S LETTER OF APOLOGY TO TV AM” </li></ul></li><li>Compositional Semantics <ul><li>656.881:301.162.721 “LETTERS OF APOLOGY” </li></ul><ul><li>656.881 “LETTERS (POSTAL SERVICES)” </li></ul><ul><li>656.881:06.022.6 “RESIGNATION LETTERS” </li></ul><ul><li>654.192.731TV-AM “TV AM (TELEVISION AM)” </li></ul></li><li>Then &amp; Now <ul><li>19th century: before modern linguistics, computers, the Internet or Web. </li></ul><ul><li>2009 - software engineers want to know how to  parse  these codes and store/query them. </li></ul><ul><li>how to modularise, link out (eg. more info about TV-AM, Mrs Thatcher, artists, topics...). </li></ul></li><li>&nbsp;</li><li>From classification to argumentation wikis? News in Context? debategraph.org </li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>Obama in Cairo </li><li>&nbsp;</li><li>&nbsp;</li><li>Meanwhile, in LCSH... </li><li>a ‘SKOS page’ describing every LCSH concept: </li><li>&nbsp;</li><li>Freebase Parallax </li><li>&nbsp;</li><li>&nbsp;</li><li>Hypertext Television? <ul><li>Every show or scene linked to context </li></ul><ul><li>...to dialogue, to debate, to literature </li></ul><ul><li>So long as the basic structures are in place </li></ul><ul><ul><li>from librarians? journalists? users?  everyone? </li></ul></ul></li><li>( End of TV intermission ) </li><li>LCSH is in the Web http://id.loc.gov/authorities/sh85067887# concept All of LCSH, officially, in modern machine formats, is part of the public Web. </li><li>Not just LCSH <ul><li>AGROVOC, RAMEAU, Wikipedia in SKOS </li></ul><ul><li>Dewey.info and UDC experimentation </li></ul><ul><li>A dozen or more thesauri in SKOS </li></ul><ul><li>Described and shared in the Web... </li></ul></li><li>Developer perspective <ul><li>Imagine you are a 20 year old programmer. </li></ul><ul><li>You don’t even remember before the Web, never mind the Mundaneum.  </li></ul><ul><li>You’re asked to make a useful, usable site from data full of UDC or DDC codes - numbers and punctuation. Help!!! </li></ul><ul><li>You’re told it’s “some library thing...”. </li></ul><ul><li>How can you write software to handle it? Who will help? Whose work can you build on? What linked datasets can you exploit? </li></ul></li><li>Ted Nelson, transliterature.org “ Tekkies think that electronic documents and the World Wide Web are something completely new and that they own it, exactly the way every generation of teenagers thinks they&apos;ve invented sex and it&apos;s their secret. But it&apos;s not new and they don&apos;t own it.  Word processing and the World Wide Web are not intrinsically new.  They are literature. What is literature?  Literature is (among other things) the study and design of documents, their structure and connections.  Therefore today&apos;s electronic documents are literature, electronic literature, and the question is what electronic literature people really need.” </li><li>&nbsp;</li><li>Not just coders... <ul><li>Interface designers </li></ul><ul><li>Information Retrieval experts </li></ul><ul><li>Information Architects </li></ul><ul><li>Data mining researchers </li></ul><ul><li>Ontologists </li></ul><ul><li>Other people like you </li></ul></li><li>UDC - an invisible Web? <ul><li>A huge community of practice links libraries across Europe and the World </li></ul><ul><li>Dozens of systems, datasets, mappings, enrichments </li></ul><ul><li>Seminars are a great way to share experiences </li></ul><ul><li>.... and the Web is a great way to share and link data. </li></ul></li><li>In 5 years time... <ul><li>What data and tools can we show the developers who make Firefox (35% European web users use it) </li></ul><ul><li>Or Drupal 7 (which powers 1000s of sites) </li></ul><ul><li>Or OpenOffice (where docs are written) </li></ul><ul><li>Or Google? </li></ul></li><li>Warning signs <ul><li>Q: Why don’t you show labels on the codes? </li></ul><ul><li>A: Because we’d have to buy a license. </li></ul></li><li>For discussion <ul><li>The road to relevance in the modern Web is through developers, designers and content creators. </li></ul><ul><li>Without them, we’ll drown in data. </li></ul><ul><li>Without our data, they won’t know how to help ... or realise that they want to? </li></ul></li><li>&nbsp;</li><li>Acknowledgements &amp; Links: <ul><li>http://www.w3.org/Illustrations/LetsShare.ai  graphic design by Robert Cailliau </li></ul><ul><li>Lonclass visuals generated by Max Froumentin&apos;s Textorizer -  http://lapin-bleu.net/software/textorizer/ </li></ul><ul><li>&apos;Palais Mondial, Rooms of the Documentary Encylopedia&apos; from W. Boyd Rayward, &amp;quot;The Universe of Information - The work of Paul Otlet for documentation and international organisation&amp;quot; (FID 520), Moscow : Published for International Federation for Documentation (FID) by All-Union Institute for Scientific and Technical Information (VINITI), 1975. p.237.  http://people.lis.illinois.edu/~wrayward/otlet/PAUL_OTLET_REFLECTIONS_ON_BIOG.HTM </li></ul><ul><li>Paul Otlet estimates on number of printed books, from Shiner gazette. (Shiner, Tex.), August 31, 1904. via  http://chroniclingamerica.loc.gov/lccn/sn86090270/1904-08-31/ed-1/seq-7/ </li></ul><ul><li>Google Blog, &amp;quot;We knew the web was big...&amp;quot; 25 July 2008,  http://googleblog.blogspot.com/2008/07/we-knew-web-was-big.html </li></ul><ul><li>Debategraph project,  http://www.debategraph.org / </li></ul><ul><li>Ted Nelson - Transliterature, A Humanist Design.  http://transliterature.org/ </li></ul><ul><li>Douglas Adams, &apos;Hyperland&apos; (BBC2 TV documentary, 1990), featuring Tom Baker.  http://www.imdb.com/title/tt0188677/   http://en.wikipedia.org/wiki/Hyperland </li></ul><ul><li>LCSH in the Web,  http://id.loc.gov/authorities/  see  http://en.scientificcommons.org/ed_summers  for design discussions, Ed Summers et al.; and thanks to Ed for discussions  </li></ul><ul><li>Freebase Parallax by David Huynh,  http://www.freebase.com/labs/parallax/ </li></ul><ul><li>Many thanks to my NoTube, VU and FOAF collaborators for ideas and brainstorming on Hypertext TV scenarios; in particular regarding UDC/Lonclass at the BBC, Vicky Buser, Libby Miller, Patrick Sinclair, Brendan Quinn, Yves Raimond and others have been exploring these issues; at VU this work is in collaboration with Guus Schreiber, Lora Aroyo, Antoine Isaac, Ronald Siebes and Chris van Aart; also many thanks to Aida Slavi ć  for help understanding the nature and structure of UDC. </li></ul></li></ol>
+</div>
+<!-- disable_ad_section_end() -->
+</div>
+<div class="column2">
+<div class="clearfix details">
+<p class="author no-zNominate-only no-lead">
+<a href="/danbri" class="userimage-link j-tooltip-bottom" title="danbri | Click here to type..."><img src="http://cdn.slidesharecdn.com/profile-photo-danbri?1212174727" alt="danbri" /><span class="h-username">danbri</span></a>
+
+<span class="h-section-add-contact potential-contact user-1817606"><a href="/signup?from=addcontact&from_source=http%3A%2F%2Fwww.slideshare.net%2Fdanbri%2Fopen-web-standards-and-classication-foundations-for-a-hybrid-approach" title="Follow this user" class="followAuthor ctaNormal h-action-add-contact j-tooltip-bottom" rel="nofollow">+ Follow</a></span>
+</p>
+
+
+<p class="stats">
+<span class="stats-text"><span class="h-view-count viewCount">13481 views</span><span class="h-other-count">, 9 favs, 6 embeds</span></span> <a href="#" class="ilink h-toggle-description" rel="nofollow">more</a> 
+</p>
+<!-- disable_ad_section_start(weight=0.5) -->
+<div class="description h-not-truncated" style="display:none">
+<p>Original title: Open Web standards and classiﬁcation: Foundations for a hybrid approach<br /><br />Keynote address, UDC Seminar: <br />Classiﬁcation at a Crossroads<br />30 October 2009 Koninklijke Bibliotheek, The Hague<br /><br />Dan Brickley, Vrije University Amsterdam</p>
+</div>
+<!-- disable_ad_section_end() -->
+</div>
+<div class="ad_300x25 lostchild slideview_link1_fill" style="border:0;margin:0;padding:0;width:300px"><!--
+<script type="text/javascript">
+  GA_googleFillSlot("slideview_link");
+</script>
+--></div>
+<script type="text/javascript">
+// <![CDATA[
+if (window.slideshare_object && slideshare_object.remove_if_blank) { slideshare_object.remove_if_blank('.slideview_link1_fill'); }
+// ]]>
+</script>
+
+<div class="column2Sidebar">
+<div class="tabsContainer tabbox horzTabs" id="moreRelated">
+<div class="tab selected related-tab h-related-tab">
+<h2><a href="#relatedList" rel="nofollow">Related</a></h2>
+<div class="tabContent" id="relatedList">
+<ul class="clearfix moreRelated h-related-slideshows">
+<li>
+<a href="/nichtich/wikipedia-as-knowledge-organization-system-2374373" title="Wikipedia as Knowledge Organization System">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/homevojmypublications20092009-udcseminarudc2009-voss-wikipedia-as-kos-091029060119-phpapp01-thumbnail-2?1258017770" height="69" alt="Wikipedia as Knowledge Organization System" width="92" />
+</span>
+<span class="h-title">Wikipedia as Knowledge Organization System</span></a>
+<span class="quiet h-stat">2389 views</span>
+</li>
+
+<li>
+<a href="/seanb/skos-past-present-and-future" title="SKOS, Past, Present and Future">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/skos-eswc-100603033738-phpapp01-thumbnail-2?1275554404" height="69" alt="SKOS, Past, Present and Future" width="92" />
+</span>
+<span class="h-title">SKOS, Past, Present and Future</span></a>
+<span class="quiet h-stat">1854 views</span>
+</li>
+
+<li>
+<a href="/danbri/understanding-the-standards-gap-1521577" title="Understanding the Standards Gap">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/zadar-dc-standardsgap-090602083832-phpapp01-thumbnail-2?1243949930" height="69" alt="Understanding the Standards Gap" width="92" />
+</span>
+<span class="h-title">Understanding the Standards Gap</span></a>
+<span class="quiet h-stat">1287 views</span>
+</li>
+
+<li>
+<a href="/drupalcon/danbri-drupalcon-export" title="Danbri Drupalcon Export">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/danbri-drupalcon-export-091011074631-phpapp02-thumbnail-2?1255265216" height="69" alt="Danbri Drupalcon Export" width="92" />
+</span>
+<span class="h-title">Danbri Drupalcon Export</span></a>
+<span class="quiet h-stat">355 views</span>
+</li>
+
+<li>
+<a href="/danbri/semweb-fundamentals-info-linking-layering-in-practice" title="SemWeb Fundamentals - Info Linking &amp; Layering in Practice">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/danbri-drupalcon-key-100408092151-phpapp01-thumbnail-2?1270736582" height="69" alt="SemWeb Fundamentals - Info Linking &amp; Layering in Practice" width="92" />
+</span>
+<span class="h-title">SemWeb Fundamentals - Info Linking &amp; Layering in Practice</span></a>
+<span class="quiet h-stat">683 views</span>
+</li>
+
+<li>
+<a href="/gardensofmeaning/the-web-and-skos-isko-july-2008" title="The Web and SKOS, ISKO July 2008">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/isko200807-1216629114767187-8-thumbnail-2?1231920562" height="69" alt="The Web and SKOS, ISKO July 2008" width="92" />
+</span>
+<span class="h-title">The Web and SKOS, ISKO July 2008</span></a>
+<span class="quiet h-stat">1506 views</span>
+</li>
+
+<li>
+<a href="/charper/c4l2008charper" title="C4l2008charper">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/c4l2008charper-12050845137740-5-thumbnail-2?1205077314" height="69" alt="C4l2008charper" width="92" />
+</span>
+<span class="h-title">C4l2008charper</span></a>
+<span class="quiet h-stat">551 views</span>
+</li>
+
+<li>
+<a href="/gardensofmeaning/simple-knowledge-organization-system-skos-in-the-context-of-semantic-web-deployment-library-of-congress-may-2008" title="Simple Knowledge Organization System (SKOS) in the Context of Semantic Web Deployment, Library of Congress, May 2008">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/loc200805-1210587992088960-9-thumbnail-2?1210580894" height="69" alt="Simple Knowledge Organization System (SKOS) in the Context of Semantic Web Deployment, Library of Congress, May 2008" width="92" />
+</span>
+<span class="h-title">Simple Knowledge Organization System (SKOS) in the Context&hellip;</span></a>
+<span class="quiet h-stat">4244 views</span>
+</li>
+
+<li>
+<a href="/Zubin67/idnsoftwareppt" title="IDN_Software.ppt">
+
+<span class="no-docThumbOverlay">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/idnsoftwareppt1641-thumbnail-2?1273131856" height="69" alt="IDN_Software.ppt" width="92" />
+</span>
+<span class="h-title">IDN_Software.ppt</span></a>
+<span class="quiet h-stat">219 views</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="tab more-tab">
+<h2><a href="#moreList" rel="nofollow">More by user</a></h2>
+<div class="tabContent" id="moreList">
+<ul class="clearfix moreRelated h-author-slideshows">
+<li>
+<a href="/danbri/intertwingularity-semantic-web-and-linked-geo-data" title="Intertwingularity, Semantic Web and linked Geo data">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/danbri-geonovum-101102092922-phpapp01-thumbnail-2?1288708262" height="69" alt="Intertwingularity, Semantic Web and linked Geo data" width="92" />
+<span class="h-title">Intertwingularity, Semantic Web and linked Geo data</span></a>
+<span class="quiet h-stat">575 views</span>
+</li>
+
+<li>
+<a href="/danbri/harmony-project-jisc-synthesis-meeting-2001" title="Harmony project - JISC Synthesis meeting 2001">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/abc-harm-jisc-review-100913024826-phpapp01-thumbnail-2?1284364171" height="69" alt="Harmony project - JISC Synthesis meeting 2001" width="92" />
+<span class="h-title">Harmony project - JISC Synthesis meeting 2001</span></a>
+<span class="quiet h-stat">180 views</span>
+</li>
+
+<li>
+<a href="/danbri/ar-dev-amsterdam" title="AR Dev Amsterdam">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/danbri-intro-100416174035-phpapp02-thumbnail-2?1271458208" height="69" alt="AR Dev Amsterdam" width="92" />
+<span class="h-title">AR Dev Amsterdam</span></a>
+<span class="quiet h-stat">563 views</span>
+</li>
+
+<li>
+<a href="/danbri/semweb-fundamentals-info-linking-layering-in-practice" title="SemWeb Fundamentals - Info Linking &amp; Layering in Practice">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/danbri-drupalcon-key-100408092151-phpapp01-thumbnail-2?1270736582" height="69" alt="SemWeb Fundamentals - Info Linking &amp; Layering in Practice" width="92" />
+<span class="h-title">SemWeb Fundamentals - Info Linking &amp; Layering in Practice</span></a>
+<span class="quiet h-stat">683 views</span>
+</li>
+
+<li>
+<a href="/danbri/acronym-soup" title="Acronym Soup">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/acronym-soup-100309063135-phpapp01-thumbnail-2?1268137903" height="69" alt="Acronym Soup" width="92" />
+<span class="h-title">Acronym Soup</span></a>
+<span class="quiet h-stat">1506 views</span>
+</li>
+
+<li>
+<a href="/danbri/wai-talk-xmpp" title="XMPP, TV and the Semantic Web">
+<img class="h-thumbnail" src="http://cdn.slidesharecdn.com/danbri-vu-wai-xmpp-100225092530-phpapp02-thumbnail-2?1267111647" height="69" alt="XMPP, TV and the Semantic Web" width="92" />
+<span class="h-title">XMPP, TV and the Semantic Web</span></a>
+<span class="quiet h-stat">1353 views</span>
+</li>
+</ul>
+<a href="/danbri/slideshows" title="View all presentations from this user" class="viewAll h-all-by-author">View all presentations from this user</a>
+</div>
+</div>
+
+
+</div>
+<!-- 300x250 ad begins here-->
+<div class="ad_300x250 adbox-outer lostchild ad_right_1"><script type="text/javascript"> 
+GA_googleFillSlot("slideview_right_1"); 
+</script>
+
+<!--
+<script type="text/javascript"> 
+if (random_number < .5) { GA_googleFillSlot("slideview_right_1"); } 
+else {  GA_googleFillSlot("slideview_right_1_exp"); } 
+</script>
+--></div>
+
+<!-- 300x250 ad ends here-->
+
+<!-- More info begins here-->
+<div class="moreInfo">
+<h2>About this <span class="type-string-down">webinar</span></h2>
+
+<h3>Usage Rights</h3>
+<p class="license">&copy; All Rights Reserved</p>
+<h3>Stats</h3>
+<ul class="clearfix detailedStats stats-bottom" id="stats-bottom">
+<li class="stats-favorites-count"><span class="favorites">9</span> <strong>Favorites</strong></li>
+<li class="stats-comments-count"><span class="comments">0</span> <strong>Comments</strong></li>
+<li class="stats-downloads-count"><span class="downloads">23</span> <strong>Downloads</strong></li>
+<li class="h-stats-on-site-count"><span class="on-site">13,444</span> <strong>Views on <br />SlideShare</strong></li>
+<li class="h-stats-from-embed-count"><span class="from-embed">37</span> <strong>Views on <br />Embeds</strong></li>
+<li class="h-stats-views-count"><span class="views">13,481</span> <strong>Total Views</strong></li>
+</ul>
+
+<div id="h-top-embeds">
+<h3>Embed views</h3>
+<ul class="embedsList h-embeds-list-top">
+<li><span class="views">17 views</span> on <em><span class="h-referer" rel="nofollow">http://www.notube.tv</span></em></li>
+
+<li><span class="views">9 views</span> on <em><span class="h-referer" rel="nofollow">http://blog.ryaneby.com</span></em></li>
+
+<li><span class="views">7 views</span> on <em><span class="h-referer" rel="nofollow">http://www.slideshare.net</span></em></li>
+
+<li><span class="views">2 views</span> on <em><span class="h-referer" rel="nofollow">http://notube.tv</span></em></li>
+
+<li><span class="views">1 views</span> on <em><span class="h-referer" rel="nofollow">http://www.notube.org</span></em></li>
+</ul>
+<p><a href="#" class="ilink action-moreembeds" rel="nofollow">more</a></p>
+</div>
+<div id="h-all-embeds">
+<h3>Embed views</h3>
+<ul class="embedsList h-embeds-list-all">
+<li><span class="views">17 views</span> on <em><span class="h-referer" rel="nofollow">http://www.notube.tv</span></em></li>
+
+<li><span class="views">9 views</span> on <em><span class="h-referer" rel="nofollow">http://blog.ryaneby.com</span></em></li>
+
+<li><span class="views">7 views</span> on <em><span class="h-referer" rel="nofollow">http://www.slideshare.net</span></em></li>
+
+<li><span class="views">2 views</span> on <em><span class="h-referer" rel="nofollow">http://notube.tv</span></em></li>
+
+<li><span class="views">1 views</span> on <em><span class="h-referer" rel="nofollow">http://www.notube.org</span></em></li>
+
+<li><span class="views">1 views</span> on <em><span class="h-referer" rel="nofollow">http://notube.sti2.org</span></em></li>
+</ul>
+<p><a href="#" class="ilink action-lessembeds" rel="nofollow">less</a></p>
+</div>
+<h3>Accessibility</h3>
+<p class="text-version-link">View <a href="#text-version" rel="nofollow">text version</a></p>
+<h3>Additional Details</h3>
+<ul>
+<li class="owner-linkedin" id="slideview_on_linkedin">
+Also on <a href="http://www.linkedin.com/opensocialInstallation/preview?_ch_panel_id=1&amp;_applicationId=1200&amp;trk=p_slideshare" rel="nofollow">LinkedIn</a>
+</li>
+<li class="h-no-api-credit">
+Uploaded via <a href="/" rel="nofollow">SlideShare</a>
+</li>
+
+<li class="h-uploaded-as" style="">
+Uploaded as <a href="/" class="uploaded-as-text">Microsoft PowerPoint</a>
+</li>
+</ul>
+<!-- Flag begins here-->
+<div class="flag flag-inappropriate">
+<a href="/signup?from=flagss&from_source=http%3A%2F%2Fwww.slideshare.net%2Fdanbri%2Fopen-web-standards-and-classication-foundations-for-a-hybrid-approach" class="action-flag" rel="nofollow">
+<span title="This webinar has been flagged" class="flagged">Flagged as inappropriate</span>
+<span title="Flag this webinar as inappropriate" class="flag">Flag as inappropriate</span>
+</a>
+<form method="post" action="#" accept-charset="utf-8" style="display:none">
+<fieldset>
+<legend>Flag as inappropriate</legend>
+<p>Select your reason for flagging this <span class="type-string-down">webinar</span> as inappropriate. If needed, use the <a href="/feedback" title="FeedBack" rel="nofollow">feedback</a> form to let us know more details.</p>
+<select name="ia_value">
+<option value="0">None</option>
+<option value="1">Pornographic</option>
+<option value="3">Defamatory</option>
+<option value="4">Illegal/Unlawful</option>
+<option value="6">Spam</option>
+<option value="5">Other Terms Of Service Violation</option>
+
+
+
+
+
+</select>
+<input class="action-submit" type="submit" value="Flag" />
+<a href="#" class="ilink action-cancel" rel="nofollow">Cancel</a>
+</fieldset>
+</form>
+</div><!-- Flag ends here-->
+<!-- Other issues similar to flagging begins here -->
+<div>
+<a href="http://www.slideshare.net/terms#dmca" rel="nofollow">File a copyright complaint</a>
+</div>
+<!-- End other issues -->
+<!-- SuperUser actions being here-->
+<!-- SuperUser actions end here-->
+</div><!-- More info, part 2 ends here-->
+<div class="sidebarPanel">
+<div id="slideshow-categories">
+<h2>Categories</h2>
+<!-- disable_ad_section_start(weight=0.75) -->
+<ul class="slideshow-categories">
+<li class="su-category"><strong><a href="/category/education">Education</a></strong></li>
+<li class="category"><strong><a href="/category/technology">Technology</a></strong></li>
+</ul>
+<!-- disable_ad_section_end() -->
+</div>
+<div class="slideshow-tags">
+<h2>Tags</h2>
+<!-- disable_ad_section_start(weight=1.0) -->
+<ul class="tags">
+<li><strong>
+<a href="/tag/udc-udc2009-notube-tv-hypertext-libraries-ontology" rel="nofollow">udc udc2009 notube tv hypertext libraries ontology</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/skos" rel="nofollow">skos</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/openweb" rel="nofollow">openweb</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/danbri" rel="nofollow">danbri</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/taxonomies" rel="nofollow">taxonomies</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/web-standards" rel="nofollow">web standards</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/linkeddata" rel="nofollow">linkeddata</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/classification" rel="nofollow">classification</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/ddc" rel="nofollow">ddc</a>
+</strong></li>
+
+<li><strong>
+<a href="/tag/semantic-libraries" rel="nofollow">semantic libraries</a>
+</strong></li>
+</ul>
+<!-- disable_ad_section_end() -->
+</div>
+
+
+</div>
+<div class="sidebarPanel">
+<h2>Follow SlideShare</h2>
+<ul class="socialProfiles">
+<li><a href="http://twitter.com/slideshare" class="iconTwitter g-slideview" title="Follow SlideShare on Twitter" rel="nofollow">Twitter</a></li>
+<li><a href="http://www.facebook.com/slideshare" class="iconFacebook g-slideview" title="Follow SlideShare on Facebook" rel="nofollow">Facebook</a></li>
+<li><a href="http://blog.slideshare.net" class="iconRSS g-slideview" title="Follow SlideShare's Blog Updates">SlideShare Blog</a></li>
+</ul>
+</div>
+<!-- right column bottom ad (block) start here  -->
+<div class="ad bottom_horizontal_google_ad_banner adbox-outer lostchild no-contest-only"><!--<script type="text/javascript">
+GA_googleFillSlot("slideview_bottom_300_250"); 
+</script>-->
+
+<!--
+<script type="text/javascript">
+if (random_number < .5){ GA_googleFillSlot("slideview_bottom_300_250"); } 
+else { GA_googleFillSlot("slideview_bottom_exp");}
+</script>
+--></div>
+<!-- right column bottom ad (block) end here  -->
+</div>
+</div> <!-- .column2Sidebar -->
+<div class="viralShare">
+<div class="clearfix viralShareItem">
+<a href="http://www.slideshare.net/share/tweet/2397710/Check%20out%20this%20SlideShare%20webinar%20:%20Describing%20Everything%20-%20Open%20Web%20standards%20a..." title="7 tweets. Tweet this to your followers on Twitter" class="tweet h-viral-tweet-button popup" rel="nofollow">
+<span class="count viral-count-twitter">7</span> <span class="plurality">tweets</span>
+</a>
+</div>
+<div class="clearfix viralShareItem">
+<a href="http://www.slideshare.net/share/facebook/2397710/Check%20out%20this%20SlideShare%20webinar%20:%20Describing%20Everything%20-%20Open%20Web%20standards%20a..." title="8 shares. Share this on Facebook" class="fbShare h-viral-facebook-button popup">
+<span class="count viral-count-facebook">8</span> <span class="plurality">shares</span>
+</a>
+</div>
+<div class="clearfix viralShareItem h-gBuzz-div">
+<a href="http://www.slideshare.net/share/googlebuzz/2397710/Check%20out%20this%20SlideShare%20webinar%20:%20Describing%20Everything%20-%20Open%20Web%20standards%20a..." title="7 shares. Share this on Google Buzz" class="gBuzz h-viral-buzz-button popup">
+<span class="count viral-count-buzz">7</span> <span class="plurality">shares</span>
+</a>
+</div>
+<div class="clearfix viralShareItem">
+<a href="#fancybox-holder" title="Share this on WordPress" class="wpShare h-viral-wordpress-button fancybox inline">WordPress</a>
+</div>
+<div class="clearfix viralShareItem">
+<a href="http://www.slideshare.net/share/blogspot/2397710" title="Share this on Blogger" class="bloggerShare h-viral-blogger-button popup">Blogger</a>
+</div>
+<div class="clearfix viralShareItem">
+<a href="#fancybox-holder" title="More share options" class="moreLink h-viral-more-link fancybox">More <br />options</a>
+</div>
+
+</div>
+<div id="fancybox-holder" style="display:none;">&nbsp;</div>
+<div class="clear clearfix medRecBelowTranscript">
+<div class="slideview_below_transcript_fill"><script type='text/javascript'>
+GA_googleFillSlot("slideview_below_transcript");
+</script></div>
+</div>
+<div class="h-modal-signup" id="j-modal-signup" style="display:none">
+<a href="/signup?from=contest&from_source=http%3A%2F%2Fwww.slideshare.net%2Fdanbri%2Fopen-web-standards-and-classication-foundations-for-a-hybrid-approach" title="trigger link for fancybox signup">modal signup</a>
+</div>
+<div class="clearfix footer-09">
+<div class="clearfix">
+<div class="sponsoredA">
+<div class="sponsoredA1"><script type="text/javascript">
+  GA_googleFillSlot("footer");
+</script>
+
+<!--
+<script type='text/javascript'>
+GA_googleFillSlot("pixel_tracker");
+</script>
+--></div>
+</div>
+<form class="headerSearch" method="get" action="/search/slideshow">
+<fieldset>
+<input name="searchfrom" type="hidden" value="footer" />
+<span class="suggestionContainer">
+<input name="q" class="text" id="search_query_bottom" type="text" value="" autocomplete="off" />
+</span>
+<input class="ctaStrong" type="submit" value="Search" />
+</fieldset>
+</form>
+<div class="sponsoredB">
+</div>
+</div>
+<div class="links">
+<div class="fColumn fColumnSmall">
+<ul class="linksList">
+<li><strong>Learn About Us</strong></li>
+<li><a href="/about" title="About us" rel="nofollow">About us</a></li>
+<li><a href="/about/workatslideshare" title="Work with us" rel="nofollow">Work with us</a></li>
+<li><a href="http://blog.slideshare.net" title="Our Blog">Our Blog</a></li>
+<li><a href="/about/press" title="Press" rel="nofollow">Press</a></li>
+<li><a href="/help" title="Get Help" rel="nofollow">GET HELP</a></li>
+</ul>
+</div>
+<div class="fColumn fColumnMid">
+<ul class="linksList">
+<li><strong>Using SlideShare</strong></li>
+<li><a href="/tour" title="Quick Tour" rel="nofollow">Quick Tour</a></li>
+<li><a href="/terms" title="Terms of Use" rel="nofollow">Terms of Use</a></li>
+<li><a href="/privacy" title="Privacy Policy" rel="nofollow">Privacy Policy</a></li>
+<li><a href="/terms#dmca" title="Copyright &amp; DMCA" rel="nofollow">Copyright &amp; DMCA</a></li>
+<li><a href="/community_guidelines" title="Community Guidelines" rel="nofollow">Community Guidelines</a></li>
+</ul>
+</div>
+<div class="fColumn fColumnSmall">
+<ul class="linksList">
+<li><strong>SlideShare Outside</strong></li>
+<li><a href="http://bit.ly/SlideshareOnFacebook" title="SlideShare for Facebook" rel="nofollow">Facebook App</a></li>
+<li><a href="http://slidesha.re/SlideShareOnLinkedIn" title="SlideShare for LinkedIn" rel="nofollow">LinkedIn App</a></li>
+<li><a href="/mobile" title="SlideShare Mobile" rel="nofollow">SlideShare Mobile</a></li>
+</ul>
+</div>
+<div class="fColumn">
+<ul class="linksList">
+<li><strong>Pro &amp; more</strong></li>
+<li><a href="/business/premium/plans?cmp_src=footer" title="Go Pro" rel="nofollow">Go Pro</a></li>
+<li><a href="/business/leadshare" title="Capture Leads" rel="nofollow">Capture Leads</a></li>
+<li><a href="http://premium.slideshare.net/advertise" title="Advertise with us" rel="nofollow">Advertise with us</a></li>
+<li><a href="https://slideshare.wufoo.com/forms/want-to-get-featured-on-the-homepage/" title="Get featured on homepage" rel="nofollow">Get featured on homepage</a></li>
+<li><a href="http://jobs.slideshare.com/" title="Jobs Board" rel="nofollow" target="_blank">Post a job</a></li>
+</ul>
+</div>
+<div class="fColumn last">
+<ul class="linksList">
+<li><strong>Developers &amp; API</strong></li>
+<li><a href="/developers" title="Developers section" rel="nofollow">Developers section</a></li>
+<li><a href="http://groups.google.com/group/slideshare-developers?lnk=srg" title="Developers Group" rel="nofollow">Developers Group</a></li>
+<li><a href="/widgets/blogbadge" title="Widgets for your blog" rel="nofollow">Widgets for your blog</a></li>
+</ul>
+</div>
+</div>
+<p class="aboutSlideShare">
+<span class="slideshareBoys">&nbsp;</span>
+<strong>SlideShare is the world's largest community for sharing presentations.</strong> Upload and share on blogs, Twitter, Facebook or LinkedIn. 45 million people use SlideShare every month for research, sharing ideas, connecting with others, and generating business leads. SlideShare also supports documents, PDFs, and videos.
+<strong><a href="/signup?footer" title="Sign up for SlideShare">Get an account</a>.</strong>
+</p><!-- .aboutSlideShare -->
+<p class="followSlideShare">
+<a href="http://www.facebook.com/slideshare"><img src="http://public.slidesharecdn.com/images/facebook-slideshare.png?1291986223" height="33" alt="Like SlideShare on Facebook" width="110" /></a>
+<a href="http://www.twitter.com/slideshare"><img src="http://public.slidesharecdn.com/images/twitter-slideshare.png?1291986223" height="27" alt="Follow SlideShare on Twitter" width="160" /></a>
+</p>
+<p class="copyright">&copy; <span class="h-copyright-year">2010</span> SlideShare Inc. All rights reserved.</p>
+<li class="expanded action-addfav-new public-only" style="display:none">
+<form method="post" action="/search/slideshow" accept-charset="utf-8">
+<fieldset>
+<legend>Favorited!</legend>
+<label>You could add some tags too</label>
+<input class="text hinted-inputfield favorite-tags j-hint-tooltip" title="separate tags by comma" type="text" value="separate tags by comma" /><br />
+<label class="h-lcomments-in-fav-section">Have an opinion? Make a quick comment as well.</label>
+<textarea class="comments-in-fav-section h-lcomments-in-fav-section" rows="3" cols="3"></textarea>
+<input class="save submit h-fav-new-submit" type="submit" value="Post" />
+<a href="#" class="ilink cancel" rel="nofollow">Cancel</a>
+</fieldset>
+</form>
+</li><li class="expanded action-addfav-edit public-only" style="display:none">
+<form method="post" action="/search/slideshow" accept-charset="utf-8">
+<fieldset>
+<legend>Edit your favorites</legend>
+<input class="text hinted-inputfield favorite-tags j-hint-tooltip" title="separate tags by comma" type="text" value="" />
+<br />
+<input class="save submit" type="submit" value="Save" />
+<a href="#" class="ilink cancel" rel="nofollow">Cancel</a>
+</fieldset>
+</form>
+</li><li class="expanded action-addgrp-new public-only" style="display:none">
+<form method="post" action="/search/slideshow" accept-charset="utf-8">
+<fieldset>
+<legend>Send to your Group / Event</legend>
+<select>
+<option selected="selected" value="0">Select Group / Event</option>
+<optgroup label="Groups"></optgroup>
+<optgroup label="Events"></optgroup>
+</select>
+<label>Add your message</label>
+<textarea class="hinted-inputfield" rows="3" cols="7"></textarea>
+<input class="save submit" type="submit" value="Send" />
+<a href="#" class="ilink cancel" rel="nofollow">Cancel</a>
+</fieldset>
+</form>
+</li></div>
+</div>
+<noscript>
+<!-- Quantcast noscript tracking-->
+<img src="http://pixel.quantserve.com/pixel/p-abU44ONrAuwk2.gif" height="1" alt="Quantcast" style="border:0;display:none" width="1" />
+<!-- Comscore noscript tracking -->
+<img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=7400849&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c15=&amp;cj=1" height="1" alt=" " width="1" />
+</noscript>
+<script type="text/javascript">
+// <![CDATA[
+new Tabbox("moreRelated", { header: "h2", autosize: false, vertical: false, select: 0 });
+new Tabbox("commentsNotes", { header: "h2", autosize: false, vertical: false, select: 0 });
+new Tabbox("favsGroupsEvents", { header: "h2", autosize: false, vertical: false, select: 0 });
+if(slideshare_object.user.owner == true && getUrlVar("show_download_info") == "true#favsGroupsEvents"){
+$(".downloadsTab .downloadList-title").click();
+}
+(function() {
+function copy(fieldname) {
+var original = document.getElementById(fieldname);
+var duplicate = document.getElementById(fieldname + '2');
+if (original && duplicate) duplicate.value = original.value;
+}
+copy('embed-code');
+copy('embedCodeWP');
+copy('embedCodeWithoutRelated');
+copy('secret-url');
+})();
+if (slideshare_object.ready) slideshare_object.ready();
+// ]]>
+</script>
+<script type="text/javascript">
+// <![CDATA[
+slideshare_object.done = true;
+// ]]>
+</script>
+
+<script id="page-load-loggedout" type="text/javascript" charset="utf-8">
+// <![CDATA[
+jQuery(window).load(function(){
+window._gaq.push(['_trackEvent', "Pageload time", "slideview_pageload_logged_out", BrowserDetect.init(), (new Date()).getTime() - timer ]);
+});
+// ]]>
+</script>
+
+
+<div id="crazyegg"></div>
+</body>
+</html>
