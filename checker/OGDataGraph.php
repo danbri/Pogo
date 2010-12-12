@@ -56,7 +56,7 @@ class OGDataGraph {
   #end configuration!
 
   public $meta = array(); # for testcase-loaded metadata
-  public $htmlok; # notneeded?
+  # public $htmlok; # notneeded?
 
   # Meta Content
   public $triples; 		# the full RDF view, follows ARC's conventions for s/p/o structures
@@ -82,9 +82,8 @@ class OGDataGraph {
     if (array_key_exists($name, $this->fields)) {
       return $this->fields[$name];
     } else {
-      #print "!@#$!"; 
       #$this->dumpFields();
-      # return ''; # empty string, or null?
+      # return ''; # no!
     }
   }
 
@@ -99,6 +98,7 @@ class OGDataGraph {
       $this->arcParse($u);
       $this->buildOGModelFromTriples();
     }
+    $this->fields['url'] = $u; # different from og_url 
     Checker::paranoidMarkupCheck($this); # uptight for now
   }
 
@@ -121,7 +121,6 @@ class OGDataGraph {
       print "$f -> $v\n";
     }  
   }
-
 
   function dumpTriples() {
     foreach ($this->triples as $key => $value) {
@@ -160,22 +159,16 @@ class OGDataGraph {
     $this->meta = $meta;
     $this->url = $meta['url'];
     if (preg_match('/^\//', $this->url )) {
-      # verbose("!!!!Got a relative URL; TODO: prepend base path from local cfg:". OGDataGraph::$my_base_uri;
+      # verbose("Got a relative URL; TODO: prepend base path from local cfg:". OGDataGraph::$my_base_uri;
       $this->url = OGDataGraph::$my_base_uri . $meta['url'];
     } 
-
-    #    print "Expected triples: " . $meta['triple_count'] . "\n"; 
-    #    print "Actual triples: TODO\n";
+    # print "Expected triples: " . $meta['triple_count'] . "\n"; 
     $fn = $meta['testgroup'] . "/" . $meta['testid'];
   }
-
 
   public function getmeta(){ 
     return $this->meta;
   }
-
-
-
 
   #################################################################################
   # Full RDFa parsers
@@ -192,8 +185,8 @@ class OGDataGraph {
 
     $c2 = "tidy -f logs/_errorlog -numeric -q -asxml ".$fn . ".cache" . "  | rapper  --count -i rdfa - ".$meta['url'];
     # print "Tidied commandline: " . $c2 . "\n\n";
-    
-    # TODO: impl
+    # note: don't wire this to untrusted content yet!
+    #
     # http://us.php.net/manual/en/function.shell-exec.php
     # http://us.php.net/manual/en/language.operators.execution.php
 
@@ -265,9 +258,6 @@ class OGDataGraph {
 
 
   public function rdf2info() {
-    #print "Got a graph ". $g;
-    #print "TODO: pull type, admins, app ID, Description, Image, title, Site URL, URL from it.";
-    # for that, we need an OO repr?
     $props = array(); #todo
     foreach ($this->triples as $key => $value) {
        if (preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
