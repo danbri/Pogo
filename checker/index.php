@@ -31,34 +31,71 @@ print "</small>";
 
 if (!$url) {  exit(1); }
 if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
+$success = 0;
 ?>
 
 <body>
 <?php 
 print "<p>URL: $url   (mode: <b>" . $mode  ."</b>) </p>";
 
-print "<h3>Info</h3></h3>";
+print '<p>Local <a href="http://og.danbri.org/pogo/Pogo/checker/index.php?url=http://developers.facebook.com/tools/lint/examples/bad_app_id&mode=lite">test</a> for failed lite parser.</p>';
+
+print "<h3>Checker</h3>";
 
 $og = new OGDataGraph();
-
 try {
 $og->readFromURL($mode, $url); # mode defaults to lite
 } catch (Exception $e) {
   print "Parsing failed: ".$e;
 }
 
+## 
+# 
 if ($mode == 'lite' && sizeof($og->triples)==0) {
-  print "Lite parser gave us an empty graph.";
+  print "Lite parser gave us an empty graph. Retrying with Full:";
+  $og2 = new OGDataGraph();
+  try {
+    $og2->readFromURL('full', $url); 
+  } catch (Exception $e) {
+    print "Full parsing failed: ".$e;
+  }
+  print "2nd Full parse: result was: ". sizeof($og2->triples) . "...triples.";
+  if ( sizeof($og2->triples)>0) { $success=1; }
+  try {
+  $og2->checkfields();
+  } catch (Exception $e) {
+    print "Checker warning: ";
+    print "<div>Error: ".$e->getMessage()."\n</div>"; 
+    $success = 0;
+  }
   
 }
 
 if ($mode == 'full' && sizeof($og->triples)==0) {
-  print "Full parser gave us an empty graph.";
+  print "Full parser gave us an empty graph. Retrying with Lite:";
+  $og2 = new OGDataGraph();
+  try {
+    $og2->readFromURL('lite', $url); 
+  } catch (Exception $e) {
+    print "Full parsing failed: ".$e;
+  }
+  print "2nd Lite parse: result was: ". sizeof($og2->triples) . "...triples.";
+  if ( sizeof($og2->triples)>0) { $success=1; }
+  try {
+  $og2->checkfields();
+  } catch (Exception $e) {
+    print "Checker warning: ";
+    print "<div>Error: ".$e->getMessage()."\n</div>"; 
+    $success = 0;
+  }
   
 }
 
 
-print $og->simpleTable();
+if ($success > 0) { 
+  print "<h3>Info</h3>";
+  print $og->simpleTable();
+}
 
 print "<h3>Checks</h3>";
   try {
