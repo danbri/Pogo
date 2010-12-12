@@ -40,6 +40,7 @@ print "<small>cached examples: <a href=\"?url=$base/testcases/imdb/legend_guardi
 print "live examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=auto\">bladerunner</a> | ";
 print " <a href='?url=http://developers.facebook.com/tools/lint/&mode=auto'>developers.facebook.com</a><br/>";
 print "bad examples: <a href='?url=http://developers.facebook.com/tools/lint/examples/bad_app_id'>bad_app_id</a><br/>";
+print 'geo: <a href="http://localhost/pogo/Pogo/checker/index.php?url=http://localhost/pogo/Pogo/checker/testcases/ogp/geo1.cache#">california</a>';
 print "</small>";
 
 if (!$url) {  exit(1); }
@@ -47,10 +48,11 @@ if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
 $success = 0;
 
 
+# onload="GetMap(48.8, 2.29)
 
 ?>
 
-<body onload="GetMap(48.8, 2.29)">
+<body>
 <?php 
 
 print "<p>URL: $url   (mode: <b>" . $mode  ."</b>) </p>";
@@ -108,7 +110,6 @@ if ($mode == 'full' && sizeof($og->triples)==0) {
 
 # Include a map?
 
-$geo = true; # todo: write some test cases with geo data, and then match that.
 
 #if ($success != 0) { 
   print "<h3>Info</h3>";
@@ -122,11 +123,15 @@ $geo = true; # todo: write some test cases with geo data, and then match that.
   }
 
   # http://www.microsoft.com/maps/isdk/ajax/
-  if ($geo) {
+  $lat = $og->og_latitude;
+  $lon = $og->og_longitude;
+  if ($lat) {
     print '<h4>Geo</h4>';
+    print "<p>Lat: $lat Long: $lon</p>";
     print "<div id='myMap' style='position:relative; width:400px; height:400px; padding: 10px; '></div>";
     # todo: read lat/long from OGP (and remove default/demo from @body attr)
-    # print '<a href="#" onclick="GetMap(53, -0.1);">map</a>';
+    #print "<a href='#' onclick='GetMap($lat, $lon );'>map</a>";
+    print "<script type='text/javascript'>GetMap($lat, $lon);</script>";
   }
 
 ?>
