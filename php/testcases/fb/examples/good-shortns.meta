@@ -1,0 +1,13 @@
+{ 
+ "url": "testcases/examples/good-shortns",
+    "testid": "good-shortns",
+    "testgroup": "fb/examples",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "status": "valid",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 4,
+    "home_site": "http://www.facebook.com/"
+}
