@@ -22,7 +22,14 @@ API
  * Charset?
  * Linter has a "Site URL" field, seemingly auto-derrived. 
    e.g. see http://developers.facebook.com/tools/lint/examples/meta_name
+ * Agree a canonical form for testing (JSON/triples?)
+ * Lite parser (from https://github.com/scottmac/opengraph) not parsing fb: properties (but then ogp.me doesn't mention them)
 
+IMPLEMENTATIONS
+
+ * remove the many parts of ARC library we don't need (MySQL store etc.). Or at least make dependencies clear.
+ * patch the bits of ARC2 parser that cause PHP5 to emit warnings?
+ * wire in other parser sources
 
 DOCS
 
