@@ -5,6 +5,18 @@
 require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
 require_once 'OG_L18N.php';
+?>
+<!-- mapping stuff -->
+<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
+<script type="text/javascript">
+         var map = null;
+         function GetMap(lat,lon){
+            map = new VEMap('myMap');
+            map.LoadMap(new VELatLong(lat, lon), 10 ,'h' ,false); //http://www.microsoft.com/maps/isdk/ajax/ 'b' birdseye
+         }   
+</script>
+
+<?php
 $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
 $me = 'index.php';
@@ -33,10 +45,14 @@ print "</small>";
 if (!$url) {  exit(1); }
 if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
 $success = 0;
+
+
+
 ?>
 
-<body>
+<body onload="GetMap(48.8, 2.29)">
 <?php 
+
 print "<p>URL: $url   (mode: <b>" . $mode  ."</b>) </p>";
 
 print "<h3>Checker</h3>";
@@ -90,6 +106,9 @@ if ($mode == 'full' && sizeof($og->triples)==0) {
   
 }
 
+# Include a map?
+
+$geo = true; # todo: write some test cases with geo data, and then match that.
 
 #if ($success != 0) { 
   print "<h3>Info</h3>";
@@ -102,10 +121,15 @@ if ($mode == 'full' && sizeof($og->triples)==0) {
     print "<p>".$e->getMessage().": ". $msg[ $e->getMessage() ]."</p>" ;
   }
 
+  # http://www.microsoft.com/maps/isdk/ajax/
+  if ($geo) {
+    print '<h4>Geo</h4>';
+    print "<div id='myMap' style='position:relative; width:400px; height:400px; padding: 10px; '></div>";
+    # todo: read lat/long from OGP (and remove default/demo from @body attr)
+    # print '<a href="#" onclick="GetMap(53, -0.1);">map</a>';
+  }
 
 ?>
-
-
 <hr />
 [pogo checker] status: v1.0, <em>experimental release.</em>
 </body>
