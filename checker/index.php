@@ -46,17 +46,11 @@ print "</small>";
 if (!$url) {  exit(1); }
 if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
 $success = 0;
-
-
-# onload="GetMap(48.8, 2.29)
-
 ?>
 
 <body>
 <?php 
-
 print "<p>URL: $url   (mode: <b>" . $mode  ."</b>) </p>";
-
 print "<h3>Checker</h3>";
 
 $og = new OGDataGraph();
@@ -67,8 +61,6 @@ $og->readFromURL($mode, $url); # mode defaults to lite
   print "Parsing failed: ".$e;
 }
 
-## 
-# 
 if ($mode == 'lite' && sizeof($og->triples)==0) {
   print "Basic OG parsing failed. Retrying with a full RDFa parser; sometimes this finds more.";
   $og2 = new OGDataGraph();
@@ -105,10 +97,7 @@ if ($mode == 'full' && sizeof($og->triples)==0) {
     print "<p>".$e->getMessage().": ". $msg[ $e->getMessage() ]."</p>" ;
     $success = 0;
   }
-  
 }
-
-# Include a map?
 
 
 #if ($success != 0) { 
@@ -128,9 +117,7 @@ if ($mode == 'full' && sizeof($og->triples)==0) {
   if ($lat) {
     print '<h4>Geo</h4>';
     print "<p>Lat: $lat Long: $lon</p>";
-    print "<div id='myMap' style='position:relative; width:400px; height:400px; padding: 10px; '></div>";
-    # todo: read lat/long from OGP (and remove default/demo from @body attr)
-    #print "<a href='#' onclick='GetMap($lat, $lon );'>map</a>";
+    print "<div id='myMap' style='position:relative; width:550px; height:400px; padding: 10px;'></div>";
     print "<script type='text/javascript'>GetMap($lat, $lon);</script>";
   }
 
