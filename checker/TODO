@@ -14,10 +14,21 @@ external services
    $parser->consume;
   $graph = $parser->graph;
 
+API
+
+ * Look at the draft W3C RDFa API and consider adoption
+ * fix the way we expose the supplied URL (or don't, currently...)
+ * APIs for reading from local file and supplied text
+ * Charset?
+ * Linter has a "Site URL" field, seemingly auto-derrived. 
+   e.g. see http://developers.facebook.com/tools/lint/examples/meta_name
+
+
 DOCS
 
 Perhaps a flow chart, with HTML, OG markup, FB content, and accuracy as different ways of screwing up.
 
+Share wiki space with other parser / toolkit folk? common testcases?
 
 LINTING
 

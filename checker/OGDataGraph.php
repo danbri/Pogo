@@ -137,7 +137,7 @@ class OGDataGraph {
     $dom = new DomDocument();
     $dom->load($source);
     $tests = array();
-    $xpath = new DomXPath($dom); # or xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ?
+    $xpath = new DomXPath($dom);
     $xpath->registerNamespace('c', 'http://www.google.com/schemas/sitemap/0.84');
     $result = $xpath->query("//c:loc/text()");
     foreach($result as $b) {
@@ -256,8 +256,8 @@ class OGDataGraph {
     $t .= "<tr><td class=\"ogfield\">Type</td><td>". $this->og_type ."</td></tr>";
     $t .= "<tr><td class=\"ogfield\">Image</td><td><a href='".$this->og_image."'><small><img src='". $this->og_image ."' alt='image shown inline'><br/>". $this->og_image ."</small></td></tr>";
     $t .= "<tr><td class=\"ogfield\">Title</td><td>".  $this->og_title ."</td></tr>";
-    $t .= "<tr><td class=\"ogfield\">URL</td><td>". $this->og_image ."</td></tr>";
-    $t .=  "<tr><td class=\"ogfield\">Site URL (<em>as supplied</em>)</td><td>".  $this->url ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">URL</td><td>". $this->og_url ."</td></tr>";
+    # $t .=  "<tr><td class=\"ogfield\">Site URL (<em>as supplied</em>)</td><td>".  $this->meta['url'] ."</td></tr>";
     $t .= "</table>\n";
     return $t;
   }

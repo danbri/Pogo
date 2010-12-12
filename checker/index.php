@@ -16,12 +16,22 @@ $url = $_GET['url'];
 print "<form action=\"$me\" method=\"get\" name=\"checker\">\n";
 print "URL:<input type=\"text\" size=\"50\" name=\"url\" /><input type=\"submit\" value=\"go\"/>\n</form>";
 
-print "<small>cached example(s): legend_guardians ";
-print "(<a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=lite\">lite</a> | ";
-print "<a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=full\">full</a>) <br/> ";
+#print "<div>local example(s): legend_guardians ";
+#print "(<a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=lite\">lite</a> | ";
+#print "<a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=full\">full</a>) <br/> ";
 
-print "live example(s): bladerunner (<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=lite\">lite</a> | ";
-print "<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=full\">full</a>)</small>";
+print "examples: imdb.com (<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=lite\">lite</a> | ";
+print "<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=full\">full</a>) ";
+
+print "developers.facebook.com (<a href='?url=http://developers.facebook.com/tools/lint/&mode=lite'>lite</a> | ";
+print "<a href='?url=http://developers.facebook.com/tools/lint/&mode=full'>full</a>) ";
+
+print "ogp.me (<a href='?url=http://ogp.me/&mode=lite'>lite</a> | <a href='?url=http://ogp.me/&mode=full'>full</a>) ";
+
+print "rottentomatoes.com (<a href='?url=http://www.rottentomatoes.com/m/legend_of_the_guardians/&mode=lite'>lite</a> | ";
+print "<a href='?url=http://www.rottentomatoes.com/m/legend_of_the_guardians/&mode=full'>full</a>)";
+
+print "</div>";
 
 if (!$url) {  exit(1); }
 if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
