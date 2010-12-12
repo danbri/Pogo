@@ -62,6 +62,16 @@ class Checker {
   }
 
 
+  ###############################################################################################
+  # Checks that operate over the simple OG property representation (fields not triples)
+
+  public function paranoidMarkupCheck($og) {
+    foreach ($og->fields as $key => $value) {
+      if ( preg_match( '/</', $value) )  { throw new Exception('UNESCAPED_LESSTHAN_IN_CONTENT_VALUE'); } 
+    }
+  }
+
+
 
   public function checkMetaName($og) {
     #    print "TODO: check syntax of meta name. Requires raw parser API not triples.";

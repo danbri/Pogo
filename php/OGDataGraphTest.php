@@ -18,9 +18,9 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
     $this->assertNotEquals($got_rapper, 0, "rapper commandline utility (RDF Redland parser) needed for some RDFa tests");
   }
  
-    /**
-     * @depends testRaptorAvailable
-     */
+  /**
+   * @depends testRaptorAvailable
+   */
   public function testRapperVersion()
   {
     $this->assertNotEquals( preg_match('/^1\.[4567890]/',0, `rapper --version 2>/dev/null`), "Raptor v1.4+ needed" );
@@ -189,10 +189,10 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
     $this->assertEquals($og->fields['og:title'], "The Rock", "Should have extracted title as 'The Rock' from RDFa.");
   }
 
-/**
-* @depends testBuildOGModelFromTriples
-*/
-public function testOverloadedPropertyLookup() {
+  /**
+  * @depends testBuildOGModelFromTriples
+  */
+  public function testOverloadedPropertyLookup() {
     $og = new OGDataGraph();
     try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
     $rdf = $og->fullParse();
@@ -201,13 +201,13 @@ public function testOverloadedPropertyLookup() {
     $this->assertEquals( $og->og_title , 'The Rock', "Should expose simple OG properties as an associative array.");
     # $this->markTestIncomplete("Need to implement model from triples reader."); # more to test? repeated properties? multiple colons?
 
-}
+  }
 
-
-/**
-* @depends testOverloadedPropertyLookup
-*/
-public function testOverloadedBogusPropertyLookup() {
+ 
+  /**
+  * @depends testOverloadedPropertyLookup
+  */
+  public function testOverloadedBogusPropertyLookup() {
     // same for a non-existent property, 'og:qwerty'
     $og = new OGDataGraph();
     try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
@@ -215,7 +215,7 @@ public function testOverloadedBogusPropertyLookup() {
     $og->buildOGModelFromTriples();
     $this->assertNotEquals( $og->og_qwerty , 'The Rock', "Should expose simple OG properties as an associative array.");
     $this->assertNull( $og->og_qwerty, "There is no og:qwerty property in this test case."); 
-}
+  }
 
 /* <head>
 <meta property="og:title" content="The Rock" />
@@ -224,7 +224,7 @@ public function testOverloadedBogusPropertyLookup() {
 <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
 </head>
 */
-public function testBasicGoodExampleFull() {
+  public function testBasicGoodExampleFull() {
     $og = new OGDataGraph();
     try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
     $rdf = $og->fullParse();
@@ -233,9 +233,9 @@ public function testBasicGoodExampleFull() {
     $this->assertEquals( $og->og_type , 'movie', '<meta property="og:type" content="movie" /> gives og->og_type');
     $this->assertEquals( $og->og_url , 'http://www.imdb.com/title/tt0117500/', '<meta property="og:url" content="http://www.imdb.com/title/tt0117500/" /> gives og->og_url'); 
     $this->assertEquals( $og->og_image , 'http://ia.media-imdb.com/images/rock.jpg', '<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" /> gives og->image');
-}
+  }
 
-public function testBasicGoodExampleLite() {
+  public function testBasicGoodExampleLite() {
     $og = new OGDataGraph();
     try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
     $rdf = $og->liteParse();
@@ -248,24 +248,106 @@ public function testBasicGoodExampleLite() {
     $this->assertNotNull($og->url, "URL field shouldn't be null, but read from meta file in testcases/.");
     $og->buildTriplesFromOGModel();
     # verbose("triples: " . $og->dumpTriples());
-}
+  }
 
-public function testOGPSamplesLite() {
+  public function testOGPSamplesLite() {
     $og = new OGDataGraph();
     try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
     $og->readFromURL();
     $this->assertEquals($og->og_title, 'The Rock', "Should get title" );
-}
+  }
 
-public function testOGPSamplesFull() {
+  public function testOGPSamplesFull() {
     $og = new OGDataGraph();
     try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
-    $og->readFromURL($og->url, 'full');
+    $og->readFromURL('full');
     $this->assertEquals($og->og_title, 'The Rock', "Should get title" );
-}
+  }
+
+
+##############################################################################
+# Installation / local config -related
+
+  # some testcases have relative URIs for meta['url'] in the JSON. Can we fetch them?
+  public function testLocalRepoAccessible() {
+    $og = new OGDataGraph();
+    try { $og->readTest('testcases/ogp/eg1.meta'); } catch(Exception $e) { $this->fail(true, "failed load"); }
+    $og->readFromURL(); # we happen to know this is a relative URI
+    $this->assertEquals($og->og_title, 'The Rock', "Should get title from local repo." );
+  }
+
+##############################################################################
+# Security-related
+
+# Strip out markup in all forms. What do the specs say about this?
+# For now, we expect all parsers to throw an exception if they find any < within content. Is this enough? Too much?
+
+  /**
+  * @depends testLocalRepoAccessible
+  * @expectedException Exception
+  * @expectedExceptionMessage UNESCAPED_LESSTHAN_IN_CONTENT_VALUE
+  */
+  public function testNoScriptLite() {
+    $og = new OGDataGraph();
+    try {$f='testcases/ogp/sec1.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+    $og->readFromURL(); # default to lite; for full need to mention uri, damn.
+    $this->markTestIncomplete( 'This test has not been implemented yet: Lite parser not integrated.');
+    $this->assertNull($og->og_title, "RDFa parsers should reject markup within property values when in content attribute."); # too harsh?
+    # print $og->og_title;
+    # $this->assertNotEquals($og->og_title, 'The <script>alert(\'Hello World!\')</script>Rock', 'No funny business.' );
+    # we can't anticipate all the variations this could show up in, but should suspect content be rejected or escaped? harsh for now.
+  }
+
+  /**
+  * @depends testLocalRepoAccessible
+  * @expectedException Exception
+  * @expectedExceptionMessage UNESCAPED_LESSTHAN_IN_CONTENT_VALUE
+  */
+  public function testNoScriptFull() {
+    $og = new OGDataGraph();
+    try {$f='testcases/ogp/sec1.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+    $og->readFromURL('full');
+    print $og->og_title;
+    $this->assertNull($og->og_title, "RDFa parsers should reject markup within property values when in content attribute.");
+    # don't try scrubbing. $this->assertEquals('The Rock', $og->og_title, "Should get title from local repo." );
+  }
+
+
+##############################################################################
+
+
+
+##############################################################################
+# Whitespace-handling
+# 
+# Spec issues: should it say we strip/ignore from start/finish? also strip \n ?
+
+  public function testPassNewlinesThroughFull() {
+    $og = new OGDataGraph();
+    try {$f='testcases/ogp/eg1.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+    $og->readFromURL('full');
+    $this->assertNotNull($og->og_description, "Expecting an og:description");
+    $this->assertRegExp('/James\n\s+/', $og->og_description, "We expect newlines within content to be preserved.");
+  }
+
+  public function testPassNewlinesThroughLite() {
+    $og = new OGDataGraph();
+    try {$f='testcases/ogp/eg1.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+    $og->readFromURL('lite');
+    $this->assertNotNull($og->og_description, "Expecting an og:description");
+    $this->assertRegExp('/James\n\s+/', $og->og_description, "We expect newlines within content to be preserved.");
+  }
+
+
+##############################################################################
+# Charset-handling
+
+
+
+#
+
 
 // http://www.phpunit.de/manual/current/en/incomplete-and-skipped-tests.html
 //    $this->markTestIncomplete( 'This test has not been implemented yet: Lite parser not integrated.');
 }
 ?>
-

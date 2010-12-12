@@ -28,9 +28,14 @@ print "<p>URL: $url   <b>" . $mode  ."</b> </p>";
 print "<h3>Info</h3></h3>";
 verbose("Fetching $url");
 $og = new OGDataGraph();
-$og->readFromURL($url, $mode); # mode defaults to lite
-if ($mode == 'lite') { $og->buildTriplesFromOGModel(); } 
-if ($mode == 'full') { $og->buildOGModelFromTriples(); } 
+
+try {
+$og->readFromURL($mode, $url); # mode defaults to lite
+} catch (Exception $e) {
+  print "Parsing failed: ".$e;
+}
+#auto'd if ($mode == 'lite') { $og->buildTriplesFromOGModel(); } 
+#if ($mode == 'full') { $og->buildOGModelFromTriples(); } 
 print $og->simpleTable();
 
 

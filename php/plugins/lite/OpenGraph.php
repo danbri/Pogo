@@ -47,6 +47,9 @@ class OpenGraph implements Iterator
    * @return OpenGraph
    */
 	static public function fetch($URI) {
+
+#		print "**$URI**"; # crude debug. danbri
+
 		return self::_parse(file_get_contents($URI));
 	}
 

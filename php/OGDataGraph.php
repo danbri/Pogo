@@ -84,11 +84,12 @@ class OGDataGraph {
     } else {
       #print "!@#$!"; 
       #$this->dumpFields();
+      # return ''; # empty string, or null?
     }
   }
 
   # default to lite, so as not to depend on RDFa parser plugin(s)
-  function readFromURL($u = 'default' , $mode='lite') {
+  function readFromURL($mode='lite',$u = 'default') {
     if ($u=='default') { $u = $this->url; } 
     # verbose("reading from url $u with mode $mode."); 
     if ($mode == 'lite') {
@@ -98,6 +99,7 @@ class OGDataGraph {
       $this->arcParse($u);
       $this->buildOGModelFromTriples();
     }
+    Checker::paranoidMarkupCheck($this); # uptight for now
   }
 
   function liteParse($u='default') {
@@ -356,7 +358,6 @@ class OGDataGraph {
   # CHECKS
   public function checkfields() {
     verbose("Running all field value checks.");
-    require 'OG_Checker.php';
     Checker::checkTypeLabel($this); # cf. testcases/fb/examples/bad_type.meta
     Checker::checkAppIDSyntax($this); # cf. testcases/fb/examples/api_key.meta
     Checker::checkMetaName($this);
