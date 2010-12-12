@@ -91,6 +91,7 @@ class Checker {
 
 
   public function checkAppIDSyntax($og) {
+
     foreach ($og->triples as $key => $value) {
       # print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
       if ($value['p'] == 'http://www.facebook.com/2008/fbmlapp_id') { 

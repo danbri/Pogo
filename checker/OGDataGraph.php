@@ -313,7 +313,7 @@ class OGDataGraph {
 
   public function buildTriplesFromOGModel() {
     foreach ($this->fields as $attr => $val ) {
-      # verbose("triple: ".$this->meta['url']."  $attr  $val ");
+      verbose("triple: ".$this->meta['url']."  $attr  $val <br/>");
       $claim = array();
       $claim['s'] = $this->url; 
       $claim['p'] = preg_replace('/og:/', 'http://ogp.me/ns#', $attr);
@@ -348,6 +348,13 @@ class OGDataGraph {
   #################################################################################
   # CHECKS
   public function checkfields() {
+
+
+    # robustification needed:
+    if (is_null($this->triples)) { verbose("Missing graph."); return; }
+    if (sizeof($this->triples) == 0) { verbose("Empty graph."); return ; }
+
+
     verbose("Running all field value checks.");
     Checker::checkTypeLabel($this); # cf. testcases/fb/examples/bad_type.meta
     Checker::checkAppIDSyntax($this); # cf. testcases/fb/examples/api_key.meta
