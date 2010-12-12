@@ -2,7 +2,8 @@
 <head><title>OpenGraph checker</title><link rel="stylesheet" href="style.css" type="text/css" /></head>
 
 <?php 
-# http://localhost/pogo/Pogo/php/simple.php
+# http://localhost/pogo/Pogo/checker/simple.php
+
 require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
 function isValidURL($url) { return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url); }
@@ -12,9 +13,9 @@ $url = $_GET['url'];
 
 print "<form action=\"simple.php\" method=\"get\" name=\"checker\">\n";
 print "URL:<input type=\"text\" size=\"50\" name=\"url\" /><input type=\"submit\" name=\"go\"/>\n</form>";
-print "<small>examples: <a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache\">legend_guardians</a> ";
-print "(<a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache&mode=lite\">lite</a> | ";
-print "<a href=\"?url=http://localhost/pogo/Pogo/php/testcases/imdb/legend_guardians.cache&mode=full\">full</a>), ";
+print "<small>examples: <a href=\"?url=http://localhost/pogo/Pogo/checker/testcases/imdb/legend_guardians.cache\">legend_guardians</a> ";
+print "(<a href=\"?url=http://localhost/pogo/Pogo/checker/testcases/imdb/legend_guardians.cache&mode=lite\">lite</a> | ";
+print "<a href=\"?url=http://localhost/pogo/Pogo/checker/testcases/imdb/legend_guardians.cache&mode=full\">full</a>), ";
 print " bladerunner (<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=lite\">lite</a> | ";
 print "<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=full\">full</a>)</small>";
 if (!$url) {  exit(1); }
