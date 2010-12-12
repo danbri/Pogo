@@ -313,7 +313,7 @@ class OGDataGraph {
 
   public function buildTriplesFromOGModel() {
     foreach ($this->fields as $attr => $val ) {
-      verbose("triple: ".$this->meta['url']."  $attr  $val <br/>");
+      # verbose("triple: ".$this->meta['url']."  $attr  $val <br/>");
       $claim = array();
       $claim['s'] = $this->url; 
       $claim['p'] = preg_replace('/og:/', 'http://ogp.me/ns#', $attr);
