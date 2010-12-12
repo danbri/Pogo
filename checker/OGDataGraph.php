@@ -351,11 +351,16 @@ class OGDataGraph {
 
 
     # robustification needed:
-    if (is_null($this->triples)) { verbose("Missing graph."); return; }
-    if (sizeof($this->triples) == 0) { verbose("Empty graph."); return ; }
+    if (is_null($this->triples)) { #verbose("Missing graph."); 
+      return; 
+    }
+
+    if (sizeof($this->triples) == 0) { #verbose("Empty graph."); 
+      return ; 
+    }
 
 
-    verbose("Running all field value checks.");
+    # verbose("Running all field value checks.");
     Checker::checkTypeLabel($this); # cf. testcases/fb/examples/bad_type.meta
     Checker::checkAppIDSyntax($this); # cf. testcases/fb/examples/api_key.meta
     Checker::checkMetaName($this);

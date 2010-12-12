@@ -4,29 +4,30 @@
 <?php 
 require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
+require_once 'OG_L18N.php';
+$msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
 $me = 'index.php';
 
 function isValidURL($url) { return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url); }
 $mode = $_GET['mode'];
-if (is_null($mode)) {$mode='lite';}
+if (is_null($mode)) {$mode='auto';}
 if ($mode &&  !preg_match( '/(^full$|^lite$|^auto$|^viz$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
 $url = $_GET['url'];
 
 print "<form action=\"$me\" method=\"get\" name=\"checker\">\n";
 print "Input URL:<input type=\"text\" size=\"70\" name=\"url\" value=\"$url\"/><input type=\"submit\" value=\"go\"/>";
-print '<div style="float: right"><input type="radio" name="mode" value="auto" checked="true" /> auto ';
-print '<input type="radio" name="mode" value="lite" /> lite';
-print '<input type="radio" name="mode" value="full" /> full</div>';
-print '</form>';
-print "<small>cached example(s): legend_guardians ";
-print "(<a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=lite\">lite</a> | ";
-print "<a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=full\">full</a>) <br/> ";
 
-print "live example(s): bladerunner (<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=lite\">lite</a> | ";
-print "<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=full\">full</a>)";
-print " fb developers: <a href='?url=http://developers.facebook.com/tools/lint/&mode=lite'>lite</a><br/>";
-print "bad e.g.: http://developers.facebook.com/tools/lint/examples/bad_app_id<br/>";
+#print '<div style="float: right"><input type="radio" name="mode" value="auto" checked="true" /> auto ';
+#print '<input type="radio" name="mode" value="lite" /> lite';
+#print '<input type="radio" name="mode" value="full" /> full</div>';
+
+print '</form>';
+print "<small>cached examples: <a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=auto\">legend_guardians</a> <br/>";
+
+print "live examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=auto\">bladerunner</a> | ";
+print " <a href='?url=http://developers.facebook.com/tools/lint/&mode=auto'>developers.facebook.com</a><br/>";
+print "bad examples: <a href='?url=http://developers.facebook.com/tools/lint/examples/bad_app_id'>bad_app_id</a><br/>";
 print "</small>";
 
 if (!$url) {  exit(1); }
@@ -38,12 +39,11 @@ $success = 0;
 <?php 
 print "<p>URL: $url   (mode: <b>" . $mode  ."</b>) </p>";
 
-print '<p>Local <a href="http://og.danbri.org/pogo/Pogo/checker/index.php?url=http://developers.facebook.com/tools/lint/examples/bad_app_id&mode=lite">test</a> for failed lite parser.</p>';
-
 print "<h3>Checker</h3>";
 
 $og = new OGDataGraph();
 try {
+if  ($mode=='auto') { $mode='lite'; } # messy but reasonable 
 $og->readFromURL($mode, $url); # mode defaults to lite
 } catch (Exception $e) {
   print "Parsing failed: ".$e;
@@ -52,60 +52,54 @@ $og->readFromURL($mode, $url); # mode defaults to lite
 ## 
 # 
 if ($mode == 'lite' && sizeof($og->triples)==0) {
-  print "Lite parser gave us an empty graph. Retrying with Full:";
+  print "Basic OG parsing failed. Retrying with a full RDFa parser; sometimes this finds more.";
   $og2 = new OGDataGraph();
   try {
     $og2->readFromURL('full', $url); 
+    $success = 1;
   } catch (Exception $e) {
     print "Full parsing failed: ".$e;
   }
-  print "2nd Full parse: result was: ". sizeof($og2->triples) . "...triples.";
+  print "Reparsing result was: ". sizeof($og2->triples) . "...graph entries.";
   if ( sizeof($og2->triples)>0) { $success=1; }
   try {
   $og2->checkfields();
   } catch (Exception $e) {
-    print "Checker warning: ";
-    print "<div>Error: ".$e->getMessage()."\n</div>"; 
+    print "<p>".$e->getMessage().": ". $msg[ $e->getMessage() ]."</p>" ;
     $success = 0;
   }
   
 }
 
 if ($mode == 'full' && sizeof($og->triples)==0) {
-  print "Full parser gave us an empty graph. Retrying with Lite:";
+  print "Full parser gave us an empty graph. Retrying with simple OG parser.:";
   $og2 = new OGDataGraph();
   try {
     $og2->readFromURL('lite', $url); 
   } catch (Exception $e) {
-    print "Full parsing failed: ".$e;
+    print "<p>Full parsing failed: ".$e."</p>";
   }
-  print "2nd Lite parse: result was: ". sizeof($og2->triples) . "...triples.";
+  print "Reparsing result was: ". sizeof($og2->triples) . "...graph entries.";
   if ( sizeof($og2->triples)>0) { $success=1; }
   try {
   $og2->checkfields();
   } catch (Exception $e) {
-    print "Checker warning: ";
-    print "<div>Error: ".$e->getMessage()."\n</div>"; 
+    print "<p>".$e->getMessage().": ". $msg[ $e->getMessage() ]."</p>" ;
     $success = 0;
   }
   
 }
 
 
-if ($success > 0) { 
+#if ($success != 0) { 
   print "<h3>Info</h3>";
   print $og->simpleTable();
-}
+#}
 
-print "<h3>Checks</h3>";
   try {
   $og->checkfields();
   } catch (Exception $e) {
-    print "Checker warning: ";
-#    if ($e->getMessage() == "BAD_TYPE_CHARS_FAIL") { print "Poor type name found. Please avoid capitals and punctuation except ':' and '_'.<b$
-#    if ($e->getMessage() == "NONDIGIT_APPID_CHARS_FAIL") { print "fb:app_id contains non-numeric characters (perhaps api key instead?)."; }
-    #FAILED_PAGEID_NUMBERSONLY_REGEX
-    print "<div>Error: ".$e->getMessage()."\n</div>"; 
+    print "<p>".$e->getMessage().": ". $msg[ $e->getMessage() ]."</p>" ;
   }
 
 
