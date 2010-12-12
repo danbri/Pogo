@@ -223,7 +223,7 @@ class OGDataGraph {
     $meta = $this->meta;    
 
     if ($u != 'default') { $url = $u; } else { $url = $meta['url']; }
-    verbose("ARC parser being called with url '$u'\n");
+    # verbose("ARC parser being called with url '$u'\n");
     try { 
       $parser = ARC2::getRDFParser();
     } catch (Exception $e) {

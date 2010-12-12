@@ -1,30 +1,18 @@
-CODING
 
- * determine when we can reasonably use a simple associative array; which props are repeatable?
+==OPTIONAL== 
 
+Optional addons to explore.
 
-==OPTIONAL= 
+external services
 
-external services:
  * any23
-
  * Toby Inkster's perl library: perl -MCPAN -e shell 
    install RDF::RDFa::Parser
    docs http://cognition-parser.googlecode.com/svn/trunk/swignition/extras/RDF-RDFa-Parser/lib/RDF/RDFa/Parser.pm
-
- use RDF::RDFa::Parser;
- 
- $parser = RDF::RDFa::Parser->new($xhtml, $baseuri);
- $parser->consume;
- $graph = $parser->graph;
-
-==ESSENTIAL==
-
- * Nothing should print() to stdout 
- * serious errors -> system error log
- * add ARC2 parser
- * add Perl parser via commandline?
-
+   use RDF::RDFa::Parser;
+    $parser = RDF::RDFa::Parser->new($xhtml, $baseuri);
+   $parser->consume;
+  $graph = $parser->graph;
 
 DOCS
 
@@ -34,7 +22,5 @@ Perhaps a flow chart, with HTML, OG markup, FB content, and accuracy as differen
 LINTING
 
  We want all the bad examples to be detectable, using either the simple parser or an RDFa-based on.
-
- Well, is that do-able?
-
+ Reproduce 'meta name' linter check from fb
 

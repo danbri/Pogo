@@ -29,13 +29,10 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 
   public function testARCAvailable()
   {
-    verbose("@ARC@???");
     if (!file_exists(dirname(__FILE__) . '/plugins/arc/ARC2.php')) {
       $this->fail("ARC2 library not found");
-      verbose("@NOPE!");
     } else {
       $this->assertTrue(true, "ARC2 library found.");
-      verbose("@PHEW!");
   }
   }
 
