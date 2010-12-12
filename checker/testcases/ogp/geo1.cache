@@ -1,0 +1,25 @@
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+<meta property="og:title" content="Fidel's Fictional Fooderia" />
+<meta property="og:type" content="restaurant" />
+<meta property="og:url" content="http://example.org/fff/" />
+<!--<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />-->
+
+
+<!--geo markup example from ogp.me -->
+<meta property="og:latitude" content="37.416343" />
+<meta property="og:longitude" content="-122.153013" />
+<meta property="og:street-address" content="1601 S California Ave" />
+<meta property="og:locality" content="Palo Alto" />
+<meta property="og:region" content="CA" />
+<meta property="og:postal-code" content="94304" />
+<meta property="og:country-name" content="USA" />
+</head>
+
+<h2>Geo-coded restaurant example</h2>
+
+<p>This example is based on the <a href="http://ogp.me/#location">location</a> section of the OGP spec.</p>
+
+</body>
+</html>
+
