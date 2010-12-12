@@ -143,6 +143,5 @@ print $js; ?>
 ?>
 
 <hr />
-[pogo checker alpha0]
 </body>
 </html>

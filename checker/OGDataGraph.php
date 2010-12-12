@@ -254,10 +254,10 @@ class OGDataGraph {
 
     $t = "<table border='1' style='background: #eeeeee;'>\n";
     $t .= "<tr><td class=\"ogfield\">Type</td><td>". $this->og_type ."</td></tr>";
-    $t .= "<tr><td class=\"ogfield\">Image</td><td><img src='". $this->og_image ."'>". $this->og_image ."</td></tr>";
+    $t .= "<tr><td class=\"ogfield\">Image</td><td><a href='".$this->og_image."'><small><img src='". $this->og_image ."' alt='image shown inline'><br/>". $this->og_image ."</small></td></tr>";
     $t .= "<tr><td class=\"ogfield\">Title</td><td>".  $this->og_title ."</td></tr>";
-    $t .=  "<tr><td class=\"ogfield\">Site URL</td><td>".  $this->og_site_url ."</td></tr>";
     $t .= "<tr><td class=\"ogfield\">URL</td><td>". $this->og_image ."</td></tr>";
+    $t .=  "<tr><td class=\"ogfield\">Site URL (<em>as supplied</em>)</td><td>".  $this->url ."</td></tr>";
     $t .= "</table>\n";
     return $t;
   }

@@ -1,7 +1,17 @@
-
+/* OG logo main green: 8bc932 */
 body { margin-left: 6em; margin-right: 9em; }
-h2 { background: #ffb;  }
-h3 { background: #ffd; border-style: solid; border-width: normal; padding: 3px; }
-h4 { background: #ffe; border-style: groove; border-width: thin; margin-left: .5em; margin-right: 15em; }
-.ogfield { font-weight: bold; background: #CCF;}
+h2 { background: #8bc932; padding: 4px; color; black; }
+h3 { background: #bee08d; border-style: solid; border-width: normal; padding: 3px; }
+h4 { background: #d9edbc; border-style: groove; border-width: thin; margin-left: .5em; margin-right: 15em; }
+.ogfield { font-weight: bold; background: #d9edbc;}
 .ogp-logo { float: right; }
+
+table {
+	font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 480px;
+	}
+A:link {text-decoration: none}
+A:visited {text-decoration: none}
+A:active {text-decoration: none}
+A:hover {text-decoration: underline; color: red;}

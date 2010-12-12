@@ -59,26 +59,55 @@ is that the unit tests check this software, the testcases/ document key
 design points for Open Graph Protocol data, and that the various checking
 functions in the codebase. 
 
-On a good day:
+The scripts can be run with "phpunit --colors --verbose OGDataGraphTest" or the 
+units.sh shortcut shell script. On a good day you'll see something like:
 
-TellyClub:checker danbri$ ./units.sh 
-PHPUnit 3.5.5 by Sebastian Bergmann.
+	TellyClub:checker danbri$ ./units.sh 
+	PHPUnit 3.5.5 by Sebastian Bergmann.
 
-OGDataGraphTest
-......................
+	OGDataGraphTest
+	......................
+	Time: 6 seconds, Memory: 8.00Mb
 
-Time: 6 seconds, Memory: 8.00Mb
-
-OK (22 tests, 50 assertions)
+	OK (22 tests, 50 assertions)
  
+Unit tests are expressed using phpunit (which is BSD Licensed). Testing so far
+has been only on OSX and Ubuntu. For details of phpunit see
+http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html
+
+If a test is failing in your environment (eg. for Raptor parser), mark it with
+$this->markTestIncomplete("excuse here...").
+
 
 === Developer API ===
 
 See OGDataGraphTests.php for examples of the API being tested.
 
-The API is a work-in-progress. For now:
+The API is a work-in-progress. See minimal_demo.php for a simple example
+of the data access API. Copied here:
 
+	<html><head><title>minimal demo</title></head>
+	<body>
+	<?php
+	require_once 'OGDataGraph.php';
 
+	$url = 'http://www.rottentomatoes.com/m/blade_runner/';
+	$og = new OGDataGraph();
+
+	try {
+	#$og->readFromURL('full', $url); # real RDFa parser          
+	$og->readFromURL('lite', $url);  # just look for OG markup
+	} catch (Exception $e) {
+	  print "Parsing failed: ".$e;
+	}
+
+	print "<p>Title is " . $og->og_title ."</p>";
+	print "<p>RDFa triple count: " . sizeof( $og->triples ) . "</p>";
+	print $og->simpleTable();
+
+	?>
+	</body>
+	</html>
 
 The basic idea is that we have a class DataGraph that deals with reading
 and managing an 'open graph' of data.
@@ -94,3 +123,58 @@ These are both included in the plugins/ directory for convenience.
 There is also partial code and tests for invoking the raptor (redland) RDFa parser
 on the commandline. In future versions it would be attractive to include a more
 general abstract API for integrating external parsers.
+
+The 'lite' and 'full' parsers are robust in different ways.
+
+Parsing with a 'full' RDFa parser will find Open Graph markup even if it 
+uses other W3C-compliant syntax conventions. It will also find other RDFa
+vocabularies, eg. Dublin Core, Creative Commons etc. anywhere in the page.
+
+After $og->readFromURL($mode, $url) is called, the library will make sure
+that if you parsed triples, it updates its simple flat OG model internally. And if
+you parsed in lite OG mode, it will internally generate an RDF graph model to 
+match. The simple OG fields are accessible as $og->fields, and an array of
+RDF triples (following for now the ARC library's encoding) are accessible as 
+$og->triples. 
+
+=== Checking Functionality ===
+
+The system implements all the same checks as Facebook's linter, with the exception of 
+the testcases/fb/examples/meta_name* test, which will require some further work 
+on the lite parser to implement. 
+
+Currently all the checks are implemented over the RDF triples representation 
+This should be transparent since RDF is generated internally after the 'lite'
+non-RDFa parser is run.
+
+A basic Web UI is provided (index.php), which provides an interface for reading
+an URL, summarising its OG contents, and describing any problems encountered.
+
+
+=== Visualization ===
+
+The plugins/ directory also contains a very basic tool for visualizing
+the graph structure encoded in OG and RDFa. It uses the Dracula Javascript
+library for graph layout (www.graphdracula.net/documentation/ MIT Licensed,
+as is the underlying Raphael.js library).
+
+As with all graph visualizations, it is useful under limited conditions. Very
+simple Open Graph data barely needs visualization; very complex data graphs
+are easily unintelligible. However for medium sized RDFa graphs with several
+objects and typed links, the tool seems potentially useful.
+
+
+=== Sitemaps XML ===
+
+At the top of the testcases/ repository are several .xml files in sitemap
+format (see http://sitemaps.org/protocol.php ). Why mix JSON and XML for 
+testcase metadata? The sitemap format can be used:
+
+
+1. to organize the collection of testcases, which is otherwise a necessarily 
+   chaotic collection of cornercase samples. 
+
+2. to support (not in this release) *bulk testing* of documents, by passing
+   a sitemap file to the online checker, instead of checking each manually.
+
+
