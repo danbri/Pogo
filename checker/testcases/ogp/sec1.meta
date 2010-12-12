@@ -1,0 +1,13 @@
+{ 
+ "url": "/testcases/ogp/sec1.cache",
+    "testid": "sec1",
+    "testgroup": "ogp",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "status": "valid",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": false,
+    "triple_count": 0,
+    "home_site": "/"
+}

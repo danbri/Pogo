@@ -1,0 +1,3 @@
+examples eg1-5 come from ogp.me main site. 
+others are variations on theme.
+none have canonical URIs so we use a relative link here.

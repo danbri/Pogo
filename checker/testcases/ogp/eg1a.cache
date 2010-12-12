@@ -1,0 +1,18 @@
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+<title>The Rock (1996)</title>
+<meta property="og:title" content="The Rock" />
+<meta property="og:type" content="movie" />
+<meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+
+<meta property="og:type" content="actor" />
+<meta property="og:description" content="Sean Connery found fame and fortune as the
+                                         suave, sophisticated British agent, James
+                                         Bond." />
+<meta property="og:site_name" content="IMDb" />
+
+
+</head>
+...
+</html>

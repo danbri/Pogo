@@ -1,0 +1,9 @@
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+...
+[REQUIRED TAGS]
+<meta property="og:email" content="me@example.com" />
+<meta property="og:phone_number" content="650-123-4567" />
+<meta property="og:fax_number" content="+1-415-123-4567" />
+...
+</head>

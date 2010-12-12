@@ -1,0 +1,11 @@
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+...
+[REQUIRED TAGS]
+<meta property="og:audio" content="http://example.com/amazing.mp3" />
+<meta property="og:audio:title" content="Amazing Song" />
+<meta property="og:audio:artist" content="Amazing Band" />
+<meta property="og:audio:album" content="Amazing Album" />
+<meta property="og:audio:type" content="application/mp3" />
+...
+</head>

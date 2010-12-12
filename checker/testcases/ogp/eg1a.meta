@@ -1,0 +1,14 @@
+{ 
+ "url": "/testcases/ogp/eg1a.cache",
+    "testid": "eg1a",
+    "testgroup": "ogp",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "status": "invalid",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 0,
+    "warning": "Page has contradictory types: both an actor and a movie",
+    "home_site": "http://www.facebook.com/"
+}

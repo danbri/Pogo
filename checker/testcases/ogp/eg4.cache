@@ -1,0 +1,11 @@
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+...
+[REQUIRED TAGS]
+<meta property="og:video" content="http://example.com/awesome.flv" />
+<meta property="og:video:height" content="640" />
+<meta property="og:video:width" content="385" />
+<meta property="og:video:type" content="application/x-shockwave-flash" />
+...
+</head>
+
