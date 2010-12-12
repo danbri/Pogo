@@ -23,8 +23,11 @@ print "URL:<input type=\"text\" size=\"50\" name=\"url\" /><input type=\"submit\
 print "examples: imdb.com (<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=lite\">lite</a> | ";
 print "<a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=full\">full</a>) ";
 
-print "developers.facebook.com (<a href='?url=http://developers.facebook.com/tools/lint/&mode=lite'>lite</a> | ";
-print "<a href='?url=http://developers.facebook.com/tools/lint/&mode=full'>full</a>) ";
+
+# Erm, the FB linter page doesn't parse with the full RDFa parser here, oops. Omitting for now!
+#
+# print "developers.facebook.com (<a href='?url=http://developers.facebook.com/tools/lint/&mode=lite'>lite</a> | ";
+# print "<a href='?url=http://developers.facebook.com/tools/lint/&mode=full'>full</a>) ";
 
 print "ogp.me (<a href='?url=http://ogp.me/&mode=lite'>lite</a> | <a href='?url=http://ogp.me/&mode=full'>full</a>) ";
 
@@ -32,6 +35,8 @@ print "rottentomatoes.com (<a href='?url=http://www.rottentomatoes.com/m/legend_
 print "<a href='?url=http://www.rottentomatoes.com/m/legend_of_the_guardians/&mode=full'>full</a>)";
 
 print "</div>";
+
+print "<p>Note: <em>final version will hide lite/full distinction from end users.</p>";
 
 if (!$url) {  exit(1); }
 if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
