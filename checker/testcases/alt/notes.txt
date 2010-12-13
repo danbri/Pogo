@@ -1,1 +1,3 @@
 Directory for exploring alternate and variant syntaxes.
+
+The .html files are early suggestions. Didn't rename to .cache yet. 
