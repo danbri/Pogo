@@ -1,0 +1,885 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/">
+<head><meta HTTP-EQUIV="Content-Type" content="text/html;charset=utf-8" /><link id="m_fav" rel="SHORTCUT ICON" href="http://img.cafecdn.com/4.22/T/icon.ico" /><link href="http://img.cafecdn.com/4.22/T/all.css" type="text/css" rel="stylesheet" /><link href="http://img.cafecdn.com/4.22/T/ajax.css" type="text/css" rel="stylesheet" /><link href="http://img.cafecdn.com/4.22/T/Menu.css" type="text/css" rel="stylesheet" /><title>
+Free Hidden Words | Play to Hidden Words Adventure, the only word game that makes you travel online on cafe.com
+</title><meta id="m_metaDescriptionID" name="Description" content="Play the best FREE online games with your friends in the fastest growing online games community. Win Real Prizes!" /><meta id="m_metaDOCUMENT-RATINGID" name="DOCUMENT-RATING" content="general" /><meta id="m_metaCOPYRIGHTID" name="COPYRIGHT" content="2009 Cafe.com All rights reserved" /><meta id="m_metaROBOTSID" name="ROBOTS" content="All" /><meta id="m_metaDISTRIBUTIONID" name="DISTRIBUTION" content="global" /><meta id="m_metakeywordsID" name="keywords" content="hidden word, puzzle, word game, game, online game, flash game, play online, free, multiplayer" /><meta id="m_metaog:titleID" property="og:title" name="og:title" content="Hidden Words Adventure - Capitals" /><meta id="m_metaog:typeID" property="og:type" name="og:type" content="game" /><meta id="m_metaog:imageID" property="og:image" name="og:image" content="http://game.cafe.com/games/1109/1.22.5/media/game_images/HP.jpg" /><meta id="m_metaog:urlID" property="og:url" name="og:url" content="http://www.cafe.com/Free_Games/Hidden-Words-Adventure-Capitals" /><meta id="m_metaog:site_nameID" property="og:site_name" name="og:site_name" content="www.cafe.com" /><meta id="m_metafb:adminsID" property="fb:admins" name="fb:admins" content="626688212,768669483,1011662491,1013387304,519486063" /><meta id="m_metafb:app_idID" property="fb:app_id" name="fb:app_id" content="7f9b1148b5e2a4580ba2b6ac644bc5aa" /></head>
+<body class="bgLight">
+<div id="fb-root"></div>
+<form name="aspnetForm" method="post" action="../Games/Product.aspx?GameName=Hidden-Words-Adventure-Capitals&amp;Play=0" id="aspnetForm">
+<div>
+<input type="hidden" name="m_d_ctl00_HiddenField" id="m_d_ctl00_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTU4NDM4ODU1DxYEHgpEaXJlY3RQbGF5aB4GR2FtZUlEAtUIFgJmD2QWBGYPZBYOAgwPFgIeB2NvbnRlbnQFIUhpZGRlbiBXb3JkcyBBZHZlbnR1cmUgLSBDYXBpdGFsc2QCDQ8WAh8CBQRnYW1lZAIODxYCHwIFP2h0dHA6Ly9nYW1lLmNhZmUuY29tL2dhbWVzLzExMDkvMS4yMi41L21lZGlhL2dhbWVfaW1hZ2VzL0hQLmpwZ2QCDw8WAh8CBT5odHRwOi8vd3d3LmNhZmUuY29tL0ZyZWVfR2FtZXMvSGlkZGVuLVdvcmRzLUFkdmVudHVyZS1DYXBpdGFsc2QCEA8WAh8CBQx3d3cuY2FmZS5jb21kAhEPFgIfAgUzNjI2Njg4MjEyLDc2ODY2OTQ4MywxMDExNjYyNDkxLDEwMTMzODczMDQsNTE5NDg2MDYzZAISDxYCHwIFIDdmOWIxMTQ4YjVlMmE0NTgwYmEyYjZhYzY0NGJjNWFhZAIBD2QWBAIHD2QWBgIDDw8WAh8BAtUIZBYIZg8WAh4HVmlzaWJsZWcWAmYPZBYCZg9kFgYCAQ8PFgIeCEltYWdlVXJsBTNodHRwOi8vaW1nLmNhZmVjZG4uY29tLzQuMjIvVC9jb250ZW50L2ljby11c2VyMi5wbmcWAh4DYWx0ZWQCAw8WAh4EVGV4dAUhSGlkZGVuIFdvcmRzIEFkdmVudHVyZSAtIENhcGl0YWxzZAIFD2QWAmYPZBYEAgEPFgYeBWNsYXNzBSZnYW1lZi10YWItZGlzYWJsZWQgQ2F0Y2ggV2hpdGUgTGlnaHRTaB4Fc3R5bGUFCWRpc3BsYXk6Ox8DZ2QCAw8WBh8HBSRnYW1lZi10YWItZW5hYmxlZCBDYXRjaCBXaGl0ZSBQaW5rU2gfCAUJZGlzcGxheTo7HwNnZAIBDxYCHwNnFgICAQ9kFgJmDxYCHwgFiwFiYWNrZ3JvdW5kOiB1cmwoJ2h0dHA6Ly9nYW1lLmNhZmUuY29tL2dhbWVzLzExMDkvMS4yMi41L21lZGlhL3NwbGFzaHNjcmVlbi9sb2dvX2VuLVVTLmpwZycpIDEwMCUgMCUgbm8tcmVwZWF0OyB3aWR0aDogNzA0cHg7IGhlaWdodDogNTc4cHg7Fg5mDw8WBh4JVGhlbWVkVXJsBRhnYW1lZnJhbWUtbGV0dGVyZ2FtZS5wbmceB1Rvb2xUaXAFCldvcmQgR2FtZXMfBAU+aHR0cDovL2ltZy5jYWZlY2RuLmNvbS80LjIyL1QvY29udGVudC9nYW1lZnJhbWUtbGV0dGVyZ2FtZS5wbmcWAh8FZWQCAQ8PFgIfBgUnPHNwYW4gY2xhc3M9IlBpbmsiPjIwMywwNjA8L3NwYW4+IGdhbWVzZGQCAg8PFgIfBgUtPHNwYW4gY2xhc3M9IlBpbmsiPjEzLDUzNzwvc3Bhbj4gaG91cnMgb2YgZnVuZGQCAw8PFgYfCQUQZ2FtZWZyYW1lLTRQLnBuZx8KBQ4xIHRvIDQgcGxheWVycx8EBTZodHRwOi8vaW1nLmNhZmVjZG4uY29tLzQuMjIvVC9jb250ZW50L2dhbWVmcmFtZS00UC5wbmcWAh8FZWQCBA8WAh8GBSJFbWJhcmsgb24gYW4gaW5jcmVkaWJsZSB3b3JkIHRvdXIhZAIGDxYCHwYFCjg4IHJhdGluZ3NkAgcPFgIfBgUNMzcxIGZhdm9yaXRlc2QCAg8WAh8DZ2QCAw8WAh8DZxYCAgEPDxYCHwNnFgIeBVN0eWxlBQlkaXNwbGF5OjsWAgIBD2QWEGYPFgIfBgW8ATxzcGFuIGNsYXNzPSJCbGFjayI+TG9naW4gbm93PC9zcGFuPiZuYnNwOzxzcGFuIGNsYXNzPSJEYXJrIj50byBlbnRlciBpbjxiciAvPjwvc3Bhbj4mbmJzcDs8c3BhbiBjbGFzcz0iUGluayI+SGlkZGVuIFdvcmRzIEFkdmVudHVyZSAtIENhcGl0YWxzPC9zcGFuPiZuYnNwOzxzcGFuIGNsYXNzPSJEYXJrIj5sb2JieTo8L3NwYW4+ZAIBDw9kFgIeCW9ua2V5ZG93bgXLAWlmIChldmVudC5rZXlDb2RlID09IDEzKQ0KCQkJew0KCQkJCSQoJyNtX2RfZ2FtZUZyYW1lX2F1dGhfaW1nRXJyb3IxLCAjbV9kX2dhbWVGcmFtZV9hdXRoX2ltZ0Vycm9yMicpLmhpZGUoKTsNCgkJCQkkKCcjbV9kX2dhbWVGcmFtZV9hdXRoX2J0bkRvQ29ubmVjdCcpLmNsaWNrKCk7DQoJCQkJcmV0dXJuIGZhbHNlOw0KCQkJfQ0KCQkJcmV0dXJuIHRydWU7ZAICDw8WAh8EBTtodHRwOi8vaW1nLmNhZmVjZG4uY29tLzQuMjIvVC9jb250ZW50L2Zvcm0taWNvbi13cm9uZy0yLnBuZxYCHwVlZAIDDw9kFgIfDAXLAWlmIChldmVudC5rZXlDb2RlID09IDEzKQ0KCQkJew0KCQkJCSQoJyNtX2RfZ2FtZUZyYW1lX2F1dGhfaW1nRXJyb3IxLCAjbV9kX2dhbWVGcmFtZV9hdXRoX2ltZ0Vycm9yMicpLmhpZGUoKTsNCgkJCQkkKCcjbV9kX2dhbWVGcmFtZV9hdXRoX2J0bkRvQ29ubmVjdCcpLmNsaWNrKCk7DQoJCQkJcmV0dXJuIGZhbHNlOw0KCQkJfQ0KCQkJcmV0dXJuIHRydWU7ZAIEDw8WAh8EBTtodHRwOi8vaW1nLmNhZmVjZG4uY29tLzQuMjIvVC9jb250ZW50L2Zvcm0taWNvbi13cm9uZy0yLnBuZxYCHwVlZAIGDw8WAh4NT25DbGllbnRDbGljawWGASQoJyNtX2RfZ2FtZUZyYW1lX2F1dGhfaW1nRXJyb3IxLCAjbV9kX2dhbWVGcmFtZV9hdXRoX2ltZ0Vycm9yMicpLmhpZGUoKTsgJCgnI21fZF9nYW1lRnJhbWVfYXV0aF9idG5Eb0Nvbm5lY3QnKS5jbGljaygpOyByZXR1cm4gZmFsc2U7ZGQCBw8PFgQfBAU6aHR0cDovL2ltZy5jYWZlY2RuLmNvbS80LjIyL1QvY29udGVudC9sb2JieS1jb25uZWN0LWZiLnBuZx4NQWx0ZXJuYXRlVGV4dAUJSSBDT05ORUNUZGQCCQ8PFgIfBAU1aHR0cDovL2ltZy5jYWZlY2RuLmNvbS80LjIyL1QvbG9jYWwvdXBzZWxsLXNpZ251cC5wbmcWAh8FZWQCBQ8PFgIeA0dJRALVCGQWAgIDD2QWAmYPZBYEAgEPDxYCHwNnZGQCAw8PFgIfA2hkZAIHD2QWAmYPZBYCAgEPZBYCAgMPZBYCAgEPZBYCZg9kFgJmD2QWAmYPZBYCAgQPZBYCZg9kFgRmD2QWAmYPZBYCZg9kFgICAQ8WAh4JaW5uZXJodG1sBRtZb3UgY291bGQgZ2FpbiAwIENhZmVDb2lucy5kAgEPZBYCZg9kFgJmD2QWAgIBDxYCHxAFbzxhIGhyZWY9Imh0dHA6Ly93d3cuY2FmZS5jb20vUmVnaXN0cmF0aW9uL1JlZ2lzdGVyLmFzcHg/cmVhc29uPTExIiBjbGFzcz0iYXUiPkdhaW4gYW5kIHN0b2NrIHlvdXIgQ2FmZUNvaW5zPC9hPmQCFQ9kFgJmD2QWAgIBD2QWBAIBD2QWAmYPZBYCAgsPZBYCZg8PFgIfBAU0aHR0cDovL2ltZy5jYWZlY2RuLmNvbS80LjIyL1QvY29udGVudC9mYi1jb25uZWN0LnBuZxYGHwVlHgV3aWR0aAUFMTQwcHgeBmhlaWdodAUFMTQwcHhkAgMPZBYCZg9kFgICAQ8PFgIfBAUpaHR0cDovL2ltZy5jYWZlY2RuLmNvbS80LjIyL1Qvc3Bpbm5lci5naWYWAh8FZWQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFE20kaCR1Y0YkcnB0RiQwJGJ0bkYFDW0kaCR1Y0wkY2hrTWUFBm0kaCRtVg8PZGZk4MD+5gNNLCje0T//HsTiEu1pfvs=" />
+</div>
+
+
+<script src="http://js.cafecdn.com/4.22/Games/leaderboard.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Libraries/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Libraries/jquery-ui-1.7.2.custom.min.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Common/resources.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Common/common.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Games/play.js" type="text/javascript"></script>
+<script src="http://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+FB.init({appId: '7f9b1148b5e2a4580ba2b6ac644bc5aa', status: true, cookie: true, xfbml: true});
+FB.Event.subscribe('auth.sessionChange', function(response) {
+if (response.session) {
+// A user has logged in, and a new cookie has been saved
+} else {
+// The user has logged out, and the cookie has been cleared
+}
+});
+//]]>
+</script>
+
+<script src="http://js.cafecdn.com/4.22/Games/gameframe.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Javascript/Menu.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Common/autocomplete.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Libraries/swfobject.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Common/flash.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Common/feedback.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Common/rating.js" type="text/javascript"></script>
+<script src="http://js.cafecdn.com/4.22/Libraries/jquery.limit-1.2.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function ProcessFB() { $.post('http://www.cafe.com/SNS/FBAuthentication.ashx', { code: cookies.get('fbs_7f9b1148b5e2a4580ba2b6ac644bc5aa') }, OnFBComplete, 'text'); } function OnFBComplete(result) { if (result == '1') { $('#m_fb_pop_ctl00_ldData').click(); modal.open('m_fb_pop', 621); } } var __cultureInfo = '{"name":"fr-FR","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":",","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":" ","CurrencySymbol":"€","NaNSymbol":"Non Numérique","CurrencyNegativePattern":8,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-Infini","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":",","NumberGroupSeparator":" ","CurrencyPositivePattern":3,"PositiveInfinitySymbol":"+Infini","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":",","PercentGroupSeparator":" ","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":0,"FullDateTimePattern":"dddd d MMMM yyyy HH:mm:ss","LongDatePattern":"dddd d MMMM yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"d MMMM","PMDesignator":"","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["dim.","lun.","mar.","mer.","jeu.","ven.","sam."],"ShortestDayNames":["di","lu","ma","me","je","ve","sa"],"DayNames":["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"],"AbbreviatedMonthNames":["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc.",""],"MonthNames":["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre",""],"IsReadOnly":true,"NativeCalendarName":"calendrier grégorien","AbbreviatedMonthGenitiveNames":["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc.",""],"MonthGenitiveNames":["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre",""]}}';//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=o2aq76Hy7wXWH9wCbGsWskgOOS9JTwF8uYNrKKFIT4gZUtLcC5RM0o8VFA_aacBtrrKO8ynbKQWXue0pdoEFih9X-hV8IwVlG-Z-hhGjYT4AUxBA8O4S0773MVg7kknyWNWW0cZFEM6XiZS9BJEO0zn6ICU1&amp;t=fffffffff45dd55f" type="text/javascript"></script>
+
+
+
+
+<div class="bgTopMenu">
+<table border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+<tr>
+
+<td>&nbsp;</td>
+
+<td width="91" valign="top">
+<a href="http://www.cafe.com/" id="m_h_lnkHome"><img id="m_h_imgLogo" src="http://img.cafecdn.com/4.22/T/local/cafe-free-online-games.gif" alt="Go To Home" style="height:63px;width:91px;border-width:0px;" /></a></td>
+
+<td  valign="top" width="887">
+<table border="0" cellpadding="0" cellspacing="0" align="center" width="887">
+<tr>
+<td style="height:34px;">
+<div>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td>
+
+<div>
+
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left">
+<ul id="qm0" class="qmmc">
+<li id="m_h_m_HomeSection"><a href="http://www.cafe.com/" id="m_h_m_Home" class="qmparent" title="Home">Home</a>
+</li>
+<li id="m_h_m_GameSection"><a href="http://www.cafe.com/Free_Games/Games.aspx" id="m_h_m_Games" class="qmparent" title="Games">Games</a>
+</li>
+<li><span class="qmdivider qmdividery"></span></li>
+<li id="m_h_m_MeSection"><a id="m_h_m_Me" class="qmparent">Me</a>
+<ul>
+<li><a href="http://www.cafe.com/Registration/Register.aspx?reason=13" id="m_h_m_MyPublicPage" class="Title" title="My Cafe Profile">My Cafe Profile</a></li>
+<li></li>
+<li><a href="http://www.cafe.com/Registration/Register.aspx?reason=13" id="m_h_m_MyMiniMe" class="Title" title="My MiniMe">My MiniMe</a></li>
+<li><a href="http://www.cafe.com/Registration/Register.aspx?reason=7" id="m_h_m_MyHighScore" class="Title" title="My High Scores">My High Scores</a></li>
+<li><a href="http://www.cafe.com/Registration/Register.aspx?reason=11" id="m_h_m_MyCafeCoins" class="Title" title="My CafeCoins">My CafeCoins</a></li>
+<li></li>
+</ul>
+</li>
+<li><span class="qmdivider qmdividery"></span></li>
+<li id="m_h_m_MyFriendSection"><a id="m_h_m_MyFriends" class="qmparent" title="My Friends">My Friends</a>
+<ul>
+<li><a href="http://www.cafe.com/Registration/Register.aspx?reason=14" id="m_h_m_MyNetwork" class="Title" title="My network">My network</a></li>
+<li></li>
+<li><a href="http://www.cafe.com/Registration/Register.aspx?reason=6" id="m_h_m_Gifts" class="Title" title="Gifts">Gifts</a></li>
+</ul>
+</li>
+<li><span class="qmdivider qmdividery"></span></li>
+<li id="m_h_m_UserTypeSection"><a href="http://www.cafe.com/Registration/Register.aspx?reason=21" id="m_h_m_UserTypeLink" class="qmparent" title="I register"><span class="Pink">I register</span></a></li>
+<li><span class="qmdivider qmdividery"></span></li>
+<li id="m_h_m_ForumSection"><a href="http://www.facebook.com/pages/Cafecom-Official-Page/156695010377?v=app_2373072738" id="m_h_m_lnkForum" class="qmparent" target="_blank" title="Forum">Forum</a></li>
+<li><a href="http://www.facebook.com/pages/Cafecom-Official-Page/156695010377?v=app_6009294086" id="m_h_m_lnkHelp" class="qmparent" target="_blank">Help</a></li>
+<li><a href="http://www.cafe.com/Shop/CafeOffer.aspx" id="m_h_m_lnkOffer" class="qmparent">
+<img alt="" src="http://img.cafecdn.com/4.22/T/local/banner-offer.gif" style="border-width:0px;" /></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+qm_create(0, false, 250, 0, false, false, false, false, false);
+</script>
+
+</div>
+</td>
+<td align="right">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+    <td>
+
+&nbsp;</td>
+<td>
+&nbsp;</td>
+<td class="s10">&nbsp;</td>
+<td valign="top">
+
+<input type="image" name="m$h$ucF$rptF$0$btnF" id="m_h_ucF_rptF_0_btnF" title="Français" PlatformID="102" src="http://img.cafecdn.com/4.22/T/content/flags/fr.gif" alt="Français" style="border-width:0px;" />
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr style="height:30px">
+<td>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td class="s6">&nbsp;</td>
+
+<td>
+
+<table id="tblLogin" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="Dark">
+<label for="m_h_ucL_txtNickname">Nickname</label></td>
+<td>&nbsp;</td>
+<td>
+<input name="m$h$ucL$txtNickname" type="text" id="m_h_ucL_txtNickname" class="Light bordered" onkeydown="if (event.keyCode == 13)
+{
+document.getElementById('m_h_ucL_loginErrorMessage').style.display = 'none';
+document.getElementById('m_h_ucL_lnkLogin').style.display = 'none';
+document.getElementById('m_h_ucL_imgSpinner').style.display = '';
+document.getElementById('m_h_ucL_btnPostbackLogin').click();
+return false;
+}
+return true;" style="height:17px;width:128px;" /><br>
+<div id="m_h_ucL_loginErrorMessage" class="sBoxRed" style="position: absolute; padding-top: 6px; margin-top: 6px; display: none;">
+</div></td>
+<td>&nbsp;</td>
+<td class="Dark">
+<label for="m_h_ucL_txtPassword">Password</label></td>
+<td>&nbsp;</td>
+<td>
+<input name="m$h$ucL$txtPassword" type="password" id="m_h_ucL_txtPassword" class="Light bordered" onkeydown="if (event.keyCode == 13)
+{
+document.getElementById('m_h_ucL_loginErrorMessage').style.display = 'none';
+document.getElementById('m_h_ucL_lnkLogin').style.display = 'none';
+document.getElementById('m_h_ucL_imgSpinner').style.display = '';
+document.getElementById('m_h_ucL_btnPostbackLogin').click();
+return false;
+}
+return true;" style="height:17px;width:128px;" /></td>
+<td>&nbsp;</td>
+<td>
+<input type="submit" name="m$h$ucL$btnPostbackLogin" value="" id="m_h_ucL_btnPostbackLogin" style="display: none;" />
+<a id="m_h_ucL_lnkLogin" class="bgPink White paddBtnLogin nodeco" onclick="document.getElementById('m_h_ucL_loginErrorMessage').style.display = 'none';
+document.getElementById('m_h_ucL_lnkLogin').style.display = 'none';
+document.getElementById('m_h_ucL_imgSpinner').style.display = '';
+document.getElementById('m_h_ucL_btnPostbackLogin').click();" title="OK">OK</a>
+<img id="m_h_ucL_imgSpinner" class="vtop" alt="" src="http://img.cafecdn.com/4.22/T/spinner-small.gif" style="border-width:0px;display: none;" /></td>
+<td>&nbsp;</td>
+<td>
+<input id="m_h_ucL_chkMe" type="checkbox" name="m$h$ucL$chkMe" checked="checked" /></td>
+<td>
+&nbsp;<label for="m_h_ucL_chkMe" id="m_h_ucL_lblCheckboxRemember" class="Dark">Remember me</label></td>
+<td class="Dark">&nbsp;|&nbsp;</td>
+<td>
+<a id="m_h_ucL_lnkForgotPassword" class="Dark" href="../Registration/SignInPage.aspx?r=1">Forgot your password?</a></td>
+</tr>
+</table>
+</td>
+<td align="right">
+<div id="m_h_bFB">
+<fb:login-button onlogin="ProcessFB();"></fb:login-button></div></td>
+
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td width="106" style="display:none;">
+
+</td>
+
+<td class="">
+&nbsp;</td>
+</tr>
+</table>
+</div>
+
+<div id="m_ctl04_btnFeedback" style="top:15%;z-index:100;position:fixed;">
+<a class="nodeco hand" onclick="return feedback.open();">
+<img src="http://img.cafecdn.com/4.22/T/local/feedback.png" id="m_ctl04_imgFeedback" alt="Contact us" title="Contact us" class="imgFeedback" />
+</a>
+</div>
+<div id="m_ctl04_modalFeedback" modalpopup="1" style="display: none; width: ; height: " ><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td class="popUpTL"></td><td class="popUpT"><table width="100%"><tr><td><span id="m_ctl04_modalFeedbackt" class="Catch White">Contact us</span></td><td width="5px"><a class="Catch White nodeco" style="cursor: pointer;" onclick="modal.autoclose(this);">X</a></td></tr></table></td><td class="popUpTR"></td></tr><tr><td class="popUpHL"></td><td class="popUpH bgLightNoDim"></td><td class="popUpHR"></td></tr><tr><td class="popUpML"></td><td class="popUpM"><div class="bgLightNoDim">
+<table cellspacing="0" cellpadding="0" border="0" class="bgWhite"><tr><td valign="top"><img src="http://img.cafecdn.com/4.22/T/boxInsideTa.gif" alt="" style="border:0px;"></td><td class="boxInsideT"></td></tr><tr><td class="boxInsideML ">&nbsp;</td><td class="boxInsideM Text Light">
+<div id="feedbackForm">
+<div class="Dark">
+Fill out and submit the following support form if you are experiencing a problem. Please describe in detail the problem, including any error messages received. Fields marked with a <label class="Red">*</label> are mandatory.
+</div>
+<div class="Dark padd6top">
+Request type <label class="Red">*</label><br>
+<select name="m$ctl04$modalFeedback$ctl00$ddlFeedbackType" id="m_ctl04_modalFeedback_ctl00_ddlFeedbackType" class="Text Light" onchange="feedback.toggleTypes();" style="width:456px;">
+<option selected="selected" value="0">Choose...</option>
+<option value="1">Report a problem in a game</option>
+<option value="2">Report a problem on the site</option>
+<option value="3">Suggestion</option>
+<option value="4">Ask a question</option>
+<option value="5">Report abuse</option>
+
+</select>
+</div>
+<div id="feedbackGame" class="Dark padd6top" style="display: none;">
+Relevant game  <label class="Red">*</label><br>
+<select name="m$ctl04$modalFeedback$ctl00$ddlGame" id="m_ctl04_modalFeedback_ctl00_ddlGame" class="Text Light" style="width:456px;">
+<option selected="selected" value="0">Choose the game...</option>
+<option value="1322">Absolute Solitaire</option>
+<option value="1101">Bay of Jewels</option>
+<option value="1528">Billiard Academy - 8-ball Edition</option>
+<option value="1529">Billiard Academy - 9-ball Edition</option>
+<option value="1151">Crazy 8</option>
+<option value="1222">Dot and Dash</option>
+<option value="1107">Hidden Words Adventure - America</option>
+<option value="1109">Hidden Words Adventure - Capitals</option>
+<option value="1108">Hidden Words Adventure - Europe</option>
+<option value="1458">Puzzle Academy</option>
+<option value="2399">Sudoku Arena</option>
+<option value="2311">Temple Of Mahjong Animals</option>
+<option value="2312">Temple Of Mahjong Asia</option>
+<option value="2315">Temple Of Mahjong Aztec</option>
+<option value="2317">Temple Of Mahjong Egypt</option>
+<option value="2316">Temple Of Mahjong Greece</option>
+<option value="2310">Temple Of Mahjong Ocean</option>
+<option value="2314">Temple Of Mahjong Xmas</option>
+
+</select>
+</div>
+<div id="feedbackGameSubType" class="Dark padd6top" style="display: none;">
+Problem type  <label class="Red">*</label><br>
+<select name="m$ctl04$modalFeedback$ctl00$ddlGameSubType" id="m_ctl04_modalFeedback_ctl00_ddlGameSubType" class="Text Light" style="width:456px;">
+<option selected="selected" value="0">Choose the problem...</option>
+<option value="1">1. Game loading / Game room</option>
+<option value="2">2. Game blocked / Freeze</option>
+<option value="3">3. Results / Score</option>
+<option value="4">4. Boosts / Gifts / Chat</option>
+<option value="5">5. Game rules</option>
+<option value="6">6. Other</option>
+
+</select>
+</div>
+<div id="feedbackSiteSubType" class="Dark padd6top" style="display: none;">
+Problem type  <label class="Red">*</label><br>
+<select name="m$ctl04$modalFeedback$ctl00$ddlSiteSubType" id="m_ctl04_modalFeedback_ctl00_ddlSiteSubType" class="Text Light" style="width:456px;">
+<option selected="selected" value="0">Choose the problem...</option>
+<option value="1">1. Authentication / Activation</option>
+<option value="2">2. CafeCoins / Boosts</option>
+<option value="3">3. Leaderboard / Score</option>
+<option value="4">4. Cafe Profile / MiniMe</option>
+<option value="5">5. Messaging / Email / Nickname</option>
+<option value="6">6. Other</option>
+
+</select>
+</div>
+<div class="Dark padd6top">
+Your Cafe nickname (if you have one)<br>
+<input name="m$ctl04$modalFeedback$ctl00$txtNickname" type="text" id="m_ctl04_modalFeedback_ctl00_txtNickname" class="wBorder" autocomplete="off" style="width:456px;" />
+</div>
+<div class="Dark padd6top">
+Your name <label class="Red">*</label><br>
+<input name="m$ctl04$modalFeedback$ctl00$txtFullName" type="text" id="m_ctl04_modalFeedback_ctl00_txtFullName" class="wBorder" autocomplete="off" style="width:456px;" />
+</div>
+<div class="Dark padd6top">
+Your e-mail <label class="Red">*</label><br>
+<input name="m$ctl04$modalFeedback$ctl00$txtEmail" type="text" id="m_ctl04_modalFeedback_ctl00_txtEmail" class="wBorder" autocomplete="off" style="width:456px;" />
+</div>
+<div class="Dark padd6top">
+Your request details (up to 300 characters) <label class="Red">*</label><br>
+<textarea name="m$ctl04$modalFeedback$ctl00$txtPersonalMessage" rows="5" cols="20" id="m_ctl04_modalFeedback_ctl00_txtPersonalMessage" class="wBorder" autocomplete="off" style="width:456px;"></textarea>
+</div>
+</div>
+<div id="feedbackNotif" style="display: none;">
+<div style="width:;"><div id="m_ctl04_modalFeedback_ctl00_ucInfobox" class="sBoxGreen" style="display: ; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;"><label id="m_ctl04_modalFeedback_ctl00_ucInfoboxtxt">Your feedback was successfully sent.</label></div></div>
+</div>
+<div id="feedbackInvalidEmail" class="Red Bold padd6top" style="display: none;">Invalid e-mail</div>
+<div id="feedbackError" class="Red Bold padd6top" style="display: none;">All fields marked with a * are mandatory</div>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="padd6top">
+<tr><td align="right"><table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td>
+<img id="m_ctl04_modalFeedback_ctl00_imgSpinner" class="vtop" alt="" src="http://img.cafecdn.com/4.22/T/spinner-small.gif" style="border-width:0px;display: none;" /></td>
+<td>&nbsp;</td>
+<td>
+<span id="m_ctl04_modalFeedback_ctl00_lblHoldMessage" class="Pink" style="display: none;">Sending the feedback...</span>
+<div id="m_ctl04_modalFeedback_ctl00_btnConfirmFeedback" class="cont100x24"><a id="m_ctl04_modalFeedback_ctl00_btnConfirmFeedbacka" href="javascript:void(0);" onclick="return feedback.send();" class="nodeco hand" title="Send"><div class="btnAlign">Send</div></a></div></td>
+<td class="s6"></td>
+<td>
+<div id="m_ctl04_modalFeedback_ctl00_btnCancel" class="cont100x24gray"><a id="m_ctl04_modalFeedback_ctl00_btnCancela" href="javascript:void(0);" onclick="return modal.autoclose(this);" class="nodeco hand" title="Cancel"><div class="btnAlign">Cancel</div></a></div>
+<div id="m_ctl04_modalFeedback_ctl00_btnClose" class="cont100x24"><a id="m_ctl04_modalFeedback_ctl00_btnClosea" href="javascript:void(0);" onclick="return modal.autoclose(this);" class="nodeco hand" title="Close"><div class="btnAlign">Close</div></a></div></td>
+</tr>
+</table></td></tr>
+</table>
+</td></tr><tr><td valign="bottom"><img src="http://img.cafecdn.com/4.22/T/boxInsideBa.gif" alt="" style="border:0px;"></td><td class="boxInsideB"></td></tr></table>
+</div></td><td class="popUpMR"></td></tr><tr><td class="popUpBL"></td><td class="popUpB"></td><td class="popUpBR"></td></tr></table></div>
+
+
+<div class="bgLight">
+<div class="bgWhite">
+<table width="980" border="0" cellpadding="0" cellspacing="0" align="center">
+<tr>
+<td valign="top">
+
+
+<div class="p6b">
+<table id="m_d_gameFrame_tblTop" cellpadding="0" cellspacing="0" border="0" width="980">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" border="0" width="980">
+<tr>
+<td class="gamef-box-t1">
+</td>
+<td class="gamef-box-t2" align="center">
+<img alt="" src="http://img.cafecdn.com/4.22/T/content/ico-user2.png" style="border-width:0px;" />
+</td>
+<td class="gamef-box-t3">
+</td>
+<td class="gamef-box-t4 Title Dark WhiteSh" align="left">
+Hidden Words Adventure - Capitals
+</td>
+<td class="gamef-box-t5" align="left">
+<div id="m_d_gameFrame_updTabs">
+
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td id="m_d_gameFrame_tabStatus" class="gamef-tab-disabled Catch White LightSh" valign="top" align="center" onclick="return gameframe.showStatus();" style="display:;">
+<span class="gamef-tab-text">
+Status</span>
+</td>
+
+<td id="m_d_gameFrame_tabLobby" class="gamef-tab-enabled Catch White PinkSh" valign="top" align="center" onclick="return gameframe.showLobby();" style="display:;">
+<span class="gamef-tab-text">
+Lobby</span>
+</td>
+
+
+</tr>
+</table>
+
+</div>
+</td>
+<td class="gamef-box-t6">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" width="980">
+<tr>
+<td id="m_d_gameFrame_lobbyLeft" class="gamef-left" valign="top">
+<div id="m_d_gameFrame_gamePres_gamePresContainer" style="background: url('http://game.cafe.com/games/1109/1.22.5/media/splashscreen/logo_en-US.jpg') 100% 0% no-repeat; width: 704px; height: 578px;">
+<table cellpadding="0" cellspacing="0" border="0" width="704">
+<tr>
+<td class="gp-tl" valign="top">
+<img id="m_d_gameFrame_gamePres_imgCategory" title="Word Games" alt="" src="http://img.cafecdn.com/4.22/T/content/gameframe-lettergame.png" style="border-width:0px;" />
+</td>
+<td class="gp-tm Title WhiteSh" valign="top" align="center">
+<div class="gp-tm-padd Black">
+<span id="m_d_gameFrame_gamePres_lblNbPlays" class="Black"><span class="Pink">203,060</span> games</span>&nbsp;-&nbsp;<span id="m_d_gameFrame_gamePres_lblNbHours" class="Black"><span class="Pink">13,537</span> hours of fun</span>
+</div>
+</td>
+<td class="gp-tr" valign="top">
+<img id="m_d_gameFrame_gamePres_imgGamePlayType" title="1 to 4 players" alt="" src="http://img.cafecdn.com/4.22/T/content/gameframe-4P.png" style="border-width:0px;" />
+</td>
+</tr>
+<tr>
+<td class="gp-center" colspan="3">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<table cellpadding="0" cellspacing="0" border="0" width="704">
+<tr>
+<td class="gp-bl" valign="top">
+<div class="gp-bl-padd">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="gp-desc Catch Black WhiteSh" align="left">
+Embark on an incredible word tour!
+</td>
+</tr>
+<tr>
+<td class="gp-rate-fav" align="left">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="Catch Black WhiteSh" align="left">
+Rating:&nbsp;
+</td>
+<td class="Catch Black WhiteSh" align="left">
+<div id="m_d_gameFrame_gamePres_gameRating_vGet">
+
+<img src="http://img.cafecdn.com/4.22/T/stars-1.png" id="m_d_gameFrame_gamePres_gameRating_star1" class="vtop" /><img src="http://img.cafecdn.com/4.22/T/stars-1.png" id="m_d_gameFrame_gamePres_gameRating_star2" class="vtop" /><img src="http://img.cafecdn.com/4.22/T/stars-1.png" id="m_d_gameFrame_gamePres_gameRating_star3" class="vtop" /><img src="http://img.cafecdn.com/4.22/T/stars-1.png" id="m_d_gameFrame_gamePres_gameRating_star4" class="vtop" /><img src="http://img.cafecdn.com/4.22/T/stars-0.png" id="m_d_gameFrame_gamePres_gameRating_star5" class="vtop" />
+
+</div>
+
+
+</td>
+<td class="Catch Black WhiteSh" align="left">
+&nbsp;88 ratings&nbsp;|&nbsp;371 favorites
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td class="gp-br">
+<div class="gp-br-padd">
+<table cellpadding="0" cellspacing="0" border="0" width="170">
+<tr>
+<td class="playAllTL"></td>
+<td class="playAllTBG" width="22" style="padding-right:3px;"><a href="http://www.cafe.com/playsolo/Hidden-Words-Adventure-Capitals" class="nodeco"><img src="http://img.cafecdn.com/4.22/T/content/play-solo-icon.png" style="height:14px;width:22px;border-width:0px;" /></a></td>
+<td class="playAllTBG White" align="center"><a href="http://www.cafe.com/playsolo/Hidden-Words-Adventure-Capitals" class="nodeco Catch i White PinkSh" title="Play solo on Hidden Words Adventure - Capitals">PLAY SOLO</a></td>
+<td class="playAllTR"></td>
+</tr>
+<tr>
+<td class="playSoloBL"></td>
+<td class="playSoloBBG" width="22" style="padding-right:3px;"><a href="http://www.cafe.com/Registration/Register.aspx?reason=27" class="nodeco"><img src="http://img.cafecdn.com/4.22/T/content/play-nomulti-icon.png" style="height:14px;width:22px;border-width:0px;" /></a></td>
+<td class="playSoloBBG White" align="center"><a href="http://www.cafe.com/Registration/Register.aspx?reason=27" class="nodeco Catch i White LightSh" title="Play multi on Hidden Words Adventure - Capitals">PLAY MULTI</a></td>
+<td class="playSoloBR"></td>
+</tr>
+</table>
+
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+
+</td>
+
+<td id="m_d_gameFrame_lobbySep" class="gamef-sep">
+</td>
+
+<td id="m_d_gameFrame_lobbyRight" class="gamef-right" valign="top">
+<div id="m_d_gameFrame_pnlAuth" style="display:;">
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="271" class="auth-cont">
+<tr>
+<td class="auth-title Title WhiteSh" align="center">
+<span class="Black">Login now</span>&nbsp;<span class="Dark">to enter in<br /></span>&nbsp;<span class="Pink">Hidden Words Adventure - Capitals</span>&nbsp;<span class="Dark">lobby:</span>
+</td>
+</tr>
+<tr>
+<td class="auth-form" align="center">
+<table cellpadding="0" cellspacing="0" border="0" width="269">
+<tr>
+<td class="Catch Dark WhiteSh" align="center">
+Use your <span class="Pink">Cafe</span>.com account:
+</td>
+</tr>
+<tr>
+<td class="auth-form-padd">
+<table cellpadding="0" cellspacing="0" border="0" width="219">
+<tr>
+<td class="formValueBg" align="center">
+<input name="m$d$gameFrame$auth$txtNickname" type="text" id="m_d_gameFrame_auth_txtNickname" class="formValue Catch Dark" autocomplete="off" onkeydown="if (event.keyCode == 13)
+{
+$('#m_d_gameFrame_auth_imgError1, #m_d_gameFrame_auth_imgError2').hide();
+$('#m_d_gameFrame_auth_btnDoConnect').click();
+return false;
+}
+return true;" style="width:205px;" />
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+<img id="m_d_gameFrame_auth_imgError1" alt="" src="http://img.cafecdn.com/4.22/T/content/form-icon-wrong-2.png" style="border-width:0px;display: none;" />
+</td>
+</tr>
+<tr>
+<td class="formValueBg" align="center">
+<input name="m$d$gameFrame$auth$txtPassword" type="password" id="m_d_gameFrame_auth_txtPassword" class="formValue Catch Dark" autocomplete="off" onkeydown="if (event.keyCode == 13)
+{
+$('#m_d_gameFrame_auth_imgError1, #m_d_gameFrame_auth_imgError2').hide();
+$('#m_d_gameFrame_auth_btnDoConnect').click();
+return false;
+}
+return true;" style="width:205px;" />
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+<img id="m_d_gameFrame_auth_imgError2" alt="" src="http://img.cafecdn.com/4.22/T/content/form-icon-wrong-2.png" style="border-width:0px;display: none;" />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="auth-btn" align="center">
+<input type="submit" name="m$d$gameFrame$auth$btnDoConnect" value="" id="m_d_gameFrame_auth_btnDoConnect" style="display: none;" />
+<div id="m_d_gameFrame_auth_btnConnect" style="width: 150px;"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="btnSmartOrangeL">&nbsp;</td><td class="btnSmartOrangeM Catch White" align="center" valign="top"><a id="m_d_gameFrame_auth_btnConnecta" href="javascript:void(0);" onclick="$('#m_d_gameFrame_auth_imgError1, #m_d_gameFrame_auth_imgError2').hide(); $('#m_d_gameFrame_auth_btnDoConnect').click(); return false;" class="nodeco hand Catch White OrangeSh" style="line-height: 34px;" title="I CONNECT">I CONNECT</a></td><td class="btnSmartOrangeR">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+<tr>
+<td align="center">
+<a class="Dark au" href="/Registration/SignInPage.aspx?r=1">
+Forgot your password?
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="auth-or Title Dark" align="center" valign="top">
+or
+</td>
+</tr>
+<tr>
+<td class="auth-fb" valign="top">
+<table cellpadding="0" cellspacing="0" border="0" width="269">
+<tr>
+<td class="Catch Dark WhiteSh" align="center">
+Use your <span class="auth-fb-blue">Facebook</span> account:
+</td>
+</tr>
+<tr>
+<td class="p6t" align="center">
+<img id="m_d_gameFrame_auth_fbConnectBig" src="http://img.cafecdn.com/4.22/T/content/lobby-connect-fb.png" alt="I CONNECT" style="border-width:0px;" />
+</td>
+</tr>
+<tr>
+<td align="center">
+<div id="m_d_gameFrame_auth_fbConnect">
+<fb:login-button onlogin="ProcessFB();" size="large"></fb:login-button></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="auth-upsell" align="center">
+<a href="/Registration/Register.aspx">
+<img alt="" src="http://img.cafecdn.com/4.22/T/local/upsell-signup.png" style="border-width:0px;" />
+</a>
+</td>
+</tr>
+</table>
+
+
+</div>
+
+
+
+</td>
+
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" width="980">
+<tr>
+<td colspan="3">
+<table cellpadding="0" cellspacing="0" border="0" width="980">
+<tr>
+<td class="gamef-box-b1">
+</td>
+<td class="gamef-box-b2">
+<table cellpadding="0" cellspacing="0" border="0" width="964">
+<td align="left">
+<fb:like href="http://www.cafe.com/Free_Games/Hidden-Words-Adventure-Capitals"
+layout="standard" show_faces="false" width="600" action="like" colorscheme="light" />
+</td>
+<td class="gamef-fav" align="right" valign="top">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td>
+<div id="m_d_gameFrame_updFavorite">
+
+<div id="m_d_gameFrame_btnFavorite" style="width: 95px;"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="playAllTBG Catch White" align="center" valign="top"><a id="m_d_gameFrame_btnFavoritea" href="http://www.cafe.com/Registration/Register.aspx?reason=20" class="nodeco hand Catch White PinkSh" style="line-height: 26px;" title="FAVORITE"><img class="vmiddle" src="http://img.cafecdn.com/4.22/T/ico-favoris.png" />&nbsp;FAVORITE</a></td></tr></table></div>
+
+</div>
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+<div id="m_d_gameFrame_btnInvite" style="width: 150px;"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="playAllBBG Catch White" align="center" valign="top"><a id="m_d_gameFrame_btnInvitea" href="/MyFriends/AddNewFriends.aspx?tab=byMail" class="nodeco hand Catch White OrangeSh" style="line-height: 26px;" title="INVITE FRIENDS"><img class="vmiddle" src="http://img.cafecdn.com/4.22/T/ico-invite.png" />&nbsp;INVITE FRIENDS</a></td></tr></table></div>
+</td>
+</tr>
+</table>
+</td>
+</table>
+</td>
+<td class="gamef-box-b3">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+</div>
+
+<table border="0" cellpadding="0" cellspacing="0" width="980">
+<tr>
+<td width="674" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="674">
+<tr>
+<td class="boxEdgeTL"></td>
+<td class="boxLobbyBG" style="width: 664px;">
+<div id="m_d_lobbyBottom_updTabs">
+
+<table border="0" cellpadding="0" cellspacing="0" style="height: 30px;">
+<tr>
+<td id="m_d_lobbyBottom_cLB" class="tabLobbyOn" align="center"><br><a id="m_d_lobbyBottom_lnkLB" class="Dark" href="javascript:__doPostBack('m$d$lobbyBottom$lnkLB','')">Leaderboard</a></td>
+
+<td class="p6r"></td>
+
+
+<td id="m_d_lobbyBottom_cR" class="tabLobbyOff" align="center"><br><a id="m_d_lobbyBottom_lnkR" class="White" href="javascript:__doPostBack('m$d$lobbyBottom$lnkR','')">Reviews</a></td>
+
+<td class="p6r"></td>
+<td id="m_d_lobbyBottom_cHTP" class="tabLobbyOff" align="center"><br><a id="m_d_lobbyBottom_lnkHTP" class="White" href="javascript:__doPostBack('m$d$lobbyBottom$lnkHTP','')">How to play</a></td>
+
+<td class="p6r"></td>
+<td id="m_d_lobbyBottom_cA" class="tabLobbyOff" align="center"><br><a id="m_d_lobbyBottom_lnkA" class="White" href="javascript:__doPostBack('m$d$lobbyBottom$lnkA','')">Album</a></td>
+
+</tr>
+</table>
+
+</div>
+</td>
+<td class="boxEdgeTR"></td>
+</tr>
+<tr>
+<td class="boxEdgeBL p6t"></td>
+<td class="boxEdgeB p6b p6t" style="width: 664px;">
+<div id="m_d_lobbyBottom_updContent">
+
+<div id="m_d_lobbyBottom_pnlLB">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="664">
+<tr>
+<td colspan="3">
+<table border="0" cellpadding="0" cellspacing="0" width="664">
+<tr>
+<td class="p6l profileSmallInfo Dark" width="150" align="left">View the leaderboard</td>
+<td align="right" class="profileSmallInfo"><select name="m$d$lobbyBottom$lb$ddlFilterType" id="m_d_lobbyBottom_lb_ddlFilterType" disabled="disabled" class="Text Dark" style="width:150px;">
+<option value="0">General</option>
+
+</select></td>
+<td class="p6l profileSmallInfo Dark" width="150" align="left">during the period</td>
+<td align="right" class="profileSmallInfo p6r"><select name="m$d$lobbyBottom$lb$ddlFilterPeriod" id="m_d_lobbyBottom_lb_ddlFilterPeriod" class="Text Dark" style="width:150px;">
+<option selected="selected" value="1">All time</option>
+<option value="4">Day</option>
+<option value="3">Week</option>
+
+</select></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="664">
+<tr>
+<td class="p6l profileSmallInfo Dark" width="150" align="left">Filter by</td>
+<td align="right" class="profileSmallInfo"><select name="m$d$lobbyBottom$lb$ddlFilterGender" id="m_d_lobbyBottom_lb_ddlFilterGender" class="Text Dark" style="width:150px;">
+<option selected="selected" value="0">Any gender</option>
+<option value="1">Male</option>
+<option value="2">Female</option>
+
+</select></td>
+<td class="p6l profileSmallInfo Dark p6l" width="150" align="left">or by</td>
+<td align="right" class="profileSmallInfo p6r"><select name="m$d$lobbyBottom$lb$ddlFilterAge" id="m_d_lobbyBottom_lb_ddlFilterAge" class="Text Dark" style="width:150px;">
+<option value="1">Any age</option>
+<option value="2">1 to 9 years old</option>
+<option value="3">10 to 18 years old</option>
+<option value="4">19 to 25 years old</option>
+<option value="5">26 to 35 years old</option>
+<option value="6">36 to 45 years old</option>
+<option value="7">46 to 60 years old</option>
+<option value="8">Over 60 years old</option>
+
+</select></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="p6l profileSmallInfo p6r" align="left" width="16"><img alt="" width="16px" height="16px" src="http://img.cafecdn.com/4.22/T/content/icon-edit.png" style="height:16px;width:16px;border-width:0px;" /></td>
+<td class="profileSmallInfo" align="left" width="342"><span id="m_d_lobbyBottom_lb_lblRanking" class="Title Pink"></span></td>
+<td class="profileSmallInfo p6r" align="right" width="300"><span id="m_d_lobbyBottom_lb_lblType" class="Catch"></span></td>
+</tr>
+</table>
+<table id="m_d_lobbyBottom_lb_tblLeaderboard" border="0" cellpadding="0" cellspacing="0" width="664">
+<tr>
+<td width="309" align="left" class="ldbBG Dark" colspan="2">Player's ranking and identity</td>
+<td class="ldbSep"></td>
+<td width="100" align="center" class="ldbBG Dark">
+<a class="hand nodeco" onclick="return leaderboard.sort(0);">
+<div>
+<img id="m_d_lobbyBottom_lb_imgSortBestScore" class="vmiddle" alt="" src="http://img.cafecdn.com/4.22/T/arrow-down-grey.gif" style="border-width:0px;display: none;" />
+<label id="m_d_lobbyBottom_lb_lblSortBestScore">Best score</label></div></a></td>
+<td class="ldbSep"></td>
+<td width="100" align="center" class="ldbBG Dark">
+<a class="hand nodeco" onclick="return leaderboard.sort(1);">
+<div>
+<img id="m_d_lobbyBottom_lb_imgSortGamePlayed" class="vmiddle" alt="" src="http://img.cafecdn.com/4.22/T/arrow-down-grey.gif" style="border-width:0px;display: none;" />
+<label id="m_d_lobbyBottom_lb_lblSortGamePlayed">Games played</label></div></a></td>
+<td class="ldbSep"></td>
+<td width="70" align="center" class="ldbBG Dark">
+<a class="hand nodeco" onclick="return leaderboard.sort(2);">
+<div>
+<img id="m_d_lobbyBottom_lb_imgSortWins" class="vmiddle" alt="" src="http://img.cafecdn.com/4.22/T/arrow-down-grey.gif" style="border-width:0px;display: none;" />
+<label id="m_d_lobbyBottom_lb_lblSortWins">Wins</label></div></a></td>
+<td class="ldbSep"></td>
+<td width="17" class="ldbBG" colspan="2"></td>
+</tr>
+</table>
+
+
+
+</div>
+
+
+
+
+
+</div>
+</td>
+<td class="boxEdgeBR p6t"></td>
+</tr>
+</table>
+</td>
+<td class="p6l" width="300" valign="top"><iframe src="http://js.cafecdn.com/4.22/ads/en-US/300x250_TopRight.html?random=1584843969" framespacing="0" frameborder="no" scrolling="no" allowtransparency="true" width="300" height="250"></iframe></td>
+</tr>
+</table>
+
+<div id="m_d_lobbyBottom_modalGrade" modalpopup="1" style="display: none; width: ; height: " ><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td class="popUpTL"></td><td class="popUpT"><table width="100%"><tr><td><span id="m_d_lobbyBottom_modalGradet" class="Catch White"></span></td><td width="5px">&nbsp;</td></tr></table></td><td class="popUpTR"></td></tr><tr><td class="popUpHL"></td><td class="popUpH bgLightNoDim"></td><td class="popUpHR"></td></tr><tr><td class="popUpML"></td><td class="popUpM"><div class="bgLightNoDim">
+<table cellspacing="0" cellpadding="0" border="0" class="bgWhite"><tr><td valign="top"><img src="http://img.cafecdn.com/4.22/T/boxStrokedTa.gif" alt="" style="border:0px;"></td><td class="boxStrokedT"></td></tr><tr><td class="boxStrokedML ">&nbsp;</td><td class="boxStrokedM Text Light">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td align="center">
+<img id="m_d_lobbyBottom_modalGrade_ctl00_imgMasterGrade" />
+</td>
+</tr>
+<tr>
+<td class="p6t" align="right">
+<div id="m_d_lobbyBottom_modalGrade_ctl00_ctl00" style="width: 100px;"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="btnSmartOrangeL">&nbsp;</td><td class="btnSmartOrangeM Title White" align="center" valign="top"><a id="m_d_lobbyBottom_modalGrade_ctl00_ctl00a" href="javascript:void(0);" onclick="return modal.autoclose(this);" class="nodeco hand Title White OrangeSh" style="line-height: 34px;" title="Close">Close</a></td><td class="btnSmartOrangeR">&nbsp;</td></tr></table></div>
+</td>
+</tr>
+</table>
+</td></tr><tr><td valign="bottom"><img src="http://img.cafecdn.com/4.22/T/boxStrokedBa.gif" alt="" style="border:0px;"></td><td class="boxStrokedB"></td></tr></table>
+</div></td><td class="popUpMR"></td></tr><tr><td class="popUpBL"></td><td class="popUpB"></td><td class="popUpBR"></td></tr></table></div>
+
+
+
+</td>
+</tr>
+<tr><td align="center"><br><iframe src="http://js.cafecdn.com/4.22/ads/en-US/728x90_Footer.html?random=1584843969" framespacing="0" frameborder="no" scrolling="no" allowtransparency="true" width="728" height="90"></iframe></td></tr>
+</table><br>
+</div>
+<div class="bgLight">
+<table width="978" border="0" cellpadding="0" cellspacing="0" align="center">
+<tr><td align="center"><br><a href="http://www.cafe.com/Free_Games/Games.aspx" id="m_f_aMultiplayer" class="Catch Khaki">FREE GAMES</a> |
+<a href="http://www.cafe.com/BottomLinks/AboutUs.aspx" id="m_f_aAboutUs" rel="nofollow" class="Catch Khaki">ABOUT US</a>
+<br>
+<a href="http://www.cafe.com/BottomLinks/PrivacyPolicy.aspx" id="m_f_aPrivacyPolicy" rel="nofollow">Privacy Policy</a> |
+<a href="http://www.cafe.com/BottomLinks/TOU.aspx" id="m_f_aTOU" rel="nofollow">Terms of Use</a> |
+<a href="http://www.cafe.com/BottomLinks/EULA.aspx" id="m_f_aEULA" rel="nofollow">EULA</a> |
+<a href="http://www.cafe.com/SiteMap.aspx" id="m_f_aSiteMap">Site Map</a> |
+<label>v4.22 &copy; 2010 WEKA Entertainment All Rights Reserved</label><br><br></td></tr>
+</table>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script src="http://js.cafecdn.com/4.22/Javascript/ga_keyword2.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3502257-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+<div id="m_fb_pop" modalpopup="1" style="display: none; width: ; height: " ><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td class="popUpTL"></td><td class="popUpT"><table width="100%"><tr><td><span id="m_fb_popt" class="Catch White">Link your Cafe.com and <img src="http://img.cafecdn.com/4.22/T/content/fb-icon.png" height="16" width="16"> Facebook accounts</span></td><td width="5px"><a class="Catch White nodeco" style="cursor: pointer;" onclick="modal.autoclose(this);">X</a></td></tr></table></td><td class="popUpTR"></td></tr><tr><td class="popUpHL"></td><td class="popUpH bgLightNoDim"></td><td class="popUpHR"></td></tr><tr><td class="popUpML"></td><td class="popUpM"><div class="bgLightNoDim">
+<div id="d">
+<table cellspacing="0" cellpadding="0" border="0" class="bgWhite"><tr><td valign="top"><img src="http://img.cafecdn.com/4.22/T/boxInsideTa.gif" alt="" style="border:0px;"></td><td class="boxInsideT"></td></tr><tr><td class="boxInsideML ">&nbsp;</td><td class="boxInsideM Text Light">
+<div id="m_fb_pop_ctl00_updPanel">
+
+
+
+
+
+
+<div id="m_fb_pop_ctl00_pnlConnecting">
+
+<table width="100%" height="274">
+<tr>
+<td width="140" class="p6r">
+<img alt="" width="140px" height="140px" src="http://img.cafecdn.com/4.22/T/content/fb-connect.png" style="height:140px;width:140px;border-width:0px;" /></td>
+<td align="center" class="Catch Dark" valign="middle">
+<div class="Catch Dark">Connecting... Please wait!</div>
+</td>
+</tr>
+</table>
+
+</div>
+<input type="submit" name="m$fb$pop$ctl00$ldData" value="" id="m_fb_pop_ctl00_ldData" style="display: none;" />
+
+</div>
+<div id="m_fb_pop_ctl00_updProg" style="display:none;">
+
+<img alt="" src="http://img.cafecdn.com/4.22/T/spinner.gif" style="border-width:0px;position: absolute; bottom: 110px; left: 370px;" />
+
+</div>
+</td></tr><tr><td valign="bottom"><img src="http://img.cafecdn.com/4.22/T/boxInsideBa.gif" alt="" style="border:0px;"></td><td class="boxInsideB"></td></tr></table>
+</div>
+</div></td><td class="popUpMR"></td></tr><tr><td class="popUpBL"></td><td class="popUpB"></td><td class="popUpBR"></td></tr></table></div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function()
+{resources.add(['CID_Feedback_FormPopupID','m_ctl04_modalFeedback'],['CID_Feedback_UserMessage','m_ctl04_modalFeedback_ctl00_txtPersonalMessage'],['CID_Feedback_HoldMessage','m_ctl04_modalFeedback_ctl00_lblHoldMessage'],['CID_Feedback_ButtonClose','m_ctl04_modalFeedback_ctl00_btnClose'],['CID_Feedback_ButtonCancel','m_ctl04_modalFeedback_ctl00_btnCancel'],['CID_Feedback_ButtonConfirm','m_ctl04_modalFeedback_ctl00_btnConfirmFeedback'],['CID_Feedback_Spinner','m_ctl04_modalFeedback_ctl00_imgSpinner'],['CID_Feedback_FeedbackType','m_ctl04_modalFeedback_ctl00_ddlFeedbackType'],['CID_Feedback_GameID','m_ctl04_modalFeedback_ctl00_ddlGame'],['CID_Feedback_SiteSubType','m_ctl04_modalFeedback_ctl00_ddlSiteSubType'],['CID_Feedback_GameSubType','m_ctl04_modalFeedback_ctl00_ddlGameSubType'],['CID_Feedback_FullName','m_ctl04_modalFeedback_ctl00_txtFullName'],['CID_Feedback_Nickname','m_ctl04_modalFeedback_ctl00_txtNickname'],['CID_Feedback_Email','m_ctl04_modalFeedback_ctl00_txtEmail'],['TXT_Feedback_AbuseText','I would like to report an abuse from {0}: '],['HDL_Feedback_Url','http://www.cafe.com/Handlers/Portal/Diagnostic.ashx'],['HDL_Feedback_ValidateEmailUrl','http://www.cafe.com/Handlers/Portal/ValidateEmail.ashx']);flash.requiredVersion='9';});Sys.Application.initialize();
+
+$(document).ready(function()
+{gameframe.init({isGuest:true,isAS3:false,pnlAuth:'#m_d_gameFrame_pnlAuth',pnlStatus:'#m_d_gameFrame_pnlStatus',pnlLobby:'#m_d_gameFrame_pnlLobby',pnlFriends:'#m_d_gameFrame_pnlFriends',tabStatus:'#m_d_gameFrame_tabStatus',tabLobby:'#m_d_gameFrame_tabLobby',tabFriends:'#m_d_gameFrame_tabFriends',divGameStatus:'#m_d_gameFrame_divGameStatus',divLobbyAS3:'#m_d_gameFrame_divLobbyAS3'});});
+$(document).ready(function()
+{resources.add(['LeaderboardUrl','http://www.cafe.com/Handlers/Portal/Leaderboard.ashx'],['tblLeaderboard','m_d_lobbyBottom_lb_tblLeaderboard'],['ddlFilterType','m_d_lobbyBottom_lb_ddlFilterType'],['ddlFilterPeriod','m_d_lobbyBottom_lb_ddlFilterPeriod'],['ddlFilterGender','m_d_lobbyBottom_lb_ddlFilterGender'],['ddlFilterAge','m_d_lobbyBottom_lb_ddlFilterAge'],['lblType','m_d_lobbyBottom_lb_lblType'],['lblRanking','m_d_lobbyBottom_lb_lblRanking'],['imgSortGamePlayed','m_d_lobbyBottom_lb_imgSortGamePlayed'],['imgSortWins','m_d_lobbyBottom_lb_imgSortWins'],['imgSortBestScore','m_d_lobbyBottom_lb_imgSortBestScore'],['lblSortGamePlayed','m_d_lobbyBottom_lb_lblSortGamePlayed'],['lblSortWins','m_d_lobbyBottom_lb_lblSortWins'],['lblSortBestScore','m_d_lobbyBottom_lb_lblSortBestScore']);});function initLeaderboard()
+{leaderboard.init(1109,0,1,0,0,1,1,0);}
+function DisplayDivTT(message)
+{document.getElementById('dTT').innerHTML=message;}
+$(document).ready(function()
+{initLeaderboard();});function openGradeModal(imageURL,tooltip)
+{$('#m_d_lobbyBottom_modalGrade_ctl00_imgMasterGrade').attr('src',imageURL);$('#m_d_lobbyBottom_modalGrade_ctl00_imgMasterGrade').attr('title',tooltip);$('#m_d_lobbyBottom_modalGrade_ctl00_imgMasterGrade').attr('alt',tooltip);modal.open('m_d_lobbyBottom_modalGrade',350);}
+$(document).ready(function()
+{resources.add(['Cafe_PopupFriend','m_popf_popupfriend'],['Cafe_QuickPlayUrl','http://www.cafe.com/Handlers/Game/QuickPlay.ashx'],['Cafe_PlaySoloUrl','http://www.cafe.com/Handlers/Game/PlaySolo.ashx'],['Cafe_JoinRoomUrl','http://www.cafe.com/Handlers/Game/JoinRoom.ashx']);});//]]>
+</script>
+</form>
+
+</body>
+</html>
