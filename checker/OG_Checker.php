@@ -97,7 +97,6 @@ class Checker {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmlapp_id') { 
         # print "Checking app_id is purely numeric.";
         if (preg_match( '/[^0-9]+/', $value['o']) )  { throw new Exception('NONDIGIT_APPID_CHARS_FAIL'); } # todo: get tighter regex w/ no false positives from FB.
-        # else { print "Passed."; } 
       }
     }
   print "<br/>"; # tmp

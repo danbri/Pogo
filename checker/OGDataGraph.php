@@ -326,7 +326,10 @@ class OGDataGraph {
     $xmlns = $this->namespaces();
     $t = "<table border='1' style='background: #eeeeee;'>\n";
     while (list($prefix, $ns) = each($xmlns)) {
-         $t .= "<tr><td class='prefix'>$prefix</td><td>$ns</td></tr>";
+         $ok = OGDataGraph::isValidURL($ns);
+         if ($ok) { $m = " URI syntax ok."; }
+         $t .= "<tr><td class='prefix'>$prefix</td><td>".htmlentities($ns)."</td><td>".$m."</td></tr>";
+
     }
     $t .= "</table>\n";    
     return $t;
