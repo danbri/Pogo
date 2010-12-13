@@ -21,7 +21,6 @@ $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
 $me = basename($_SERVER['SCRIPT_FILENAME']); # index.php by default
 
-function isValidURL($url) { return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url); }
 $mode = $_GET['mode'];
 if (is_null($mode)) {$mode='auto';}
 if ($mode &&  !preg_match( '/(^full$|^lite$|^auto$|^viz$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
@@ -44,7 +43,7 @@ print 'geo: <a href="?url=http://localhost/pogo/Pogo/checker/testcases/ogp/geo1.
 print "</small>";
 
 if (!$url) {  exit(1); }
-if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
+if (!OGDataGraph::isValidURL($url)){ exit("Unsupported URL syntax."); }
 $success = 0;
 ?>
 
