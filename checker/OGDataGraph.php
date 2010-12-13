@@ -438,12 +438,14 @@ class OGDataGraph {
     }
 
     # verbose("Running all field value checks.");
-    Checker::checkTypeLabel($this); # cf. testcases/fb/examples/bad_type.meta
-    Checker::checkAppIDSyntax($this); # cf. testcases/fb/examples/api_key.meta
-    Checker::checkMetaName($this);
-    Checker::checkNotCSV($this);
-    Checker::checkNumericPageID($this);
-    Checker::checkAdminsNotBigNumber($this);
+    $notices = array();
+    array_push ($notices, Checker::checkTypeLabel($this) ); # cf. testcases/fb/examples/bad_type.meta
+    array_push ($notices, Checker::checkAppIDSyntax($this) ); # cf. testcases/fb/examples/api_key.meta
+    array_push ($notices, Checker::checkMetaName($this));
+    array_push ($notices, Checker::checkNotCSV($this));
+    array_push ($notices, Checker::checkNumericPageID($this));
+    array_push ($notices, Checker::checkAdminsNotBigNumber($this));
+    return $notices;
   }
   
   function shortify($u) {

@@ -4,6 +4,18 @@
 # -- http://www.imdb.com/title/tt0325980/quotes
 
 
+  # utility that depends on the json list of common namespace prefixes from prefix.cc
+  function shortify($u) {
+    foreach (OGDataGraph::$nslist as $prefix => $uri) {   # print "DOES $u CONTAIN $uri ? <br/>";
+      if(strstr($u , $uri ) ) {
+        $short = str_replace( $uri, $prefix . ':', $u );  # print "Replacing $uri with $prefix in $u : result is $short<br/>";
+        return($short);
+      }
+    } # end loop thru namespaces; todo: cache
+    return ($u);
+  }   
+
+
 # This class encapsulates all our checks against the form and content of OG markup
 #
 # These should include:
@@ -27,38 +39,44 @@
 
 class Checker {
 
-/*    $this->checkTypeLabel(); # cf. testcases/fb/examples/bad_type.meta
-    $this->checkAppIDSyntax(); # cf. testcases/fb/examples/api_key.meta
-    $this->checkMetaName();
-    $this->checkNotCSV();
-    $this->checkNumericPageID();
-    $this->checkAdminsNotBigNumber();
-*/
-  
-
   public function checkNotCSV($og) {
+    $report = array();
     foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') {
-        if (!preg_match( '/^\s*[0-9]+(\s*,\s*[0-9]+)*\s*$/', $value['o']) )  { throw new Exception('FAILED_FBADMINS_REGEX'); }
+        if (!preg_match( '/^\s*[0-9]+(\s*,\s*[0-9]+)*\s*$/', $value['o']) )  { 
+          $report['FAILED_FBADMINS_REGEX'] = $value['o'];
+          # throw new Exception('FAILED_FBADMINS_REGEX'); 
+        }
       }
     }
+    return $report;
   }
 
   public function checkNumericPageID($og) {
     foreach ($og->triples as $key => $value) {
+      $report = array();
       if ($value['p'] == 'http://www.facebook.com/2008/fbmlpage_id') { 
-        if ( preg_match( '/[^0-9]+/', $value['o']) )  { throw new Exception('FAILED_PAGEID_NUMBERSONLY_REGEX'); }
+        if ( preg_match( '/[^0-9]+/', $value['o']) )  { 
+          $report['FAILED_FBADMINS_REGEX'] = $value['o'];
+          # throw new Exception('FAILED_PAGEID_NUMBERSONLY_REGEX'); 
+        }
       }
     }
+    return $report;
   }
 
 
   public function checkAdminsNotBigNumber($og) {
+    $report = array();
     foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') { 
-        if ( preg_match( '/[0-9]{10}/', $value['o']) )  { throw new Exception('FAILED_BIG_NUMBER_IN_ADMINS'); } # todo: clarify rule!
+        if ( preg_match( '/[0-9]{10}/', $value['o']) )  { 
+          #throw new Exception('FAILED_BIG_NUMBER_IN_ADMINS'); 
+          $report['FAILED_BIG_NUMBER_IN_ADMINS'] = $value['o'];
+        } # todo: clarify rule!
       }
     }
+    return $report;
   }
 
 
@@ -66,53 +84,55 @@ class Checker {
   # Checks that operate over the simple OG property representation (fields not triples)
 
   public function paranoidMarkupCheck($og) {
+    $report = array();
     foreach ($og->fields as $key => $value) {
-      if ( preg_match( '/</', $value) )  { throw new Exception('UNESCAPED_LESSTHAN_IN_CONTENT_VALUE'); } 
+      if ( preg_match( '/</', $value) )  { 
+        $report['UNESCAPED_LESSTHAN_IN_CONTENT_VALUE'] = 'less-than symbol.';
+        # throw new Exception('UNESCAPED_LESSTHAN_IN_CONTENT_VALUE'); 
+      } 
     }
+    return $report;
   }
 
 
 
   public function checkMetaName($og) {
-    #    print "TODO: check syntax of meta name. Requires raw parser API not triples.";
-    return; # todo: requires markup access, not ARC triples. use built-in simple parser.
+    $report = array();			   #    print "TODO: check syntax of meta name. Requires raw parser API not triples.";
+    return $report;
   }
 
   public function checkTypeLabel($og) {
+    $report = array();
     foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://opengraphprotocol.org/schema/type') { 
-        if (preg_match( '/[^a-z_:]/', $value['o']) )  { throw new Exception('BAD_TYPE_CHARS_FAIL'); }
+        if (preg_match( '/[^a-z_:]/', $value['o'] ) )  { 
+          $report['BAD_TYPE_CHARS_FAIL'] = $value['o'];
+          # throw new Exception('BAD_TYPE_CHARS_FAIL'); 
+        }
       }
     }
-  print "<br/>"; # tmp
+    return $report;
   }
   #  Warning: Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+
 
 
-
   public function checkAppIDSyntax($og) {
 
+    $report = array();
     foreach ($og->triples as $key => $value) {
       # print "[S]: " . $value['s'] . "<br/>\n";      print "[P]: " . $value['p'] . "<br/>\n";     print "[O]: " . $value['o'] . "<br/>\n";
       if ($value['p'] == 'http://www.facebook.com/2008/fbmlapp_id') { 
         # print "Checking app_id is purely numeric.";
-        if (preg_match( '/[^0-9]+/', $value['o']) )  { throw new Exception('NONDIGIT_APPID_CHARS_FAIL'); } # todo: get tighter regex w/ no false positives from FB.
+        if (preg_match( '/[^0-9]+/', $value['o']) )  { 
+          $report['NONDIGIT_APPID_CHARS_FAIL'] = $value['o'];
+          # throw new Exception('NONDIGIT_APPID_CHARS_FAIL'); 
+        } # todo: get tighter regex w/ no false positives from FB.
       }
     }
-  print "<br/>"; # tmp
-    
+    return $report;
   }
 
 
-  function shortify($u) {
-    foreach (OGDataGraph::$nslist as $prefix => $uri) {   # print "DOES $u CONTAIN $uri ? <br/>";
-      if(strstr($u , $uri ) ) {
-        $short = str_replace( $uri, $prefix . ':', $u );  # print "Replacing $uri with $prefix in $u : result is $short<br/>";
-        return($short);
-      }
-    } # end loop thru namespaces; todo: cache
-    return ($u);
-  }   
 
 }
 
