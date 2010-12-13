@@ -118,7 +118,8 @@ class OGDataGraph {
     # todo: better exception structures
 
     foreach (OGDataGraph::$officialFields as $f) {
-      $v = $o->_values[$f];
+      # verbose("Mapping $f");
+      @$v = $o->_values[$f]; # suppress warning for missing fields, or unittests fail.
       if ($v) {
         # verbose("Store:$v");
         $this->fields[ 'og:'.$f ] = $v;
