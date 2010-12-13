@@ -19,7 +19,7 @@ require_once 'OG_L18N.php';
 <?php
 $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
-$me = 'index.php';
+$me = basename($_SERVER['SCRIPT_FILENAME']); # index.php by default
 
 function isValidURL($url) { return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url); }
 $mode = $_GET['mode'];

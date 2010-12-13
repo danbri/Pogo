@@ -141,6 +141,12 @@ class OGDataGraph {
   #################################################################################
   # Testcases-related methods
 
+  # utility 
+  public static function isValidURL($url) { 
+    return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url); 
+  }
+
+  # sitemap reader
   public static function getTests($source) {  
 
     $dom = new DomDocument();
