@@ -66,6 +66,8 @@ class OGDataGraph {
   public $url; 			# notneeded?
   public $log = array(); 	#not used yet; plan is to keep transaction log, load, transform etc.
 
+  public $content;
+
   public static $nslist; 	# namespace prefixes list, loaded from json when needed.
 
   public static $officialFields = array('title', 'type', 'url', 'image', 'description', 'site_name', 'latitude', 'longitude', 'street-address', 'locality', 'region', 'postal-code', 'country-name', 'email', 'phone_number', 'fax_number', 'video', 'video:height', 'video:width', 'video:type', 'audio', 'audio:title', 'audio:artist', 'audio:album', 'audio:type');
@@ -89,7 +91,23 @@ class OGDataGraph {
 
   # default to lite, so as not to depend on RDFa parser plugin(s)
   function readFromURL($mode='lite',$u = 'default') {
+ 
     if ($u=='default') { $u = $this->url; } 
+
+    # this will be slow, but we'll grab a copy for ourselves to revisit later.
+    # ideally a single fetch would be used with each parser too. do-able.
+    try {
+      $handle = fopen( $u, "r");
+      $this->content = stream_get_contents($handle);
+      #print "meta: ". $contents . "\n<br/>\n";
+      fclose($handle);
+    } catch (Exception $e) { 
+      verbose("Trouble fetching from url $u.");
+      throw new Exception('FAILED_READ_URL');
+    }
+
+    # OK, now to use the various libraries/plugins
+    #
     # verbose("reading from url $u with mode $mode."); 
     if ($mode == 'lite') {
       $this->liteParse($u);
