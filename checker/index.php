@@ -54,6 +54,8 @@ print "<p>URL: $url   (mode: <b>" . $mode  ."</b>) </p>";
 print "<h3>Checker</h3>";
 
 $og = new OGDataGraph();
+
+#print "<hr/>";
 try {
 if  ($mode=='auto') { $mode='lite'; } # messy but reasonable 
 $og->readFromURL($mode, $url); # mode defaults to lite
