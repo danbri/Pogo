@@ -91,7 +91,7 @@ class OGDataGraph {
 
   # default to lite, so as not to depend on RDFa parser plugin(s)
   function readFromURL($mode='lite',$u = 'default') {
- 
+    
     if ($u=='default') { $u = $this->url; } 
 
     # this will be slow, but we'll grab a copy for ourselves to revisit later.
@@ -157,6 +157,15 @@ class OGDataGraph {
       }
   }
 
+  function prependBaseURI() {
+    # verbose("prependBaseURI: ". $this->meta['url']."\n");
+    # relative URI (todo: push into library code)
+    if (preg_match('/^\//', $this->meta['url']) ) {
+      $this->meta['url'] = OGDataGraph::$my_base_uri.preg_replace( '/^\//', '', $this->meta['url']);
+      # verbose("prepended. final: ".$this->meta['url']."\n");
+    }
+  }
+
   #################################################################################
   # Testcases-related methods
 
@@ -195,11 +204,15 @@ class OGDataGraph {
     $this->meta = $meta;
     $this->url = $meta['url'];
     if (preg_match('/^\//', $this->url )) {
-      # verbose("Got a relative URL; TODO: prepend base path from local cfg:". OGDataGraph::$my_base_uri;
+      # verbose("Got a relative URL; need to prepend base path from local cfg:". OGDataGraph::$my_base_uri;
+      $this->prependBaseURI(); # for testcases with url='/testcases/foo/bar...'
       $this->url = OGDataGraph::$my_base_uri . $meta['url'];
     } 
     # print "Expected triples: " . $meta['triple_count'] . "\n"; 
     $fn = $meta['testgroup'] . "/" . $meta['testid'];
+
+
+
   }
 
   public function getmeta(){ 
