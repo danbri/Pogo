@@ -68,7 +68,9 @@ class ARC2_RDFParser extends ARC2_Class {
     $suffix = $mappings[$format] . 'Parser';
     ARC2::inc($suffix);
     $cls = 'ARC2_' . $suffix;
-    $this->parser =& new $cls($this->a, $this);
+#danbri
+    $this->parser = new $cls($this->a, $this);
+
     $this->parser->setReader($this->reader);
     return $this->parser->parse($path, $data);
   }
