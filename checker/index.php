@@ -40,7 +40,7 @@ print "<small>cached examples: <a href=\"?url=$base/testcases/imdb/legend_guardi
 print "live examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=auto\">bladerunner</a> | ";
 print " <a href='?url=http://developers.facebook.com/tools/lint/&mode=auto'>developers.facebook.com</a><br/>";
 print "bad examples: <a href='?url=http://developers.facebook.com/tools/lint/examples/bad_app_id'>bad_app_id</a><br/>";
-print 'geo: <a href="url=http://localhost/pogo/Pogo/checker/testcases/ogp/geo1.cache#">california</a>';
+print 'geo: <a href="?url=http://localhost/pogo/Pogo/checker/testcases/ogp/geo1.cache#">california</a>';
 print "</small>";
 
 if (!$url) {  exit(1); }
