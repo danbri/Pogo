@@ -284,12 +284,13 @@ class OGDataGraph {
     if ($u != 'default') { $url = $u; } else { $url = $meta['url']; }
     # verbose("ARC parser being called with url '$u'\n");
     try { 
-      $parser = ARC2::getRDFParser(  array('sem_html_formats' => 'rdfa')); # conservative settings
+      # http://arc.semsol.org/docs/v2/parsing
+      $parser = ARC2::getRDFParser( array('sem_html_formats' => 'rdfa')); # conservative settings
     } catch (Exception $e) {
       verbose("Exception with getting parser! '$parser' ");
     }
 
-    $parser->parse($url);
+    $parser->parse($url, $this->content); # pass it the pre-grabbed content
     $parser->extractRDF('rdfa');
     $triples = $parser->getTriples();
     $this->triples=$triples;

@@ -1,4 +1,7 @@
-<html>
+<?php
+header("HTTP/1.1 200 OK");
+header("Content-type: text/html"); # half-hearted attempt to do NPH
+?><html>
 <head><title>OpenGraph checker</title><link rel="stylesheet" href="style.css" type="text/css" />
 
 <?php 
@@ -32,6 +35,7 @@ $me = 'index.php';
 print "Fetching sitemap XML.<br/>";
 
 $map = 'testcases/approved.xml';
+$map = 'testcases/fb_tests.xml';
 
 require_once 'OGDataGraph.php';
 print "<hr/>";
@@ -54,13 +58,13 @@ foreach ($tests as $tc) {
      $og->readTest($tc);
      try {
        $og->readFromURL('full', $url); 
-       # print "Content: " . $og->content;
+
        $xmlns = $og->namespaces(); 
        print $og->xmlnsTable();
-
+       
        print "<h4>Checks</h4>"; 
-
-       print $og->checkfields();  
+       $report = $og->checkfields(); 
+       print Checker::tableFromReport($report);
 
      } catch (Exception $e) {
         print "Parsing failed... <br/>";

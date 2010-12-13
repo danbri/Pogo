@@ -43,3 +43,9 @@ LINTING
  We want all the bad examples to be detectable, using either the simple parser or an RDFa-based on.
  Reproduce 'meta name' linter check from fb
 
+TESTCASES
+
+Some sites to add:
+
+blocket.se cafe.com cnn.com ekstrabladet.dk farmville.com imdb.com mafiawars.com
+perezhilton.com photobucket.com playlist.com skyrock.com tmz.com tvneto.com zynga.com
