@@ -9,8 +9,12 @@ h4 { background: #d9edbc; border-style: groove; border-width: thin; margin-left:
 table {
 	font: 11px/24px Verdana, Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
-	width: 480px;
+	width: 580px;
 	}
+
+.trouble { background: pink; } 
+.badtrouble { background: red; } 
+
 A:link {text-decoration: none}
 A:visited {text-decoration: none}
 A:active {text-decoration: none}
