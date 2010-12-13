@@ -106,7 +106,9 @@ class ARC2_SemHTMLParser extends ARC2_LegacyXMLParser {
     /* reader */
     if (!$this->v('reader')) {
       ARC2::inc('Reader');
-      $this->reader = & new ARC2_Reader($this->a, $this);
+#danbri. old:      $this->reader = & new ARC2_Reader($this->a, $this);
+#new:
+      $this->reader =  new ARC2_Reader($this->a, $this);
     }
     $this->reader->setAcceptHeader('Accept: text/html, application/xhtml, */*; q=0.9');
     $this->reader->activate($path, $data);
@@ -282,7 +284,7 @@ class ARC2_SemHTMLParser extends ARC2_LegacyXMLParser {
         $sub_v = substr($sub_v, 1);
       }
       $sub_v = $sub_v ? $sub_r[2] : $sub_v;
-      $vals = split(' ', $val);
+      $vals = preg_split('/ /', $val); # danbri
       return array(array('k' => $r[1], 'value' => $val, 'values' => $vals), $sub_v);
     }
     return array(0, $v);
@@ -328,7 +330,9 @@ class ARC2_SemHTMLParser extends ARC2_LegacyXMLParser {
   function extractRDF($formats = '') {
     $this->node_index = $this->getNodeIndex();
     $formats = !$formats ? $this->v1('sem_html_formats', $this->default_sem_html_formats, $this->a) : $formats;
-    $formats = split(' ', $formats);
+    #$formats = split(' ', $formats); # danbri
+    $formats = preg_split('/ /', $formats); # danbri
+ 
     foreach ($formats as $format) {
       if (!in_array($format, $this->extracted_formats)) {
         $comp = $this->camelCase($format) . 'Extractor';
