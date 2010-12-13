@@ -154,7 +154,8 @@ class OGDataGraph {
     $dom->load($source);
     $tests = array();
     $xpath = new DomXPath($dom);
-    $xpath->registerNamespace('c', 'http://www.google.com/schemas/sitemap/0.84');
+    # $xpath->registerNamespace('c', 'http://www.google.com/schemas/sitemap/0.84');
+    $xpath->registerNamespace('c', 'http://www.sitemaps.org/schemas/sitemap/0.9');
     $result = $xpath->query("//c:loc/text()");
     foreach($result as $b) {
       array_push($tests, $b->data);
