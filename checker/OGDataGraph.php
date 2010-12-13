@@ -322,6 +322,15 @@ class OGDataGraph {
   }
 
 
+  public function xmlnsTable() {
+    $xmlns = $this->namespaces();
+    $t = "<table border='1' style='background: #eeeeee;'>\n";
+    while (list($prefix, $ns) = each($xmlns)) {
+         $t .= "<tr><td class='prefix'>$prefix</td><td>$ns</td></tr>";
+    }
+    $t .= "</table>\n";    
+    return $t;
+  }
 
   public function rdf2info() {
     $props = array(); #todo
@@ -415,16 +424,15 @@ class OGDataGraph {
   # CHECKS
   public function checkfields() {
 
-
     # robustification needed:
     if (is_null($this->triples)) { #verbose("Missing graph."); 
       return; 
     }
 
+
     if (sizeof($this->triples) == 0) { #verbose("Empty graph."); 
       return ; 
     }
-
 
     # verbose("Running all field value checks.");
     Checker::checkTypeLabel($this); # cf. testcases/fb/examples/bad_type.meta
