@@ -40,7 +40,7 @@
 require_once 'OG_L18N.php'; # natural-lang text strings belong here
 require_once 'OG_Checker.php'; 
 
-error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED ); # looking in a hash for missing info - not a crime
+#error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED ); # looking in a hash for missing info - not a crime
 # error_reporting(E_ALL|E_STRICT); # dev't
 
 # verbosity stopgap
@@ -106,7 +106,17 @@ class OGDataGraph {
     if ($u != 'default') { $url = $u; } else { $url = $this->meta['url']; $u = $url; }
     # verbose("liteParse: '$u'");
     require_once 'plugins/lite/OpenGraph.php';
-    $o = OpenGraph::fetch($u);
+
+    try { 
+    $o = @OpenGraph::fetch($u);
+    } catch (Exception $e) {                                 
+      print "Problem fetching $u: ".$e;
+      return;
+    }
+    # the @ suppresses warnings leaking out into page content
+    # http://www.signore.net/code/phpwarnings_code.php
+    # todo: better exception structures
+
     foreach (OGDataGraph::$officialFields as $f) {
       $v = $o->_values[$f];
       if ($v) {
