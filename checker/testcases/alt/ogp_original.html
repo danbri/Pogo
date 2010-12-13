@@ -1,0 +1,306 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://developers.facebook.com/schema/">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>The Open Graph Protocol</title>
+    <link rel="stylesheet" href="base.css" type="text/css"/>
+    <meta property="og:title" content="Open Graph Protocol" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.opengraphprotocol.org/" />
+    <meta property="og:image" content="http://static.ak.fbcdn.net/pics/hubs/d_likes.png" />
+    <meta property="og:description" content="The Open Graph protocol enables any web page to become a rich object in a social graph. " />
+    <meta property="fb:admins" content="706023" />
+  </head>
+  <body>
+    <div id="body">
+    <div id="header">
+      <h1>The Open Graph Protocol</h1>
+      <img src="http://static.ak.fbcdn.net/pics/hubs/d_likes.png" />
+    </div>
+    <div id="content">
+      <p>The <a href="http://www.opengraphprotocol.org/">Open Graph protocol</a> enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to enable any web page to have the same functionality as a <a href="http://www.facebook.com/advertising/?pages">Facebook Page</a>.</p>
+
+<p>While many different technologies and schemas exist and could be combined together, there isn't a single technology which provides enough information to richly represent any web page within the social graph. The Open Graph protocol builds on these existing technologies and gives developers one thing to implement.</p>
+
+<p><a name="metadata"></a></p>
+
+<h2>Basic metadata</h2>
+
+<p>To Open Graph-enable your page, you need to add basic metadata to your page. We've chosen to use <a href="http://en.wikipedia.org/wiki/RDFa">RDFa</a> which means that you'll place additional <code>&lt;meta&gt;</code> tags in the <code>&lt;head&gt;</code> of your web page. The four required properties for every Open Graph page are:</p>
+
+<ul>
+<li><code>og:title</code> - The title of your object as it should appear within the graph, e.g., "The Rock".</li>
+<li><code>og:type</code> - The <a href="#types">type</a> of your object, e.g., "movie".  Depending on the type you specify, other properties may also be required.</li>
+<li><code>og:image</code> - An image URL which should represent your object within the graph.</li>
+<li><code>og:url</code> - The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/".</li>
+</ul>
+
+<p>As an example, the following is the Open Graph protocol markup for <a href="http://www.imdb.com/title/tt0117500">The Rock on IMDB</a>:</p>
+
+<pre><code>&lt;html xmlns:og="http://opengraphprotocol.org/schema/"&gt;
+  &lt;head&gt;
+    &lt;title&gt;The Rock (1996)&lt;/title&gt;
+    &lt;meta property="og:title" content="The Rock" /&gt;
+    &lt;meta property="og:type" content="movie" /&gt;
+    &lt;meta property="og:url" content="http://www.imdb.com/title/tt0117500/" /&gt;
+    &lt;meta property="og:image" content="http://ia.media-imdb.com/images/...jpg" /&gt;
+    ...
+  &lt;/head&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+
+<p>The following properties are optional for any object:</p>
+
+<ul>
+<li><code>og:description</code> - A one to two sentence description of your object.</li>
+</ul>
+
+<p>For example (line-break solely for display purposes):</p>
+
+<pre><code>&lt;meta property="og:type" content="actor" /&gt;
+&lt;meta property="og:description" content="Sean Connery found fame and fortune as the
+                                         suave, sophisticated British agent, James
+                                         Bond." /&gt;
+</code></pre>
+
+<p><a name="location"></a></p>
+
+<h2>Specifying location</h2>
+
+<p>The Open Graph protocol supports the ability for you to specify location information for your object. This is useful if your object is for a business or anything else with a real-world location. You can specify location via latitude and longitude, a full address, or both. The property names used are defined within the <a href="http://microformats.org/wiki/hcard">Microformat hCard</a>.</p>
+
+<p>In order to specify latitude and longitude, include the following two properties:</p>
+
+<ul>
+<li><code>og:latitude</code> - e.g., "37.416343".</li>
+<li><code>og:longitude</code> - e.g., "-122.153013".</li>
+</ul>
+
+<p>If you wish to specify a human readable address, include the following four properties:</p>
+
+<ul>
+<li><code>og:street-address</code> - e.g., "1601 S California Ave"</li>
+<li><code>og:locality</code> - e.g, "Palo Alto"</li>
+<li><code>og:region</code> - e.g., "CA"</li>
+<li><code>og:postal-code</code> e.g., "94304"</li>
+<li><code>og:country-name</code> - e.g., "USA"</li>
+</ul>
+
+<p>For example:</p>
+
+<pre><code>&lt;html xmlns:og="http://opengraphprotocol.org/schema/"&gt;
+  &lt;head&gt;
+    ...
+    &lt;meta property="og:latitude" content="37.416343" /&gt;
+    &lt;meta property="og:longitude" content="-122.153013" /&gt;
+    &lt;meta property="og:street-address" content="1601 S California Ave" /&gt;
+    &lt;meta property="og:locality" content="Palo Alto" /&gt;
+    &lt;meta property="og:region" content="CA" /&gt;
+    &lt;meta property="og:postal-code" content="94304" /&gt;
+    &lt;meta property="og:country-name" content="USA" /&gt;
+    ...
+  &lt;/head&gt;
+</code></pre>
+
+<p><a name="contact"></a></p>
+
+<h2>Specifying contact information</h2>
+
+<p>The Open Graph protocol supports the ability for you to specify contact information for your object. It's likely that future versions of the protocol will support extracting this information from the body of your page. In order to specify contact information, include at least one of the following three properties:</p>
+
+<ul>
+<li><code>og:email</code> - e.g., "me@example.com".</li>
+<li><code>og:phone_number</code> - e.g., "+1-650-123-4567".</li>
+<li><code>og:fax_number</code> - e.g., "+1-415-123-4567".</li>
+</ul>
+
+<p>For example:</p>
+
+<pre><code>&lt;html xmlns:og="http://opengraphprotocol.org/schema/"&gt;
+  &lt;head&gt;
+    ...
+    &lt;meta property="og:email" content="me@example.com" /&gt;
+    &lt;meta property="og:phone_number" content="650-123-4567" /&gt;
+    &lt;meta property="og:fax_number" content="+1-415-123-4567" /&gt;
+    ...
+  &lt;/head&gt;
+</code></pre>
+
+<p><a name="types"></a></p>
+
+<h2>Object types</h2>
+
+<p>In order for your object to be represented within the graph, you need to specify its type. This is done using the <code>og:type</code> property:</p>
+
+<pre><code>&lt;meta property="og:type" content="product" /&gt;
+</code></pre>
+
+<p>It is strongly preferred to include a description with each object:</p>
+
+<pre><code>&lt;meta name="og:description" content="High powered, versatile...." /&gt;
+</code></pre>
+
+<p>Some types also define optional attributes to provide more information:</p>
+
+<pre><code>&lt;meta name="og:isbn" content="1594868824" /&gt;
+</code></pre>
+
+<h3>Activities</h3>
+
+<ul>
+<li><code>activity</code></li>
+<li><code>sport</code></li>
+</ul>
+
+<h3>Businesses</h3>
+
+<ul>
+<li><code>bar</code></li>
+<li><code>company</code>
+
+<ul>
+<li>Attributes: <code>products</code> (comma-separated)</li>
+</ul></li>
+<li><code>cafe</code>
+
+<ul>
+<li>Attributes: <code>cuisine</code></li>
+</ul></li>
+<li><code>hotel</code></li>
+<li><code>restaurant</code>
+
+<ul>
+<li>Attributes: <code>cuisine</code></li>
+</ul></li>
+</ul>
+
+<h3>Groups</h3>
+
+<ul>
+<li><code>cause</code></li>
+<li><code>sports_league</code>
+
+<ul>
+<li>Attributes: <code>sport</code></li>
+</ul></li>
+<li><code>sports_team</code>
+
+<ul>
+<li>Attributes: <code>league</code> and <code>sport</code></li>
+</ul></li>
+<li><code>religion</code></li>
+</ul>
+
+<h3>Organizations</h3>
+
+<ul>
+<li><code>band</code>
+
+<ul>
+<li>Attributes: <code>genre</code> and <code>musicians</code></li>
+</ul></li>
+<li><code>government</code></li>
+<li><code>non_profit</code></li>
+<li><code>school</code></li>
+<li><code>university</code></li>
+</ul>
+
+<h3>People</h3>
+
+<ul>
+<li><code>actor</code></li>
+<li><code>athlete</code></li>
+<li><code>author</code></li>
+<li><code>director</code></li>
+<li><code>musician</code></li>
+<li><code>politician</code></li>
+<li><code>public_figure</code></li>
+</ul>
+
+<h3>Places</h3>
+
+<ul>
+<li><code>city</code>
+
+<ul>
+<li>Attributes: <code>country</code></li>
+</ul></li>
+<li><code>country</code>
+
+<ul>
+<li>Attributes: <code>capital</code></li>
+</ul></li>
+<li><code>landmark</code></li>
+<li><code>state_province</code>
+
+<ul>
+<li>Attributes: <code>country</code></li>
+</ul></li>
+</ul>
+
+<h3>Products and Entertainment</h3>
+
+<ul>
+<li><code>album</code>
+
+<ul>
+<li>Attributes: <code>band</code> and <code>genre</code></li>
+</ul></li>
+<li><code>book</code>
+
+<ul>
+<li>Attributes: <code>author</code>, <code>genre</code>, and <code>isbn</code></li>
+</ul></li>
+<li><code>drink</code></li>
+<li><code>food</code>
+
+<ul>
+<li>Attributes: <code>cuisine</code></li>
+</ul></li>
+<li><code>game</code>
+
+<ul>
+<li>Attributes: <code>company</code></li>
+</ul></li>
+<li><code>movie</code>
+
+<ul>
+<li>Attributes: <code>directed_by</code>, <code>genre</code>, <code>season</code>, <code>starring</code>, <code>network</code>, and <code>written_by</code></li>
+</ul></li>
+<li><code>product</code></li>
+<li><code>song</code>
+
+<ul>
+<li>Attributes: <code>album</code>, <code>band</code>, and <code>genre</code></li>
+</ul></li>
+<li><code>tv_show</code>
+
+<ul>
+<li>Attributes: <code>directed_by</code>, <code>genre</code>, <code>season</code>, <code>starring</code>, <code>network</code>, and <code>written_by</code></li>
+</ul></li>
+</ul>
+
+<h3>Websites</h3>
+
+<ul>
+<li><code>blog</code>
+
+<ul>
+<li>Optional attribute: <code>author</code></li>
+</ul></li>
+<li><code>website</code></li>
+</ul>
+
+<h2>Discussion and support</h2>
+
+<p>You can discuss the Open Graph Protocol on <a href="http://groups.google.com/group/open-graph-protocol">the developer mailing list</a>. It is currently supported by <a href="http://d2.dev.facebook.com/docs/opengraph">Facebook</a>, etc.</p></p>
+
+<iframe src="http://www.facebook.com/widgets/like.php?width=450&amp;height=25&amp;layout=bar" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+
+<p>The Open Graph protocol was originally created at Facebook and is based on <a href="http://en.wikipedia.org/wiki/Dublin_Core">Dublin Core</a>, <a href="http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html">link-rel canonical</a>, <a href="http://microformats.org/">Microformats</a>, and <a href="http://en.wikipedia.org/wiki/RDFa">RDFa</a>. The specification drescribed on this page is available under the <a href="http://openwebfoundation.org/legal/agreement/">Open Web Foundation Agreement, Version 0.9</a>. Last updated April 18th, 2010.</p>
+    </div>
+    </div>
+  </body>
+</html>

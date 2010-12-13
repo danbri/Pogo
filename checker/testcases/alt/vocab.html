@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:dct="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/" 
+xmlns:og="http://opengraphprotocol.org/schema/" 
+xmlns:fb="http://developers.facebook.com/schema/">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Open Graph Protocol: Base vocabulary</title>
+    <link rel="stylesheet" href="base.css" type="text/css"/>
+    
+     <style type="text/css">
+    code.type { font-style:bold; color: brown; }
+    li.type code { font-style:bold; color: brown; }
+    li.prop code { font-style:italic; color: green; }
+    em.type { color: brown; }
+    em.prop { color: green; }
+    </style>
+
+    <script type="text/javascript">    
+// <![CDATA[
+    function showMappings() {
+      var mappings = getElementsByClass('mappings');
+      for (i = 0; i < mappings.length; i++) { mappings[i].style.display="block";}
+    }
+    function hideMappings() {
+      var mappings = getElementsByClass('mappings');
+      for (i = 0; i < mappings.length; i++) { mappings[i].style.display="none"; }
+    }
+
+    function getElementsByClass(searchClass,node,tag) {
+	  var classElements = new Array();
+	  if ( node == null )
+	  	  node = document;
+  	  if ( tag == null )
+	  	tag = '*';
+	  var els = node.getElementsByTagName(tag);
+	  var elsLen = els.length;
+	  var pattern = new RegExp('(^|\\\\s)'+searchClass+'(\\\\s|$)');
+	  for (i = 0, j = 0; i < elsLen; i++) {
+		  if ( pattern.test(els[i].className) ) {
+			classElements[j] = els[i];
+			j++;
+		  }
+	  }
+	  return classElements;
+    }
+// ]]>
+</script>
+
+  <!-- base href="http://www.opengraphprotocol.org/vocab/" -->
+  </head>
+<body>
+<p style="float: right">See mappings to other linked data sets: 
+[<big><b><a href="#" onclick="javascript:showMappings();return false;">+</a></b></big>] |  
+[<big><b><a href="#" onclick="javascript:hideMappings();return false;">-</a></b></big>]  </p>
+<hr style="clear: both"/>
+
+<h1>Open Graph Protocol: Base vocabulary</h1>
+<p>The <a href="http://www.opengraphprotocol.org/">Open Graph protocol</a> enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to enable any web page to have the same functionality as a <a href="http://www.facebook.com/advertising/?pages">Facebook Page</a>.</p>
+
+
+<h2>Basic vocabulary</h2>
+
+<p>
+The Open Graph protocol is based around the idea of <em class="prop">properties</em> and <em class="type">types</em>. Each Open Graph page includes several properties of the main thing it describes; you are free to add more information about these objects using community extensions.
+</p>
+
+<p>
+To keep things simple, we always write <em class="type">type</em> names with an initial capital letter: eg. 'Hotel', 'Director', 'Song'; these are categories of thing. Each individual thing has a number of <em class="prop">properties</em> such as 'street-address', 'cuisine', 'genre'. A property can written in textual form, or be a link to another thing in the graph.
+</p>
+
+<p>The four required properties for every Open Graph page are:</p>
+
+<ul>
+<li class="prop"><code>og:title</code> - The title of your object as it should appear within the graph, e.g., "The Rock".</li>
+<li class="prop"><code>og:type</code> - The <a href="#types">type</a> of your object, e.g., "movie".  Depending on the type you specify, other properties may also be required.</li>
+<li class="prop"><code>og:image</code> - An image URL which should represent your object within the graph.</li>
+<li class="prop"><code>og:url</code> - The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/".</li>
+</ul>
+
+<p>The following properties are optional for any object:</p>
+
+<ul>
+<li class="prop"><code>og:description</code> - A one to two sentence description of your object.</li>
+</ul>
+
+
+<p><a id="location"></a></p>
+
+<h2>Specifying location</h2>
+
+<p>The Open Graph protocol supports the ability for you to specify location information for your object. This is useful if your object is 
+for a business or anything else with a real-world location. You can specify location via latitude and longitude, 
+a full address, or both. The property names used are defined within the <a href="http://microformats.org/wiki/hcard">Microformat hCard</a>.</p>
+
+<p>In order to specify latitude and longitude, include the following two properties:</p>
+
+<ul>
+<li class="prop"><code>og:latitude</code> - e.g., "37.416343".</li>
+<li class="prop"><code>og:longitude</code> - e.g., "-122.153013".</li>
+</ul>
+
+<p>If you wish to specify a human readable address, include the following four properties:</p>
+
+<ul>
+
+<li class="prop">
+<code>og:street-address</code> - e.g., "1601 S California Ave"
+</li>
+
+<li class="prop">
+<code>og:locality</code> - e.g, "Palo Alto"
+</li>
+
+<li class="prop">
+<code>og:region</code> - e.g., "CA"
+</li>
+
+<li class="prop">
+<code>og:postal-code</code> e.g., "94304"
+</li>
+
+<li class="prop">
+<code>og:country-name</code> - e.g., "USA"
+</li>
+
+</ul>
+
+<h2>Specifying contact information</h2>
+
+<p>The Open Graph protocol supports the ability for you to specify contact information for your object. 
+It's likely that future versions of the protocol will support extracting this information from the body of your page. 
+In order to specify contact information, include at least one of the following three properties:</p>
+
+<ul>
+<li class="prop">
+<code>og:email</code> - e.g., "me@example.com".
+</li>
+
+<li class="prop">
+<code>og:phone_number</code> - e.g., "+1-650-123-4567".
+</li>
+
+<li class="prop">
+<code>og:fax_number</code> - e.g., "+1-415-123-4567".
+</li>
+
+</ul>
+
+<p><a id="types"></a></p>
+
+<h2>Object types</h2>
+
+<p>The type can be specified using the og:type property, or with RDFa's built-in "typeof" attribute. </p>
+
+<ul>
+<li class="prop"><code>og:type</code> - e.g., og:Product</li>
+</ul>
+
+<p>Some types also define optional properties to provide more information:</p>
+
+<pre><code>&lt;meta name="og:isbn" content="1594868824" /&gt;
+</code></pre>
+
+<h3>Activities</h3>
+
+<ul>
+<li class="type">
+<code>og:Activity</code>
+</li>
+
+<li class="type">
+<code>og:Sport</code>
+</li>
+
+</ul>
+
+<h3>Businesses</h3>
+
+<ul>
+
+<li class="type">
+<code>og:Bar</code>
+</li>
+
+<li  class="type">
+<code>og:Company</code>
+<ul>
+<li class="prop">custom properties: <code>og:products</code> (a comma-separated string)</li>
+</ul>
+</li>
+
+<li class="type">
+<code>og:Cafe</code>
+<ul>
+<li  class="prop">custom properties: <code>og:cuisine</code>(a string)</li>
+</ul>
+</li>
+
+
+
+<li>
+<code class="type">og:Hotel</code>
+</li>
+
+
+
+<li>
+<code class="type">og:Restaurant</code>
+<ul>
+<li  class="prop">custom properties: <code>og:cuisine</code></li>
+</ul>
+</li>
+
+</ul>
+
+<h3>Groups</h3>
+
+<ul>
+
+
+<li class="type">
+<code>og:Cause</code>
+</li>
+
+
+<li class="type">
+<code>og:Sports_league</code>
+<ul>
+<li class="prop">custom properties: <code>og:sport</code></li>
+</ul>
+</li>
+
+
+
+<li class="type">
+<code>og:Sports_team</code>
+<ul>
+<li class="prop">custom properties: <code>og:league</code> and <code>og:sport</code></li>
+</ul>
+</li>
+
+
+<li class="type">
+<code>og:Religion</code>
+</li>
+
+
+</ul>
+
+
+
+
+<h3>Organizations</h3>
+
+<ul>
+
+
+<li class="type" about="#Band" typeof="rdfs:Class">
+<code>og:<span property="rdfs:label">Band</span></code>
+<ul>
+
+<li class="prop">custom properties: <code>og:genre</code> and <code>og:musicians</code></li>
+</ul>
+
+</li>
+
+
+<li class="type" about="#Governmental" typeof="rdfs:Class">
+<code>og:Governmental</code>
+</li>
+
+<li class="type" about="#Non_profit" typeof="rdfs:Class">
+<code>og:Non_profit</code>
+</li>
+
+
+<li class="type"  about="#School" typeof="rdfs:Class">
+<code>og:School</code>
+</li>
+
+
+<li class="type" about="#University" typeof="rdfs:Class">
+<code>og:University</code>
+</li>
+
+
+</ul>
+
+<h3>People</h3>
+
+<ul>
+<li class="type" about="#Actor" typeof="rdfs:Class">
+<code>og:<span property="rdfs:label">Actor</span></code>
+<ul class="mappings">
+<li>subclass of <span rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Person"><a href="http://xmlns.com/foaf/0.1/#term_Person">foaf:Person</a></span></li>
+<li>equivalent class: <span rel="owl:equivalentClass"><a href="http://dbpedia.org/resource/Actor">dbpedia:Person</a></span></li>
+</ul>
+
+</li>
+
+
+<li class="type" about="#Athlete" typeof="rdfs:Class">
+<code>og:Athlete</code>
+<ul class="mappings">
+<li>subclass of <span rel="rdfs:subClassOf" resource="http://xmlns.com/foaf/0.1/Person"><a href="http://xmlns.com/foaf/0.1/#term_Person">foaf:Person</a></span></li>
+<li>equivalent class: <span rel="owl:equivalentClass"><a href="http://dbpedia.org/resource/Athlete">dbpedia:Athlete</a></span></li>
+</ul>
+</li>
+
+<li class="type" about="#Author" typeof="rdfs:Class">
+<code>og:Author</code>
+</li>
+
+
+<li class="type" about="#Director" typeof="rdfs:Class">
+<code>og:Director</code>
+</li>
+
+
+<li class="type" about="#Musician" typeof="rdfs:Class">
+<code>og:Musician</code>
+</li>
+
+
+<li class="type" about="#Poltician" typeof="rdfs:Class">
+<code>og:Politician</code>
+</li>
+
+
+<li class="type" about="#Public_figure" typeof="rdfs:Class">
+<code>og:Public_figure</code>
+</li>
+
+
+</ul>
+
+
+
+<h3>Places</h3>
+
+<ul>
+
+
+<li class="type">
+<code>og:City</code>
+<ul>
+<li  class="prop" about="#City" typeof="rdfs:Class">
+custom properties: <code>og:country</code></li>
+</ul>
+</li>
+
+
+
+
+<li class="type" about="#Country" typeof="rdfs:Class">
+<code>og:Country</code>
+<ul>
+ <li class="prop">custom properties: <code>og:capital</code></li>
+</ul>
+</li>
+
+
+
+<li class="type" about="#Landmark" typeof="rdfs:Class"><code>og:Landmark</code></li>
+
+
+
+<li class="type" about="#State_province" typeof="rdfs:Class">
+<code>og:State_province</code>
+<ul>
+<li class="prop">custom properties: <code>og:country</code></li>
+</ul>
+</li>
+
+
+</ul>
+
+
+
+<h3>Products and Entertainment</h3>
+
+<ul>
+
+
+<li class="type" about="#Album" typeof="rdfs:Class">
+<code>og:Album</code>
+<ul>
+<li class="prop">custom properties: <code>og:band</code> and <code>og:genre</code>
+
+<ul class="mappings">
+  <li>equivalent class: <span rel="owl:equivalentClass"><a href="http://dbpedia.org/resource/Album">dbpedia:Album</a></span></li>
+</ul>
+
+</li>
+
+</ul>
+</li>
+
+
+
+<li class="type" about="#Book" typeof="rdfs:Class">
+<code>og:<span property="rdfs:label">Book</span></code>
+<ul class="mappings">
+  <li>equivalent class: <span rel="owl:equivalentClass" resource="http://purl.org/ontology/bibo/Book"><a href="http://bibotools.googlecode.com/svn/bibo-ontology/trunk/doc/index.html">bibo:Book</a></span></li>
+  <li>equivalent class: <span rel="owl:equivalentClass"><a href="http://dbpedia.org/resource/Book">dbpedia:Book</a></span></li>
+</ul>
+<ul>
+<li class="prop">custom properties: 
+
+<span class="prop" about="#author" typeof="rdf:Property">
+<code>og:author</code>, 
+</span>
+<code>og:genre</code>, and 
+<code>og:isbn</code>
+
+</li>
+
+</ul>
+</li>
+
+
+
+<li class="type" about="#Drink" typeof="rdfs:Class">
+<code>og:Drink</code></li>
+
+
+
+<li class="type" about="#Food" typeof="rdfs:Class">
+<code>og:Food</code>
+<ul>
+<li class="prop">custom properties: <code>og:cuisine</code></li>
+</ul>
+</li>
+
+
+
+<li class="type" about="#Game" typeof="rdfs:Class">
+<code>og:Game</code>
+<ul>
+<li class="prop">custom properties: <code>og:company</code> (can be a string or a link(?))</li>
+</ul>
+</li>
+
+
+
+<li class="type" about="#Movie" typeof="rdfs:Class">
+<code>og:Movie</code>
+<ul>
+<li class="prop">custom properties: <code>og:directed_by</code>, <code>og:genre</code>, <code>og:season</code>,  <code>og:starring</code>, <code>og:network</code>, and <code>og:written_by</code></li>
+</ul>
+</li>
+
+
+
+<li class="type">
+<code>og:Product</code></li>
+
+
+
+<li class="type">
+<code>og:Song</code>
+<ul>
+<li class="prop">custom properties: <code>og:album</code>, <code>og:band</code>, and <code>og:genre</code></li>
+</ul>
+</li>
+
+
+
+<li class="type">
+<code>og:TV_show</code>
+<ul>
+<li class="prop">custom properties: <code>og:directed_by</code>, <code>og:genre</code>, <code>og:season</code>, <code>og:starring</code>, <code>og:network</code> and <code>og:written_by</code></li>
+</ul>
+</li>
+
+</ul>
+
+<h3>Websites</h3>
+
+<ul>
+
+<li class="type">
+<code>og:Blog</code>
+<ul>
+<li class="prop">custom properties: <code>og:author</code></li>
+</ul>
+</li>
+
+
+
+
+<li class="type">
+<code>og:Website</code>
+</li>
+
+</ul>
+
+<div class="mappings">
+<h2>Things and Pages</h2>
+
+<p>
+Open Graph Protocol descriptions are typically not about the page they're written in. We might be describing the <span class="prop">og:director</span> of a <span class="type">og:Movie</span>, or the <span class="prop">og:cuisine</span> of a <span class="type">og:Bar</span>. 
+</p>
+<p>
+The ideal markup to express this clearly is as follows:
+</p>
+
+<pre><code> [ to be completed ] 
+</code></pre>
+
+<p>Note that URLs ending "#og" are treated as identifying the thing in the world (movie, actor etc.) rather than page.
+</div>
+
+
+
+<p about=""
+     resource="http://www.w3.org/TR/rdfa-syntax"
+     rel="dc:conformsTo" xmlns:dc="http://purl.org/dc/terms/">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa"
+        alt="Valid XHTML + RDFa" height="31" width="88" /></a>
+  </p>
+  
+</body>
+</html>
