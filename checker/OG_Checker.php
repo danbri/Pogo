@@ -1,5 +1,10 @@
 <?php
 
+
+
+require_once 'OG_L18N.php';
+require_once 'cfg.php';
+       
 # 'And thirdly, the code is more what you'd call "guidelines" than actual rules.'
 # -- http://www.imdb.com/title/tt0325980/quotes
 
@@ -38,6 +43,25 @@
 
 
 class Checker {
+
+
+  public function tableFromReport($report) {
+    if (sizeof($report) == 0) { return ''; }
+    $msg = Label::$messages;
+    $t = "<table border='1' class='trouble'>";
+    foreach ($report as $ticket) {
+      if (sizeof($ticket)==0) { continue; }
+      # print "<pre>".var_dump($ticket)."</pre>";
+      while (list($code, $info) = each($ticket)) {
+        $t .= "<tr><td>$code</td><td>".$msg[$code]."</td><td>$info</td></tr>\n";
+      }
+    }
+      $t .= "</table>";
+    return $t;
+  }
+
+
+
 
   public function checkNotCSV($og) {
     $report = array();
