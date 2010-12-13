@@ -166,6 +166,23 @@ class OGDataGraph {
     }
   }
 
+  # crude hack for now, but covers most cases.
+  function namespaces() {
+    $content = $this->content;
+    preg_match_all("/xmlns:(.*?)=[\"']([^'\"]*?)[\"']/", $content, $matches);
+    $i=0;
+    $ns=array();
+    foreach($matches[1] as $prefix) # $matches[2] as $uri)
+    {
+      #print "Prefix:". $prefix."\n";
+      #print "URI: ". $matches[2][$i]."\n";
+      $ns[$prefix] = $matches[2][$i];
+      $i++;
+   }
+    return $ns;
+  }
+
+
   #################################################################################
   # Testcases-related methods
 

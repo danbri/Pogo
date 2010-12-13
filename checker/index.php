@@ -20,10 +20,9 @@ require_once 'OG_L18N.php';
 $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
 $me = basename($_SERVER['SCRIPT_FILENAME']); # index.php by default
-
 $mode = $_GET['mode'];
 if (is_null($mode)) {$mode='auto';}
-if ($mode &&  !preg_match( '/(^full$|^lite$|^auto$|^viz$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
+if ((!is_null($mode)) &&  !preg_match( '/(^full$|^lite$|^auto$|^viz$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
 $url = $_GET['url'];
 
 print "<form action=\"$me\" method=\"get\" name=\"checker\">\n";
