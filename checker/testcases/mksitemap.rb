@@ -1,6 +1,8 @@
 #!/usr/bin/ruby
 
-# usage mksitemap.rb > testcases/_all.xml
+# usage testcases/mksitemap.rb > testcases/_all.xml
+# run from the main directory above testcases/
+# since we need the foldername in our paths.
 
 puts '<?xml version="1.0" encoding="UTF-8"?>'
 puts '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
