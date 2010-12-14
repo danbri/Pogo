@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>file:testcases/fb/examples/good-shortns.meta</loc></url>
+<url><loc>file:testcases/i18n/restaurant_jp_type_Shift_JIS.meta</loc></url>
+<url><loc>file:testcases/i18n/restaurant_jp_type_utf8.meta</loc></url>
 </urlset>

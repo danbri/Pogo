@@ -22,6 +22,7 @@ BIGGER THINGS
  * clarify what we mean by 'triple count' and break out different aspects; eg. triples for core OpenGraphProtocol, triples from 3rd party extensions to it,
    triples from other RDFa vocabularies that happen to be in the same page, and those annoying triples added by RDFa parsers for stylesheet links.
  * ARC is fetching live from Web, not cache; most of our tests point into repo currently so that's ok-ish but needs fixing for external links.
+ * full parser has some weirdness reading Japanese, see testCanReadJapaneseUTF8Full unit test.
 
 LITTLE THINGS
 

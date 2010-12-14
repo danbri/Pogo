@@ -356,6 +356,71 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
   }
 
 
+
+
+  /**
+  * @depends testLocalRepoAccessible
+  */
+  public function testCanReadJapaneseUTF8Lite() {
+    $og = new OGDataGraph();
+    try {$f='testcases/i18n/restaurant_jp_type_utf8.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+    $og->readFromURL('lite');
+    $this->assertNotNull($og->og_type, "Expecting a (wrong but should parse) og:type using Japanese katakana symbols.");
+  }
+
+  /**
+  * @depends testLocalRepoAccessible
+  */
+  public function testCanReadJapaneseUTF8Full() {
+    $og = new OGDataGraph();
+    try {$f='testcases/i18n/restaurant_jp_type_utf8.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+
+    $this->markTestIncomplete( 'This test has not been implemented yet. Something wrong here, it seems to invoke ARC turtle parser, not rdfa.');
+
+    try {
+      $og->readFromURL('full');
+    } catch (Exception $e) { 
+      $this->fail("Something failed during full parsing. ". $e->getMessage() );
+    }
+    $this->assertNotNull($og->og_type, "Expecting a (wrong but should parse) og:type using Japanese katakana symbols.");
+  }
+
+
+
+
+
+  /**
+  * @depends testLocalRepoAccessible
+  */
+  public function testCanReadJapaneseShift_JISLite() {
+    $og = new OGDataGraph();
+    try {$f='testcases/i18n/restaurant_jp_type_Shift_JIS.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+    $og->readFromURL('lite');
+    $this->assertNotNull($og->og_type, "Expecting a (wrong but should parse) og:type using Japanese katakana symbols.");
+  }
+
+  /**
+  * @depends testLocalRepoAccessible
+  */
+  public function testCanReadJapaneseShift_JISFull() {
+    $og = new OGDataGraph();
+    try {$f='testcases/i18n/restaurant_jp_type_Shift_JIS.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
+
+###    $this->markTestIncomplete( 'This test has not been implemented yet. Something wrong here, it seems to invoke ARC turtle parser, not rdfa.');
+
+    try {
+      $og->readFromURL('full');
+    } catch (Exception $e) { 
+      $this->fail("Something failed during full parsing. ". $e->getMessage() );
+    }
+    $this->assertNotNull($og->og_type, "Expecting a (wrong but should parse) og:type using Japanese katakana symbols.");
+  }
+
+
+
+
+
+
   public function testReadsGoodShortNSTestcaseMetaFile() {
     $og = new OGDataGraph();
 

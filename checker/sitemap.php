@@ -17,7 +17,7 @@ print '<body>';
 $map = 'testcases/approved.xml';
 $map = 'testcases/fb_tests.xml';
 $map = 'testcases/_all.xml';
-#$map = 'testcases/_todo.xml';
+$map = 'testcases/_todo.xml';
 try { 
 $tests = OGDataGraph::getTests($map);
 } catch (Exception $e) { print "oops"; print $e; }
