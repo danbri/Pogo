@@ -211,7 +211,7 @@ class Checker {
 
   public function check_bad_type_chars_fail($og) {
     $report = array();
-    verbose("CHECKING FOR BAD TYPE: ". $og->og_type);
+    # verbose("CHECKING FOR BAD TYPE: ". $og->og_type);
     foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://opengraphprotocol.org/schema/type') { 
         if (preg_match( '/[^a-z_:]/', $value['o'] ) )  { 
