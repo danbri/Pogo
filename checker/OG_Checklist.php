@@ -19,6 +19,7 @@ Class Label
 	'METANAME_ATTRIBUTE_NOT_PROPERTY' =>		'Incorrect syntax; using meta name attribute instead of property attribute.',
 	'OG_TITLE_HIGHLY_PUNCTUATED' =>			'Style warning: og:title contains a lot of punctuation. Titles should be simple text, no need for navigation info.',
 	'BAD_HTML' => 					'HTML markup is exceptionally bad, consider visiting validator.w3.org.',
+	'MISC_FB_FAIL' =>				'Something wrong in one of the fb: fields, sorry no more details available. Try the Facebook linter.',
 	);
 
 
