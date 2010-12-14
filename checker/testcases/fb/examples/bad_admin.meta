@@ -3,6 +3,7 @@
     "testid": "bad_admin",
     "testgroup": "fb/examples",
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "warn": ['FAILED_BIG_NUMBER_IN_ADMINS'],
     "warning": "The fb:admins field contained some invalid ids, namely 113869198637480; App ID in Admin Field; You put 113869198637480 in the fb:admins field. It should be in fb:app_id.",
     "valid_html": false,
     "status": "invalid",

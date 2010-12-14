@@ -3,6 +3,7 @@
     "testid": "bad_app_id",
     "testgroup": "fb/examples",
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "warn": [ 'NONDIGIT_APPID_CHARS_FAIL' ],
     "warning": "this appid is bad! (contains words not numbers).",
     "valid_html": false,
     "status": "invalid",

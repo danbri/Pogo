@@ -2,6 +2,8 @@
  "url": "http://developers.facebook.com/tools/lint/examples/bad_domain",
     "testid": "bad_domain",
     "testgroup": "fb/examples",
+    "warn": [ 'MISC_FB_FAIL' ],
+    "warning": "The application ID specified within the \"fb:app_id\" meta tag is not allowed on this domain. You must setup the Connect Base Domains for your application to be a prefix of http://example.com.",
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "valid_html": false,
     "uses_rdfa": true,
@@ -9,6 +11,5 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 0,
-    "warning": "The application ID specified within the \"fb:app_id\" meta tag is not allowed on this domain. You must setup the Connect Base Domains for your application to be a prefix of http://example.com.",
     "home_site": "http://www.facebook.com/"
 }
