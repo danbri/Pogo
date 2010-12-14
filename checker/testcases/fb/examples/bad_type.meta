@@ -3,7 +3,7 @@
     "testid": "bad_type",
     "testgroup": "fb/examples",
 
-    "warn": ['MISSING_REQUIRED_PROPERTY', 'BAD_TYPE_CHARS_FAIL' ],
+    "warn": ["MISSING_REQUIRED_PROPERTY", "BAD_TYPE_CHARS_FAIL" ],
 
     "warning": "Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+. Also others missing.",
 

@@ -3,7 +3,7 @@
     "testid": "homepage",
     "testgroup": "playlist",
 
-    "warn": ['MISSING_REQUIRED_PROPERTY'],
+    "warn": ["MISSING_REQUIRED_PROPERTY"],
 
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "status": "valid",

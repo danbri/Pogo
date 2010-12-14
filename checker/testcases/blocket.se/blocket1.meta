@@ -3,7 +3,7 @@
     "testid": "blocket1",
     "testgroup": "blocket",
 
-    "warn": ['MISSING_REQUIRED_PROPERTY', 'OG_NAMESPACE_UNDECLARED' ],
+    "warn": ["MISSING_REQUIRED_PROPERTY", "OG_NAMESPACE_UNDECLARED" ],
 
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "status": "valid",

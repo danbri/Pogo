@@ -3,7 +3,7 @@
     "testid": "not_CSV",
     "testgroup": "fb/examples",
 
-    "warn": [ 'FAILED_FBADMINS_REGEX', 'MISSING_REQUIRED_PROPERTY' ],
+    "warn": [ "FAILED_FBADMINS_REGEX", "MISSING_REQUIRED_PROPERTY" ],
     "warning: "Field contains values that cannot be fb admin ids.",
 
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
