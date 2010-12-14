@@ -2,8 +2,12 @@
  "url": "http://developers.facebook.com/tools/lint/examples/bad_page_id",
     "testid": "bad_page_id",
     "testgroup": "fb/examples",
-    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+
+    "warn": "
+    "warn": [ 'FAILED_PAGEID_NUMBERSONLY_REGEX' ],
     "warning": "this page_id is bad! (contains words not numbers).",
+
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "valid_html": false,
     "status": "invalid",
     "uses_rdfa": true,
