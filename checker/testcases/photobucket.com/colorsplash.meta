@@ -1,0 +1,14 @@
+{ 
+ "url": "photobucket.com/images/color%20splash/",
+    "testid": "colorsplash",
+    "testgroup": "photobucket.com",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "status": "ivalid",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 1,
+    "warning": "Only one (og:site_name) property found; 4 are mandatory.",
+    "home_site": "http://www.photobucket.com/"
+}
