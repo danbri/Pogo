@@ -15,22 +15,36 @@ external services
   $graph = $parser->graph;
 
 
-BIG THINGS
+BIGGER THINGS
 
  * should plug in the HTML5 parser somehow, since majority of in-the-wild files are illformed (poor unicode etc see ekstrabladet.dk test)
  * manifests should declare the testcase file's charset; should parsers also force it, or read from content where available?
+ * clarify what we mean by 'triple count' and break out different aspects; eg. triples for core OpenGraphProtocol, triples from 3rd party extensions to it,
+   triples from other RDFa vocabularies that happen to be in the same page, and those annoying triples added by RDFa parsers for stylesheet links.
+ * ARC is fetching live from Web, not cache; most of our tests point into repo currently so that's ok-ish but needs fixing for external links.
 
 LITTLE THINGS
 
  * Extract (and use?) <link rel="canonical" ...>
+ * Geo checks; make sure an og:latitude always comes with an og:longitude and vice-versa
+ * we complain about <meta id="m_metaog:urlID" property="og:url" name="og:url" content="http://www.cafe.com/Free_Games/Hidden-Words-Adventure-Capitals" />
+   but it's fine to have name= so long as property= also there. See Test: file:testcases/cafe.com/hiddenwords.meta VS METANAME_ATTRIBUTE_NOT_PROPERTY
+ * document rules for testcase repository use of relative URIs. See grep -R url */* | grep -v http
+ * check for contradictory types (something being a 'restaurant' and a 'profile' simultaneously)
+
+FAILING TESTS
+
+ * Test: file:testcases/cnn.com/cnn1.meta in sitemap.php checker
+   MISSING_REQUIRED_PROPERTY even though two are there it doesn't see og:title or type. This is because we're not falling back on the Lite parser yet.
+
+
 
 API
 
  * Look at the draft W3C RDFa API and consider adoption
- * fix the way we expose the supplied URL (or don't, currently...)
+ * fix the way we expose the supplied URL (or don't, currently...), whether it's canonicalised
  * APIs for reading from local file and supplied text
- * Charset?
- * Linter has a "Site URL" field, seemingly auto-derrived. 
+ * Charset? can we set it in the parsers?
    e.g. see http://developers.facebook.com/tools/lint/examples/meta_name
  * Agree a canonical form for testing (JSON/triples?)
  * Lite parser (from https://github.com/scottmac/opengraph) not parsing fb: properties (but then ogp.me doesn't mention them)
