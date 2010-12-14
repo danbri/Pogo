@@ -9,5 +9,7 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 5,
-    "home_site": "http://www.facebook.com/"
+    "home_site": "http://ogp.me/",
+    "warn": [],
+    "warning": "Note, content also includes a real RDF type, in addition to og:type."
 }

@@ -9,5 +9,7 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 0,
+    "warn": [ "OG_NAMESPACE_UNDECLARED", "FB_NAMESPACE_UNDECLARED" ], 
+    "warning": "The fb: and og: prefixes are not declared. This testcase confuses the checker currently - need to fallback to Lite parser.",
     "home_site": "http://www.facebook.com/"
 }

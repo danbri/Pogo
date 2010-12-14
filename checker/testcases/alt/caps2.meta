@@ -9,5 +9,7 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 5,
-    "home_site": "http://www.facebook.com/"
+    "home_site": "http://ogp.me/",
+    "warn": [ "MISSING_REQUIRED_PROPERTY" ],
+    "warning": "Missing the URL values because we use link syntax instead."
 }

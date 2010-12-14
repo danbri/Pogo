@@ -2,6 +2,8 @@
  "url": "ekstrabladet.dk/112/article1469733.ece",
     "testid": "article1469733",
     "testgroup": "ekstrabladet.dk",
+    "warn": ["OG_NAMESPACE_UNDECLARED","MISSING_REQUIRED_PROPERTY"],
+    "warning": "Missing required properties due to missing xmlns:og; picky mode. However checker _should_ fall-back to lite mode. As an aside, input has some charset issues too.",
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "status": "valid",
     "valid_html": false,
@@ -9,6 +11,5 @@
     "uses_og": true,
     "extended": false,
     "triple_count": 4,
-    "warning": "Input is not proper UTF-8, indicate encoding ! Bytes: 0xA9 0x2C 0x20 0x32"
-    "home_site": "http://ekstrabladet.dk//"
+    "home_site": "http://ekstrabladet.dk/"
 }

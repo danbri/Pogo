@@ -8,6 +8,6 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 19,
-     "warning": "rapper: Error testcases/rottentomatoes/matrix.cache:1 column 0 - XML parser error: Opening and ending tag mismatch: link line 0 and head rapper: Failed to parse file matrix.cache rdfa content"
+     "warning": "rapper: Error testcases/rottentomatoes/matrix.cache:1 column 0 - XML parser error: Opening and ending tag mismatch: link line 0 and head rapper: Failed to parse file matrix.cache rdfa content",
     "home_site": "http://www.rottentomatoes.com/"
 }

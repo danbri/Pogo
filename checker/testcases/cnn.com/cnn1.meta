@@ -3,7 +3,8 @@
     "testid": "cnn1",
     "testgroup": "cnn.com",
 
-    "warning:" "Only contains og:title, og:type. Namespace declaration missing",
+    "warning": "Only contains og:title, og:type. Namespace declaration missing. Confuses checker - needs fallback to lite parser. Triplecount includes normal html rel= usage.",
+
     "warn": ["MISSING_REQUIRED_PROPERTY", "OG_NAMESPACE_UNDECLARED" ],
 
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
@@ -12,6 +13,6 @@
     "uses_rdfa": true,
     "uses_og": true,
     "extended": true,
-    "triple_count": 3,
+    "triple_count": 12,
     "home_site": "http://www.facebook.com/"
 }

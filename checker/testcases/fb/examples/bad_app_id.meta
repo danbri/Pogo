@@ -3,7 +3,7 @@
     "testid": "bad_app_id",
     "testgroup": "fb/examples",
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
-    "warn": [ "NONDIGIT_APPID_CHARS_FAIL"],
+    "warn": [ "NONDIGIT_APPID_CHARS_FAIL", "MISSING_REQUIRED_PROPERTY"],
     "warning": "this appid is bad! (contains words not numbers).",
     "valid_html": false,
     "status": "invalid",
@@ -11,6 +11,6 @@
     "status": "invalid",
     "uses_og": true,
     "extended": true,
-    "triple_count": 0,
+    "triple_count": 1,
     "home_site": "http://www.facebook.com/"
 }

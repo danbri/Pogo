@@ -4,7 +4,7 @@
     "testgroup": "fb/examples",
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "status": "invalid",    
-    "warn": ["METANAME_ATTRIBUTE_NOT_PROPERTY"],
+    "warn": ["METANAME_ATTRIBUTE_NOT_PROPERTY", "MISSING_REQUIRED_PROPERTY"],
     "warning": "Using meta attribute instead of property attribute.",
     "valid_html": false,
     "uses_rdfa": true,

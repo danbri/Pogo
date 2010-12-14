@@ -1,5 +1,5 @@
 {
-    "url": "http://opengraphprotocol.org/todo2",
+    "url": "/testcases/opengraphprotocol.org/rock2.cache",
     "testid": "rock2",
     "testgroup": "opengraphprotocol.org",
     "cache_date": "Sun 31 Oct 2010 13:46:47 CET",
@@ -8,6 +8,6 @@
     "uses_rdfa": true,
     "uses_og": true,
     "extended": false,
-    "triple_count": 4,
+    "triple_count": 11,
     "home_site": "http://www.opengraphprotocol.org/"
 }

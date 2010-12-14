@@ -1,5 +1,5 @@
 { 
- "url": "testcases/examples/good-shortns",
+ "url": "/testcases/fb/examples/good-shortns.cache",
     "testid": "good-shortns",
     "testgroup": "fb/examples",
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
@@ -9,5 +9,6 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 4,
+    "warning": "Something's wrong with checker here, full parser upset; should be ok with lite. work needed.",
     "home_site": "http://www.facebook.com/"
 }

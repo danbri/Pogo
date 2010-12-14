@@ -3,7 +3,7 @@
     "testid": "bad_page_id",
     "testgroup": "fb/examples",
 
-    "warn": [ "FAILED_PAGEID_NUMBERSONLY_REGEX" ],
+    "warn": [ "FAILED_PAGEID_NUMBERSONLY_REGEX", "MISSING_REQUIRED_PROPERTY" ],
     "warning": "this page_id is bad! (contains words not numbers).",
 
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",

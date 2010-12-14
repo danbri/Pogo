@@ -9,7 +9,7 @@
     "status": "invalid",
     "uses_og": true,
     "extended": true,
-    "triple_count": 0,
+    "triple_count": 1,
     "warn": [ "NONDIGIT_APPID_CHARS_FAIL", "MISSING_REQUIRED_PROPERTY" ],
     "warning": "You used your api key \"f0345d178810e97cdab9e9474de8a25d\" instead of your app id \"113869198637480\". Oops!",
     "home_site": "http://www.facebook.com/"

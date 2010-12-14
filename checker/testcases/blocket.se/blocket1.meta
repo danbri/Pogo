@@ -1,9 +1,9 @@
 { 
  "url": "http://ehandel.blocket.se/Philips_HD2383_1115754.htm",
     "testid": "blocket1",
-    "testgroup": "blocket",
+    "testgroup": "blocket.se",
 
-    "warn": ["MISSING_REQUIRED_PROPERTY", "OG_NAMESPACE_UNDECLARED" ],
+    "warn": ["MISSING_REQUIRED_PROPERTY", "OG_NAMESPACE_UNDECLARED"],
 
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "status": "valid",
@@ -12,6 +12,6 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 0,
-    "warning": "Site has title/type/image/url/site_name but no prefix declaration, and markup is commented out. Therefore missing required properties."
+    "warning": "Site has title/type/image/url/site_name but no prefix declaration, and markup is commented out. Therefore missing required properties. Checker will not currently notice, as it checks for xmlns declarations with regex not HTML5 parser.",
     "home_site": "http://ehandel.blocket.se/"
 }
