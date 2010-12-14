@@ -58,8 +58,6 @@ class Checker {
     # Certain checks only make sense once we've got some data.
 
 
-
-
     # robustification needed. these were shortcuts to speed things, but maybe 
     # worth running some other checks too, to catch reasons for failure? if so
     # move them up prior to this code block for now. But really these are just 

@@ -97,10 +97,14 @@ class OGDataGraph {
     # this will be slow, but we'll grab a copy for ourselves to revisit later.
     # ideally a single fetch would be used with each parser too. do-able.
     try {
-      $handle = fopen( $u, "r");
-      $this->content = stream_get_contents($handle);
+
+      @$handle = fopen( $u, "r");
+      @$this->content = stream_get_contents($handle);
       #print "meta: ". $contents . "\n<br/>\n";
-      fclose($handle);
+      @fclose($handle);
+      if (is_null($handle)) { 
+        throw new Exception('FAILED_READ_URL'); # not clear which failures are exceptions yet
+      }
     } catch (Exception $e) { 
       verbose("Trouble fetching from url $u.");
       throw new Exception('FAILED_READ_URL');
