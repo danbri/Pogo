@@ -1,0 +1,17 @@
+{ 
+ "url": "http://www.playlist.com/",
+    "testid": "homepage",
+    "testgroup": "playlist",
+
+    "warn": ['MISSING_REQUIRED_PROPERTY'],
+
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "status": "valid",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 3,
+    "warning": "Missing 3 of the 4 required og: properties (only have og:image)",
+    "home_site": "http://www.playlist.com/"
+}

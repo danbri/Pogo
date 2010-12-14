@@ -1,0 +1,837 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="verify-v1" content="9gAYqcGrg4zjSPRcyGwL7NyX1P2BVJv0D4na4RIFZY8=" />
+<meta name="google-site-verification" content="_80fIHlS0afO__htgCqBdq-EEjfX0Ne_dy_aUxVrZ64" />
+<meta property="fb:admins" content="535161587" />
+<meta property="fb:page_id" content="143916713473" />
+<meta property="fb:app_id" content="115829328445307" />
+<title>Playlist.com | Listen to Free Music Online - Free Music Streaming - Search music, find music, listen to music, & share music online</title>
+<meta name="description" content="Listen to free music.  Search and listen to free songs online. Search songs, artists, and albums, create playlists & share them with your friends and family. Free Music Streaming."/><meta name="keywords" content="music, music songs, music video, free music, songs, albums, new music, listen music, play music, song music, search music, pop music, share, cover, remix"/><meta name="robots" content="index,follow"/><link rel="image_src" href="http://static.pplaylist.com/img/phoenix/icons/sharethis-facebook-icon.gif" /><meta property="og:image" content="http://static.pplaylist.com/img/phoenix/icons/sharethis-facebook-icon.gif" /><meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+<meta http-equiv="PRAGMA" content="NO-CACHE" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.playlist.com/opensearch.xml" title="Playlist.com Music Search"/>
+<link rel="stylesheet" type="text/css" media="all" href="http://static.pplaylist.com/styles/merged/std_merged_v208.css"/>
+
+<!--[if IE 8]>
+    <link rel="stylesheet" href="http://static.pplaylist.com/styles/phoenix/ie.css" type="text/css" media="screen" title="Screen Styles" charset="utf-8"/>
+<![endif]-->
+
+<!--[if IE 7]>
+    <link rel="stylesheet" href="http://static.pplaylist.com/styles/phoenix/ie7.css" type="text/css" media="screen" title="Screen Styles" charset="utf-8"/>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" media="all" href="http://static.pplaylist.com/styles//phoenix/sections/frontpage_v208.css"/>
+
+<script type="text/javascript">
+//<![CDATA[
+var DOMAIN_ASYNC = 'http://www.playlist.com/async';
+var DOMAIN_BASE = '';
+var DOMAIN_MAIN = 'http://www.playlist.com';
+var DOMAIN_SEARCH = 'http://www.playlist.com/search';
+var DOMAIN_SEARCHBETA = 'http://www.playlist.com/searchbeta';
+var DOMAIN_STATIC = 'http://static.pplaylist.com';
+var DOMAIN_LOGGING = 'http://www.playlist.com';
+var DOMAIN_JAVASCRIPT = 'http://www.playlist.com/prod/scripts/27';
+var DOMAIN_FORUMS = 'http://www.playlist.com/forum';
+var DOMAIN_API = 'http://www.playlist.com/api';
+var DOMAIN_API2 = 'http://www.playlist.com/api2';
+var DOMAIN_PLAYLIST = 'http://www.playlist.com/playlist';
+var DOMAIN_VIDEO_PLAYLIST = 'http://www.playlist.com/video';
+var DOMAIN_USERS = 'http://www.playlist.com/user';
+var DOMAIN_PRE_XSPF = 'http://pl.playlist.com/pl.php?e=1%26playlist=';
+var DOMAIN_PLAYLIST_BASEURL= 'http://pl.playlist.com/pl.php';
+var DOMAIN_PLAYERSTATIC = 'http://www.playlist.com/prod/players/1033';
+var DOMAIN_TOOLBAR = 'http://toolbar.playlist.com';
+var DEV_MODE = '';
+var PHOENIX = 0;
+var MAX_PLAYLIST_TRACKLINKS = '200';
+var STATIC_REVISION = '208';
+var OFFERTEST = 0;
+var MIN_FLASH_VERSION = 8;
+var ENABLE_SEARCHCOMPLETE = 1;
+var ADS_ON = '1';
+var ADS_REFRESH = 70;
+var FLASH_MINREV = '9.0.115';
+var FLASH_GOODREV = '9.0.115';
+var ECOM = '';
+var global_firstError = "";
+var global_videosEnabled = 1;
+var player_default_flashvars = {"age":"","api_baseurl":"http:\/\/www.playlist.com\/api2","baseurl":"http:\/\/www.playlist.com","bgcolor":"#ffffff","cc":"","gender":"","getcode":"gigya","height":"","is_autologin":true,"is_autostart":false,"is_enablejs":true,"is_loginjs":true,"is_onsite":true,"is_showcombobox":true,"is_showpopout":true,"is_shuffle":false,"javascript_id":"pplMainFlashPlayer","maxtemp":"0","parent_div":"testPanelPlayer","player_type":"all","player_baseurl":"http:\/\/www.playlist.com\/prod\/players\/1033","playlist_baseurl":"http:\/\/pl.playlist.com\/pl.php","player_name":"SearchPlayerApp","playlist_id":"","skin_id":"","so_path":"ppl-so5","tracking":true,"use_loader":false,"user_id":"","width":"","wid":"test"};
+var SEARCH_VER = '2';
+var Meebo;
+var has_player = 1;
+var STIME = '1292318005';
+var GA_PAGE = '/';
+var ENABLE_GOOGLE_SEARCH_ADS = 0;
+var GOOGLE_ADTERMS = '';
+var debug_security = '';var debug_solr = '';var debug_jstest = '';var debug_audioads = '';var debug_subscribed = '';var debug_ad_dur = '';var debug_ad_acct = '';var debug_ad_tracks_before = '';var debug_ad_tracks_between = '';var debug_ad_scale = '';var debug_metalinks = '';var debug_offertest = '';var debug_dismax = '';var debug_skreemr = '';var debug_searchcomplete = '';var debug_gads = '';var debug_cmc_off = '';var debug_passion = '';var debug_myplay = '';var debug_js_improvements = '';var debug_adaptv = '';
+//]]>
+</script>
+	<script src="http://www.playlist.com/scripts/remote_logger.js" type="text/javascript"></script>
+	<script src="http://www.playlist.com/prod/scripts/27/opt/std_opt.js" type="text/javascript"></script>
+  
+<script src="http://cdn.gigya.com/wildfire/js/wfapiv2.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" charset="UTF-8" src="http://www.playlist.com/prod/scripts/27/phoenix/sections/front-page.js"></script>
+</head>
+    <body id="indexPage" class="other_os in_unknown " >
+        
+    <div id="wrapper">
+        <div id="container">
+            <div id="nav">
+                
+<h6><a href="http://www.playlist.com">Playlist</a></h6>
+<p>
+        	<a id="navSignUp" href="http://www.playlist.com/user/register" onclick="RemoteLogger.logGAEvent('registration', 'click_sign_up_link', 'location', 'top_nav_signup');" class="bold">Join Now</a>
+    
+					<span>|</span>
+							<a id="navLogIn" href="#" onclick="PPL.navigation.navToLogin(true);" >Log in</a> <!-- this is the login navigation function -->
+					
+    </p>
+            </div> <!-- end nav -->
+            <div id="search-nav">
+                <form id="frmGlobalSearch" action="http://www.playlist.com/searchbeta" method="get">
+                                        <input id="txtGlobalSearch" type="text" name="searchfor" class="textbox idleField" maxlength="100" value=""/>
+                    <input id="globalSearchType" type="hidden" name="t" value="videos"/>
+                                                            <button type="submit" class="image_button" id="nav_search_button">Search</button>
+                </form>
+            </div> <!-- end search-nav -->
+
+            <div id="middle">
+                
+                <div id="content">
+                                                            
+                            
+                    
+                            
+                    
+    
+ 
+
+
+
+<div id="cms-gutter-left">
+        
+</div> <!-- end cms-gutter-left -->
+
+<div id="cms-gutter-right">
+    
+</div> <!-- end cms-gutter-right -->
+
+
+<div id="pencil-ad">
+	<script type="text/javascript" src="http://ad.doubleclick.net/adj/proj.playlist/frontpage;tile=0;sz=980x30,1x1;ord=351981896;mtfIFPath=/ext/doubleclick/;a=26;g=h;?"></script>
+<noscript><a href="http://ad.doubleclick.net/jump/proj.playlist/frontpage;tile=0;sz=980x30,1x1;ord=351981896;mtfIFPath=/ext/doubleclick/;a=26;g=h;?"><img src="http://ad.doubleclick.net/ad/proj.playlist/frontpage;tile=0;sz=980x30,1x1;ord=351981896;a=26;g=h;?" border="0" alt="sponsored result" /></a></noscript>
+
+</div> <!-- end pencil-ad -->
+
+
+<div id="topHomeBox" class="section-noheader clearfix">
+        <div class="call-to-action clearfix">
+        <h1>The place to discover and listen to free music online, create free playlists,<br/>and share it all on your favorite social networks: Facebook, Twitter, Blogger, and more.</h1>
+        <div id="call-to-action">
+            <a href="http://www.playlist.com/user/register" class="button">Join Now</a>
+            <a href="#" class="log-in-cta" onclick="PPL.navigation.navToLogin(false);">Log In</a>
+        </div>
+    </div> <!-- end call-to-action -->
+        <div id="topBoxContent">        
+        <h2>Start building a playlist</h2>
+                <form id="frmHomeSearch" action="http://www.playlist.com/searchbeta" method="get">
+                    <div id="searchBoxContainer" class="mergedSearchBoxContainer clearfix">
+                <span><input id="txtHomeSearch" type="text" name="searchfor" class="textbox" value="" autocomplete="off"/></span>
+                                <input id="homeSearchType" type="hidden" name="t" value="videos" />
+                                <input id="btnHomeSearch" type="image" value="Search" src="/img/phoenix/buttons/button-home-search.gif"/>
+            </div>
+        </form>
+        
+        
+        <div id="top-searches" class="clearfix">
+            
+            <h3>Today's Top Searches</h3>
+                                    <ul>            <li><a href="/searchbeta/tracks#eminem">eminem</a></li>
+                                                            <li><a href="/searchbeta/tracks#lil%20wayne">lil wayne</a></li>
+                                                            <li><a href="/searchbeta/tracks#christmas">christmas</a></li>
+                                                            <li><a href="/searchbeta/tracks#nicki%20minaj">nicki minaj</a></li>
+            </ul>                                    <ul>            <li><a href="/searchbeta/tracks#taylor%20swift">taylor swift</a></li>
+                                                            <li><a href="/searchbeta/tracks#drake">drake</a></li>
+                                                            <li><a href="/searchbeta/tracks#katy%20perry">katy perry</a></li>
+                                                            <li><a href="/searchbeta/tracks#bruno%20mars">bruno mars</a></li>
+            </ul>                                    <ul>            <li><a href="/searchbeta/tracks#rihanna">rihanna</a></li>
+                                                            <li><a href="/searchbeta/tracks#3oh%213">3oh!3</a></li>
+                                                            <li><a href="/searchbeta/tracks#chris%20brown">chris brown</a></li>
+                                                            <li><a href="/searchbeta/tracks#trey%20songz">trey songz</a></li>
+            </ul>                                    <ul>            <li><a href="/searchbeta/tracks#ke%24ha">ke$ha</a></li>
+                                                            <li><a href="/searchbeta/tracks#grenade">grenade</a></li>
+                                                            <li><a href="/searchbeta/tracks#linkin%20park">linkin park</a></li>
+                                                            <li><a href="/searchbeta/tracks#glee">glee</a></li>
+            </ul>                                    <ul>            <li><a href="/searchbeta/tracks#kesha">kesha</a></li>
+                                                            <li><a href="/searchbeta/tracks#kid%20cudi">kid cudi</a></li>
+                                                            <li><a href="/searchbeta/tracks#justin%20bieber">justin bieber</a></li>
+                                                            <li><a href="/searchbeta/tracks#usher">usher</a></li>
+            </ul>                        <div class="clear"></div>
+        </div> <!-- end top-searches -->
+                
+    </div> <!-- end topBoxContent -->
+    
+        <div class="med-rec">
+        <iframe width="300" height="272" id="ad_right" src="http://ad.doubleclick.net/adi/proj.playlist/frontpage;tile=1;sz=300x250;ord=463909742;mtfIFPath=/ext/doubleclick/;a=26;g=h;dcopt=ist;?" width="300" height="250" marginwidth="0" marginheight="0" frameborder="0" scrolling="no">
+<script type="text/javascript" src="http://ad.doubleclick.net/adj/proj.playlist/frontpage;tile=1;sz=300x250;abr=!ie;ord=463909742;mtfIFPath=/ext/doubleclick/;a=26;g=h;dcopt=ist;?"></script>
+</iframe>
+<noscript><a href="http://ad.doubleclick.net/jump/proj.playlist/frontpage;tile=1;sz=300x250;ord=463909742;a=26;g=h;dcopt=ist;?"><img src="http://ad.doubleclick.net/ad/proj.playlist/frontpage;tile=1;sz=300x250;ord=463909742;?" border="0" alt="A word from our sponsors" /></a></noscript>
+
+    </div>
+    <div class="remove-ads-button"><a href="http://www.playlist.com/subscription">Remove Ads: $2.99/mo</a></div>
+        
+
+</div> <!-- end topHomeBox -->
+
+    
+<div id="revenueContent">
+
+
+    <div class="section-header clearfix">
+        <h5 class="section">Features</h5>
+    </div> <!-- end section-header -->
+
+    <div class="section clearfix">
+        <div id="featuredPlaylistBox">
+            
+<div id="featuredPlaylist">
+    <div id="flashPlayer_container"><p class="center">Please upgrade <a href="http://www.adobe.com/products/flashplayer/" title="Download Adobe Flash Player">Adobe Flash Player</a><br> in order to play music on playlist.com</p></div>
+<script type="text/javascript">
+  //<![CDATA[
+    var swfFile = "http://www.playlist.com/prod/players/1033/mp3player_new.swf";
+    var ppl_swfobject_flashvars = {
+      baseurl: DOMAIN_MAIN,
+      config: "site_noautostart",
+      loginjs: "false",
+      autologin: "never",
+      getCode: "gigya",
+      movie: swfFile,
+      enablejs: "true",
+      is_subscriber: "false",
+      javascriptid: "flashPlayer",
+      playlist_id: "20834435339",
+      apibaseurl: DOMAIN_API,
+      domain_pre_xspf: DOMAIN_PRE_XSPF,
+      tracking: "true",
+      bgcolor: "#ffffff",
+      myheight: "300",
+      mywidth: "300",
+      wid: "si",
+      loc: "",
+      getcode: "",
+      promo: "",
+      meebo: "",
+      userid: "",
+      debug: (window.location.search.indexOf("debug_ppl=2") > -1) ? "true" : "false"
+    };
+    var ppl_swfobject_params = {
+      wmode: "transparent",
+      bgcolor: "#ffffff",
+      allowscriptaccess: "always",
+      allowfullscreen: "false"
+    };
+    var ppl_swfobject_attributes = {
+      id: "flashPlayer",
+      name: "flashplayer"
+    };
+    swfobject.embedSWF(swfFile, "flashPlayer_container", "300", "300", FLASH_MINREV, "/players/expressInstall.swf", ppl_swfobject_flashvars, ppl_swfobject_params, ppl_swfobject_attributes);
+  //]]>
+</script>
+</div>
+
+<ul class="clearfix">
+    <li id="btnVisitProfile"><a href="http://www.playlist.com/playlistfeatures">Visit Profile</a></li>
+    <li><a href="http://www.playlist.com/playlist/20834435339/download" id="pl_ringtones">Get Ringtones</a></li>
+    <li class="last_child"><a id="btnGetPlaylistPopOut" href="http://www.playlist.com/playlist/20834435339/standalone" target="_blank" onclick="window.open('http://www.playlist.com/playlist/20834435339/standalone','popout','width=500,height=600');return false;">Pop-Out</a></li>
+
+</ul>                        
+        </div> <!-- end featuredPlaylistBox -->          
+        
+        <div class="feature-carousel-wrapper">
+            <ul class="feature-carousel clearfix">
+                <li>
+
+
+<a href="http://www.playlist.com/playlist/18661562635?utm_source=homepage&utm_medium=feature&utm_campaign=Humbug" class="feature-image"><img src="http://static.pplaylist.com/blog/2009/12/humbug.jpg" alt="Humbug" width="180" height="150" class="framed"/></a>
+    <h4>Featured Playlist</h4>
+    <h3>Humbug!</h3>
+    <p>It's beginning to look at a lot like Christmas. And for some of us, nothing could be more annoying. So even though the airwaves are being bombarded by 70 versions of "Jingle Bells," you can rely on this <a href="http://www.playlist.com/playlist/18661562635?utm_source=homepage&utm_medium=feature&utm_campaign=Humbug">playlist of songs that say exactly how you feel: bah humbug!</a></p>
+</li>
+
+<li>
+
+
+<a href="http://www.playlist.com/playlist/18661689355?utm_source=homepage&utm_medium=feature&utm_campaign=PlaylistHoliday" class="feature-image"><img src="http://static.pplaylist.com/blog/2009/12/Happy_Holidays2.jpg" alt="Happy Holidays" width="180" height="150" class="framed"/></a>
+    <h4>Featured Playlist</h4>
+    <h3>Happy Holidays From Playlist</h3>
+    <p>Filled to the brim with all kinds of holiday cheer, this playlist is a collection of our favorite songs from all of our other Christmas playlists.<a href="http://www.playlist.com/playlist/18661689355?utm_source=homepage&utm_medium=feature&utm_campaign=PlaylistHoliday">Happy holidays!</a></p>
+</li>
+
+<li class="last">
+
+
+<a href="http://www.playlist.com/playlist/20858458123/standalone" target="_blank" onclick="window.open('http://ad.doubleclick.net/clk;231336216;43217174;v?http://www.playlist.com/playlist/20858458123/standalone','popout','width=500,height=600');return false;"><img src="http://static.pplaylist.com/blog/2010/11/electro-pop.png" alt="Electronic Vibe" width="180" height="150" class="framed"/></a>
+    <h4>Featured Playlist</h4>
+    <h3>Electronic Vibes</h3>
+    <p>The <a href="http://www.playlist.com/playlist/20858458123">Electronic Vibes</a> playlist is not your average set of digital recordings played off of a computer from somewhere over the internet. It also features computed noises in an industrial fashion for those of you taking your music in to the realm of digital sounds</a>.
+
+</p>
+
+</li>
+            </ul> <!-- end feature-carousel -->    
+            <a href="http://www.playlist.com/features" class="button">View More Features &#187;</a>
+        </div> <!-- end feature-carousel-wrapper -->        
+        
+    </div> <!-- end section -->
+    
+</div> <!-- end revenueContent -->
+
+<div id="homeGrownContent" class="row">
+    
+    <div class="twothirds columns">
+
+        <div class="section-header">
+            <h5 class="section">Today's Top 10 Playlists</h5>
+        </div> <!-- end section-header -->
+    
+        <div class="section clearfix">        
+                        
+            <ul class="playlists clearfix">
+                	    <li class="playlist odd ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/playlistfeatures" class="playlist-user-image" title="Click to visit Playlist Features’ profile"><img src="http://static.pplaylist.com/uimg/9/e/V/i15681724929t.png" alt="Playlist Features’ profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/20834435339">1</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/20834435339">Modern Rock v. 2</a></h3>
+        			<h4><span class="length">(40 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/playlistfeatures" title="Click to visit Playlist Features’ profile">Playlist Features</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">Summersong</span> by <span class="artist-title">The Decemberists</span></li>
+            <li><span class="song-title">Kiss With a Fist</span> by <span class="artist-title">Florence and the Machine</span></li>
+            <li><span class="song-title">Radioactive</span> by <span class="artist-title">Kings Of Leon</span></li>
+            <li><span class="song-title">the kids don't stand a chance</span> by <span class="artist-title">vampire weekend</span></li>
+            <li><span class="song-title">When You Were Young</span> by <span class="artist-title">Killers, The</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/20834435339"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist  ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/user/19017760" class="playlist-user-image" title="Click to visit kascryder’s profile"><img src="http://static.pplaylist.com/img/user/du.gif" alt="kascryder’s profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/6024829707">2</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/6024829707">kascryder's playlist</a></h3>
+        			<h4><span class="length">(198 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/user/19017760" title="Click to visit kascryder’s profile">kascryder</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">Life in Technicolor II</span> by <span class="artist-title">Coldplay</span></li>
+            <li><span class="song-title">I Just Don't Think I'll Ever Get...</span> by <span class="artist-title">Colin Hay</span></li>
+            <li><span class="song-title">Gone Away from Me</span> by <span class="artist-title">Ray Lamontagne</span></li>
+            <li><span class="song-title">Sunshine</span> by <span class="artist-title">Matt Costa</span></li>
+            <li><span class="song-title">Perpetuum Mobile - Penguin Cafe...</span> by <span class="artist-title">Classical Chillout</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/6024829707"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist odd ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/user/53146147" class="playlist-user-image" title="Click to visit tumblrphotography’s profile"><img src="http://static.pplaylist.com/img/user/du.gif" alt="tumblrphotography’s profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/20666304267">3</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/20666304267">tumblrphotography's Playlist</a></h3>
+        			<h4><span class="length">(62 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/user/53146147" title="Click to visit tumblrphotography’s profile">tumblrphotography</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">Two Is Better Than One</span> by <span class="artist-title">Boys Like Girls Feat. Taylor Swift</span></li>
+            <li><span class="song-title">Miserable At Best</span> by <span class="artist-title">Mayday Parade</span></li>
+            <li><span class="song-title">The only exception</span> by <span class="artist-title">Paramore</span></li>
+            <li><span class="song-title">Fearless</span> by <span class="artist-title">Taylor Swift</span></li>
+            <li><span class="song-title">Mine</span> by <span class="artist-title">Taylor Swift</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/20666304267"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist  ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/playlistfeatures" class="playlist-user-image" title="Click to visit Playlist Features’ profile"><img src="http://static.pplaylist.com/uimg/9/e/V/i15681724929t.png" alt="Playlist Features’ profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/20548090123">4</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/20548090123">Top 40 Charts</a></h3>
+        			<h4><span class="length">(40 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/playlistfeatures" title="Click to visit Playlist Features’ profile">Playlist Features</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">Firework</span> by <span class="artist-title">Katy Perry</span></li>
+            <li><span class="song-title">Raise your glass</span> by <span class="artist-title">Pink</span></li>
+            <li><span class="song-title">What's My Name (Feat. Drake)</span> by <span class="artist-title">Rihanna</span></li>
+            <li><span class="song-title">The time</span> by <span class="artist-title">Black Eyed Peas</span></li>
+            <li><span class="song-title">Grenade</span> by <span class="artist-title">Bruno Mars</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/20548090123"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist odd ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/user/41946565" class="playlist-user-image" title="Click to visit thriftydecorchick’s profile"><img src="http://static.pplaylist.com/img/user/du.gif" alt="thriftydecorchick’s profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/14609939979">5</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/14609939979">thriftydecorchick's Playlist</a></h3>
+        			<h4><span class="length">(16 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/user/41946565" title="Click to visit thriftydecorchick’s profile">thriftydecorchick</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">Twisted</span> by <span class="artist-title">New Kids On The Block</span></li>
+            <li><span class="song-title">Untouched</span> by <span class="artist-title">The Veronicas</span></li>
+            <li><span class="song-title">Single</span> by <span class="artist-title">New Kids On The Block</span></li>
+            <li><span class="song-title">L David Archuleta-Crush</span> by <span class="artist-title">David Archuleta</span></li>
+            <li><span class="song-title">Around The Way Girl</span> by <span class="artist-title">Ll Cool J</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/14609939979"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist  ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/subbedanime" class="playlist-user-image" title="Click to visit subbedanime’s profile"><img src="http://static.pplaylist.com/img/user/du.gif" alt="subbedanime’s profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/17834174219">6</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/17834174219">SubbedAnime Playlist</a></h3>
+        			<h4><span class="length">(62 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/subbedanime" title="Click to visit subbedanime’s profile">subbedanime</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">Maze</span> by <span class="artist-title">Savage Genius</span></li>
+            <li><span class="song-title">Aka no Kakera</span> by <span class="artist-title">Yuki Suzuki</span></li>
+            <li><span class="song-title">Namida no Mukou</span> by <span class="artist-title">stereopony</span></li>
+            <li><span class="song-title">Invoke</span> by <span class="artist-title">Gundam Seed</span></li>
+            <li><span class="song-title">Result</span> by <span class="artist-title">Tamaki Nami</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/17834174219"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist odd ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/user/50512465" class="playlist-user-image" title="Click to visit ChickenJosh’s profile"><img src="http://static.pplaylist.com/uimg/a/v/t/i16046998529t.jpg" alt="ChickenJosh’s profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/19020118283">7</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/19020118283">MACHOMOE</a></h3>
+        			<h4><span class="length">(91 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/user/50512465" title="Click to visit ChickenJosh’s profile">ChickenJosh</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">All I Want for Christmas for .</span> by <span class="artist-title">Mariah Carey</span></li>
+            <li><span class="song-title">Last Christmas</span> by <span class="artist-title">Wham!</span></li>
+            <li><span class="song-title">Do They Know its Christmas?</span> by <span class="artist-title">Band Aid</span></li>
+            <li><span class="song-title">Have Yourself a Merry Merry...</span> by <span class="artist-title">Christina Aguilera</span></li>
+            <li><span class="song-title">This Christmas</span> by <span class="artist-title">Chris Brown</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/19020118283"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist  ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/user/52292531" class="playlist-user-image" title="Click to visit swagcodez’s profile"><img src="http://static.pplaylist.com/img/user/du.gif" alt="swagcodez’s profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/20090530059">8</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/20090530059">SwagCodez</a></h3>
+        			<h4><span class="length">(107 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/user/52292531" title="Click to visit swagcodez’s profile">swagcodez</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">Over </span> by <span class="artist-title">Drake</span></li>
+            <li><span class="song-title">Day N Night</span> by <span class="artist-title">Kid Cudi</span></li>
+            <li><span class="song-title">Pursuit Of Happiness (Nightmare)...</span> by <span class="artist-title">Kid Cudi</span></li>
+            <li><span class="song-title">Fallen leaves</span> by <span class="artist-title">Billy Talent feat Schmiddie23</span></li>
+            <li><span class="song-title">Hey, Soul Sister</span> by <span class="artist-title">Train</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/20090530059"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist odd ">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/user/15300717" class="playlist-user-image" title="Click to visit owensmommyadrienne’s profile"><img src="http://static.pplaylist.com/img/user/du.gif" alt="owensmommyadrienne’s profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/4643788555">9</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/4643788555">owensmommyadrienne's playlist</a></h3>
+        			<h4><span class="length">(15 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/user/15300717" title="Click to visit owensmommyadrienne’s profile">owensmommyadrienne</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">Lullaby</span> by <span class="artist-title">Dixie Chicks</span></li>
+            <li><span class="song-title">Bless The Broken Road</span> by <span class="artist-title">Selah</span></li>
+            <li><span class="song-title">God Bless The Child.mp3</span> by <span class="artist-title">Shania Twain</span></li>
+            <li><span class="song-title">Somewhere Over the Rainbow</span> by <span class="artist-title">Katharine McPhee</span></li>
+            <li><span class="song-title">bubbly</span> by <span class="artist-title">Colbie caillat</span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/4643788555"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	    	    <li class="playlist  last">    		    
+                <div class="playlist-header clearfix">
+                    <div class="playlist-user-image-wrapper">
+			<a href="http://www.playlist.com/user/42713727" class="playlist-user-image" title="Click to visit DigitalWidgets’ profile"><img src="http://static.pplaylist.com/img/user/du.gif" alt="DigitalWidgets’ profile pic" class="userpic_default" style="width:50px;height:50px;"/></a>
+                        <a class="playlist-rank" href="http://www.playlist.com/playlist/15461254923">10</a>                        
+                    </div> <!-- end playlist-user-image-wrapper -->
+        			<h3><a href="http://www.playlist.com/playlist/15461254923">XmasFun</a></h3>
+        			<h4><span class="length">(81 songs)</span></h4>
+        			<h4>by <a href="http://www.playlist.com/user/42713727" title="Click to visit DigitalWidgets’ profile">DigitalWidgets</a></h4>
+                </div> <!-- end playlist-header -->
+    			 
+    			        <ol class="playlist-teaser-list">
+            <li><span class="song-title">All I Want for Christmas is My...</span> by <span class="artist-title">Chipmunks</span></li>
+            <li><span class="song-title">All I Want For Christmas Is You</span> by <span class="artist-title">Mariah Carey</span></li>
+            <li><span class="song-title">Angels We Have Heard on High</span> by <span class="artist-title">Christina Aguilera</span></li>
+            <li><span class="song-title">Ave Maria</span> by <span class="artist-title">The Carpenters</span></li>
+            <li><span class="song-title">Schubert: Ave Maria</span> by <span class="artist-title"></span></li>
+        </ol>
+
+                    
+    <div class="view-more">        
+                	<a target="_top" href="http://www.playlist.com/playlist/15461254923"><span>View All</span></a>
+        	                
+            </div>
+    
+
+    			    		</li>
+        	            </ul>
+            
+            <a href="http://www.playlist.com/playlist/browse/2" class="button">View More Top Playlists &#187;</a>
+        </div> <!-- end section -->
+    </div> <!-- end twothirds -->
+
+    <div class="third column last">
+        <div class="section-header">
+            <h5 class="section">The Playlist Blog</h5>
+        </div> <!-- end section-header -->
+
+        <div class="section clearfix">
+            <div id="playlistNews">
+                                                <h3 class="news-title">Old Time Holiday</h3>
+                <h6>Posted 2 December 2010, 11:12 pm by Playlist Features </h6>
+                <img class="alignnone size-full wp-image-1428" title="Old Time Holiday" src="http://static.pplaylist.com/blog/2009/12/oldtimeyxmas.jpg" alt="Old Time Holiday" width="180" height="150" />
+
+<p>Gather your loved ones, huddle by the fire, and have a listen to our "Old Time Holiday" playlist. It's packed with some of the most enduring holiday classics from the likes of Bing Crosby, Frank Sinatra, Burl Ives, and many many more. It's the perfect music for your family Christmas party or for just filling your heart with the holiday spirit. <a href="http://www.playlist.com/playlist/18661648651?utm_source=homepage&amp;utm_medium=feature&amp;utm_campaign=Old+Time%20Holiday">Have a listen!</a></p>
+
+<br /></br>
+            </div>
+            <a href="/siteblog/?cat=6" class="button">View More Posts &#187;</a>
+        </div> <!-- end section -->            
+    </div> <!-- end third column last -->
+
+        
+</div> <!-- end homeGrownContent -->
+
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+
+		$('a.download_playlist').click( function(event) { 
+			event.preventDefault(); 
+			PPL.offer.convert('playlist');
+		});
+		 
+
+        $('a.premium_learn_more').click(function(event) { 
+            document.location = "/user/premium";
+        });
+
+        $('#premium_header_2').click(function(event) { 
+            document.location = "/user/premium";
+        });
+
+		$('a.ph_learn_more').click(function(event) { 
+			document.location = "/user/premium";
+		});
+
+        $('a.ph_cta').click(function(event) { 
+            event.preventDefault(); 
+            PPL.offer.convert('top_nav');
+        });
+        $('a.ph_cta_learn_more').click(function(event) { 
+            document.location = "/user/premium";
+        });
+
+	});
+
+
+</script>
+
+
+
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://optimize.indieclick.com/www/delivery/ajs.php':'http://optimize.indieclick.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=330201");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://optimize.indieclick.com/www/delivery/ck.php?n=ad2219f9&amp;cb=7976019848' target='_blank'><img src='http://optimize.indieclick.com/www/delivery/avw.php?zoneid=330201&amp;cb=7976019848&amp;n=ad2219f9' border='0' alt='' /></a></noscript>
+    
+
+
+
+
+        
+
+<div class="clear"></div>
+</div> <!-- end content -->
+</div> <!-- end middle -->
+</div> <!-- end container -->
+<div id="footer">
+    <div id="footer-wrapper">
+            	<div id="bannerAd">
+							
+			    	</div> <!-- end bottom banner ad -->
+    			<div id="footer-logo">
+		   <div id="splayer_div"></div>
+		   <script type="text/javascript">
+			   //<![CDATA[
+			var flashvars = {
+				movie: "http://www.playlist.com/prod/players/1033/splayer.swf",
+				javascriptid: "ppl_splayer"
+			};
+			var params = {
+				wmode: "transparent",
+				bgcolor: "#ffffff",
+				allowscriptaccess: "always",
+				allowfullscreen: "false"
+			};
+			var attributes = {
+				id: "so5",
+				name: "ppl_splayer"
+			};
+			swfobject.embedSWF("http://www.playlist.com/prod/players/1033/splayer.swf", "splayer_div", "148", "42", "8","expressInstall.swf", flashvars, params, attributes);
+				//]]>
+			</script>
+		</div> 
+        <div class="clear"></div> <!-- end clear -->
+        <div class="sitemap clearfix">
+            <div class="footer-sitemap">
+                <h5>About</h5>
+                <ul class="sitemap-list">
+                    <li><a href="http://www.playlist.com/about">About Us</a></li>
+                    <li><a href="http://www.playlist.com/help/contact">Contact</a></li>
+                    <li><a href="http://www.playlist.com/about/advertising">Advertise With Us</a></li>
+                    <li></li>
+                </ul>
+            </div> <!-- end footer-sitemap -->
+
+            <div class="footer-sitemap" id="footer_do_stuff">
+		<h5>Do Stuff</h5>
+<ul class='sitemap-list'>
+		<li><a href='http://www.playlist.com/user/register'>Join Now</a></li>
+	<li><a href='http://www.playlist.com/user/login'>Log In</a></li>
+</ul>            
+            </div> <!-- end footer-sitemap -->
+
+            <div class="footer-sitemap">
+                <h5>Help</h5>
+                <ul class="sitemap-list">
+                    <li><a href="http://www.playlist.com/help">FAQs</a></li>
+                    <li><a href="http://www.playlist.com/forum">Forums</a></li>
+                    <li><a href="http://www.playlist.com/help/contact?prob_type=Feedback#contact-support" id="feedback-link">Feedback</a></li>
+                </ul>            
+            </div> <!-- end footer-sitemap -->
+
+            <div class="footer-sitemap">
+                <h5>Legal</h5>
+                <ul class="sitemap-list">
+                    <li><a href="http://www.playlist.com/about/terms">Terms Of Service</a></li>
+                    <li><a href="http://www.playlist.com/about/license">Licenses And Legal</a></li>
+                    <li><a href="http://www.playlist.com/about/privacy">Privacy Policy</a></li>
+                    <li><a href="http://www.playlist.com/about/copyright">Copyright</a></li>
+                </ul>            
+            </div>            
+            <div class="footer-sitemap">
+                <h5>Social</h5>
+                <ul class="sitemap-list social">
+                    <li class="facebook"><a href="http://www.facebook.com/playlistdotcom" title="Facebook">Fan Us On Facebook</a></li>
+                    <li class="myspace"><a href="http://www.myspace.com/playlist_support" title="MySpace">Friend Us On MySpace</a></li>
+                    <li class="twitter"><a href="http://twitter.com/playlist" title="Twitter">Follow Us On Twitter</a></li>
+                </ul>            
+            </div>            
+        </div> <!-- end sitemap -->                            
+    </div> <!-- footer-wrapper -->
+
+</div> <!-- end footer -->
+</div> <!-- end wrapper -->
+
+
+<script type="text/javascript">
+//<![CDATA[
+// Located in global.js
+var myinterstitial;
+$(document).ready(function() {
+
+  
+	PPL.resize.init();
+	PPL.navigation.initPlayAway();
+
+	PPL.init();
+	// here call the first lazy loading data
+	PPL.log.setLazyEntry('init');
+
+	if (typeof initGlobal == 'function') initGlobal();
+
+	if (typeof indexPage == 'function')
+		indexPage();
+
+
+});
+
+//]]>
+</script>
+
+
+ 
+	
+	<script type="text/javascript">
+		function page_init_meebo() {
+
+			if (Meebo != undefined) {
+				if (ADS_ON=='0') Meebo.disableAds = true;
+				else Meebo.disableAds = false;
+
+				Meebo('domReady');
+				if (debug_passion=='1')
+					Meebo('makeVideosSharable', {});
+			}
+		}
+	</script>
+	
+
+
+	<script type="text/javascript">
+	//<![CDATA[
+		$(document).ready(function() {
+			PPL.page.isLazy = true;
+			PPL.page.lazy_loading();
+		});	
+	//]]>
+	</script>
+	
+	    <script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript"> 
+      /*<![CDATA[*/
+        var pageTracker = _gat._getTracker("UA-363647-1"); 
+        pageTracker._setDomainName('playlist.com');
+        pageTracker._initData(); 
+				pageTracker._setVar('lload');
+						if (RemoteLogger) RemoteLogger.logGAPageview('/');
+              /*]]>*/
+    </script>
+
+
+
+<script type="text/javascript">
+	//<![CDATA[
+		$(document).ready(function() {
+			
+			PPL.script.load( document.location.protocol == "https:" ? "https://sb" : "http://b" + ".scorecardresearch.com/beacon.js", PPL.script.comscore_analytics );
+
+			//PPL.script.option_abc = null;			//PPL.script.ga_page = '/';;
+			//PPL.script.load( "http://www.google-analytics.com/ga.js", PPL.script.google_analytics) ;
+			PPL.script.filename =  null;			PPL.script.load( "http://edge.quantserve.com/quant.js", PPL.script.quantcast_analytics);
+		});	
+	//]]>
+</script>
+
+
+
+
+
+</body>
+</html>
