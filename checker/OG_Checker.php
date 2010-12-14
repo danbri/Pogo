@@ -2,7 +2,7 @@
 
 
 
-require_once 'OG_L18N.php';
+require_once 'OG_Checklist.php';
 require_once 'cfg.php';
        
 # 'And thirdly, the code is more what you'd call "guidelines" than actual rules.'

@@ -37,7 +37,7 @@
 
 
 
-require_once 'OG_L18N.php'; # natural-lang text strings belong here
+require_once 'OG_Checklist.php'; # natural-lang text strings belong here
 require_once 'OG_Checker.php'; 
 
 #error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED ); # looking in a hash for missing info - not a crime
