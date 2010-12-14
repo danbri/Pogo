@@ -1,0 +1,360 @@
+<html>
+<head><title>OpenGraph checker</title><link rel="stylesheet" href="style.css" type="text/css" />
+
+
+<link rel="shortcut icon" type="image/x-icon" href="doc/favicon.ico">
+</head>
+<body>
+<div class="navlinks">
+<a href="http://ogp.me/"><img class="ogp-logo" src="doc/ogp-logo.jpg" alt="OGP logo"  width="85"/></a>
+[<a href="index.php">check url</a>] [<a href="http://developers.facebook.com/tools/lint/">Facebook's linter</a>]</div>
+
+<h2><a href="http://og.danbri.org/pogo/Pogo/checker/">OpenGraph checker</a></h2>
+
+
+
+<body>
+<h4>Test: file:testcases/alt/404.meta</h4><em class='warning'>this test references a real site, but a non-existing page.</em><br/>
+Input URL: http://danbri.org/not-a-real-page<p>Expected triples: 0</p><p>Actual triples: 0</p>
+<p>Results: no OpenGraph data found.</p>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>No data found; empty graph.</td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/alt/caps1.meta</h4><em class='warning'>Note, content also includes a real RDF type, in addition to og:type.</em><br/>
+Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/alt/caps1.cache<p>Expected triples: 5</p><p>Actual triples: 5</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/...jpg'><small><img src='http://ia.media-imdb.com/images/...jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/...jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/alt/caps2.meta</h4><em class='warning'>Missing the URL values because we use link syntax instead.</em><br/>
+Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/alt/caps2.cache<p>Expected triples: 5</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/blocket.se/blocket1.meta</h4><em class='warning'>Site has title/type/image/url/site_name but no prefix declaration, and markup is commented out. Therefore missing required properties. Checker will not currently notice, as it checks for xmlns declarations with regex not HTML5 parser.</em><br/>
+Input URL: http://ehandel.blocket.se/Philips_HD2383_1115754.htm<p>Expected triples: 0</p><p>Actual triples: 0</p>
+<p>Results: no OpenGraph data found.</p><h5>Expected Issues</h5><table class='expected'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+<tr><td>OG_NAMESPACE_UNDECLARED</td><td>Document uses but does not declare the og: namespace.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>No data found; empty graph.</td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/cafe.com/hiddenwords.meta</h4>Input URL: http://www.cafe.com/Free_Games/Hidden-Words-Adventure-Capitals<p>Expected triples: 11</p><p>Actual triples: 11</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>game</td></tr><tr><td class="ogfield">Image</td><td><a href='http://game.cafe.com/games/1109/1.22.5/media/game_images/HP.jpg'><small><img src='http://game.cafe.com/games/1109/1.22.5/media/game_images/HP.jpg' alt='image shown inline'><br/>http://game.cafe.com/games/1109/1.22.5/media/game_images/HP.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>Hidden Words Adventure - Capitals</td></tr><tr><td class="ogfield">URL</td><td>http://www.cafe.com/Free_Games/Hidden-Words-Adventure-Capitals</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/cnn.com/cnn1.meta</h4><em class='warning'>Only contains og:title, og:type. Namespace declaration missing. Confuses checker - needs fallback to lite parser. Triplecount includes normal html rel= usage.</em><br/>
+Input URL: http://edition.cnn.com/2010/WORLD/europe/12/13/istanbul.grand.bazaar/index.html?hpt=C2<p>Expected triples: 12</p><p>Actual triples: 12</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+<tr><td>OG_NAMESPACE_UNDECLARED</td><td>Document uses but does not declare the og: namespace.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/ekstrabladet.dk/article1469733.meta</h4><em class='warning'>Missing required properties due to missing xmlns:og; picky mode. However checker _should_ fall-back to lite mode. As an aside, input has some charset issues too.</em><br/>
+Input URL: ekstrabladet.dk/112/article1469733.ece<p>Expected triples: 4</p><p>Actual triples: 0</p>
+<p>Results: no OpenGraph data found.</p><h5>Expected Issues</h5><table class='expected'><tr><td>OG_NAMESPACE_UNDECLARED</td><td>Document uses but does not declare the og: namespace.</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>No data found; empty graph.</td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/dev/lint.meta</h4>Input URL: http://developers.facebook.com/tools/lint/<p>Expected triples: 4</p><p>Actual triples: 15</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/dev/lint2.meta</h4><em class='warning'>The fb: and og: prefixes are not declared. This testcase confuses the checker currently - need to fallback to Lite parser.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/<p>Expected triples: 0</p><p>Actual triples: 15</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>OG_NAMESPACE_UNDECLARED</td><td>Document uses but does not declare the og: namespace.</td></tr>
+<tr><td>FB_NAMESPACE_UNDECLARED</td><td>Document uses but does not declare the fb: namespace.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/dev/lint3.meta</h4>Input URL: http://developers.facebook.com/tools/lint/<p>Expected triples: 5</p><p>Actual triples: 15</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/api_key.meta</h4><em class='warning'>You used your api key "f0345d178810e97cdab9e9474de8a25d" instead of your app id "113869198637480". Oops!</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/api_key<p>Expected triples: 1</p><p>Actual triples: 1</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>NONDIGIT_APPID_CHARS_FAIL</td><td>fb:app_id contains non-numeric characters (perhaps you used an api key instead?).</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>NONDIGIT_APPID_CHARS_FAIL</td><td>fb:app_id contains non-numeric characters (perhaps you used an api key instead?).</td><td>f0345d178810e97cdab9e9474de8a25d</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/bad_admin.meta</h4><em class='warning'>The fb:admins field contained some invalid ids, namely 113869198637480; App ID in Admin Field; You put 113869198637480 in the fb:admins field. It should be in fb:app_id.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/bad_admin<p>Expected triples: 1</p><p>Actual triples: 1</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>FAILED_BIG_NUMBER_IN_ADMINS</td><td>fb:admins field has implausibly large number as value.</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>FAILED_BIG_NUMBER_IN_ADMINS</td><td>fb:admins field has implausibly large number as value.</td><td>113869198637480</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/bad_app_id.meta</h4><em class='warning'>this appid is bad! (contains words not numbers).</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/bad_app_id<p>Expected triples: 1</p><p>Actual triples: 1</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>NONDIGIT_APPID_CHARS_FAIL</td><td>fb:app_id contains non-numeric characters (perhaps you used an api key instead?).</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>NONDIGIT_APPID_CHARS_FAIL</td><td>fb:app_id contains non-numeric characters (perhaps you used an api key instead?).</td><td>Paul is Awesome</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/bad_domain.meta</h4><em class='warning'>The application ID specified within the "fb:app_id" meta tag is not allowed on this domain. You must setup the Connect Base Domains for your application to be a prefix of http://example.com.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/bad_domain<p>Expected triples: 2</p><p>Actual triples: 2</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td>http://example.com</td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>MISC_FB_FAIL</td><td>Something wrong in one of the fb: fields, sorry no more details available. Try the Facebook linter.</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/bad_page_id.meta</h4><em class='warning'>this page_id is bad! (contains words not numbers).</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/bad_page_id<p>Expected triples: 1</p><p>Actual triples: 1</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>FAILED_PAGEID_NUMBERSONLY_REGEX</td><td>An fb:pageid property contains something other than numbers.</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>FAILED_FBADMINS_REGEX</td><td>The fb:admins field has unexpected values.</td><td>Paul Rocks</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/bad_type.meta</h4><em class='warning'>Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+. Also others missing.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/bad_type<p>Expected triples: 1</p><p>Actual triples: 1</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>Paul isn't a Type</td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+<tr><td>BAD_TYPE_CHARS_FAIL</td><td>Poor type name found. Please avoid capitals and punctuation except ":" and "_".</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>BAD_TYPE_CHARS_FAIL</td><td>Poor type name found. Please avoid capitals and punctuation except ":" and "_".</td><td>Paul isn't a Type</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/good-shortns.meta</h4><em class='warning'>Something's wrong with checker here, full parser upset; should be ok with lite. work needed.</em><br/>
+Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/fb/examples/good-shortns.cache<p>Expected triples: 4</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/fb/examples/good.meta</h4>Input URL: http://developers.facebook.com/tools/lint/examples/good<p>Expected triples: 4</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/fb/examples/meta_name.meta</h4><em class='warning'>Using meta attribute instead of property attribute.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/meta_name<p>Expected triples: 0</p><p>Actual triples: 0</p>
+<p>Results: no OpenGraph data found.</p><h5>Expected Issues</h5><table class='expected'><tr><td>METANAME_ATTRIBUTE_NOT_PROPERTY</td><td>Incorrect syntax; using meta name attribute instead of property attribute.</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>METANAME_ATTRIBUTE_NOT_PROPERTY</td><td>Incorrect syntax; using meta name attribute instead of property attribute.</td><td>Use "property" not "name" meta attribute here:  name="og...</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>No data found; empty graph.</td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/meta_name_2.meta</h4><em class='warning'>Using meta attribute instead of property attribute.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/meta_name_2<p>Expected triples: 0</p><p>Actual triples: 0</p>
+<p>Results: no OpenGraph data found.</p><h5>Expected Issues</h5><table class='expected'><tr><td>METANAME_ATTRIBUTE_NOT_PROPERTY</td><td>Incorrect syntax; using meta name attribute instead of property attribute.</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>METANAME_ATTRIBUTE_NOT_PROPERTY</td><td>Incorrect syntax; using meta name attribute instead of property attribute.</td><td>Use "property" not "name" meta attribute here:  name="fb...</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>No data found; empty graph.</td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/fb/examples/not_CSV.meta</h4><em class='warning'>Property value isn't CSV.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/not_CSV<p>Expected triples: 1</p><p>Actual triples: 1</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>FAILED_FBADMINS_REGEX</td><td>The fb:admins field has unexpected values.</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>FAILED_FBADMINS_REGEX</td><td>The fb:admins field has unexpected values.</td><td>1 2 3 4 5</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/i18n/restaurant_jp_type_Shift_JIS.meta</h4><em class='warning'>The og:type is in Japanese, not characters [a-z:_] as expected.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/good<p>Expected triples: 4</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>BAD_TYPE_CHARS_FAIL</td><td>Poor type name found. Please avoid capitals and punctuation except ":" and "_".</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/i18n/restaurant_jp_type_utf8.meta</h4><em class='warning'>The og:type is in Japanese, not characters [a-z:_] as expected.</em><br/>
+Input URL: http://developers.facebook.com/tools/lint/examples/good<p>Expected triples: 4</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>BAD_TYPE_CHARS_FAIL</td><td>Poor type name found. Please avoid capitals and punctuation except ":" and "_".</td></tr>
+<tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/imdb/comicbookguy.meta</h4><em class='warning'>XML parser error: EntityRef: expecting ';'</em><br/>
+Input URL: http://www.imdb.com/character/ch0002991/<p>Expected triples: 15</p><p>Actual triples: 23</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>public_figure</td></tr><tr><td class="ogfield">Image</td><td><a href='http://i.media-imdb.com/images/SFc0774313bf9ccbfe22050c8bb4029e41/imdb-share-logo.gif'><small><img src='http://i.media-imdb.com/images/SFc0774313bf9ccbfe22050c8bb4029e41/imdb-share-logo.gif' alt='image shown inline'><br/>http://i.media-imdb.com/images/SFc0774313bf9ccbfe22050c8bb4029e41/imdb-share-logo.gif</small></td></tr><tr><td class="ogfield">Title</td><td>Comic Book Guy (Character)</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/character/ch0002991/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/imdb/craig_dibble.meta</h4>Input URL: http://www.imdb.com/name/nm3501561/<p>Expected triples: 1000</p><p>Actual triples: 12</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>actor</td></tr><tr><td class="ogfield">Image</td><td><a href='http://i.media-imdb.com/images/SFc0774313bf9ccbfe22050c8bb4029e41/imdb-share-logo.gif'><small><img src='http://i.media-imdb.com/images/SFc0774313bf9ccbfe22050c8bb4029e41/imdb-share-logo.gif' alt='image shown inline'><br/>http://i.media-imdb.com/images/SFc0774313bf9ccbfe22050c8bb4029e41/imdb-share-logo.gif</small></td></tr><tr><td class="ogfield">Title</td><td>Craig Dibble</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/name/nm3501561/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/imdb/legend_guardians.meta</h4>Input URL: http://www.imdb.com/title/tt1219342/<p>Expected triples: 1000</p><p>Actual triples: 12</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/M/MV5BMjE0NjA5OTA4N15BMl5BanBnXkFtZTcwODA3MTA3Mw@@._V1._SX95_SY140_.jpg'><small><img src='http://ia.media-imdb.com/images/M/MV5BMjE0NjA5OTA4N15BMl5BanBnXkFtZTcwODA3MTA3Mw@@._V1._SX95_SY140_.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/M/MV5BMjE0NjA5OTA4N15BMl5BanBnXkFtZTcwODA3MTA3Mw@@._V1._SX95_SY140_.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>Legend of the Guardians: The Owls of Ga&#x27;Hoole (2010)</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt1219342/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/mixi/mixi1.meta</h4>Input URL: http://r.gnavi.co.jp/g363600/<p>Expected triples: 4</p><p>Actual triples: 16</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/ogp/eg1.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/eg1.cache<p>Expected triples: 4</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/ogp/eg1a.meta</h4><em class='warning'>Page has contradictory types: both an actor and a movie</em><br/>
+Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/eg1a.cache<p>Expected triples: 0</p><p>Actual triples: 7</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>actor</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/ogp/eg1b.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/eg1b.cache<p>Expected triples: 4</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>  movie</td></tr><tr><td class="ogfield">Image</td><td><a href='  http://ia.media-imdb.com/images/rock.jpg'><small><img src='  http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>  http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>  The Rock</td></tr><tr><td class="ogfield">URL</td><td>  http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/ogp/eg1c.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/eg1c.cache<p>Expected triples: 0</p><p>Actual triples: 7</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>actor</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/ogp/eg2.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/eg2.cache<p>Expected triples: 4</p><p>Actual triples: 7</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/ogp/eg3.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/eg3.cache<p>Expected triples: 4</p><p>Actual triples: 3</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/ogp/eg4.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/eg4.cache<p>Expected triples: 4</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/ogp/eg5.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/eg5.cache<p>Expected triples: 4</p><p>Actual triples: 5</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/ogp/geo1.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/geo1.cache<p>Expected triples: 10</p><p>Actual triples: 11</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>restaurant</td></tr><tr><td class="ogfield">Image</td><td><a href='http://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Chile_Rellenos.jpg/220px-Chile_Rellenos.jpg'><small><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Chile_Rellenos.jpg/220px-Chile_Rellenos.jpg' alt='image shown inline'><br/>http://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Chile_Rellenos.jpg/220px-Chile_Rellenos.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>Fidel's Fictional Fooderia</td></tr><tr><td class="ogfield">URL</td><td>http://example.org/fff/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/ogp/good.meta</h4>Input URL: http://developers.facebook.com/tools/lint/examples/good<p>Expected triples: 4</p><p>Actual triples: 4</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/ogp/sec1.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/ogp/sec1.cache<p>Expected triples: 0</p><p>Actual triples: 5</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The <script</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/opengraphprotocol.org/rock1.meta</h4>Input URL: http://opengraphprotocol.org/todo<p>Expected triples: 4</p><p>Actual triples: 0</p>
+<p>Results: no OpenGraph data found.</p>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>No data found; empty graph.</td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/opengraphprotocol.org/rock2.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/opengraphprotocol.org/rock2.cache<p>Expected triples: 11</p><p>Actual triples: 11</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://ia.media-imdb.com/images/rock.jpg'><small><img src='http://ia.media-imdb.com/images/rock.jpg' alt='image shown inline'><br/>http://ia.media-imdb.com/images/rock.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Rock</td></tr><tr><td class="ogfield">URL</td><td>http://www.imdb.com/title/tt0117500/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/photobucket.com/colorsplash.meta</h4><em class='warning'>Only one (og:site_name) property found; 4 are mandatory.</em><br/>
+Input URL: photobucket.com/images/color%20splash/<p>Expected triples: 1</p><p>Actual triples: 0</p>
+<p>Results: no OpenGraph data found.</p>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>No data found; empty graph.</td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/playlist.com/homepage.meta</h4><em class='warning'>Missing 3 of the 4 required og: properties (only have og:image). Also the top html element is repeated.</em><br/>
+Input URL: http://www.playlist.com/<p>Expected triples: 3</p><p>Actual triples: 8</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td></td></tr><tr><td class="ogfield">Image</td><td><a href=''><small><img src='' alt='image shown inline'><br/></small></td></tr><tr><td class="ogfield">Title</td><td></td></tr><tr><td class="ogfield">URL</td><td></td></tr></table>
+<h5>Expected Issues</h5><table class='expected'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td></tr>
+</table>
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'><tr><td>MISSING_REQUIRED_PROPERTY</td><td>One or more required properties (og:title, og:type, og:url, og:image) are missing.</td><td>og:title is missing. og:type is missing. og:image is missing. og:url is missing. </td></tr>
+</table><p><br/> </p><h4>Test: file:testcases/rottentomatoes/matrix.meta</h4><em class='warning'>rapper: Error testcases/rottentomatoes/matrix.cache:1 column 0 - XML parser error: Opening and ending tag mismatch: link line 0 and head rapper: Failed to parse file matrix.cache rdfa content</em><br/>
+Input URL: http://www.rottentomatoes.com/m/matrix/<p>Expected triples: 19</p><p>Actual triples: 68</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>movie</td></tr><tr><td class="ogfield">Image</td><td><a href='http://content7.flixster.com/movie/16/90/52/1690525_pro.jpg'><small><img src='http://content7.flixster.com/movie/16/90/52/1690525_pro.jpg' alt='image shown inline'><br/>http://content7.flixster.com/movie/16/90/52/1690525_pro.jpg</small></td></tr><tr><td class="ogfield">Title</td><td>The Matrix</td></tr><tr><td class="ogfield">URL</td><td>http://www.rottentomatoes.com/m/matrix/</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p><h4>Test: file:testcases/slideshare/ss1.meta</h4>Input URL: http://og.danbri.org/pogo/Pogo/checker/testcases/slideshare/ss1.cache<p>Expected triples: 18</p><p>Actual triples: 20</p>
+<table border='1' style='background: #eeeeee;'>
+<tr><td class="ogfield">Type</td><td>article</td></tr><tr><td class="ogfield">Image</td><td><a href='http://cdn.slidesharecdn.com/udc-slides-091101144048-phpapp01-thumbnail-2?1257892480'><small><img src='http://cdn.slidesharecdn.com/udc-slides-091101144048-phpapp01-thumbnail-2?1257892480' alt='image shown inline'><br/>http://cdn.slidesharecdn.com/udc-slides-091101144048-phpapp01-thumbnail-2?1257892480</small></td></tr><tr><td class="ogfield">Title</td><td>Describing Everything - Open Web standards and classiﬁcation</td></tr><tr><td class="ogfield">URL</td><td>http://www.slideshare.net/danbri/open-web-standards-and-classication-foundations-for-a-hybrid-approach</td></tr></table>
+
+<h5>Detected Issues</h5>
+
+<table border='1' class='trouble'></table><p><br/> </p>
+<hr />
+[pogo checker] status: v1.0, <em>experimental release.</em>
+</body>
+</html>
