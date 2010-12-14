@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta property="og:title" content="A restaurant whose type is written in Japanese katakana chars" />
+<meta property="og:type" content="レストラン" />
+<meta property="og:url" content="http://example.com/restaurant/" />
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Breakfast_at_Tamahan_Ryokan%2C_Kyoto.jpg/250px-Breakfast_at_Tamahan_Ryokan%2C_Kyoto.jpg" />
+</head>
+<body>
+  This is an example page built to test the international aspect of the 
+  restriction on og:type being [a-z:_] characters only. The type here is 
+  given as 'レストラン'. This file should be in Shift_JS charset.
+  body>
+</html>

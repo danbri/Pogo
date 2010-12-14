@@ -1,0 +1,14 @@
+{ 
+ "url": "http://developers.facebook.com/tools/lint/examples/good",
+    "testid": "restaurant_jp_type_utf8",
+    "testgroup": "i18n",
+    "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
+    "status": "invalid",
+    "valid_html": false,
+    "uses_rdfa": true,
+    "uses_og": true,
+    "extended": true,
+    "triple_count": 4,
+    "warning": "The og:type is in Japanese, not characters [a-z:_] as expected."
+    "home_site": "http://ogp.me/"
+}
