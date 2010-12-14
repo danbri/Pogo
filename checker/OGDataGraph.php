@@ -428,18 +428,29 @@ class OGDataGraph {
   # CHECKS
   public function checkfields() {
 
-    # robustification needed:
-    if (is_null($this->triples)) { #verbose("Missing graph."); 
-      return; 
-    }
-
-
-    if (sizeof($this->triples) == 0) { #verbose("Empty graph."); 
-      return ; 
-    }
-
     # verbose("Running all field value checks.");
     $notices = array();
+
+    # Raw syntax checks 
+    # Initially conducted with regex, should push down to DOM code.
+    #
+    array_push ($notices, Checker::checkMetaName($this));
+
+    #throw new Exception("FAILING CHECKER!");
+
+    # Certain checks only make sense once we've got some data.
+
+    # robustification needed.
+    if (is_null($this->triples)) { #verbose("Missing graph."); 
+      return $notices; 
+    }
+    if (sizeof($this->triples) == 0) { #verbose("Empty graph."); 
+      return $notices; 
+    }
+
+
+    # The following checks apply to the loaded data and its actual content:
+    #
     array_push ($notices, Checker::checkTypeLabel($this) ); # cf. testcases/fb/examples/bad_type.meta
     array_push ($notices, Checker::checkAppIDSyntax($this) ); # cf. testcases/fb/examples/api_key.meta
     array_push ($notices, Checker::checkMetaName($this));
