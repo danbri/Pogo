@@ -69,7 +69,6 @@ class Checker {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') {
         if (!preg_match( '/^\s*[0-9]+(\s*,\s*[0-9]+)*\s*$/', $value['o']) )  { 
           $report['FAILED_FBADMINS_REGEX'] = $value['o'];
-          # throw new Exception('FAILED_FBADMINS_REGEX'); 
         }
       }
     }
@@ -82,7 +81,6 @@ class Checker {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmlpage_id') { 
         if ( preg_match( '/[^0-9]+/', $value['o']) )  { 
           $report['FAILED_FBADMINS_REGEX'] = $value['o'];
-          # throw new Exception('FAILED_PAGEID_NUMBERSONLY_REGEX'); 
         }
       }
     }
@@ -95,7 +93,6 @@ class Checker {
     foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') { 
         if ( preg_match( '/[0-9]{10}/', $value['o']) )  { 
-          #throw new Exception('FAILED_BIG_NUMBER_IN_ADMINS'); 
           $report['FAILED_BIG_NUMBER_IN_ADMINS'] = $value['o'];
         } # todo: clarify rule!
       }
@@ -112,7 +109,6 @@ class Checker {
     foreach ($og->fields as $key => $value) {
       if ( preg_match( '/</', $value) )  { 
         $report['UNESCAPED_LESSTHAN_IN_CONTENT_VALUE'] = 'less-than symbol.';
-        # throw new Exception('UNESCAPED_LESSTHAN_IN_CONTENT_VALUE'); 
       } 
     }
     return $report;
@@ -131,7 +127,6 @@ class Checker {
       if ($value['p'] == 'http://opengraphprotocol.org/schema/type') { 
         if (preg_match( '/[^a-z_:]/', $value['o'] ) )  { 
           $report['BAD_TYPE_CHARS_FAIL'] = $value['o'];
-          # throw new Exception('BAD_TYPE_CHARS_FAIL'); 
         }
       }
     }
@@ -149,7 +144,6 @@ class Checker {
         # print "Checking app_id is purely numeric.";
         if (preg_match( '/[^0-9]+/', $value['o']) )  { 
           $report['NONDIGIT_APPID_CHARS_FAIL'] = $value['o'];
-          # throw new Exception('NONDIGIT_APPID_CHARS_FAIL'); 
         } # todo: get tighter regex w/ no false positives from FB.
       }
     }
