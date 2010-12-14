@@ -2,6 +2,8 @@
  "url": "http://developers.facebook.com/tools/lint/",
     "testid": "lint",
     "testgroup": "fb/dev",
+    "warn": [ "MISSING_REQUIRED_PROPERTY", "OG_NAMESPACE_UNDECLARED"],
+    "warning": "Right now we're being strict and complaing because og: was undeclared, that we're missing required properties. However the lite parser will find them.",
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "status": "valid",
     "valid_html": false,
