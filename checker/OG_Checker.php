@@ -44,6 +44,59 @@ require_once 'cfg.php';
 
 class Checker {
 
+  public function checkall($og) {
+
+    # verbose("Running all field value checks.");
+    $notices = array();
+
+    # Raw syntax checks
+    # Initially conducted with regex, should push down to DOM code.
+    #
+    array_push ($notices, Checker::check_metaname_attribute_not_property($og));
+    array_push ($notices, Checker::check_no_page_content($og));
+
+    # Certain checks only make sense once we've got some data.
+
+
+
+
+    # robustification needed. these were shortcuts to speed things, but maybe 
+    # worth running some other checks too, to catch reasons for failure? if so
+    # move them up prior to this code block for now. But really these are just 
+    # more checks and should be named and structured the same. todo.
+ 
+    if (is_null($og->triples)) { #verbose("Missing graph.");
+      $report = array();
+      $report['MISSING_REQUIRED_PROPERTY'] = "No data found; missing graph.";
+
+      array_push($notices,$report);
+      return $notices;
+    }
+    if (sizeof($og->triples) == 0) { #verbose("Empty graph.");
+      $report = array();
+      $report['MISSING_REQUIRED_PROPERTY'] = "No data found; empty graph.";
+      array_push($notices,$report);
+      return $notices;
+    }
+
+
+    # The following checks apply to the loaded data and its actual content:
+    #
+
+    # to rename
+    array_push ($notices, Checker::checkTypeLabel($og) ); # cf. testcases/fb/examples/bad_type.meta
+    array_push ($notices, Checker::checkNotCSV($og));
+    array_push ($notices, Checker::checkNumericPageID($og));
+    array_push ($notices, Checker::checkAdminsNotBigNumber($og));
+      
+    array_push ($notices, Checker::check_nondigit_appid_chars_fail($og) ); # cf. testcases/fb/examples/api_key.meta
+    array_push ($notices, Checker::check_missing_required_property($og));
+    return $notices;
+  }
+   
+
+
+  ### UTILITIES
 
   public function tableFromReport($report) {
     if (sizeof($report) == 0) { return ''; }
@@ -62,7 +115,10 @@ class Checker {
 
 
 
-
+  #########################################################################################
+  #
+  # Checks
+  #
   public function checkNotCSV($og) {
     $report = array();
     foreach ($og->triples as $key => $value) {
@@ -116,8 +172,20 @@ class Checker {
 
 
 
-  public function checkMetaName($og) {
-    $report = array();			   #    print "TODO: check syntax of meta name. Requires raw parser API not triples.";
+  public function check_no_page_content ($og) {
+    $report = array();
+    if ( strlen($og->content) < 1 ) { $report['NO_PAGE_CONTENT'] = 'No page content found.'; }
+  }
+
+  public function check_metaname_attribute_not_property($og) {
+    $report = array();			  
+    if (preg_match('/(\s+name\s*=\s*")(og|fb)?:/',$og->content , $matches ) ) {
+
+      # sometimes sites use name= alongside property=, which is fine
+      if (!preg_match('/(\s+property\s*=\s*")(og|fb)?:/',$og->content ) ) {
+        $report['METANAME_ATTRIBUTE_NOT_PROPERTY'] = 'Use "property" not "name" meta attribute here: '.$matches[1].$matches[2]."...";
+      }
+    } 
     return $report;
   }
 
@@ -135,7 +203,27 @@ class Checker {
   #  Warning: Your og:type may only contain lowercase letters, _ and :. i.e. it must match [a-z_:]+
 
 
-  public function checkAppIDSyntax($og) {
+  # http://ogp.me/ "The four required properties for every page are:"
+  #
+  # og:title - The title of your object as it should appear within the graph, e.g., "The Rock".
+  # og:type - The type of your object, e.g., "movie". Depending on the type you specify, other properties may also be required.
+  # og:image - An image URL which should represent your object within the graph.
+  # og:url - The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/".
+  # 
+  public function check_missing_required_property($og) {
+    $report = array();
+    $oops = '';
+    if (is_null($og->og_title)) { $oops .= "og:title is missing. "; }
+    if (is_null($og->og_type)) { $oops .= "og:type is missing. "; }
+    if (is_null($og->og_image)) { $oops .= "og:image is missing. "; }
+    if (is_null($og->og_url)) { $oops .= "og:url is missing. "; }
+    if ($oops != '') { $report['MISSING_REQUIRED_PROPERTY'] = $oops; }
+    return $report;
+    # aside: note that this happens to use OG API not raw triples
+  }
+
+
+  public function check_nondigit_appid_chars_fail($og) {
 
     $report = array();
     foreach ($og->triples as $key => $value) {

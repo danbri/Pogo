@@ -328,7 +328,7 @@ class OGDataGraph {
     $t = "<table border='1' style='background: #eeeeee;'>\n";
     while (list($prefix, $ns) = each($xmlns)) {
          $ok = OGDataGraph::isValidURL($ns);
-         if ($ok) { $m = " URI syntax ok."; }
+         if ($ok) { $m = " (URI seems ok.)"; }
          $t .= "<tr><td class='prefix'>$prefix</td><td>".htmlentities($ns)."</td><td>".$m."</td></tr>";
 
     }
@@ -425,41 +425,7 @@ class OGDataGraph {
   }
 
   #################################################################################
-  # CHECKS
-  public function checkfields() {
-
-    # verbose("Running all field value checks.");
-    $notices = array();
-
-    # Raw syntax checks 
-    # Initially conducted with regex, should push down to DOM code.
-    #
-    array_push ($notices, Checker::checkMetaName($this));
-
-    #throw new Exception("FAILING CHECKER!");
-
-    # Certain checks only make sense once we've got some data.
-
-    # robustification needed.
-    if (is_null($this->triples)) { #verbose("Missing graph."); 
-      return $notices; 
-    }
-    if (sizeof($this->triples) == 0) { #verbose("Empty graph."); 
-      return $notices; 
-    }
-
-
-    # The following checks apply to the loaded data and its actual content:
-    #
-    array_push ($notices, Checker::checkTypeLabel($this) ); # cf. testcases/fb/examples/bad_type.meta
-    array_push ($notices, Checker::checkAppIDSyntax($this) ); # cf. testcases/fb/examples/api_key.meta
-    array_push ($notices, Checker::checkMetaName($this));
-    array_push ($notices, Checker::checkNotCSV($this));
-    array_push ($notices, Checker::checkNumericPageID($this));
-    array_push ($notices, Checker::checkAdminsNotBigNumber($this));
-    return $notices;
-  }
-  
+  # UTILITY (for graph visualization etc.)  
   function shortify($u) {
     foreach (OGDataGraph::$nslist as $prefix => $uri) {   # print "DOES $u CONTAIN $uri ? <br/>";
       if(strstr($u , $uri ) ) {

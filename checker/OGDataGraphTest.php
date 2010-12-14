@@ -101,12 +101,11 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
       $this->fail("Loading not_CSV failed.");
     } # copied from above test.
 
-
-    $this->assertNotNull($og, "Should get an $og from prev test via dependency(?).");
+    $this->assertNotNull($og, "Should get an $og");
     $m = $og->getmeta();
     $this->assertNotNull($m, "Didn't get metadata.");
     #print "\nDUMP: ". var_dump($m) . "\n\n";
-    $this->assertEquals($m['triple_count'],0, "not_CSV test has 0 triples.");
+    $this->assertEquals($m['triple_count'],1, "not_CSV test has 1 triples.");
     $this->assertEquals($m['status'],'invalid', "not_CSV test has status of 'invalid'.");
     $this->assertEquals($m['url'],'http://developers.facebook.com/tools/lint/examples/not_CSV', "URL should match expectation.");
 
@@ -357,6 +356,22 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
     $this->assertRegExp('/James\n\s+/', $og->og_description, "We expect newlines within content to be preserved.");
   }
 
+
+  public function testReadsGoodShortNSTestcaseMetaFile() {
+    $og = new OGDataGraph();
+
+    $f='testcases/fb/examples/good-shortns.meta';
+    try { 
+      $og->readTest($f);
+   } catch(Exception $e) { 
+      $this->fail(true, "failed loading testcase metadata $f, exception:".$e);
+    }
+  }
+
+    
+#    $og->readFromURL('lite');
+    # $this->assertNotNull($og->og_description, "Expecting an og:description");
+    # $this->assertRegExp('/James\n\s+/', $og->og_description, "We expect newlines within content to be preserved.");
 
 ##############################################################################
 # Charset-handling
