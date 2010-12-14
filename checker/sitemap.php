@@ -63,7 +63,16 @@ foreach ($tests as $tc) {
        print $og->xmlnsTable();
        
        print "<h4>Checks</h4>"; 
+
+       print "<p>Expected:</p><p><i>".$og->meta['warning']."</i></p>\n<table style='background: yellow;' border='1'>";
+#       print var_dump($og->meta['warn'] );
+       foreach ($og->meta['warn'] as $expect) {
+         print "<tr><td>$expect</td><td>". $msg[$expect] . "</td></tr>\n";
+       }
+       print '</table>';
+
        $report = $og->checkfields(); 
+       print "<p>Found:</p>\n\n";
        print Checker::tableFromReport($report);
 
      } catch (Exception $e) {
