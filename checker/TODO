@@ -14,6 +14,15 @@ external services
    $parser->consume;
   $graph = $parser->graph;
 
+
+BIG THINGS
+
+ * should plug in the HTML5 parser somehow, since majority of in-the-wild files are illformed (poor unicode etc see ekstrabladet.dk test)
+
+LITTLE THINGS
+
+ * Extract (and use?) <link rel="canonical" ...>
+
 API
 
  * Look at the draft W3C RDFa API and consider adoption
@@ -41,11 +50,12 @@ Share wiki space with other parser / toolkit folk? common testcases?
 LINTING
 
  We want all the bad examples to be detectable, using either the simple parser or an RDFa-based on.
+
  Reproduce 'meta name' linter check from fb
 
 TESTCASES
 
-Some sites to add:
+Some sites to check:
 
 blocket.se cafe.com cnn.com ekstrabladet.dk farmville.com imdb.com mafiawars.com
 perezhilton.com photobucket.com playlist.com skyrock.com tmz.com tvneto.com zynga.com
