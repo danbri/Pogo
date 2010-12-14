@@ -115,8 +115,7 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
       $this->fail("Something terrible happened while parsing ". $m['url'] );
     }
     try {    
-#      $og->checkNotCSV();
-      Checker::checkNotCSV($og);
+      Checker::check_failed_fbadmins_regex($og);
     } catch (Exception $e) {
       $this->assertEquals($e->getMessage(), "FAILED_FBADMINS_REGEX", "not_CSV test should fail fb:admins regex.");
     }

@@ -38,6 +38,7 @@ Class Label
 
 	'NO_PAGE_CONTENT' => 				'Page seems to be empty.',
 
+	'NONNUMERIC_PAGE_ID' =>				'The page_id property is non-numeric.',
 	);
 
 

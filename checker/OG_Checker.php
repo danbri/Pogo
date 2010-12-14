@@ -82,11 +82,10 @@ class Checker {
     #
 
     # to rename
-    array_push ($notices, Checker::checkTypeLabel($og) ); # cf. testcases/fb/examples/bad_type.meta
-    array_push ($notices, Checker::checkNotCSV($og));
-    array_push ($notices, Checker::checkNumericPageID($og));
-    array_push ($notices, Checker::checkAdminsNotBigNumber($og));
-      
+    array_push ($notices, Checker::check_bad_type_chars_fail($og) ); # cf. testcases/fb/examples/bad_type.meta
+    array_push ($notices, Checker::check_failed_fbadmins_regex($og));
+    array_push ($notices, Checker::check_nonnumeric_page_id($og));
+    array_push ($notices, Checker::check_failed_big_number_in_admins($og));
     array_push ($notices, Checker::check_nondigit_appid_chars_fail($og) ); # cf. testcases/fb/examples/api_key.meta
     array_push ($notices, Checker::check_missing_required_property($og));
     return $notices;
@@ -117,7 +116,7 @@ class Checker {
   #
   # Checks
   #
-  public function checkNotCSV($og) {
+  public function check_failed_fbadmins_regex($og) {
     $report = array();
     foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') {
@@ -129,20 +128,20 @@ class Checker {
     return $report;
   }
 
-  public function checkNumericPageID($og) {
+  #was checkNumericPageID
+  public function check_nonnumeric_page_id($og) {
     foreach ($og->triples as $key => $value) {
       $report = array();
       if ($value['p'] == 'http://www.facebook.com/2008/fbmlpage_id') { 
         if ( preg_match( '/[^0-9]+/', $value['o']) )  { 
-          $report['FAILED_FBADMINS_REGEX'] = $value['o'];
+          $report['NONNUMERIC_PAGE_ID'] = $value['o'];
         }
       }
     }
     return $report;
   }
 
-
-  public function checkAdminsNotBigNumber($og) {
+  public function check_failed_big_number_in_admins($og) {
     $report = array();
     foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://www.facebook.com/2008/fbmladmins') { 
@@ -187,7 +186,7 @@ class Checker {
     return $report;
   }
 
-  public function checkTypeLabel($og) {
+  public function check_bad_type_chars_fail($og) {
     $report = array();
     foreach ($og->triples as $key => $value) {
       if ($value['p'] == 'http://opengraphprotocol.org/schema/type') { 
