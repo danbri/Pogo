@@ -1,9 +1,9 @@
 { 
- "url": "http://developers.facebook.com/tools/lint/examples/good",
+ "url": "/testcases/i18n/restaurant_jp_type_Shift_JIS.cache",
     "testid": "restaurant_jp_type_utf8",
     "testgroup": "i18n",
 
-    "warn": ["BAD_TYPE_CHARS_FAIL","MISSING_REQUIRED_PROPERTY"],
+    "warn": ["BAD_TYPE_CHARS_FAIL"],
 
     "cache_date": "Sun 14 Nov 2010 13:46:47 CET",
     "status": "invalid",
