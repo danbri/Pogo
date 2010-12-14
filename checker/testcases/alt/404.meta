@@ -9,6 +9,6 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 0,
-    "warning": "this test references a real site, but a non-existing page."
+    "warning": "this test references a real site, but a non-existing page.",
     "home_site": "http://danbri.org/"
 }

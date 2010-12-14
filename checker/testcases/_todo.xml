@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>file:testcases/fb/examples/meta_name.meta</loc></url>
-<url><loc>file:testcases/fb/examples/meta_name_2.meta</loc></url>
+<url><loc>file:testcases/fb/examples/good-shortns.meta</loc></url>
 </urlset>
