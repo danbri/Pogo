@@ -12,6 +12,6 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 3,
-    "warning": "Missing 3 of the 4 required og: properties (only have og:image)",
+    "warning": "Missing 3 of the 4 required og: properties (only have og:image). Also the top html element is repeated.",
     "home_site": "http://www.playlist.com/"
 }
