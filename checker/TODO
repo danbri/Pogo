@@ -18,6 +18,7 @@ external services
 BIG THINGS
 
  * should plug in the HTML5 parser somehow, since majority of in-the-wild files are illformed (poor unicode etc see ekstrabladet.dk test)
+ * manifests should declare the testcase file's charset; should parsers also force it, or read from content where available?
 
 LITTLE THINGS
 
