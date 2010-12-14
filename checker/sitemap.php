@@ -13,56 +13,28 @@ require_once 'cfg.php';
 $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
 $me = 'index.php';
-
-#$mode = $_GET['mode'];
-#if (is_null($mode)) {$mode='auto';}
-#if ($mode &&  !preg_match( '/(^full$|^lite$|^auto$|^viz$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
-#$url = $_GET['url'];
-
-#print "<form action=\"$me\" method=\"get\" name=\"checker\">\n";
-#print "Input URL:<input type=\"text\" size=\"70\" name=\"url\" value=\"$url\"/><input type=\"submit\" value=\"go\"/>";
-#print '<div style="float: right"><input type="radio" name="mode" value="auto" checked="true" /> auto ';
-#print '<input type="radio" name="mode" value="lite" /> lite';
-#print '<input type="radio" name="mode" value="full" /> full</div>';
-#print '</form>';
-
-#if (!$url) {  exit(1); }
-#if (!isValidURL($url)){ exit("Unsupported URL syntax."); }
-?>
-<body>
-<?php 
-
+print '<body>';
 $map = 'testcases/approved.xml';
 $map = 'testcases/fb_tests.xml';
 $map = 'testcases/_all.xml';
 #$map = 'testcases/_todo.xml';
-
-require_once 'OGDataGraph.php';
-
 try { 
 $tests = OGDataGraph::getTests($map);
 } catch (Exception $e) { print "oops"; print $e; }
 
 foreach ($tests as $tc) {
-  # set up a graph for this test
-  $og = new OGDataGraph();
+  $og = new OGDataGraph();	  # set up a graph for this test
   print "<h4>Test: $tc</h4>";
   $og->readTest($tc);
   $url = $og->meta['url'];
 
-  if ($og->meta['warning']) { 
-    print "<em class='warning'>".$og->meta['warning']."</em><br/>\n";  
-  } 
-
+  if ($og->meta['warning']) {    print "<em class='warning'>".$og->meta['warning']."</em><br/>\n";    } 
   print "Input URL: $url";
 
-
-  print "<p>Expected triples: ". $og->meta['triple_count']."</p>";
   try {
      $og->readTest($tc);
      try {
        $og->readFromURL('full', $url); 
-       print "<p>Actual triples: ". sizeof($og->triples)."</p>\n";
        $xmlns = $og->namespaces(); 
        # print $og->xmlnsTable();
 
@@ -71,6 +43,7 @@ foreach ($tests as $tc) {
        } else {
          print "<p>Results: no OpenGraph data found.</p>";
        }
+       print "<p>Data items: expected=".$og->meta['triple_count']." actual=". sizeof($og->triples)."</p>\n";
 
       if ( sizeof($og->meta['warn']) > 0 ) { 
          print "<h5>Expected Issues</h5>";
