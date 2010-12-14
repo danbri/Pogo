@@ -54,6 +54,7 @@ class Checker {
     #
     array_push ($notices, Checker::check_metaname_attribute_not_property($og));
     array_push ($notices, Checker::check_no_page_content($og));
+    array_push ($notices, Checker::check_og_namespace_undeclared($og));
 
     # Certain checks only make sense once we've got some data.
 
@@ -185,6 +186,28 @@ class Checker {
     } 
     return $report;
   }
+
+
+
+  # todo: migrate to real parser. but will catch most cases.
+  public function check_og_namespace_undeclared($og) {
+    $report = array();			  
+    if (!preg_match('/xmlns:og/',$og->content  ) ) {
+        $report['OG_NAMESPACE_UNDECLARED'] = "Couldn't find xmlns:og in the document.";
+    } 
+    return $report;
+  }
+
+#    todo: only run this check if fb: prefix is used.
+#  # todo: migrate to real parser. but will catch most cases.
+#  public function check_fb_namespace_undeclared($og) {
+#    $report = array();			  
+#    if (!preg_match('/xmlns:fb/',$og->content , $matches ) ) {
+#        $report['FB_NAMESPACE_UNDECLARED'] = 'Couldn't find xmlns:fb in the document.';
+#    } 
+#    return $report;
+#  }
+
 
   public function check_bad_type_chars_fail($og) {
     $report = array();
