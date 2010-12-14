@@ -13,7 +13,10 @@ Class Label
         'MISSING_REQUIRED_PROPERTY' => 'One or more of the required properties (title, type, url, image) are missing.',
         'FAILED_PAGEID_NUMBERSONLY_REGEX' => 'An fb:pageid property contains something other than numbers.',
         'UNESCAPED_LESSTHAN_IN_CONTENT_VALUE' => 'Field value contains a markup symbol (less-than sign).',
-#        'SURROUNDING_WHITESPACE_WARNING' => 'Field value begins and/or ends with whitespace.',
+        'SURROUNDING_WHITESPACE_WARNING' => 'Field value begins and/or ends with whitespace.',
+        'OG_NAMESPACE_UNDECLARED' => "Document uses but does not declare the og: namespace.",
+        'FB_NAMESPACE_UNDECLARED' => "Document uses but does not declare the fb: namespace.",
+        'NAMESPACE_UNDECLARED' => "Document uses but does not declare an extension namespace.",
 	);
 
   function label($l) {
