@@ -4,7 +4,7 @@
 <?php 
 require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
-require_once 'OG_L18N.php';
+require_once 'OG_Checklist.php';
 ?>
 <!-- mapping stuff -->
 <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>

@@ -7,7 +7,7 @@ header("Content-type: text/html"); # half-hearted attempt to do NPH
 <?php 
 require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
-require_once 'OG_L18N.php';
+require_once 'OG_Checklist.php';
 require_once 'cfg.php';
 
 $msg = Label::$messages;
