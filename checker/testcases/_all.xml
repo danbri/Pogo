@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>file:alt/404.meta</loc></url>
 <url><loc>file:alt/caps1.meta</loc></url>
 <url><loc>file:alt/caps2.meta</loc></url>
+<url><loc>file:blocket.se/blocket1.meta</loc></url>
+<url><loc>file:cafe.com/hiddenwords.meta</loc></url>
+<url><loc>file:cnn.com/cnn1.meta</loc></url>
+<url><loc>file:ekstrabladet.dk/article1469733.meta</loc></url>
 <url><loc>file:fb/dev/lint.meta</loc></url>
 <url><loc>file:fb/dev/lint2.meta</loc></url>
 <url><loc>file:fb/dev/lint3.meta</loc></url>
@@ -16,6 +21,8 @@
 <url><loc>file:fb/examples/meta_name.meta</loc></url>
 <url><loc>file:fb/examples/meta_name_2.meta</loc></url>
 <url><loc>file:fb/examples/not_CSV.meta</loc></url>
+<url><loc>file:i18n/restaurant_jp_type_Shift_JIS.meta</loc></url>
+<url><loc>file:i18n/restaurant_jp_type_utf8.meta</loc></url>
 <url><loc>file:imdb/comicbookguy.meta</loc></url>
 <url><loc>file:imdb/craig_dibble.meta</loc></url>
 <url><loc>file:imdb/legend_guardians.meta</loc></url>
@@ -33,6 +40,8 @@
 <url><loc>file:ogp/sec1.meta</loc></url>
 <url><loc>file:opengraphprotocol.org/rock1.meta</loc></url>
 <url><loc>file:opengraphprotocol.org/rock2.meta</loc></url>
+<url><loc>file:photobucket.com/colorsplash.meta</loc></url>
+<url><loc>file:playlist.com/homepage.meta</loc></url>
 <url><loc>file:rottentomatoes/matrix.meta</loc></url>
 <url><loc>file:slideshare/ss1.meta</loc></url>
 </urlset>
