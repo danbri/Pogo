@@ -50,7 +50,7 @@ class OpenGraph implements Iterator
 
 #		print "**$URI**"; # crude debug. danbri
 
-		return self::_parse(file_get_contents($URI));
+		return self::parse(file_get_contents($URI));
 	}
 
   /**
@@ -60,7 +60,7 @@ class OpenGraph implements Iterator
    * @param $HTML    HTML to parse
    * @return OpenGraph
    */
-	static private function _parse($HTML) {
+	static public function parse($HTML) {
 		$old_libxml_error = libxml_use_internal_errors(true);
 
 		$doc = new DOMDocument();
