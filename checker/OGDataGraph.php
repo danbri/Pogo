@@ -140,7 +140,7 @@ class OGDataGraph {
     
     try { 
       if ($u == 'default') {
-        verbose("Lite parser in default mode, will use cache'd content.");
+        # verbose("Lite parser in default mode, will use cache'd content.");
         if ( sizeof($this->content) < 1) { throw new Exception("No local content "); }
         $o = @OpenGraph::parse( $this->content );
       } else {

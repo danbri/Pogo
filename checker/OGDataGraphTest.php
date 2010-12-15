@@ -440,21 +440,41 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 
   public function testhtml5libParserAvailable() {
     require_once 'plugins/html5lib//library/HTML5/Parser.php';
-    $dom = HTML5_Parser::parse('<html><body>...');
+    $dom = HTML5_Parser::parse('<html><head xmlns:og="http://ogp.me/#"><meta property="og:title" content="html5"/><body>');
     $nodelist = HTML5_Parser::parseFragment('<b>Boo</b><br>');
     $nodelist2 = HTML5_Parser::parseFragment('<td>Bar</td>', 'table');
+
+    # DOMNodeList, DOMDocument, 
     $this->assertNotNull($dom, "Should get an HTML DOM from htmllib parser.");
     $this->assertNotNull($nodelist, "Should get a nodelist from htmllib parser.");
     $this->assertNotNull($nodelist2, "Should get a second nodelist from htmllib parser.");
+
+    $this->assertType("DOMDocument", $dom, "DOM should be a DOM");
+    $this->assertType("DOMNodeList", $nodelist, "Nodelist should be a DOMNodeList");
+    $this->assertType("DOMNodeList", $nodelist2, "Nodelist should be a DOMNodeList");
+
+    #verbose("HTML5: ". var_dump($dom) . "  ".var_dump($nodelist ));
+    #verbose("Tags are:  ". var_dump($dom->getElementsByTagName('meta')));
+
+    $og = new OGDataGraph();
+  
+    $f='testcases/fb/examples/good-shortns.meta';
+    try {
+      $og->readTest($f);
+    } catch(Exception $e) {
+       $this->fail(true, "failed loading testcase metadata $f, exception:".$e);
+    }
+   $this->assertNotNull($og);
+   $og->fetchAndCache();
+   $this->assertNotNull($og->content);
+   $domnodelist = HTML5_Parser::parseFragment($og->content);
+   $this->assertNotNull($domnodelist);
    
-  }
-
-
-
-    
-#    $og->readFromURL('lite');
-    # $this->assertNotNull($og->og_description, "Expecting an og:description");
-    # $this->assertRegExp('/James\n\s+/', $og->og_description, "We expect newlines within content to be preserved.");
+   # future investigation...
+   #foreach ($domnodelist as $n) {
+   #  verbose("\n\n\nDOMNode: ".print_r($n). "\n\n\n");
+   #}
+ }
 
 ##############################################################################
 # Charset-handling
