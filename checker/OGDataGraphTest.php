@@ -470,10 +470,20 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
    $domnodelist = HTML5_Parser::parseFragment($og->content);
    $this->assertNotNull($domnodelist);
    
+   $attrs = $domnodelist->item(1)->attributes;
+   $this->assertNotNull($attrs, "Should get some meta attributes.");
+
+   $meta_property = $attrs->getNamedItem("property");
+   # $this->assertNotNull( $meta_property, "Our meta element has a property attribute.");
+
    # future investigation...
-   #foreach ($domnodelist as $n) {
-   #  verbose("\n\n\nDOMNode: ".print_r($n). "\n\n\n");
-   #}
+
+   foreach ($domnodelist as $n) {
+     $amap = $n->attributes;
+	#     $this->assertNotNull($amap, "Each meta node should have attributes.");
+	#     verbose("\n\n\nDOMNode: ".print_r($n). "\n\n\n");
+   }
+
  }
 
 ##############################################################################
