@@ -89,15 +89,13 @@ class OGDataGraph {
     }
   }
 
-  # default to lite, so as not to depend on RDFa parser plugin(s)
-  function readFromURL($mode='lite',$u = 'default') {
-    
+
+  public function fetchAndCache($mode='lite',$u = 'default') {
     if ($u=='default') { $u = $this->url; } 
 
     # this will be slow, but we'll grab a copy for ourselves to revisit later.
     # ideally a single fetch would be used with each parser too. do-able.
     try {
-
       @$handle = fopen( $u, "r");
       @$this->content = stream_get_contents($handle);
       #print "meta: ". $contents . "\n<br/>\n";
@@ -109,7 +107,14 @@ class OGDataGraph {
       verbose("Trouble fetching from url $u.");
       throw new Exception('FAILED_READ_URL');
     }
+  }
 
+  # default to lite, so as not to depend on RDFa parser plugin(s)
+  function readFromURL($mode='lite',$u = 'default') {
+    
+    if ($u=='default') { $u = $this->url; } 
+
+    $this->fetchAndCache();
     # OK, now to use the various libraries/plugins
     #
     # verbose("reading from url $u with mode $mode."); 
@@ -124,15 +129,25 @@ class OGDataGraph {
     Checker::paranoidMarkupCheck($this); # uptight for now
   }
 
+
+
   function liteParse($u='default') {
-    if ($u != 'default') { $url = $u; } else { $url = $this->meta['url']; $u = $url; }
-    # verbose("liteParse: '$u'");
+    if ($u != 'default') { $url = $u; } else { $url = $this->meta['url']; }
+    # verbose("liteParse: '$url'");
     require_once 'plugins/lite/OpenGraph.php';
 
+ 
+    
     try { 
-    $o = @OpenGraph::fetch($u);
+      if ($u == 'default') {
+        verbose("Lite parser in default mode, will use cache'd content.");
+        if ( sizeof($this->content) < 1) { throw new Exception("No local content "); }
+        $o = @OpenGraph::parse( $this->content );
+      } else {
+        $o = @OpenGraph::fetch($url);
+      }
     } catch (Exception $e) {                                 
-      print "Problem fetching $u: ".$e;
+      print "Problem fetching $url: ".$e;
       return;
     }
     # the @ suppresses warnings leaking out into page content

@@ -251,6 +251,7 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
   public function testBasicGoodExampleLite() {
     $og = new OGDataGraph();
     try { $og->readTest('testcases/fb/examples/good.meta'); } catch(Exception $e) { $this->fail(true, "failed load testcases/fb/examples/good.meta");}
+    $og->fetchAndCache();
     $rdf = $og->liteParse();
     # 
     $this->AssertNotNull($og->og_title, "We should have a title.");
@@ -431,6 +432,24 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
       $this->fail(true, "failed loading testcase metadata $f, exception:".$e);
     }
   }
+
+
+################################################################################################
+# HTML5 parsing tests
+
+
+  public function testhtml5libParserAvailable() {
+    require_once 'plugins/html5lib//library/HTML5/Parser.php';
+    $dom = HTML5_Parser::parse('<html><body>...');
+    $nodelist = HTML5_Parser::parseFragment('<b>Boo</b><br>');
+    $nodelist2 = HTML5_Parser::parseFragment('<td>Bar</td>', 'table');
+    $this->assertNotNull($dom, "Should get an HTML DOM from htmllib parser.");
+    $this->assertNotNull($nodelist, "Should get a nodelist from htmllib parser.");
+    $this->assertNotNull($nodelist2, "Should get a second nodelist from htmllib parser.");
+   
+  }
+
+
 
     
 #    $og->readFromURL('lite');
