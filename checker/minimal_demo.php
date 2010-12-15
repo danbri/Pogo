@@ -2,6 +2,7 @@
 <body>
 <?php 
 require_once 'OGDataGraph.php'; 
+require_once 'CheckUI.php';
 
 $url = 'http://www.rottentomatoes.com/m/blade_runner/';
 $og = new OGDataGraph();
@@ -15,7 +16,7 @@ $og->readFromURL('lite', $url);  # just look for OG markup
 
 print "<p>Title is " . $og->og_title ."</p>";
 print "<p>RDFa triple count: " . sizeof( $og->triples ) . "</p>";
-print $og->simpleTable();
+print CheckUI::simpleTable($og);
 
 ?>
 </body>

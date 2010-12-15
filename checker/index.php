@@ -3,20 +3,15 @@
 
 <?php 
 require_once 'page_top.php';
-require_once 'OGDataGraph.php'; 
-require_once 'OG_Checklist.php';
 ?>
 <!-- mapping stuff -->
 <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
-<script type="text/javascript">
-         var map = null;
-         function GetMap(lat,lon){
-            map = new VEMap('myMap');
-            map.LoadMap(new VELatLong(lat, lon), 10 ,'h' ,false); //http://www.microsoft.com/maps/isdk/ajax/ 'b' birdseye
-         }   
-</script>
+<script type="text/javascript">var map = null;function GetMap(lat,lon){map = new VEMap('myMap');map.LoadMap(new VELatLong(lat, lon), 10 ,'h' ,false);}</script>
 
 <?php
+require_once 'OGDataGraph.php'; 
+require_once 'OG_Checklist.php';
+require_once 'CheckUI.php';
 $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
 $me = basename($_SERVER['SCRIPT_FILENAME']); # index.php by default
@@ -25,22 +20,7 @@ if (is_null($mode)) {$mode='auto';}
 if ((!is_null($mode)) &&  !preg_match( '/(^full$|^lite$|^auto$|^viz$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
 $url = $_GET['url'];
 
-print "<form action=\"$me\" method=\"get\" name=\"checker\">\n";
-print "Input URL:<input type=\"text\" size=\"70\" name=\"url\" value=\"$url\"/><input type=\"submit\" value=\"go\"/>";
-
-#print '<div style="float: right"><input type="radio" name="mode" value="auto" checked="true" /> auto ';
-#print '<input type="radio" name="mode" value="lite" /> lite';
-#print '<input type="radio" name="mode" value="full" /> full</div>';
-
-print '</form>';
-print "<small>cached examples: <a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=auto\">legend_guardians</a> <br/>";
-
-print "live examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=auto\">bladerunner</a> | ";
-print " <a href='?url=http://developers.facebook.com/tools/lint/&mode=auto'>developers.facebook.com</a><br/>";
-print "bad examples: <a href='?url=http://developers.facebook.com/tools/lint/examples/bad_app_id'>bad_app_id</a><br/>";
-print 'geo: <a href="?url=http://localhost/pogo/Pogo/checker/testcases/ogp/geo1.cache#">california</a>';
-print "</small>";
-
+print CheckUI::simpleForm($url);
 if (!$url) {  exit(1); }
 if (!OGDataGraph::isValidURL($url)){ exit("Unsupported URL syntax."); }
 $success = 0;
@@ -73,7 +53,8 @@ if ($mode == 'lite' && sizeof($og->triples)==0) {
   print "Reparsing result was: ". sizeof($og2->triples) . "...graph entries.";
   if ( sizeof($og2->triples)>0) { $success=1; }
   try {
-  $og2->checkfields();
+  $rep2 =  Checker::checkall($og2);
+  print 'Report2: '.CheckUI::tableFromReport($rep2);
   } catch (Exception $e) {
     print "<p>".$e->getMessage().": ". $msg[ $e->getMessage() ]."</p>" ;
     $success = 0;
@@ -92,21 +73,20 @@ if ($mode == 'full' && sizeof($og->triples)==0) {
   print "Reparsing result was: ". sizeof($og2->triples) . "...graph entries.";
   if ( sizeof($og2->triples)>0) { $success=1; }
   try {
-  $og2->checkfields();
+   $report = Checker::checkall($og2);
+   print "Report: ". CheckUI::tableFromReport($report);
   } catch (Exception $e) {
     print "<p>".$e->getMessage().": ". $msg[ $e->getMessage() ]."</p>" ;
     $success = 0;
   }
+
 }
 
-
-#if ($success != 0) { 
   print "<h3>Info</h3>";
-  print $og->simpleTable();
-#}
+  print CheckUI::simpleTable($og);
 
   try {
-  $og->checkfields();
+  Checker::checkall($og);
   } catch (Exception $e) {
     print "<p>".$e->getMessage().": ". $msg[ $e->getMessage() ]."</p>" ;
   }

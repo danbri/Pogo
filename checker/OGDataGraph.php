@@ -327,63 +327,6 @@ class OGDataGraph {
 
 
   #################################################################################
-  # HTML output 
-
-  public function simpleTable() {
-
-    $t = "<table border='1' style='background: #eeeeee;'>\n";
-    $t .= "<tr><td class=\"ogfield\">Type</td><td>". $this->og_type ."</td></tr>";
-    $t .= "<tr><td class=\"ogfield\">Image</td><td><a href='".$this->og_image."'><small><img src='". $this->og_image ."' alt='image shown inline'><br/>". $this->og_image ."</small></td></tr>";
-    $t .= "<tr><td class=\"ogfield\">Title</td><td>".  $this->og_title ."</td></tr>";
-    $t .= "<tr><td class=\"ogfield\">URL</td><td>". $this->og_url ."</td></tr>";
-    # $t .=  "<tr><td class=\"ogfield\">Site URL (<em>as supplied</em>)</td><td>".  $this->meta['url'] ."</td></tr>";
-    $t .= "</table>\n";
-    return $t;
-  }
-
-
-  public function xmlnsTable() {
-    $xmlns = $this->namespaces();
-    $t = "<table border='1' style='background: #eeeeee;'>\n";
-    while (list($prefix, $ns) = each($xmlns)) {
-         $ok = OGDataGraph::isValidURL($ns);
-         if ($ok) { $m = " (URI seems ok.)"; }
-         $t .= "<tr><td class='prefix'>$prefix</td><td>".htmlentities($ns)."</td><td>".$m."</td></tr>";
-
-    }
-    $t .= "</table>\n";    
-    return $t;
-  }
-
-  public function rdf2info() {
-    $props = array(); #todo
-    foreach ($this->triples as $key => $value) {
-       if (preg_match( '/http:\/\/opengraphprotocol\.org/', $value['p'])) {
-          $prop =  $value['p'];
-          $props[$prop] = $value['o'];
-          # print $prop. " " . $value['o'] . " \n";
-       }
-    }
-    $url_parts = parse_url( $props["http://opengraphprotocol.org/schema/url"] );
-
-    if ($url_parts['host'] && $url_parts['port']) { 
-      $site_url = $url_parts['scheme'] ."://". $url_parts['host'] . $url_parts['port'] . "/" ; # TODO: must we guess this?
-    } else {
-      $site_url = '';
-    }
-    $t = "<table border='1'>\n";
-    $t .= "<tr><td class=\"ogfield\">Type</td><td>". $props["http://opengraphprotocol.org/schema/type"] ."</td></tr>";
-    $t .= "<tr><td class=\"ogfield\">Image</td><td><img src='". $props["http://opengraphprotocol.org/schema/image"] ."' /><br/>". $props["http://opengraphprotocol.org/schema/image"] ."</td></tr>";
-    $t .= "<tr><td class=\"ogfield\">Title</td><td>". $props["http://opengraphprotocol.org/schema/title"] ."</td></tr>";
-    $t .=  "<tr><td class=\"ogfield\">Site URL</td><td>". $site_url ."</td></tr>";
-    $t .= "<tr><td class=\"ogfield\">URL</td><td>". $props["http://opengraphprotocol.org/schema/url"] ."</td></tr>";
-    $t .= "</table>\n";
-    return $t;
-  }
-
-
-  #################################################################################
-  #
   #  Hop between Lite and Full views
 
 

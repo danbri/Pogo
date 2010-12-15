@@ -7,6 +7,7 @@ header("Content-type: text/html"); # half-hearted attempt to do NPH
 require_once 'page_top.php';
 require_once 'OGDataGraph.php'; 
 require_once 'OG_Checklist.php';
+require_once 'CheckUI.php';
 require_once 'cfg.php';
 $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
@@ -15,8 +16,6 @@ print '<body>';
 $map = 'testcases/fb_tests.xml';
 #$map = 'testcases/_all.xml';
 #$map = 'testcases/_todo.xml';
-
-require 'CheckUI.php';
 
 try { 
 $tests = OGDataGraph::getTests($map);
