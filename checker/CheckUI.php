@@ -29,16 +29,15 @@ e.g. $og->xmlnsTable(); # crude table of namespace declarations
   public static function tableFromReport($report) {
     if (sizeof($report) == 0) { return ''; }
     $t = "<table border='1' class='trouble'>";
-    foreach ($report as $ticket) {
-      if (sizeof($ticket)==0) { continue; }
-      while (list($code, $info) = each($ticket)) {
+    foreach ($report as $code => $info ) {
+#      if (sizeof($ticket)==0) { continue; }
+#      while (list($code, $info) = each($ticket)) {
         $t .= "<tr><td>$code</td><td>".Label::$messages[$code]."</td><td>$info</td></tr>\n";
-      }
+#      }
     }
       $t .= "</table>";
     return $t;
   }
-
 
 
 

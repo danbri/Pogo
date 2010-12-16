@@ -11,11 +11,14 @@ require_once 'CheckUI.php';
 require_once 'cfg.php';
 $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
+
 print '<body>';
 #$map = 'testcases/approved.xml';
 $map = 'testcases/fb_tests.xml';
 #$map = 'testcases/_all.xml';
 #$map = 'testcases/_todo.xml';
+
+
 
 try { 
 $tests = OGDataGraph::getTests($map);

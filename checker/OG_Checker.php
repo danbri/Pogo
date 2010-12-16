@@ -89,9 +89,21 @@ class Checker {
     array_push ($notices, Checker::check_failed_big_number_in_admins($og));
     array_push ($notices, Checker::check_nondigit_appid_chars_fail($og) ); # cf. testcases/fb/examples/api_key.meta
     array_push ($notices, Checker::check_missing_required_property($og));
-    return $notices;
+    return Checker::reportSummary($notices);
   }
    
+    public static function reportSummary($report) {
+      $summary=array();
+      if (sizeof($report) == 0) { return ''; }  
+      foreach ($report as $ticket) {
+        if (sizeof($ticket)==0) { continue; }
+        while (list($code, $info) = each($ticket)) {
+           $summary[$code]=$info; # flattening, on assumption different checks find different bugs
+        }
+      }
+      return $summary;
+    }
+
 
 
   #########################################################################################
