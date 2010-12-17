@@ -35,3 +35,5 @@ li.type code { font-style:bold; color: brown; }
 li.prop code { font-style:italic; color: green; }
 em.type { color: brown; }
 em.prop { color: green; }
+.detail { background: #EEEEEE; }
+

@@ -34,6 +34,7 @@ LITTLE THINGS
  * check for contradictory types (something being a 'restaurant' and a 'profile' simultaneously)
  * FB_NAMESPACE_UNDECLARED not checked for, 'cos we should also check it is being used before complaining.
  * Test: file:testcases/mixi/mixi1.meta is detecting MISSING_REQUIRED_PROPERTY ... our harsh handling of xmlns:og missing; even though it did extract the fields ok.
+ * list urls in web ui somewhere, see find . -name \*.meta -exec grep url {} \;
 
 
 FAILING TESTS

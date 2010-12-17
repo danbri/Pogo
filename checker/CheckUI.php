@@ -72,6 +72,10 @@ e.g. $og->xmlnsTable(); # crude table of namespace declarations
        }
        print "<p>Expected data items: ".$og->meta['triple_count']." actual: ". sizeof($og->triples)."</p>\n";
 
+       $me = basename($_SERVER['SCRIPT_FILENAME']);
+       $name = "testcases/". $og->meta['testgroup'].'/'.$og->meta['testid'].'.meta';
+       print "<a href='". $name . "'> ".$name . '</a>';
+
       # Each testcase can have an array of warning codes from our OG_Checklist
       if ( sizeof($og->meta['warn']) > 0 ) { 
          print "<h5>Expected Issues</h5>";
@@ -154,11 +158,17 @@ e.g. $og->xmlnsTable(); # crude table of namespace declarations
     #print '<input type="radio" name="mode" value="lite" /> lite';
     #print '<input type="radio" name="mode" value="full" /> full</div>';
     $f .= '</form>';
-    $f .= "<small>cached examples: <a href=\"?url=$base/testcases/imdb/legend_guardians.cache&mode=auto\">legend_guardians</a> <br/>";
-    $f .= "live examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/&mode=auto\">bladerunner</a> | ";
+    $f .= "<small>cached examples: <a href=\"?url=$base/testcases/imdb/legend_guardians.cache\">legend_guardians</a> <br/>";
+    $f .= "live examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/\">bladerunner</a> | <a href='?url=http://graph.danbri.org/Pogo/checker/testcases/cafe.com/hiddenwords.cache'>cafe.com</a> | ";
+    $f .= " <a href='?url=http://www.slideshare.net/slidarko/problemsolving-using-graph-traversals-searching-scoring-ranking-and-recommendation'>slideshare.com</a> |";
+    $f .= " <a href='?url=http://r.gnavi.co.jp/g363600/'>gnavi.co.jp (known charset issue)</a> | ";
+#    $f .= " <a href='?url= '></a>";
     $f .= " <a href='?url=http://developers.facebook.com/tools/lint/&mode=auto'>developers.facebook.com</a><br/>";
-    $f .= "bad examples: <a href='?url=http://developers.facebook.com/tools/lint/examples/bad_app_id'>bad_app_id</a><br/>";
-    $f .= 'geo: <a href="?url=http://localhost/pogo/Pogo/checker/testcases/ogp/geo1.cache#">california</a>';
+    $f .= "bad examples: <a href='?url=http://developers.facebook.com/tools/lint/examples/bad_app_id'>bad_app_id</a> |";
+    $f .= " <a href='?url=http://photobucket.com/images/color%20splash/'>photobucket.com</a> |";
+    $f .= " <a href='?url=http://www.playlist.com/'>playlist.com</a> <br/>";
+    $f .= 'geo: <a href="?url=http://graph.danbri.org/Pogo/checker/testcases/ogp/geo1.cache">california (with map example)</a><br/>';
+    $f .= 'non-ogp <a href="http://jay.beweep.com/2010/03/30/creating-local-visibility-to-open-box-products-with-front-end-semantic-web/?utm_source=rss&utm_medium=rss&utm_campaign=creating-local-visibility-to-open-box-products-with-front-end-semantic-web">vocab</a> example: <a href="?url=http://stores.bestbuy.com/142/-/products/open-box/samsung-32-class-1080p-60hz-led-lcd-hdtv/0036725233690/?uid=101">best buy (og: markup not yet added)</a>';
     $f .= "</small>";
     return $f;
   }
