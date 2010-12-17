@@ -493,7 +493,36 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 #
 
 
+################################################################################################
 
+
+# BUG CHASING CORNER
+
+# ok testcases/fb/examples/bad_app_id is throwing OG_NAMESPACE_UNDECLARED when we know it's got one.
+
+   
+  public function testOGNamespaceInBadAppIDTestcase() {
+    $og = new OGDataGraph();
+     $f='testcases/fb/examples/bad_app_id.meta';
+    try {
+      $og->readTest($f);
+    } catch(Exception $e) {
+      $this->fail(true, "failed loading testcase metadata $f, exception:".$e);
+    }
+    $this->assertNotNull($og,"Should have a graph.");
+    $this->assertNotNull($og->meta,"Should have a metadata-annotated graph.");
+    $this->assertNotNull($og->meta['url'],"Should have a meta field for url in graph.");
+
+    $og->fetchAndCache(); ## populates ->content
+
+    $og->liteParse();
+    
+    $report = Checker::checkall($og);
+    verbose("CHECKED: ".var_dump($report)."\n\n");
+    # todo: read it first! this'll fail
+    $this->assertNotNull($og->content,"Should have raw content of cached page.");
+
+  }
 
 
 

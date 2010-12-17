@@ -69,13 +69,15 @@ class Checker {
       $report['MISSING_REQUIRED_PROPERTY'] = "No data found; missing graph.";
 
       array_push($notices,$report);
-      return $notices;
+      return Checker::reportSummary($notices);
+#      return $notices;
     }
     if (sizeof($og->triples) == 0) { #verbose("Empty graph.");
       $report = array();
       $report['MISSING_REQUIRED_PROPERTY'] = "No data found; empty graph.";
       array_push($notices,$report);
-      return $notices;
+      return Checker::reportSummary($notices);
+#      return $notices;
     }
 
 
