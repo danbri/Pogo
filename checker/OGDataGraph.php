@@ -158,12 +158,15 @@ class OGDataGraph {
       # verbose("Mapping $f");
       @$v = $o->_values[$f]; # suppress warning for missing fields, or unittests fail.
       if ($v) {
-        # verbose("Store:$v");
-        if ( ! preg_match('/</', $v )  ) {
-          $this->fields[ 'og:'.$f ] = $v;
-        } else { verbose("Skipping field content due to embedded markup: ".$v); }
+         # verbose("Store:$v");
+         if ( ! preg_match('/</', $v )  ) {
+           $this->fields[ 'og:'.$f ] = $v;
+           } else { 
+             #verbose("Skipping field content due to embedded markup: ".$v); 
+           }
+ 
+         }
       }
-    }
   }
 
   function dumpFields() {
@@ -345,9 +348,11 @@ class OGDataGraph {
       foreach ($this->triples as $key => $v) { 		         # print "XFactoid: ".$v['s']." ".$v['p']." ".$v['o']."\n";
         if (OGDataGraph::isOGField( $fieldname, $v['p'] )) { #verbose("got:".$v['o']."!");
 
-        if ( ! preg_match('/</', $v['o'] )  ) {
-           $f[ 'og:'.$fieldname ] = $v['o']; 
-        } else { verbose("Skipping field content due to embedded markup: ".$v); }
+          if ( ! preg_match('/</', $v['o'] )  ) {
+             $f[ 'og:'.$fieldname ] = $v['o']; 
+          } else { 
+            #verbose("Skipping field content due to embedded markup: ".$v); 
+          }
 
         }
       }
