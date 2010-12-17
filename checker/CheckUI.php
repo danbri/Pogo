@@ -162,6 +162,10 @@ e.g. $og->xmlnsTable(); # crude table of namespace declarations
     $f .= "live examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/\">bladerunner</a> | <a href='?url=http://graph.danbri.org/Pogo/checker/testcases/cafe.com/hiddenwords.cache'>cafe.com</a> | ";
     $f .= " <a href='?url=http://www.slideshare.net/slidarko/problemsolving-using-graph-traversals-searching-scoring-ranking-and-recommendation'>slideshare.com</a> |";
     $f .= " <a href='?url=http://r.gnavi.co.jp/g363600/'>gnavi.co.jp (known charset issue)</a> | ";
+    $f .= " <a href='?url=http://ekstrabladet.dk/112/article1469733.ece'>ekstrabladet.dk</a> |";
+    $f .= " <a href='?url=http://www.rottentomatoes.com/m/matrix/'>rottentomatoes.com</a> |";
+    $f .= " <a href='?url=http://ehandel.blocket.se/Philips_HD2383_1115754.htm'>blocket.se</a> |";
+#    $f .= " <a href='?url= '></a>";
 #    $f .= " <a href='?url= '></a>";
     $f .= " <a href='?url=http://developers.facebook.com/tools/lint/&mode=auto'>developers.facebook.com</a><br/>";
     $f .= "bad examples: <a href='?url=http://developers.facebook.com/tools/lint/examples/bad_app_id'>bad_app_id</a> |";
