@@ -15,8 +15,8 @@ $base = OGDataGraph::$my_base_uri;
 print '<body>';
 #$map = 'testcases/approved.xml';
 $map = 'testcases/fb_tests.xml';
-$map = 'testcases/_all.xml';
-$map = 'testcases/_todo.xml';
+#$map = 'testcases/_all.xml';
+#$map = 'testcases/_todo.xml';
 
 
 
