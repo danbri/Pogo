@@ -92,15 +92,17 @@ class OGDataGraph {
 
   public function fetchAndCache($mode='lite',$u = 'default') {
     if ($u=='default') { $u = $this->url; } 
-
+    # print "Fetching andcaching $u mode=$mode";
     # this will be slow, but we'll grab a copy for ourselves to revisit later.
     # ideally a single fetch would be used with each parser too. do-able.
     try {
       @$handle = fopen( $u, "r");
+      #print "Handle: $handle to resource '$u'<br/>";
       @$this->content = stream_get_contents($handle);
-      #print "meta: ". $contents . "\n<br/>\n";
+      # print "meta: ". $this->content . "\n<br/>\n";
       @fclose($handle);
       if (is_null($handle)) { 
+        print "Failed reading url $u";
         throw new Exception('FAILED_READ_URL'); # not clear which failures are exceptions yet
       }
     } catch (Exception $e) { 
@@ -114,7 +116,8 @@ class OGDataGraph {
     
     if ($u=='default') { $u = $this->url; } 
 
-    $this->fetchAndCache();
+    $this->fetchAndCache($mode, $u);
+
     # OK, now to use the various libraries/plugins
     #
     # verbose("reading from url $u with mode $mode."); 

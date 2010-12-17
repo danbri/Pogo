@@ -54,8 +54,9 @@ class Checker {
     #
     array_push ($notices, Checker::check_metaname_attribute_not_property($og));
     array_push ($notices, Checker::check_no_page_content($og));
-    array_push ($notices, Checker::check_og_namespace_undeclared($og));
 
+    array_push ($notices, Checker::check_og_namespace_undeclared($og));
+    
     # Certain checks only make sense once we've got some data.
 
 
@@ -94,7 +95,15 @@ class Checker {
     array_push ($notices, Checker::check_failed_big_number_in_admins($og));
     array_push ($notices, Checker::check_nondigit_appid_chars_fail($og) ); # cf. testcases/fb/examples/api_key.meta
     array_push ($notices, Checker::check_missing_required_property($og));
-    return Checker::reportSummary($notices);
+
+    $summary = Checker::reportSummary($notices);
+
+    # Compute dependencies: e.g. OG_NAMESPACE_UNDECLARED implies MISSING_REQUIRED_PROPERTY for now.
+    if ($summary['OG_NAMESPACE_UNDECLARED']) {
+     @$summary['MISSING_REQUIRED_PROPERTY'] = "Technically we are missing all properties, since xmlns:og is undeclared."; 
+    }
+    return $summary;
+
   }
    
     public static function reportSummary($report) {
@@ -189,7 +198,8 @@ class Checker {
 
   # todo: migrate to real parser. but will catch most cases.
   public function check_og_namespace_undeclared($og) {
-    $report = array();			  
+    $report = array();	
+    # print "GOT content: {{".$og->content . "}}";		  
     if (!preg_match('/xmlns:og/',$og->content  ) ) {
         $report['OG_NAMESPACE_UNDECLARED'] = "Couldn't find xmlns:og in the document.";
     } 
@@ -230,6 +240,7 @@ class Checker {
   # og:url - The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/".
   # 
   public function check_missing_required_property($og) {
+    # print "TESTING MISSING_REQUIRED_PROPERTY NOW. title is ".$og->og_title;
     $report = array();
     $oops = '';
     if (is_null($og->og_title)) { $oops .= "og:title is missing. "; }
@@ -237,6 +248,7 @@ class Checker {
     if (is_null($og->og_image)) { $oops .= "og:image is missing. "; }
     if (is_null($og->og_url)) { $oops .= "og:url is missing. "; }
     if ($oops != '') { $report['MISSING_REQUIRED_PROPERTY'] = $oops; }
+        
     return $report;
     # aside: note that this happens to use OG API not raw triples
   }
