@@ -67,7 +67,8 @@ class Checker {
     if (is_null($og->triples)) { #verbose("Missing graph.");
       $report = array();
       $report['MISSING_REQUIRED_PROPERTY'] = "No data found; missing graph.";
-
+      $report['FAILED_READ_URL'] = "No page content, perhaps a problem reading URL.";
+      $report['NO_PAGE_CONTENT'] = "No page content.";
       array_push($notices,$report);
       return Checker::reportSummary($notices);
 #      return $notices;
@@ -75,6 +76,8 @@ class Checker {
     if (sizeof($og->triples) == 0) { #verbose("Empty graph.");
       $report = array();
       $report['MISSING_REQUIRED_PROPERTY'] = "No data found; empty graph.";
+      $report['FAILED_READ_URL'] = "No page content, perhaps a problem reading URL.";
+      $report['NO_PAGE_CONTENT'] = "No page content.";
       array_push($notices,$report);
       return Checker::reportSummary($notices);
 #      return $notices;

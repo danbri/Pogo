@@ -9,6 +9,7 @@
     "uses_og": true,
     "extended": true,
     "triple_count": 0,
+    "warn": [ "FAILED_READ_URL", "NO_PAGE_CONTENT" ],
     "warning": "this test references a real site, but a non-existing page.",
     "home_site": "http://danbri.org/"
 }
