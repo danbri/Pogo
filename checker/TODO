@@ -23,6 +23,8 @@ BIGGER THINGS
    triples from other RDFa vocabularies that happen to be in the same page, and those annoying triples added by RDFa parsers for stylesheet links.
  * ARC is fetching live from Web, not cache; most of our tests point into repo currently so that's ok-ish but needs fixing for external links.
  * full parser has some weirdness reading Japanese, see testCanReadJapaneseUTF8Full unit test.
+ * port the various tests that operate on triples, to use the basic common property API instead
+ * patch Lite parser to import fb: fields as well as og:, eg. needed for check_nondigit_appid_chars_fail
 
 LITTLE THINGS
 
@@ -32,6 +34,7 @@ LITTLE THINGS
  * check for contradictory types (something being a 'restaurant' and a 'profile' simultaneously)
  * FB_NAMESPACE_UNDECLARED not checked for, 'cos we should also check it is being used before complaining.
  * Test: file:testcases/mixi/mixi1.meta is detecting MISSING_REQUIRED_PROPERTY ... our harsh handling of xmlns:og missing; even though it did extract the fields ok.
+
 
 FAILING TESTS
 
