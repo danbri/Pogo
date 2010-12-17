@@ -293,35 +293,29 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 
   /**
   * @depends testLocalRepoAccessible
-  * @expectedException Exception
-  * @expectedExceptionMessage UNESCAPED_LESSTHAN_IN_CONTENT_VALUE
   */
   public function testNoScriptLite() {
     $og = new OGDataGraph();
     try {$f='testcases/ogp/sec1.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
-    $og->readFromURL(); # default to lite; for full need to mention uri, damn.
-    $this->markTestIncomplete( 'This test has not been implemented yet: Lite parser needs more integration.');
-    $this->assertNull($og->og_title, "RDFa parsers should reject markup within property values when in content attribute."); # too harsh?
-    # print $og->og_title;
+    $og->readFromURL('lite'); 
+    $this->assertNull($og->og_title, "Should we throw out og fields containing markup? Too strict?"); 
     # $this->assertNotEquals($og->og_title, 'The <script>alert(\'Hello World!\')</script>Rock', 'No funny business.' );
     # we can't anticipate all the variations this could show up in, but should suspect content be rejected or escaped? harsh for now.
   }
 
   /**
   * @depends testLocalRepoAccessible
-  * @expectedException Exception
-  * @expectedExceptionMessage UNESCAPED_LESSTHAN_IN_CONTENT_VALUE
   */
   public function testNoScriptFull() {
     $og = new OGDataGraph();
-    $this->markTestIncomplete( 'This test has not been implemented yet: checker API changed, not using exceptions any more.');
-
     try {$f='testcases/ogp/sec1.meta';$og->readTest($f);}catch(Exception $e){$this->fail(true, "failed loading $f, exception:".$e);}
-    $og->readFromURL('full');
-    print $og->og_title;
-    $this->assertNull($og->og_title, "RDFa parsers should reject markup within property values when in content attribute.");
-    # don't try scrubbing. $this->assertEquals('The Rock', $og->og_title, "Should get title from local repo." );
+    $og->readFromURL('full'); 
+    $this->assertNull($og->og_title, "Should we throw out og fields containing markup? Too strict?"); 
+#    $this->markTestIncomplete( 'This test has not been implemented yet: Lite parser needs more integration.');
+    # $this->assertNotEquals($og->og_title, 'The <script>alert(\'Hello World!\')</script>Rock', 'No funny business.' );
+    # we can't anticipate all the variations this could show up in, but should suspect content be rejected or escaped? harsh for now.
   }
+
 
 
 ##############################################################################
@@ -498,8 +492,8 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 
 # BUG CHASING CORNER
 
-# ok testcases/fb/examples/bad_app_id is throwing OG_NAMESPACE_UNDECLARED when we know it's got one.
-
+# ok testcases/fb/examples/bad_app_id was throwing OG_NAMESPACE_UNDECLARED when we know it's got one.
+# ... it's not now, but we'll keep this handy.
    
   public function testOGNamespaceInBadAppIDTestcase() {
     $og = new OGDataGraph();
@@ -512,17 +506,23 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
     $this->assertNotNull($og,"Should have a graph.");
     $this->assertNotNull($og->meta,"Should have a metadata-annotated graph.");
     $this->assertNotNull($og->meta['url'],"Should have a meta field for url in graph.");
-
     $og->fetchAndCache(); ## populates ->content
-
     $og->liteParse();
-    
-    $report = Checker::checkall($og);
-    verbose("CHECKED: ".var_dump($report)."\n\n");
-    # todo: read it first! this'll fail
     $this->assertNotNull($og->content,"Should have raw content of cached page.");
-
+    $report = Checker::checkall($og);
   }
+
+
+# todo: cache vs web - confirm
+#
+#  testcases/imdb/legend_guardians.cache 
+#  this testcase has a different image (from wikipedia) and the word 'cached' added to og:title
+#  todo: tests that make 100% sure we're loading from disk vs net when we think we are
+#
+# 1. loaded from disk, og:title contains 'cached'
+#   - same for lite and full
+#.3. from web, doesn't contain
+#   - same for lite and full
 
 
 
