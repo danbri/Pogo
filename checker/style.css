@@ -26,3 +26,12 @@ A:link {text-decoration: none}
 A:visited {text-decoration: none}
 A:active {text-decoration: none}
 A:hover {text-decoration: underline; color: red;}
+
+
+/* used for show and hide of sections */
+
+code.type { font-style:bold; color: brown; }
+li.type code { font-style:bold; color: brown; }
+li.prop code { font-style:italic; color: green; }
+em.type { color: brown; }
+em.prop { color: green; }
