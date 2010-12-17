@@ -28,10 +28,9 @@ LITTLE THINGS
 
  * Extract (and use?) <link rel="canonical" ...>
  * Geo checks; make sure an og:latitude always comes with an og:longitude and vice-versa
- * we complain about <meta id="m_metaog:urlID" property="og:url" name="og:url" content="http://www.cafe.com/Free_Games/Hidden-Words-Adventure-Capitals" />
-   but it's fine to have name= so long as property= also there. See Test: file:testcases/cafe.com/hiddenwords.meta VS METANAME_ATTRIBUTE_NOT_PROPERTY
- * document rules for testcase repository use of relative URIs. See grep -R url */* | grep -v http
+ * should document the rules for testcase repository use of relative URIs. See grep -R url */* | grep -v http
  * check for contradictory types (something being a 'restaurant' and a 'profile' simultaneously)
+ * FB_NAMESPACE_UNDECLARED not checked for, 'cos we should also check it is being used before complaining.
 
 FAILING TESTS
 
