@@ -25,6 +25,7 @@ BIGGER THINGS
  * full parser has some weirdness reading Japanese, see testCanReadJapaneseUTF8Full unit test.
  * port the various tests that operate on triples, to use the basic common property API instead
  * patch Lite parser to import fb: fields as well as og:, eg. needed for check_nondigit_appid_chars_fail
+ * Go through the facebook forums http://forum.developers.facebook.net/viewtopic.php?id=78701 etc to find corner cases and new checkable patterns
 
 LITTLE THINGS
 
