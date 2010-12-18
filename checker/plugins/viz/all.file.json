@@ -3,7 +3,8 @@
   "imdb": "http:\/\/www.imdb.com\/",
   "facebook": "http:\/\/www.facebook.com\/",
   "ogp": "http:\/\/ogp.me\/",
-  "pogo1": "http:\/\/graph.danbri.org/Pogo/checker/testcases/",
+  "pogo": "http:\/\/graph.danbri.org/Pogo/checker/testcases/",
+  "pogo1": "http:\/\/graph.danbri.org/Pogo/checker//testcases/",
   "wikicommons": "http://\/\/upload.wikipedia.org/wikipedia/commons/",
 
   "foaf": "http:\/\/xmlns.com\/foaf\/0.1\/",

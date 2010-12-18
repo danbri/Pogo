@@ -9,6 +9,9 @@ require_once 'page_top.php';
 <script type="text/javascript">var map = null;function GetMap(lat,lon){map = new VEMap('myMap');map.LoadMap(new VELatLong(lat, lon), 10 ,'h' ,false);}</script>
 
 <?php
+require_once 'plugins/viz/header.php';
+
+
 require_once 'OGDataGraph.php'; 
 require_once 'OG_Checklist.php';
 require_once 'CheckUI.php';
@@ -116,8 +119,60 @@ if ($og) {
   }
 }
 
+
+ # VIZ TESTS
+
+if ($mode == 'viz') { 
+  require_once 'plugins/viz/ns_prefix.php';
+  OGDataGraph::$nslist = loadNamespaceList();
+  $js = '';
+  foreach ($og_lite->triples as $key => $value) {
+    #print "<li style='font-size: small;'>" . $value['s'] . " " . $value['p'] . " " . $value['o'] . "<br/>\n";
+    $predicate = $value['p'];
+    # print "<li style='font-size: small;'>s:".  $value['s'] . " p: " . OGDataGraph::shortify( $predicate) . " o: " . $value['o'] . " <br/><br/></li>";
+    $js .= "g.addEdge(\"". OGDataGraph::shortify( $value['s']). "\", \""
+                . OGDataGraph::shortify( $value['o'])
+                . "\", { directed:true, label: \"".  OGDataGraph::shortify( $predicate)."\"}  );\n";
+    $js .= "g.addNode(\"". OGDataGraph::shortify( $value['s']). "\", { label:\"".OGDataGraph::shortify( $value['s'])."\" } );\n";
+    $js .= "g.addNode(\"". OGDataGraph::shortify( $value['o']). "\", { label:\"".OGDataGraph::shortify( $value['o'])."\" } );\n";
+  }
+
+  print "<h4>Viz plugin</h4>";
+  print "<p><div id=\"canvas_lite\"></div><button id=\"redraw\" onclick=\"redraw()\">redraw</button></p>";
+}
+
+
 ?>
+
+
+<script type="text/javascript"> 
+<!--
+var redraw;
+var height = 650;
+var width = 750;
+window.onload = function viz_lite() {
+    var g = new Graph();
+<?php
+print $js; ?>
+    var layouter = new Graph.Layout.Spring(g);     /* layout the graph using the Spring layout implementation */
+    layouter.layout();
+    var renderer = new Graph.Renderer.Raphael('canvas_lite', g, width, height);    /* draw the graph using the RaphaelJS draw implementation */
+    renderer.draw();
+    redraw = function() {
+        layouter.layout();
+        renderer.draw();
+    };
+};
+-->
+
+
+hideSection(); // otherwise we over-write this from body element.
+</script>
+
+
 <hr />
+
+
 [pogo checker] status: v1.0, <em>pre-release.</em>
 </body>
 </html>

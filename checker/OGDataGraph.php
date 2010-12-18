@@ -123,7 +123,7 @@ class OGDataGraph {
     # verbose("reading from url $u with mode $mode."); 
     if ($mode == 'lite') {
       $this->liteParse($u);
-      $this->buildTriplesFromOGModel();
+      $this->buildTriplesFromOGModel($u);
     } else {
       $this->arcParse($u);
       $this->buildOGModelFromTriples();
@@ -345,10 +345,12 @@ class OGDataGraph {
   }
 
   public function buildOGModelFromTriples() {
+#    print "<b>BUILDING OG MODEL FROM TRIPLES.</b>";
     if (is_null($this->getTriples())) { throw new Exception("BUILD_OG_NO_TRIPLES_YET"); }
     $f = array(); 
     foreach ( OGDataGraph::$officialFields as $fieldname) {      # verbose("Scanning for field $fieldname.");
-      foreach ($this->triples as $key => $v) { 		         # print "XFactoid: ".$v['s']." ".$v['p']." ".$v['o']."\n";
+      foreach ($this->triples as $key => $v) { 		         # 
+#print "<b style='color: red;'>XFactoid: ".$v['s']." ".$v['p']." ".$v['o']."</b><br/>\n";
         if (OGDataGraph::isOGField( $fieldname, $v['p'] )) { #verbose("got:".$v['o']."!");
 
           if ( ! preg_match('/</', $v['o'] )  ) {
@@ -366,11 +368,16 @@ class OGDataGraph {
     # todo: write test cases for html order situation
   }
 
-  public function buildTriplesFromOGModel() {
+  public function buildTriplesFromOGModel($u='default') {
+    if ($u == 'default') {
+      $u == $this->meta['url']; #
+    }
+    $this->meta['url'] = $u; 
+#    print "BASE: $u +===".$this->meta['url'];
     foreach ($this->fields as $attr => $val ) {
-      # verbose("triple: ".$this->meta['url']."  $attr  $val <br/>");
+ #     verbose("triple: ".$this->meta['url']."  $attr  $val  ... or url = $u<br/>");
       $claim = array();
-      $claim['s'] = $this->url; 
+      $claim['s'] = $u;
       $claim['p'] = preg_replace('/og:/', 'http://ogp.me/ns#', $attr);
       $claim['o'] = $val; 
       $claim['s_type'] = 'uri'; # todo: double-check with ARC2 that we're API-compatible
