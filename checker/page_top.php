@@ -33,8 +33,16 @@
 
 </head>
 <body>
-<p style="float: right">show details? [<big><b><a href="#" onclick="javascript:showSection();return false;">+</a></b></big>] |
-[<big><b><a href="#" onclick="javascript:hideSection();return false;">-</a></b></big>]  </p>
+
+<?php
+
+if ($_GET['url']) {
+print "<p style=\"float: right\">show details? [<big><b><a href=\"#\" onclick=\"javascript:showSection();return false;\">+</a></b></big>] |";
+print "[<big><b><a href=\"#\" onclick=\"javascript:hideSection();return false;\">-</a></b></big>]  </p>";
+}
+?>
+
+
 <hr style="clear: both"/>
 
 <div class="navlinks">
