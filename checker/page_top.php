@@ -87,7 +87,6 @@ if ($_GET['url']) {
 if (! $_GET['url']) {
 print "<h2 class=\"checkmarkup\">Check your markup for common mistakes</h2>";
 print "<p class=\"howto\">Enter a URL below to check your page and get feedback on your Open Graph markup.</p>";
-# print "<p>Examples: http://www.imdb.com/title/tt0083658/ </p>";
 }
 ?>
 

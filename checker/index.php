@@ -118,11 +118,28 @@ print "</div>\n";
 print "<h3>Results from 'Lite' parser</h3>\n";
 print CheckUI::simpleTable($og_lite);
 
-print "<div class=\"detail\"><h3>Results from 'Full' parser</h3>\n";
+print "<br/>\n\n";
+print "<table class=\"fulltriples\" class=\"detail\">\n";
+print "<tr><th class=\"s\">entity ID</th><th class=\"p\">property</th><th class=\"p\">value</th></tr>\n";
+foreach ($og_lite->triples as $t)  {
+  echo "<tr><td>" .$t['s']. "</td><td>". $t['p'] ."</td><td>". $t['o'] ."</td></tr>\n";
+} 
+print "</table><br/ class=\"clearboth\">\n";
+
+
+print "<div class=\"detail\"><h3>Results from 'Full' parser</h3>\n\n";
 print CheckUI::simpleTable($og_full);
-print "</div>\n";
+
+print "<br/>\n\n";
+print "<table class=\"fulltriples\">\n";
+print "<tr><th class=\"s\">entity ID</th><th class=\"p\">property</th><th class=\"p\">value</th></tr>\n";
+foreach ($og_full->triples as $t)  {
+  echo "<tr><td>" .$t['s']. "</td><td>". $t['p'] ."</td><td>". $t['o'] ."</td></tr>\n";
+} 
+print "</table><br/>\n";
 
 print "<p><span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span></p>";
+print "</div>\n";
 
 
 if ($og_lite->og_latitude) { $og = $og_lite; } # pick an OGP instance

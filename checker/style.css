@@ -2,7 +2,16 @@
 /* OG logo main green: 8bc932 */
 
 
-body { margin-left: 6em; margin-right: 9em; 	font: 14px Helvetica, sans-serif; }
+body { margin-left: 4em; margin-right: 9em; 	font: 14px Helvetica, sans-serif; }
+
+.s {  background: #dbe9c9;}
+.p {  background: #dbe9c9;}
+.o {  background: #dbe9c9;}
+
+.fulltriples {
+  float: left;
+  font-size: 10px;
+}
 
 .helpdoc {
     margin-left: 5em; 

@@ -162,7 +162,7 @@ e.g. $og->xmlnsTable(); # crude table of namespace declarations
     #print '<input type="radio" name="mode" value="full" /> full</div>';
 
     if (! $_GET['url']) {
-      $f .= "<p class=\"urlexamples\">Examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/\">http://www.imdb.com/title/tt0083658/</a></p>";  
+      $f .= "<p class=\"urlexamples\">Examples: <a href=\"?url=http://www.rottentomatoes.com/m/matrix/\">http://www.rottentomatoes.com/m/matrix/</a></p>";  
     }
     $f .= '</form></div>';
 
