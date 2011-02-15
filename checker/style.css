@@ -158,17 +158,19 @@ black; } .hidedetail A:visited {text-decoration: none; color: black; } .showmore
 
 .checkmarkup {
 /*    text-align: center; */
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .howto {
 /*    text-align: center; */
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 .learn {
-    margin-left: 20px;
+    margin-left: 25px;
+/*    text-align: center; */
 }
+
 
 h2 A:visited {text-decoration: none; color: black;} h3 A:visited {text-decoration: none; color: black;} h4 A:visited {text-decoration: none; color: black;} .ogfield { 
 font-weight: bold; background: #d9edbc;}
