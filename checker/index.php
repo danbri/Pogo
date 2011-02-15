@@ -26,7 +26,7 @@ $url = $_GET['url'];
 
 
 if (!$url) { 
-#  print "<p>Learn more about the Open Graph protocol from <a href=\"http://ogp.me\">ogp.me</a>,<a href=\"http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol\">Wikipedia</a> or <a href=\"http://developers.facebook.com/docs/opengraph/\">Facebook</a>.</p>";
+#  print "<p>Learn more about the Open Graph protocol from <a href=\"http://ogp.me\">ogp.me</a>, <a href=\"http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol\">Wikipedia</a> or <a href=\"http://developers.facebook.com/docs/opengraph/\">Facebook</a>.</p>";
   print CheckUI::simpleForm($url);  
   print "<p class=\"learn\">Learn more about the Open Graph protocol from <a href=\"http://ogp.me\">ogp.me</a>,<a href=\"http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol\">Wikipedia</a> or <a href=\"http://developers.facebook.com/docs/opengraph/\">Facebook</a>.</p>";
 
