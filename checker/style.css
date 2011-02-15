@@ -1,12 +1,9 @@
-/* green-tinted grey, #dbe9c9;  font helvetica */
-/* OG logo main green: 8bc932 */
+/* green-tinted grey, #dbe9c9; font helvetica */ /* OG logo main green: 8bc932 */
 
 
-body { margin-left: 4em; margin-right: 9em; 	font: 14px Helvetica, sans-serif; }
+body { margin-left: 4em; margin-right: 9em; font: 14px Helvetica, sans-serif; }
 
-.s {  background: #dbe9c9;}
-.p {  background: #dbe9c9;}
-.o {  background: #dbe9c9;}
+.s { background: #dbe9c9;} .p { background: #dbe9c9;} .o { background: #dbe9c9;}
 
 .fulltriples {
   float: left;
@@ -14,37 +11,38 @@ body { margin-left: 4em; margin-right: 9em; 	font: 14px Helvetica, sans-serif; }
 }
 
 .helpdoc {
-    margin-left: 5em; 
-    margin-top: 1em; 
+    margin-left: 5em;
+    margin-top: 1em;
     width: 600px;
+    font-size: 15px;
 }
 
 .ogfield {
     width: 200px;
 }
 
-.th_error { 
-    background: pink; 
+.th_error {
+    background: pink;
 }
 
-.th_desc { 
-    background: grey; 
+.th_desc {
+    background: #dcdcdc;
 }
 
-.th_detail { 
-    background: grey; 
+.th_detail {
+    background: #dcdcdc;
 }
 
-.footer { 
-    width: 850px; 
+.footer {
+    width: 850px;
     padding: 7px;
-    height: 1px; 
+    height: 1px;
     text-align: center;
     border-style: none;
     border: 0px solid #F00;
 }
 
-hr { 
+hr {
    margin-left:auto;
    margin-right:auto;
    width:70%;
@@ -56,8 +54,8 @@ hr {
     float: right;
 }
 
-h2 { 		
-    border-width: medium; 
+h2 {
+    border-width: medium;
     margin-right: 6em;
     font-size: 24px;
     color: #666566;
@@ -68,27 +66,26 @@ h3 {
    color: #999;
 }
 
-.headblock { 
+.headblock {
     background: #dbe9c9;
-    padding: 7px; 
-    border-width: medium; 
+    padding: 7px;
+    border-width: medium;
     margin-right: 6em;
     float: left;
     width: 850px;
 }
 
 .fatURL {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .checkbutton {
-   font-weight: bolder;
-background-color: #eeeeee; 
+   font-weight: bolder; background-color: #eeeeee;
 }
 
 .urlfield {
    font-weight: bolder;
-   background-color: #dbe9c9; 
+   background-color: #dbe9c9;
    width: 80%;
    margin-left: 10px;
 }
@@ -99,37 +96,35 @@ background-color: #eeeeee;
 
 .urlexamples A:visited {text-decoration: none; color: black;}
 
+.OGPtop A:link {text-decoration: none; color: black; } .OGPtop A:visited {text-decoration: none; color: black; }
 
-.showmore A:visited {text-decoration: none; color: black;}
-.showmore A:link {text-decoration: none; color: black;}
-.hidedetail A:link {text-decoration: none; color: black; }
-.hidedetail A:visited {text-decoration: none; color: black; }
-.showmore {
+.showmore A:visited {text-decoration: none; color: black;} .showmore A:link {text-decoration: none; color: black;} .hidedetail A:link {text-decoration: none; color: 
+black; } .hidedetail A:visited {text-decoration: none; color: black; } .showmore {
   margin-left: 400px;
   text-decoration: underline;
 }
 
 
-.urlform { 
+.urlform {
     background: #dcdcdc;
-    padding: 7px; 
-    border-width: medium; 
+    padding: 7px;
+    border-width: medium;
     margin-right: 6em;
     float: left;
     width: 850px;
-    -moz-border-radius: 10px; 
+    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 
-.headlogo {		/* medium logo, w/ transparency to pick up green-grey bg. */
-    float: left; 
-    width: 100px; 
+.headlogo { /* medium logo, w/ transparency to pick up green-grey bg. */
+    float: left;
+    width: 100px;
     padding: 10px;
 }
 
-.headtext {		/* Open Graph checker blah blah */
+.headtext { /* Open Graph checker blah blah */
     float: left;
-    width: 600px; 
+    width: 600px;
     padding-top: 15px;
     line-height: 1.25;
     font-size: 15px;
@@ -163,40 +158,29 @@ h2 .checkmarkup {
     margin: 0px;
 }
 
-h2 A:visited {text-decoration: none; color: black;}
-h3 A:visited {text-decoration: none; color: black;}
-h4 A:visited {text-decoration: none; color: black;}
-.ogfield { font-weight: bold; background: #d9edbc;}
+h2 A:visited {text-decoration: none; color: black;} h3 A:visited {text-decoration: none; color: black;} h4 A:visited {text-decoration: none; color: black;} .ogfield { 
+font-weight: bold; background: #d9edbc;}
 
 table {
-    font: 14px Helvetica, sans-serif; 
+    font: 14px Helvetica, sans-serif;
     border-collapse: collapse;
     width: 580px;
     border-style: solid;
     border-width: thin;
 }
 
-td{ 
+td{
     border-style: solid;
     border-width: thin;
 }
 
-.expected { background: yellow; } 
-.warning { background: orange; padding: 2px; }
-A:link {text-decoration: none}
-A:visited {text-decoration: none}
-A:active {text-decoration: none}
-A:hover {text-decoration: underline; color: red;}
+.expected { background: yellow; } .warning { background: orange; padding: 2px; } A:link {text-decoration: none} A:visited {text-decoration: none} A:active 
+{text-decoration: none} A:hover {text-decoration: underline; color: red;}
 
-/* used for show and hide of sections */
-code.type { font-style:bold; color: brown; }
-li.type code { font-style:bold; color: brown; }
-li.prop code { font-style:italic; color: green; }
-em.type { color: brown; }
-em.prop { color: green; }
+/* used for show and hide of sections */ code.type { font-style:bold; color: brown; } li.type code { font-style:bold; color: brown; } li.prop code { font-style:italic; 
+color: green; } em.type { color: brown; } em.prop { color: green; }
 
-/* rounded corners */
-.rc {
+/* rounded corners */ .rc {
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
@@ -207,3 +191,4 @@ em.prop { color: green; }
    margin-right:auto;
    width:70%;
 }
+

@@ -6,7 +6,7 @@
 
 <div class="headblock rc" style="margin: 1em"> 
  <div class="headlogo"> 
-   <a href="http://og.danbri.org/pogo/Pogo/checker/"><img class="ogp-logo" src="ogp-translogo.png" alt="OGP logo"  width="85"/></a> 
+   <a href="<?php require_once '../OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>"><img  border="0" class="ogp-logo" src="ogp-translogo.png" alt="OGP logo"  width="85"/></a> 
  </div> 
  <div class="headtext"> 
   <div class="OGPtop"><a href="http://og.danbri.org/pogo/Pogo/checker/">Open Graph checker</a></div> 
@@ -106,6 +106,10 @@ Currently we only display the most basic Open Graph properties.
 The checker's target behaviour is based on a collection of <a href="https://github.com/danbri/Pogo/tree/master/checker/testcases">test cases</a>. 
 Each has metadata expressed in JSON, and is grouped into collections (described using sitemap files). See the Git repository for details.
 </dd>
+
+<p><br/></p>
+
+<hr/>
 
 <h2>Error Codes</h2>
 

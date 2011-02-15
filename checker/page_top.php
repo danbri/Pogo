@@ -68,7 +68,7 @@ if ($_GET['url']) {
 
 <div class="headblock rc">
  <div class="headlogo">
-   <a href="<?php require_once 'OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>"><img class="ogp-logo" src="doc/ogp-translogo.png" alt="OGP logo"  width="85"/></a>
+   <a href="<?php require_once 'OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>"><img border="0" class="ogp-logo" src="doc/ogp-translogo.png" alt="OGP logo"  width="85"/></a>
  </div>
  <div class="headtext">
   <div class="OGPtop"><a href="<?php require_once 'OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>">Open Graph checker</a></div>
@@ -86,7 +86,10 @@ if ($_GET['url']) {
 <?php
 if (! $_GET['url']) {
 print "<h2 class=\"checkmarkup\">Check your markup for common mistakes</h2>";
-print "<p class=\"howto\">Enter a URL below to check your page and get feedback on your Open Graph markup.</p>";
+print "<pclass=\"howto\">Enter a URL below to check your page and get feedback on your Open Graph markup.</p>";
+print "<p>Learn more about the Open Graph protocol from <a href=\"http://ogp.me\">ogp.me</a>, <a href=\"http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol\">Wikipedia</a> or <a href=\"http://developers.facebook.com/docs/opengraph/\">Facebook</a>.</p>";
+
+
 }
 ?>
 

@@ -95,11 +95,11 @@ if ( count ($report_combi) > 0 ) {
 
 print '<p>'.CheckUI::tableFromReport($report_combi).'</p>';
 
-print "   <span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span>";
+print "   <div class=\"clearboth\"/><span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span>";
 
 } else {
 print "<p>No problems found.</p>";
-print "   <span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span>";
+print "   <div class=\"clearboth\"/><span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span>";
 }
 
 print "<div class=\"detail\">";
@@ -138,7 +138,7 @@ foreach ($og_full->triples as $t)  {
 } 
 print "</table><br/>\n";
 
-print "<p><span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span></p>";
+print "<div class=\"clearboth\"/><p><br/><span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span></p>";
 print "</div>\n";
 
 
