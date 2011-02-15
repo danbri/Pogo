@@ -86,11 +86,12 @@ if ($_GET['url']) {
 <?php
 if (! $_GET['url']) {
 print "<h2 class=\"checkmarkup\">Check your markup for common mistakes</h2>";
-print "<pclass=\"howto\">Enter a URL below to check your page and get feedback on your Open Graph markup.</p>";
-print "<p>Learn more about the Open Graph protocol from <a href=\"http://ogp.me\">ogp.me</a>, <a href=\"http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol\">Wikipedia</a> or <a href=\"http://developers.facebook.com/docs/opengraph/\">Facebook</a>.</p>";
+print "<p class=\"howto\">Enter a URL below to check your page and get feedback on your Open Graph markup.</p>";
 
 
 }
+#print "<p>Learn more about the Open Graph protocol from <a href=\"http://ogp.me\">ogp.me</a>, 
+#<a href=\"http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol\">Wikipedia</a> or <a href=\"http://developers.facebook.com/docs/opengraph/\">Facebook</a>.</p>";
 ?>
 
 

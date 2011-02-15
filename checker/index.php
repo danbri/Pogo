@@ -25,7 +25,18 @@ if ((!is_null($mode)) &&  !preg_match( '/(^full$|^lite$|^auto$|^viz$|^testcase$)
 $url = $_GET['url'];
 
 
-if (!$url) { print CheckUI::simpleForm($url);  exit(1); }
+if (!$url) { 
+#  print "<p>Learn more about the Open Graph protocol from <a href=\"http://ogp.me\">ogp.me</a>,<a href=\"http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol\">Wikipedia</a> or <a href=\"http://developers.facebook.com/docs/opengraph/\">Facebook</a>.</p>";
+  print CheckUI::simpleForm($url);  
+  print "<p class=\"learn\">Learn more about the Open Graph protocol from <a href=\"http://ogp.me\">ogp.me</a>,<a href=\"http://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol\">Wikipedia</a> or <a href=\"http://developers.facebook.com/docs/opengraph/\">Facebook</a>.</p>";
+
+  print "<br/><br/><div class=\"footer\"><hr/>Open Graph checker, 2011</div>\n";
+
+
+exit(1); 
+
+}
+
 if (!OGDataGraph::isValidURL($url)){ exit("Unsupported URL syntax."); }
 $success = 0;
 ?>

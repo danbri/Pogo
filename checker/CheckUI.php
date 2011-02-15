@@ -168,9 +168,6 @@ e.g. $og->xmlnsTable(); # crude table of namespace declarations
 
     $f .= "<div class=\"clearboth\"/><br/>";
 
-if (! $_GET['url']) {
-    $f .= "<br/><br/><div class=\"footer\"><hr/>Open Graph checker, 2011</div>\n";
-}
 
 #    $f .= "live examples: <a href=\"?url=http://www.imdb.com/title/tt0083658/\">bladerunner</a> 
 #| <a href='?url=http://graph.danbri.org/Pogo/checker/testcases/cafe.com/hiddenwords.cache'>cafe.com</a> | ";

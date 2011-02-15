@@ -107,9 +107,13 @@ black; } .hidedetail A:visited {text-decoration: none; color: black; } .showmore
 
 .urlform {
     background: #dcdcdc;
-    padding: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 5px;
+
     border-width: medium;
     margin-right: 6em;
+    
     float: left;
     width: 850px;
     -moz-border-radius: 10px;
@@ -152,10 +156,18 @@ black; } .hidedetail A:visited {text-decoration: none; color: black; } .showmore
 
 .ogptop A:visited {text-decoration: none; color: black;}
 
-h2 .checkmarkup {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin: 0px;
+.checkmarkup {
+/*    text-align: center; */
+    margin-left: 10px;
+}
+
+.howto {
+/*    text-align: center; */
+    margin-left: 20px;
+}
+
+.learn {
+    margin-left: 20px;
 }
 
 h2 A:visited {text-decoration: none; color: black;} h3 A:visited {text-decoration: none; color: black;} h4 A:visited {text-decoration: none; color: black;} .ogfield { 
