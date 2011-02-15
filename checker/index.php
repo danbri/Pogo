@@ -1,6 +1,5 @@
 <html>
 <head><title>OpenGraph checker</title><link rel="stylesheet" href="style.css" type="text/css" />
-
 <?php 
 require_once 'page_top.php';
 ?>
@@ -14,7 +13,9 @@ require_once 'plugins/viz/header.php';
 
 require_once 'OGDataGraph.php'; 
 require_once 'OG_Checklist.php';
+
 require_once 'CheckUI.php';
+
 $msg = Label::$messages;
 $base = OGDataGraph::$my_base_uri;
 $me = basename($_SERVER['SCRIPT_FILENAME']); # index.php by default
@@ -22,16 +23,15 @@ $mode = $_GET['mode'];
 if (is_null($mode)) {$mode='auto';}
 if ((!is_null($mode)) &&  !preg_match( '/(^full$|^lite$|^auto$|^viz$|^testcase$)/', $mode )  ) { exit("Unknown mode '$mode' requested."); } 
 $url = $_GET['url'];
-print CheckUI::simpleForm($url);
-if (!$url) {  exit(1); }
+
+
+if (!$url) { print CheckUI::simpleForm($url);  exit(1); }
 if (!OGDataGraph::isValidURL($url)){ exit("Unsupported URL syntax."); }
 $success = 0;
 ?>
 <body onload="javascript:hideSection()">
 
 <?php 
-print "<p>URL: $url</p>\n <h3>Results</h3>";
-#   (mode: <b>" . $mode  ."</b>)
 
 $og_lite = new OGDataGraph();
 $og_full = new OGDataGraph();
@@ -53,13 +53,10 @@ $og_full->readFromURL('full', $url);
 $tc_lite = sizeof($og_lite->triples);
 $tc_full = sizeof($og_full->triples);
 
-print "<div><b>Count:</b> <em>lite parser found <b>$tc_lite</b> properties, full parser found <b>$tc_full</b></em></div>\n\n";
+print "<h2 class=\"results\">Results</h2>";
+print "<p class=\"results\"><b>Overview:</b> lite parser found $tc_lite items, full parser found $tc_full. <span class=\"showmore\"><a href=\"#\" onclick=\"javascript:showSection();return false;\">Show more &gt;</a></span>";
 
-#print 'LITEContent: '. $og_lite->content;
-#print 'FULLContent: '. $og_full->content;
-
-# sizeof($og->triples)
-# if ( sizeof($og->triples)>0) { $success=1; }
+print CheckUI::simpleForm($url);
 
 
 #### RUN THE CHECKLIST
@@ -85,25 +82,47 @@ foreach ($report_lite as $k => $v ) { $report_combi[$k] = $v; }
 foreach ($report_full as $k => $v ) { $report_combi[$k] = $v; } 
 
 # default to showing merged table
-print '<small>'.CheckUI::tableFromReport($report_combi).'</small>';
 
+print "<h3>Problems</h3>";
 
-print '<p><b>More details...?</b> [<big><b><a href="#" onclick="javascript:showSection();return false;">+</a></b></big] | [<big><b><a href="#" onclick="javascript:hideSection();return false;">-</a></b></big>]';
+if ( count ($report_combi) > 0 ) {
 
-print '<div class="detail"><b>Lite parser issues:</br><br/><small>'.CheckUI::tableFromReport($report_lite).'</small>';
-print '<b>Full parser issues:</b><br/><small>'.CheckUI::tableFromReport($report_full).'</small></div>';
-print "</p>\n";
+  if ( count($report_combi) == 1 ) {
+    print "1 problem found.";
+  } else {
+    print count($report_combi) . " problems found (combined results).";
+  }
 
-print "<b>Lite OGP parser</b>:\n";
+print '<p>'.CheckUI::tableFromReport($report_combi).'</p>';
+
+print "   <span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span>";
+
+} else {
+print "<p>No problems found.</p>";
+print "   <span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span>";
+}
+
+print "<div class=\"detail\">";
+print "<br/><hr/>";
+print "<p>This checker runs two parser against your content. Full details of any problems are shown here.</p>\n";
+
+if ( count ($report_lite) > 0) {
+  print '<h3>Problem Report (Lite parser)</h3><p class="liteissues">'.CheckUI::tableFromReport($report_lite).'</p>';
+}
+
+if ( count ($report_full) > 0) {
+print '<h3>Problem Report (Full parser)</h3> <p class="fullissues">'.CheckUI::tableFromReport($report_full).'</p>';
+}
+print "</div>\n";
+
+print "<h3>Results from 'Lite' parser</h3>\n";
 print CheckUI::simpleTable($og_lite);
 
-
-print '<p><b>More details...?</b> [<big><b><a href="#" onclick="javascript:showSection();return false;">+</a></b></big] | [<big><b><a href="#" onclick="javascript:hideSection();return false;">-</a></b></big>]</p>';
-
-print "<div class=\"detail\">Full RDFa parser results:\n";
+print "<div class=\"detail\"><h3>Results from 'Full' parser</h3>\n";
 print CheckUI::simpleTable($og_full);
 print "</div>\n";
 
+print "<p><span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span></p>";
 
 
 if ($og_lite->og_latitude) { $og = $og_lite; } # pick an OGP instance
@@ -170,9 +189,6 @@ hideSection(); // otherwise we over-write this from body element.
 </script>
 
 
-<hr />
-
-
-[pogo checker] status: v1.0, <em>pre-release.</em>
+<br/><br/><div class="footer"><hr/>Open Graph checker, 2011</div>
 </body>
 </html>

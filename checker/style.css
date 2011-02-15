@@ -1,25 +1,177 @@
+/* green-tinted grey, #dbe9c9;  font helvetica */
 /* OG logo main green: 8bc932 */
-body { margin-left: 6em; margin-right: 9em; 	font: 11px/24px Verdana, Arial, Helvetica, sans-serif;}
-h2 { background: #8bc932; padding: 4px; color; black; border-style: solid; border-width: medium; margin-right: 6em;}
-h3 { background: #bee08d; border-style: solid; border-width: normal; padding: 3px; }
-h4 { background: #d9edbc; border-style: solid; border-width: normal; margin-left: .5em; margin-right: 1em; padding: 4px; }
-/*h5 { background: #d9edbc; border-style: solid; border-width: normal; margin-left: .5em; margin-right: 1em; padding: 2px; }*/
+
+
+body { margin-left: 6em; margin-right: 9em; 	font: 14px Helvetica, sans-serif; }
+
+.helpdoc {
+    margin-left: 5em; 
+    margin-top: 1em; 
+    width: 600px;
+}
+
+.ogfield {
+    width: 200px;
+}
+
+.th_error { 
+    background: pink; 
+}
+
+.th_desc { 
+    background: grey; 
+}
+
+.th_detail { 
+    background: grey; 
+}
+
+.footer { 
+    width: 850px; 
+    padding: 7px;
+    height: 1px; 
+    text-align: center;
+    border-style: none;
+    border: 0px solid #F00;
+}
+
+hr { 
+   margin-left:auto;
+   margin-right:auto;
+   width:70%;
+   line-height:0px;
+   border: 1px solid black;
+}
+
+.helplink {
+    float: right;
+}
+
+h2 { 		
+    border-width: medium; 
+    margin-right: 6em;
+    font-size: 24px;
+    color: #666566;
+    background-color: #ffffff;
+}
+
+h3 {
+   color: #999;
+}
+
+.headblock { 
+    background: #dbe9c9;
+    padding: 7px; 
+    border-width: medium; 
+    margin-right: 6em;
+    float: left;
+    width: 850px;
+}
+
+.fatURL {
+    font-size: 30px;
+}
+
+.checkbutton {
+   font-weight: bolder;
+background-color: #eeeeee; 
+}
+
+.urlfield {
+   font-weight: bolder;
+   background-color: #dbe9c9; 
+   width: 80%;
+   margin-left: 10px;
+}
+
+.urlexamples {
+   margin-left: 100px;
+}
+
+.urlexamples A:visited {text-decoration: none; color: black;}
+
+
+.showmore A:visited {text-decoration: none; color: black;}
+.showmore A:link {text-decoration: none; color: black;}
+.hidedetail A:link {text-decoration: none; color: black; }
+.hidedetail A:visited {text-decoration: none; color: black; }
+.showmore {
+  margin-left: 400px;
+  text-decoration: underline;
+}
+
+
+.urlform { 
+    background: #dcdcdc;
+    padding: 7px; 
+    border-width: medium; 
+    margin-right: 6em;
+    float: left;
+    width: 850px;
+    -moz-border-radius: 10px; 
+    border-radius: 10px;
+}
+
+.headlogo {		/* medium logo, w/ transparency to pick up green-grey bg. */
+    float: left; 
+    width: 100px; 
+    padding: 10px;
+}
+
+.headtext {		/* Open Graph checker blah blah */
+    float: left;
+    width: 600px; 
+    padding-top: 15px;
+    line-height: 1.25;
+    font-size: 15px;
+}
+
+.ogptop {
+     font-size: 33px;
+     font-weight: bold;
+}
+
+.tagline {
+    padding-left: 2px;
+    padding-top: 0px;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.posthead {
+    clear: both;
+}
+
+.clearboth{
+    clear: both;
+}
+
+.ogptop A:visited {text-decoration: none; color: black;}
+
+h2 .checkmarkup {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+h2 A:visited {text-decoration: none; color: black;}
+h3 A:visited {text-decoration: none; color: black;}
+h4 A:visited {text-decoration: none; color: black;}
 .ogfield { font-weight: bold; background: #d9edbc;}
-.ogp-logo { float: right; }
 
 table {
- 	font: 11px/24px Verdana, Arial, Helvetica, sans-serif; 
- 	border-collapse: collapse;
-	width: 580px;
-        border-style: solid;
-	border-width: thin;
-	}
-td{ 
-        border-style: solid;
-	border-width: thin;
+    font: 14px Helvetica, sans-serif; 
+    border-collapse: collapse;
+    width: 580px;
+    border-style: solid;
+    border-width: thin;
 }
-.trouble { background: pink; } 
-.badtrouble { background: red; } 
+
+td{ 
+    border-style: solid;
+    border-width: thin;
+}
+
 .expected { background: yellow; } 
 .warning { background: orange; padding: 2px; }
 A:link {text-decoration: none}
@@ -27,13 +179,22 @@ A:visited {text-decoration: none}
 A:active {text-decoration: none}
 A:hover {text-decoration: underline; color: red;}
 
-
 /* used for show and hide of sections */
-
 code.type { font-style:bold; color: brown; }
 li.type code { font-style:bold; color: brown; }
 li.prop code { font-style:italic; color: green; }
 em.type { color: brown; }
 em.prop { color: green; }
-.detail { background: #EEEEEE; }
 
+/* rounded corners */
+.rc {
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+.center {
+   margin-left:auto;
+   margin-right:auto;
+   width:70%;
+}

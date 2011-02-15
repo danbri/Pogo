@@ -431,6 +431,10 @@ class OGDataGraphTest extends PHPUnit_Framework_TestCase
 ################################################################################################
 # HTML5 parsing tests
 
+  # work-in-progress
+  # to test just this one, ...
+  # phpunit --filter testhtml5libParserAvailable  --colors --verbose OGDataGraphTest
+  #
 
   public function testhtml5libParserAvailable() {
     require_once 'plugins/html5lib//library/HTML5/Parser.php';

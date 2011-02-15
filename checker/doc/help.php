@@ -2,7 +2,7 @@
 <head>
 <title>OpenGraph checker: help </title><link rel="stylesheet" href="../style.css" type="text/css" />
 </head>
-<body style="margin-left: 10em; margin-top: 1em; margin-right: 25em;">
+<body>
 
 <div class="headblock rc" style="margin: 1em"> 
  <div class="headlogo"> 
@@ -19,7 +19,7 @@
 
 <p class="clearboth"><br/></p>
 
-<div style="margin-top: 2em; margin-left: 2em; margin-right: 30em;">
+<div class="helpdoc">
 
 <p>Help with the Open Graph protocol checker.</p>
 
