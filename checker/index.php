@@ -152,6 +152,8 @@ print "</table><br/>\n";
 print "<div class=\"clearboth\"/><p><br/><span class=\"hidedetail\"><a href=\"#\" onclick=\"javascript:hideSection();return false;\">&lt; Hide details</a></span></p>";
 print "</div>\n";
 
+print "</div>\n";
+
 
 if ($og_lite->og_latitude) { $og = $og_lite; } # pick an OGP instance
 if ($og_full->og_latitude) { $og = $og_full; } # default to lite; upgrade to full if still got geo
