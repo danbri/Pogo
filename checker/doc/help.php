@@ -92,7 +92,7 @@ Currently we only display the most basic Open Graph properties.
 
 <dl>
 <dt>How can I check my geographic markup?</dt>
-<dd>If you include lat/lon info, the results should automatically include a map to help check data accuracy. See the <a href="<?php require_once '../OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>?url=http://graph.danbri.org/Pogo/checker/testcases/ogp/geo1.cache">california example</a> 
+<dd>If you include og:latitude and og:longitude info, the results should automatically include a map to help check data accuracy. See the <a href="<?php require_once '../OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>?url=http://graph.danbri.org/Pogo/checker/testcases/ogp/geo1.cache">california example</a> 
 included in the test cases repository.
 </dl>
 
