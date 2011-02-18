@@ -104,8 +104,16 @@ Currently we only display the most basic Open Graph properties.
 <dl>How does it work?</dl>
 <dd>
 The checker's target behaviour is based on a collection of <a href="https://github.com/danbri/Pogo/tree/master/checker/testcases">test cases</a>. 
-Each has metadata expressed in JSON, and is grouped into collections (described using sitemap files). See the Git repository for details.
+Each has metadata expressed in JSON, and is grouped into collections (described using sitemap files). See the Git repository for details. Note that the 'lite' 
+parser is currently based on <a href="https://github.com/scottmac/opengraph">scottmac's</a> simple parser, while the 'full' parser uses <a 
+href="https://github.com/semsol/arc2">semsol's</a> RDFa 1.0 parser. Future work could include rewriting the 'lite' version to remove this dependency, and to 
+use <a href="http://code.google.com/p/html5lib/">html5lib</a>, as well as adaptations (eg. other parsers) to accomodate W3C's <a href="http://www.w3.org/TR/2010/WD-rdfa-core-20100422/">RDFa 1.1 work</a>.
+ 
+
+
 </dd>
+
+
 
 <p><br/></p>
 
