@@ -71,10 +71,11 @@ Live examples:
 
 <dl>
 <dt>Bad examples</dt>
+<dd>
 <a href='<?php require_once '../OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>?url=http://developers.facebook.com/tools/lint/examples/bad_app_id'>bad_app_id</a>
  | <a href='<?php require_once '../OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>?url=http://photobucket.com/images/color%20splash/'>photobucket.com</a> 
  | <a href='<?php require_once '../OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>?url=http://www.playlist.com/'>playlist.com</a>  
-</dt>
+</dd>
 </dl>
 
 <dl>

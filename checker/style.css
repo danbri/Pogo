@@ -5,6 +5,10 @@ body { margin-left: 4em; margin-right: 9em; font: 14px Helvetica, sans-serif; }
 
 .s { background: #dbe9c9;} .p { background: #dbe9c9;} .o { background: #dbe9c9;}
 
+
+dt { font-weight: bold; }
+dd { padding: 7px;  color: #222;}
+
 .fulltriples {
   float: left;
   font-size: 10px;
