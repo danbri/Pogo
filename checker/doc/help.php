@@ -45,9 +45,9 @@ make it less forgiving, it does permit many more ways of expressing your data (f
 </dl>
 
 <dl>
-<dt>What does the 'full details' view show?</dt>
-<dd>The 'full details' view will show how your page content looks to both parsers. It is worth also 
-testing with Facebook's <a href="http://developers.facebook.com/tools/lint/">linter</a>. Their parser is 
+<dt>What does the 'Show more' view show?</dt>
+<dd>The 'full details' view will show how your page content looks to both parsers, including a table of all
+the items / facts / properties it finds. It is worth also testing with Facebook's <a href="http://developers.facebook.com/tools/lint/">linter</a>. Their parser is 
 quite permissive, and will show you how your data looks to the Facebook platform.
 </dd>
 </dl>
@@ -86,9 +86,17 @@ Currently we only display the most basic Open Graph properties.
 </dl>
 
 <dl>
-<dt>Can I see the rest of the parsed data?</dt>
-<dd>A future revision will show the raw parser output. For now, you can also see an <em>experimental</em> visualization, by appending '&amp;mode=viz' to any URL.</dd>
+<dt>Can I see the graph structure in a less nerdy form?</dt>
+<dd>There is an <em>experimental</em> visualization, by appending '&amp;mode=viz' to any URL; however it is not yet nice enough to include by default</dd>
 </dl>
+
+<dl>
+<dt>How can I check my geographic markup?</dt>
+<dd>If you include lat/lon info, the results should automatically include a map to help check data accuracy. See the <a href="<?php require_once '../OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>?url=http://graph.danbri.org/Pogo/checker/testcases/ogp/geo1.cache">california example</a> 
+included in the test cases repository.
+</dl>
+
+
 
 <dl>
 <dt>Can you make it faster?</dt>
