@@ -154,6 +154,9 @@ print "</div>\n";
 
 print "</div>\n";
 
+print "<h3>Visualization</h3>";   
+print "<p>An <a href=\"?url=$url&mode=viz\">experimental visualization</a> of the data is also available.</p>";
+
 
 if ($og_lite->og_latitude) { $og = $og_lite; } # pick an OGP instance
 if ($og_full->og_latitude) { $og = $og_full; } # default to lite; upgrade to full if still got geo
@@ -175,16 +178,28 @@ if ($mode == 'viz') {
   require_once 'plugins/viz/ns_prefix.php';
   OGDataGraph::$nslist = loadNamespaceList();
   $js = '';
+#  print "<ul>\n";
   foreach ($og_lite->triples as $key => $value) {
     #print "<li style='font-size: small;'>" . $value['s'] . " " . $value['p'] . " " . $value['o'] . "<br/>\n";
     $predicate = $value['p'];
-    # print "<li style='font-size: small;'>s:".  $value['s'] . " p: " . OGDataGraph::shortify( $predicate) . " o: " . $value['o'] . " <br/><br/></li>";
-    $js .= "g.addEdge(\"". OGDataGraph::shortify( $value['s']). "\", \""
-                . OGDataGraph::shortify( $value['o'])
-                . "\", { directed:true, label: \"".  OGDataGraph::shortify( $predicate)."\"}  );\n";
-    $js .= "g.addNode(\"". OGDataGraph::shortify( $value['s']). "\", { label:\"".OGDataGraph::shortify( $value['s'])."\" } );\n";
-    $js .= "g.addNode(\"". OGDataGraph::shortify( $value['o']). "\", { label:\"".OGDataGraph::shortify( $value['o'])."\" } );\n";
+#    print "<li style='font-size: small;'>s:".  $value['s'] . " p: " . OGDataGraph::shortify( $predicate) . " o: " . $value['o'] . " <br/><br/></li>";
+
+
+    if ($predicate == 'http://ogp.me/ns#url') {
+      # exceptional case, url should be a different node
+      $js .= "g.addNode(\"". OGDataGraph::shortify( $value['s']). "\", { label:\"".OGDataGraph::shortify( $value['s'])."\" } );\n";
+      $js .= "g.addEdge(\"". OGDataGraph::shortify( $value['s']). "\", \"'"   . OGDataGraph::shortify( $value['o'])
+            . "'\", { directed:true, label: \"".  OGDataGraph::shortify( $predicate)."\"}  );\n";
+      $js .= "g.addNode(\"'". OGDataGraph::shortify( $value['o']). "'\", { label:\"".OGDataGraph::shortify( $value['o'])."\" } );\n";
+
+    } else {
+      $js .= "g.addNode(\"". OGDataGraph::shortify( $value['s']). "\", { label:\"".OGDataGraph::shortify( $value['s'])."\" } );\n";
+      $js .= "g.addEdge(\"". OGDataGraph::shortify( $value['s']). "\", \""   . OGDataGraph::shortify( $value['o'])
+            . "\", { directed:true, label: \"".  OGDataGraph::shortify( $predicate)."\"}  );\n";
+      $js .= "g.addNode(\"". OGDataGraph::shortify( $value['o']). "\", { label:\"".OGDataGraph::shortify( $value['o'])."\" } );\n";
+    }
   }
+#  print "</ul>\n";
 
   print "<h4>Viz plugin</h4>";
   print "<p><div id=\"canvas_lite\"></div><button id=\"redraw\" onclick=\"redraw()\">redraw</button></p>";
