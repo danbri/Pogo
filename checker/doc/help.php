@@ -102,6 +102,7 @@ with multiple vocabularies, however doing so makes the graph visually over-compl
 <dt>How can I check my geographic markup?</dt>
 <dd>If you include og:latitude and og:longitude info, the results should automatically include a map to help check data accuracy. See the <a href="<?php require_once '../OGDataGraph.php'; echo OGDataGraph::$my_base_uri; ?>?url=http://graph.danbri.org/Pogo/checker/testcases/ogp/geo1.cache">california example</a> 
 included in the test cases repository.
+<img src="cal-map1.png" alt="example map." />
 </dl>
 
 
