@@ -87,7 +87,14 @@ Currently we only display the most basic Open Graph properties.
 
 <dl>
 <dt>Can I see the graph structure in a less nerdy form?</dt>
-<dd>There is an <em>experimental</em> visualization, by appending '&amp;mode=viz' to any URL; however it is not yet nice enough to include by default</dd>
+<dd>There is an <em>experimental</em> visualization, by appending '&amp;mode=viz' to any URL; however it is not yet nice enough to include by default. There is a 
+link to this mode at the end of each results page. The nodes and arcs are displayed randomly, but can be moved around. Currently the visual graph shows 
+only the basic Open Graph properties, ignoring data from other vocabularies. Such a visualization would be more useful if it showed full RDFa graph structure
+with multiple vocabularies, however doing so makes the graph visually over-complicated. Suggestions welcomed!
+
+<img src="example-viz1.png" alt="example vizualization." />
+
+</dd>
 </dl>
 
 <dl>
@@ -116,9 +123,6 @@ Each has metadata expressed in JSON, and is grouped into collections (described 
 parser is currently based on <a href="https://github.com/scottmac/opengraph">scottmac's</a> simple parser, while the 'full' parser uses <a 
 href="https://github.com/semsol/arc2">semsol's</a> RDFa 1.0 parser. Future work could include rewriting the 'lite' version to remove this dependency, and to 
 use <a href="http://code.google.com/p/html5lib/">html5lib</a>, as well as adaptations (eg. other parsers) to accomodate W3C's <a href="http://www.w3.org/TR/2010/WD-rdfa-core-20100422/">RDFa 1.1 work</a>.
- 
-
-
 </dd>
 
 
