@@ -1,0 +1,45 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:poap="http://wam.inria.fr/poap/0.1/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/">
+         
+         <poap:Poi rdf:ID="GVAbastille">
+                  <poap:name>Bastille</poap:name>
+                  <poap:coordinates lat="45.198662" lon="5.725124" ele="386.58"/>
+                  <poap:triggering radius="193.3" />
+                  <poap:visibility radius="284.2" />
+                  <foaf:maker rdf:resource="http://wam.inrialpes.fr/rdf/foaf/Audrey-Colbrant.rdf"/>
+                  <foaf:homepage rdf:resource="www.bastille-grenoble.com" />
+                  <poap:update timestamp="2010-11-01T18:17:44Z"/>
+                  <poap:content doctype="html5" rdf:resource="./resource/content/bastille.html"/>
+                  <poap:lifecycle begin="2010-11-01T18:17:44Z" end="2011-12-31T18:17:44Z" />
+                  <poap:channel category="culture"/>
+         </poap:Poi> 
+         
+         <poap:Poi rdf:ID="GVAtelepheriqueBastille">
+                  <poap:name>Téléphérique de la Bastille</poap:name>
+                  <poap:coordinates lat="45.192956" lon="5.726106" ele="221.399"/>
+                  <foaf:maker rdf:resource="http://wam.inrialpes.fr/rdf/foaf/Audrey-Colbrant.rdf"/>
+                  <foaf:mbox rdf:resource="mailto:contact@cab-grenoble.net" />
+                  <poap:update timestamp="2010-11-01T18:17:44Z"/>
+                  <poap:content  doctype="html5" rdf:resource="./resource/content/telepherique.html"/>
+                  <poap:triggering radius="50.5" />
+                  <poap:visibility radius="165.2" />
+                  <poap:lifecycle begin="2010-11-01T18:17:44Z" end="2011-12-31T18:17:44Z" />
+                  <poap:channel category="culture"/>
+                  <poap:channel category="transportation"/>
+         </poap:Poi>
+
+         <poap:Poi rdf:ID="GVAjardinDeVille">
+                  <poap:name>Jardin de Ville</poap:name>
+                  <poap:coordinates lat="45.1925890" lon="5.726197" ele="217.861"/>
+                  <foaf:maker rdf:resource="http://wam.inrialpes.fr/rdf/foaf/Audrey-Colbrant.rdf"/>
+                  <poap:update timestamp="2010-11-01T18:17:44Z"/>
+                  <poap:panoramic rdf:resource="./resource/panorama/jardinDeVille.jpg" type="hemispherical"/>
+                  <poap:content doctype="html5" rdf:resource="./resource/content/jardinDeVille.html"/>
+                  <poap:audio rdf:resource="./resource/atmosphere/jardinVilleAtmosphere.mp3"/>
+                  <poap:triggering radius="5.5" />
+                  <poap:visibility radius="4.5" />
+                  <poap:channel category="parc"/>
+         </poap:Poi>
+</rdf:RDF>
+

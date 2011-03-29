@@ -1,0 +1,99 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix poap: <http://wam.inria.fr/poap/0.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/jacques.rdf#GVAbastille>
+    poap:channel [
+        poap:category "culture"
+    ] ;
+    poap:content <file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/content/bastille.html> ;
+    poap:coordinates [
+        poap:ele "386.58" ;
+        poap:lat "45.198662" ;
+        poap:lon "5.725124"
+    ] ;
+    poap:lifecycle [
+        poap:begin "2010-11-01T18:17:44Z" ;
+        poap:end "2011-12-31T18:17:44Z"
+    ] ;
+    poap:name "Bastille" ;
+    poap:triggering [
+        poap:radius "193.3"
+    ] ;
+    poap:update [
+        poap:timestamp "2010-11-01T18:17:44Z"
+    ] ;
+    poap:visibility [
+        poap:radius "284.2"
+    ] ;
+    a poap:Poi ;
+    foaf:homepage <file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/www.bastille-grenoble.com> ;
+    foaf:maker <http://wam.inrialpes.fr/rdf/foaf/Audrey-Colbrant.rdf> .
+
+<file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/jacques.rdf#GVAjardinDeVille>
+    poap:audio <file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/atmosphere/jardinVilleAtmosphere.mp3> ;
+    poap:channel [
+        poap:category "parc"
+    ] ;
+    poap:content <file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/content/jardinDeVille.html> ;
+    poap:coordinates [
+        poap:ele "217.861" ;
+        poap:lat "45.1925890" ;
+        poap:lon "5.726197"
+    ] ;
+    poap:name "Jardin de Ville" ;
+    poap:panoramic <file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/panorama/jardinDeVille.jpg> ;
+    poap:triggering [
+        poap:radius "5.5"
+    ] ;
+    poap:update [
+        poap:timestamp "2010-11-01T18:17:44Z"
+    ] ;
+    poap:visibility [
+        poap:radius "4.5"
+    ] ;
+    a poap:Poi ;
+    foaf:maker <http://wam.inrialpes.fr/rdf/foaf/Audrey-Colbrant.rdf> .
+
+<file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/jacques.rdf#GVAtelepheriqueBastille>
+    poap:channel [
+        poap:category "culture"
+    ], [
+        poap:category "transportation"
+    ] ;
+    poap:content <file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/content/telepherique.html> ;
+    poap:coordinates [
+        poap:ele "221.399" ;
+        poap:lat "45.192956" ;
+        poap:lon "5.726106"
+    ] ;
+    poap:lifecycle [
+        poap:begin "2010-11-01T18:17:44Z" ;
+        poap:end "2011-12-31T18:17:44Z"
+    ] ;
+    poap:name "Téléphérique de la Bastille" ;
+    poap:triggering [
+        poap:radius "50.5"
+    ] ;
+    poap:update [
+        poap:timestamp "2010-11-01T18:17:44Z"
+    ] ;
+    poap:visibility [
+        poap:radius "165.2"
+    ] ;
+    a poap:Poi ;
+    foaf:maker <http://wam.inrialpes.fr/rdf/foaf/Audrey-Colbrant.rdf> ;
+    foaf:mbox <mailto:contact@cab-grenoble.net> .
+
+<file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/content/bastille.html>
+    poap:doctype "html5" .
+
+<file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/content/jardinDeVille.html>
+    poap:doctype "html5" .
+
+<file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/content/telepherique.html>
+    poap:doctype "html5" .
+
+<file:///Applications/MAMP/htdocs/pogo/Pogo/checker/testcases/poi/resource/panorama/jardinDeVille.jpg>
+    poap:type "hemispherical" .
+
