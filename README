@@ -1,7 +1,8 @@
 
 == PHP Open Graph checker ==
 
-This is a utility for checking Open Graph Protocol (OGP) content.
+This is a simple utility for checking Open Graph Protocol (OGP) content, produced under
+contract for Facebook, and released here as opensource. 
 
 Source code: https://github.com/danbri/Pogo (APACHE licensed)
 
@@ -9,6 +10,8 @@ Source code: https://github.com/danbri/Pogo (APACHE licensed)
 
 It also may be useful for comparing the behaviour of OGP-related software, 
 in particular parsers. 
+
+(This tool is not currently maintained.)
 
  
 === Testcases ===
