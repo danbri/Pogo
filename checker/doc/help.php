@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>OpenGraph checker: help </title><link rel="stylesheet" href="../style.css" type="text/css" />
+<title>OpenGraph checker: Help </title><link rel="stylesheet" href="../style.css" type="text/css" />
 </head>
 <body>
 
